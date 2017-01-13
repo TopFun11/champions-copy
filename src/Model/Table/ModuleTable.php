@@ -9,6 +9,8 @@ use Cake\Validation\Validator;
 /**
  * Module Model
  *
+ * @property \Cake\ORM\Association\HasMany $Sections
+ *
  * @method \App\Model\Entity\Module get($primaryKey, $options = [])
  * @method \App\Model\Entity\Module newEntity($data = null, array $options = [])
  * @method \App\Model\Entity\Module[] newEntities(array $data, array $options = [])
@@ -33,6 +35,10 @@ class ModuleTable extends Table
         $this->table('module');
         $this->displayField('title');
         $this->primaryKey('id');
+
+        $this->hasMany('Sections', [
+            'foreignKey' => 'module_id'
+        ]);
     }
 
     /**

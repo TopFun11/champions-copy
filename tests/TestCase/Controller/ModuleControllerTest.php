@@ -16,7 +16,8 @@ class ModuleControllerTest extends IntegrationTestCase
      * @var array
      */
     public $fixtures = [
-        'app.module'
+        'app.module',
+        'app.sections'
     ];
 
     /**

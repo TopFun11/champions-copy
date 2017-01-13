@@ -8,6 +8,8 @@ use Cake\ORM\Entity;
  *
  * @property int $id
  * @property string $title
+ *
+ * @property \App\Model\Entity\Section[] $sections
  */
 class Module extends Entity
 {

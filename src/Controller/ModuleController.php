@@ -34,7 +34,7 @@ class ModuleController extends AppController
     public function view($id = null)
     {
         $module = $this->Module->get($id, [
-            'contain' => []
+            'contain' => ['Sections']
         ]);
 
         $this->set('module', $module);

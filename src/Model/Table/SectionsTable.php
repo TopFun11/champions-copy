@@ -33,6 +33,9 @@ class SectionsTable extends Table
         $this->table('sections');
         $this->displayField('title');
         $this->primaryKey('id');
+        $this->belongsTo('Module', [
+          'className' => 'Module',
+        ]);
     }
 
     /**

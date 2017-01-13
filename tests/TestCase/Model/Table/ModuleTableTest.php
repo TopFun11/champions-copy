@@ -24,7 +24,8 @@ class ModuleTableTest extends TestCase
      * @var array
      */
     public $fixtures = [
-        'app.module'
+        'app.module',
+        'app.sections'
     ];
 
     /**
