@@ -19,12 +19,45 @@ class FormularVariablesController extends AppController
     public function index()
     {
         $this->paginate = [
-            'contain' => ['Formular', 'Question']
+            'contain' => ['Formular', 'Question'],
+            'order' => ['Formular.orderNumber' => 'ASC']
         ];
         $formularVariables = $this->paginate($this->FormularVariables);
 
         $this->set(compact('formularVariables'));
         $this->set('_serialize', ['formularVariables']);
+    }
+
+
+    public function moveUp($id = null){
+      $var = $this->FormularVariables->get($id);
+
+        $var->orderNumber = $var->orderNumber - 1;
+
+        if ($this->FormularVariables->save($var)) {
+          $chngVar = $this->FormularVariables->find()->where(["formular_id" => $var->formular_id, 'orderNumber' => $var->orderNumber])->first();
+          $chngVar->orderNumber = $chngVar->orderNumber + 2;
+          if($this->FormularVariables->save($chngVar)){
+            $this->Flash->success(__('Possion moved up'));
+            return $this->redirect(['action' => 'index']);
+          }
+        
+      }
+    }
+
+    public function moveDown($id = null){
+      $var = $this->FormularVariables->get($id);
+
+      $var->orderNumber = $var->orderNumber + 1;
+
+      if ($this->FormularVariables->save($var)) {
+        $chngVar = $this->FormularVariables->find()->where(["formular_id" => $var->formular_id, 'orderNumber' => $var->orderNumber])->first();
+        $chngVar->orderNumber = $chngVar->orderNumber - 2;
+        if($this->FormularVariables->save($chngVar)){
+          $this->Flash->success(__('Possion moved down'));
+          return $this->redirect(['action' => 'index']);
+        }
+      }
     }
 
     /**
@@ -54,6 +87,8 @@ class FormularVariablesController extends AppController
         $formularVariable = $this->FormularVariables->newEntity();
         if ($this->request->is('post')) {
             $formularVariable = $this->FormularVariables->patchEntity($formularVariable, $this->request->data);
+            $count = $this->FormularVariables->find()->where(['formular_id' => $formularVariable->Formular_id])->all();
+            $formularVariable->orderNumber = count($count);
             if ($this->FormularVariables->save($formularVariable)) {
                 $this->Flash->success(__('The formular variable has been saved.'));
 
