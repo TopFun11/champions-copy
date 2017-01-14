@@ -31,7 +31,8 @@ class FormularTableTest extends TestCase
         'app.users',
         'app.userenrollment',
         'app.formular_operators',
-        'app.formular_variables'
+        'app.formular_variables',
+        'app.question'
     ];
 
     /**
