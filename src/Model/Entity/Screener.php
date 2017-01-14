@@ -8,6 +8,9 @@ use Cake\ORM\Entity;
  *
  * @property int $id
  * @property string $Name
+ * @property int $module_id
+ *
+ * @property \App\Model\Entity\Module $module
  */
 class Screener extends Entity
 {

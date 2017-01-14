@@ -59,7 +59,8 @@ class QuestionController extends AppController
                 $this->Flash->error(__('The question could not be saved. Please, try again.'));
             }
         }
-        $this->set(compact('question'));
+        $screener = $this->Question->Screener->find('list', ['limit' => 200]);
+        $this->set(compact('question', 'screener'));
         $this->set('_serialize', ['question']);
     }
 

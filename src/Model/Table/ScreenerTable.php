@@ -9,6 +9,8 @@ use Cake\Validation\Validator;
 /**
  * Screener Model
  *
+ * @property \Cake\ORM\Association\BelongsTo $Module
+ *
  * @method \App\Model\Entity\Screener get($primaryKey, $options = [])
  * @method \App\Model\Entity\Screener newEntity($data = null, array $options = [])
  * @method \App\Model\Entity\Screener[] newEntities(array $data, array $options = [])
@@ -31,8 +33,14 @@ class ScreenerTable extends Table
         parent::initialize($config);
 
         $this->table('screener');
-        $this->displayField('id');
+        $this->displayField('Name');
         $this->primaryKey('id');
+
+        $this->belongsTo('Module', [
+            'foreignKey' => 'module_id',
+            'joinType' => 'INNER'
+        ]);
+
     }
 
     /**
@@ -52,5 +60,19 @@ class ScreenerTable extends Table
             ->notEmpty('Name');
 
         return $validator;
+    }
+
+    /**
+     * Returns a rules checker object that will be used for validating
+     * application integrity.
+     *
+     * @param \Cake\ORM\RulesChecker $rules The rules object to be modified.
+     * @return \Cake\ORM\RulesChecker
+     */
+    public function buildRules(RulesChecker $rules)
+    {
+        $rules->add($rules->existsIn(['module_id'], 'Module'));
+
+        return $rules;
     }
 }

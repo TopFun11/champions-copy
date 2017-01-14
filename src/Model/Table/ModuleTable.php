@@ -36,6 +36,10 @@ class ModuleTable extends Table
         $this->displayField('title');
         $this->primaryKey('id');
 
+        $this->hasOne("Screener", [
+          'foreignKey' => 'module_id'
+        ]);
+
         $this->hasMany('Sections', [
             'foreignKey' => 'module_id'
         ]);

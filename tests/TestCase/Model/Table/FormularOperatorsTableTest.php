@@ -1,22 +1,22 @@
 <?php
 namespace App\Test\TestCase\Model\Table;
 
-use App\Model\Table\FormularTable;
+use App\Model\Table\FormularOperatorsTable;
 use Cake\ORM\TableRegistry;
 use Cake\TestSuite\TestCase;
 
 /**
- * App\Model\Table\FormularTable Test Case
+ * App\Model\Table\FormularOperatorsTable Test Case
  */
-class FormularTableTest extends TestCase
+class FormularOperatorsTableTest extends TestCase
 {
 
     /**
      * Test subject
      *
-     * @var \App\Model\Table\FormularTable
+     * @var \App\Model\Table\FormularOperatorsTable
      */
-    public $Formular;
+    public $FormularOperators;
 
     /**
      * Fixtures
@@ -24,14 +24,15 @@ class FormularTableTest extends TestCase
      * @var array
      */
     public $fixtures = [
+        'app.formular_operators',
         'app.formular',
         'app.screener',
         'app.module',
         'app.sections',
         'app.users',
         'app.userenrollment',
-        'app.formular_operators',
-        'app.formular_variables'
+        'app.formular_variables',
+        'app.question'
     ];
 
     /**
@@ -42,8 +43,8 @@ class FormularTableTest extends TestCase
     public function setUp()
     {
         parent::setUp();
-        $config = TableRegistry::exists('Formular') ? [] : ['className' => 'App\Model\Table\FormularTable'];
-        $this->Formular = TableRegistry::get('Formular', $config);
+        $config = TableRegistry::exists('FormularOperators') ? [] : ['className' => 'App\Model\Table\FormularOperatorsTable'];
+        $this->FormularOperators = TableRegistry::get('FormularOperators', $config);
     }
 
     /**
@@ -53,7 +54,7 @@ class FormularTableTest extends TestCase
      */
     public function tearDown()
     {
-        unset($this->Formular);
+        unset($this->FormularOperators);
 
         parent::tearDown();
     }

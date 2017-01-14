@@ -8,6 +8,11 @@ use Cake\ORM\Entity;
  *
  * @property int $id
  * @property string $name
+ * @property int $screener_id
+ *
+ * @property \App\Model\Entity\Screener $screener
+ * @property \App\Model\Entity\Formular-operator[] $formular_operators
+ * @property \App\Model\Entity\Formular-variable[] $formular_variables
  */
 class Formular extends Entity
 {

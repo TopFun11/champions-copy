@@ -18,6 +18,9 @@ class ScreenerController extends AppController
      */
     public function index()
     {
+        $this->paginate = [
+            'contain' => ['Module']
+        ];
         $screener = $this->paginate($this->Screener);
 
         $this->set(compact('screener'));
@@ -34,7 +37,7 @@ class ScreenerController extends AppController
     public function view($id = null)
     {
         $screener = $this->Screener->get($id, [
-            'contain' => []
+            'contain' => ['Module']
         ]);
 
         $this->set('screener', $screener);
@@ -59,7 +62,8 @@ class ScreenerController extends AppController
                 $this->Flash->error(__('The screener could not be saved. Please, try again.'));
             }
         }
-        $this->set(compact('screener'));
+        $module = $this->Screener->Module->find('list', ['limit' => 200]);
+        $this->set(compact('screener', 'module'));
         $this->set('_serialize', ['screener']);
     }
 
@@ -85,7 +89,8 @@ class ScreenerController extends AppController
                 $this->Flash->error(__('The screener could not be saved. Please, try again.'));
             }
         }
-        $this->set(compact('screener'));
+        $module = $this->Screener->Module->find('list', ['limit' => 200]);
+        $this->set(compact('screener', 'module'));
         $this->set('_serialize', ['screener']);
     }
 

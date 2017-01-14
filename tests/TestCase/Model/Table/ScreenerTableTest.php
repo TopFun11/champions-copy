@@ -24,7 +24,11 @@ class ScreenerTableTest extends TestCase
      * @var array
      */
     public $fixtures = [
-        'app.screener'
+        'app.screener',
+        'app.module',
+        'app.sections',
+        'app.users',
+        'app.userenrollment'
     ];
 
     /**

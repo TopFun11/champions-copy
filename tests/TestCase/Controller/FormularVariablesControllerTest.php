@@ -1,13 +1,13 @@
 <?php
 namespace App\Test\TestCase\Controller;
 
-use App\Controller\ScreenerController;
+use App\Controller\FormularVariablesController;
 use Cake\TestSuite\IntegrationTestCase;
 
 /**
- * App\Controller\ScreenerController Test Case
+ * App\Controller\FormularVariablesController Test Case
  */
-class ScreenerControllerTest extends IntegrationTestCase
+class FormularVariablesControllerTest extends IntegrationTestCase
 {
 
     /**
@@ -16,11 +16,15 @@ class ScreenerControllerTest extends IntegrationTestCase
      * @var array
      */
     public $fixtures = [
+        'app.formular_variables',
+        'app.formular',
         'app.screener',
         'app.module',
         'app.sections',
         'app.users',
-        'app.userenrollment'
+        'app.userenrollment',
+        'app.formular_operators',
+        'app.question'
     ];
 
     /**

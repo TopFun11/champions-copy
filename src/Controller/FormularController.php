@@ -18,6 +18,9 @@ class FormularController extends AppController
      */
     public function index()
     {
+        $this->paginate = [
+            'contain' => ['Screener']
+        ];
         $formular = $this->paginate($this->Formular);
 
         $this->set(compact('formular'));
@@ -34,7 +37,7 @@ class FormularController extends AppController
     public function view($id = null)
     {
         $formular = $this->Formular->get($id, [
-            'contain' => []
+            'contain' => ['Screener', 'FormularOperators', 'FormularVariables']
         ]);
 
         $this->set('formular', $formular);
@@ -59,7 +62,8 @@ class FormularController extends AppController
                 $this->Flash->error(__('The formular could not be saved. Please, try again.'));
             }
         }
-        $this->set(compact('formular'));
+        $screener = $this->Formular->Screener->find('list', ['limit' => 200]);
+        $this->set(compact('formular', 'screener'));
         $this->set('_serialize', ['formular']);
     }
 
@@ -85,7 +89,8 @@ class FormularController extends AppController
                 $this->Flash->error(__('The formular could not be saved. Please, try again.'));
             }
         }
-        $this->set(compact('formular'));
+        $screener = $this->Formular->Screener->find('list', ['limit' => 200]);
+        $this->set(compact('formular', 'screener'));
         $this->set('_serialize', ['formular']);
     }
 
