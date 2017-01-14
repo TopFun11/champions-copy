@@ -9,10 +9,6 @@ use Cake\Validation\Validator;
 /**
  * Formular Model
  *
- * @property \Cake\ORM\Association\BelongsTo $Screener
- * @property \Cake\ORM\Association\HasMany $FormularOperators
- * @property \Cake\ORM\Association\HasMany $FormularVariables
- *
  * @method \App\Model\Entity\Formular get($primaryKey, $options = [])
  * @method \App\Model\Entity\Formular newEntity($data = null, array $options = [])
  * @method \App\Model\Entity\Formular[] newEntities(array $data, array $options = [])
@@ -42,12 +38,9 @@ class FormularTable extends Table
             'foreignKey' => 'screener_id',
             'joinType' => 'INNER'
         ]);
-        $this->hasMany('FormularOperators', [
-            'foreignKey' => 'formular_id'
-        ]);
-        $this->hasMany('FormularVariables', [
-            'foreignKey' => 'formular_id'
-        ]);
+
+        $this->hasMany('FormularOperators');
+        $this->hasMany('FormularVariables');
     }
 
     /**
@@ -67,19 +60,5 @@ class FormularTable extends Table
             ->notEmpty('name');
 
         return $validator;
-    }
-
-    /**
-     * Returns a rules checker object that will be used for validating
-     * application integrity.
-     *
-     * @param \Cake\ORM\RulesChecker $rules The rules object to be modified.
-     * @return \Cake\ORM\RulesChecker
-     */
-    public function buildRules(RulesChecker $rules)
-    {
-        $rules->add($rules->existsIn(['screener_id'], 'Screener'));
-
-        return $rules;
     }
 }

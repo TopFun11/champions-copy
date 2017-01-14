@@ -2,7 +2,7 @@
 
 use Phinx\Migration\AbstractMigration;
 
-class FormularLogic extends AbstractMigration
+class FormularLogicSanity extends AbstractMigration
 {
     /**
      * Change Method.
@@ -72,10 +72,10 @@ class FormularLogic extends AbstractMigration
     }
 
     public function up(){
-      $this->addVars();
-      $this->addOps();
+      //$this->addVars();
+      //$this->addOps();
 
-        $formTable = $this->table('formular');
+        /*$formTable = $this->table('formular');
         $formTable
         ->addColumn('screener_id', 'integer', [
           'limit' => 11,
@@ -84,16 +84,16 @@ class FormularLogic extends AbstractMigration
         ])
         ->addIndex('screener_id')
         ->addForeignKey('screener_id', "screener", "id")
-        ->update();
+        ->update();*/
     }
     public function down(){
       $this->dropTable('formular_operators');
       $this->dropTable('formular_variables');
-      $formTable = $this->table('formular');
+      /*$formTable = $this->table('formular');
       $formTable
         ->dropForeignKey('screener_id')
         ->removeIndex('screener_id')
         ->removeColumn('screener_id')
-        ->update();
+        ->update();*/
     }
 }
