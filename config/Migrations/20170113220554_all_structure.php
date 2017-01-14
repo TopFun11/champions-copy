@@ -28,7 +28,7 @@ class AllStructure extends AbstractMigration
     public function up(){
       $weekTable = $this->table('week');
 
-      /*$weekTable->addColumn('useful', 'string')->create();
+      $weekTable->addColumn('useful', 'string')->create();
 
       $dayTable = $this->table('day');
 
@@ -42,7 +42,7 @@ class AllStructure extends AbstractMigration
 
       $formularTable = $this->table('formular');
       $formularTable->addColumn('name', 'string')->create();
-*/
+
       $motivationTable = $this->table('motivation');
 
       $motivationTable->addColumn('motivation', 'string')->create();

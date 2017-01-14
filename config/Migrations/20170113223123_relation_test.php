@@ -41,7 +41,7 @@ class RelationTest extends AbstractMigration
      public function down(){
         $sectionsTable = $this->table('sections');
         $sectionsTable
-          ->removeForeignKey('module_id')
+          ->dropForeignKey('module_id')
           ->removeIndex('module_id')
           ->removeColumn('module_id')
           ->update();

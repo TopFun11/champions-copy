@@ -83,7 +83,7 @@ $this->end();
 <div class="panel panel-default">
     <!-- Panel header -->
     <div class="panel-heading">
-        <h3 class="panel-title"><?= __('Related Sections') ?></h3>
+        <h3 class="panel-title"><?= __('Enrolled Users') ?></h3>
     </div>
     <?php if (!empty($module->sections)): ?>
         <table class="table table-striped">
