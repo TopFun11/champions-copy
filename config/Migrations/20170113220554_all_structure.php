@@ -49,11 +49,11 @@ class AllStructure extends AbstractMigration
     }
 
     public function down(){
-      /*$this->dropTable('week');
+      $this->dropTable('week');
       $this->dropTable('day');
       $this->dropTable('screener');
       $this->dropTable('question');
-      $this->dropTable('formular');*/
+      $this->dropTable('formular');
       $this->dropTable('motivation');
     }
 }
