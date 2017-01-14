@@ -13,7 +13,7 @@
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
 
-$cakeDescription = 'CakePHP: the rapid development php framework';
+$cakeDescription = 'Champions for Health';
 ?>
 <!DOCTYPE html>
 <html>
@@ -44,15 +44,15 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
               <ul class="nav navbar-nav navbar-left">
                   <li><a href="/">Home</a>
                   </li>
-                  <li><a href="/products">About us</a>
+                  <li><a href="/about">About us</a>
                   </li>
                   <li><a href="/about-us">Explore Modules</a>
                   </li>
               </ul>
               <ul class="nav navbar-nav navbar-right">
-                  <li><a href="/">Login</a>
+                  <li><a href="/users/login">Login</a>
                   </li>
-                  <li><a href="/products">Register</a>
+                  <li><a href="/users/add">Register</a>
                   </li>
               </ul>
           </div>
@@ -64,7 +64,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     </div>
     <footer class="footer">
       <div class="container">
-        <a href="#">Accessibility</a><br/><a href="#">Terms of use</a><br/><a href="#">Privacy statement</a><br/><a href="#">Back to top</a>
+        <a href="/accessibility">Accessibility</a><br/><a href="/terms">Terms of use</a><br/><a href="/privacy">Privacy statement</a><br/><a href="#">Back to top</a>
       </div>
     </footer>
 </body>
