@@ -35,6 +35,10 @@ class UsersTable extends Table
         $this->table('users');
         $this->displayField('id');
         $this->primaryKey('id');
+        $this->belongsToMany('Module', [
+          'className' => 'Module',
+          'through' => 'userenrollment',
+        ]);
 
         $this->addBehavior('Timestamp');
     }

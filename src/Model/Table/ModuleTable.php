@@ -39,6 +39,9 @@ class ModuleTable extends Table
         $this->hasMany('Sections', [
             'foreignKey' => 'module_id'
         ]);
+        $this->belongsToMany('Users', [
+          'through' => 'userenrollment',
+        ]);
     }
 
     /**

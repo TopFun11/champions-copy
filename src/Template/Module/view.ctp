@@ -79,3 +79,38 @@ $this->end();
         <p class="panel-body">no related Sections</p>
     <?php endif; ?>
 </div>
+
+<div class="panel panel-default">
+    <!-- Panel header -->
+    <div class="panel-heading">
+        <h3 class="panel-title"><?= __('Related Sections') ?></h3>
+    </div>
+    <?php if (!empty($module->sections)): ?>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th><?= __('Id') ?></th>
+                <th><?= __('Title') ?></th>
+                <th><?= __('Content') ?></th>
+                <th><?= __('Module Id') ?></th>
+                <th class="actions"><?= __('Actions') ?></th>
+            </tr>
+            </thead>
+            <tbody>
+            <?php foreach ($module->users as $user): ?>
+                <tr>
+                    <td><?= h($user->id) ?></td>
+                    <td><?= h($user->username) ?></td>
+                    <td class="actions">
+                        <?= $this->Html->link('', ['controller' => 'Sections', 'action' => 'view', $sections->id], ['title' => __('View'), 'class' => 'btn btn-default glyphicon glyphicon-eye-open']) ?>
+
+                        <?= $this->Form->postLink('', ['controller' => 'Sections', 'action' => 'delete', $sections->id], ['confirm' => __('Are you sure you want to delete # {0}?', $sections->id), 'title' => __('Unenroll'), 'class' => 'btn btn-default glyphicon glyphicon-trash']) ?>
+                    </td>
+                </tr>
+            <?php endforeach; ?>
+            </tbody>
+        </table>
+    <?php else: ?>
+        <p class="panel-body">No patients enrolled</p>
+    <?php endif; ?>
+</div>

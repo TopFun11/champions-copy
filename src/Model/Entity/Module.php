@@ -10,6 +10,7 @@ use Cake\ORM\Entity;
  * @property string $title
  *
  * @property \App\Model\Entity\Section[] $sections
+ * @property \App\Model\Entity\User[] $users
  */
 class Module extends Entity
 {
