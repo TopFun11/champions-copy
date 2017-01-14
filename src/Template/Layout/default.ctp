@@ -26,30 +26,46 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     </title>
     <?= $this->Html->meta('icon') ?>
     <?= $this->Html->css('/webroot/css/bootstrap/bootstrap.min.css'); ?>
+    <?= $this->Html->css('/webroot/css/champions/app.css'); ?>
     <?= $this->Html->script(['/webroot/js/jquery/jquery.min.js', '/webroot/js/bootstrap/bootstrap.min.js']); ?>
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
     <?= $this->fetch('script') ?>
 </head>
 <body>
-    <nav class="top-bar expanded" data-topbar role="navigation">
-        <ul class="title-area large-3 medium-4 columns">
-            <li class="name">
-                <h1><a href=""><?= $this->fetch('title') ?></a></h1>
-            </li>
-        </ul>
-        <div class="top-bar-section">
-            <ul class="right">
-                <li><a target="_blank" href="http://book.cakephp.org/3.0/">Documentation</a></li>
-                <li><a target="_blank" href="http://api.cakephp.org/3.0/">API</a></li>
-            </ul>
-        </div>
-    </nav>
+  <div id="custom-bootstrap-menu" class="navbar navbar-default " role="navigation">
+      <div class="container">
+          <div class="navbar-header">
+              <a class="navbar-brand" href="#"><img src="/webroot/img/logo.png" class="c4h-logo" /></a>
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-menubuilder"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+          </button>
+          </div>
+          <div class="collapse navbar-collapse navbar-menubuilder">
+              <ul class="nav navbar-nav navbar-left">
+                  <li><a href="/">Home</a>
+                  </li>
+                  <li><a href="/products">About us</a>
+                  </li>
+                  <li><a href="/about-us">Explore Modules</a>
+                  </li>
+              </ul>
+              <ul class="nav navbar-nav navbar-right">
+                  <li><a href="/">Login</a>
+                  </li>
+                  <li><a href="/products">Register</a>
+                  </li>
+              </ul>
+          </div>
+      </div>
+  </div>
     <?= $this->Flash->render() ?>
     <div class="container clearfix">
         <?= $this->fetch('content') ?>
     </div>
-    <footer>
+    <footer class="footer">
+      <div class="container">
+        <a href="#">Accessibility</a><br/><a href="#">Terms of use</a><br/><a href="#">Privacy statement</a><br/><a href="#">Back to top</a>
+      </div>
     </footer>
 </body>
 </html>
