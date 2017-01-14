@@ -14,22 +14,29 @@ $this->start('tb_actions');
 <table class="table table-striped" cellpadding="0" cellspacing="0">
     <thead>
         <tr>
-            <th><?= $this->Paginator->sort('id'); ?></th>
+          <th><?= $this->Paginator->sort('id'); ?></th>
+            <th><?= $this->Paginator->sort('order'); ?></th>
             <th><?= $this->Paginator->sort('formular_id'); ?></th>
             <th><?= $this->Paginator->sort('question_id'); ?></th>
+            <th><?= $this->Paginator->sort('orderNumber'); ?></th>
             <th class="actions"><?= __('Actions'); ?></th>
         </tr>
     </thead>
     <tbody>
         <?php foreach ($formularVariables as $formularVariable): ?>
         <tr>
-            <td><?= $this->Number->format($formularVariable->id) ?></td>
+          <td><?= $this->Number->format($formularVariable->id) ?></td>
+            <td><?= $this->Number->format($formularVariable->orderNumber) ?></td>
             <td>
                 <?= $formularVariable->has('formular') ? $this->Html->link($formularVariable->formular->name, ['controller' => 'Formular', 'action' => 'view', $formularVariable->formular->id]) : '' ?>
             </td>
             <td>
                 <?= $formularVariable->has('question') ? $this->Html->link($formularVariable->question->id, ['controller' => 'Question', 'action' => 'view', $formularVariable->question->id]) : '' ?>
             </td>
+
+              <td><?= $formularVariable->Order ?>
+                <?= $this->Html->link('', ['action' => 'moveup', $formularVariable->id], ['title' => __('Up'), 'class' => 'btn btn-default glyphicon glyphicon-arrow-up']) ?>
+                <?= $this->Html->link('', ['action' => 'movedown', $formularVariable->id], ['title' => __('Down'), 'class' => 'btn btn-default glyphicon glyphicon-arrow-down']) ?></td>
             <td class="actions">
                 <?= $this->Html->link('', ['action' => 'view', $formularVariable->id], ['title' => __('View'), 'class' => 'btn btn-default glyphicon glyphicon-eye-open']) ?>
                 <?= $this->Html->link('', ['action' => 'edit', $formularVariable->id], ['title' => __('Edit'), 'class' => 'btn btn-default glyphicon glyphicon-pencil']) ?>
