@@ -4,13 +4,16 @@ namespace App\Model\Entity;
 use Cake\ORM\Entity;
 
 /**
- * Question Entity
+ * FormularVariable Entity
  *
  * @property int $id
- * @property string $question
- * @property int $screener_id
+ * @property int $formular_id
+ * @property int $question_id
+ *
+ * @property \App\Model\Entity\Formular $formular
+ * @property \App\Model\Entity\Question $question
  */
-class Question extends Entity
+class FormularVariable extends Entity
 {
 
     /**

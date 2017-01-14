@@ -16,7 +16,14 @@ class FormularControllerTest extends IntegrationTestCase
      * @var array
      */
     public $fixtures = [
-        'app.formular'
+        'app.formular',
+        'app.screener',
+        'app.module',
+        'app.sections',
+        'app.users',
+        'app.userenrollment',
+        'app.formular_operators',
+        'app.formular_variables'
     ];
 
     /**
