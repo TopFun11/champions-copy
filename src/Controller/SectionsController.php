@@ -18,6 +18,9 @@ class SectionsController extends AppController
      */
     public function index()
     {
+        $this->paginate = [
+            'contain' => ['Module']
+        ];
         $sections = $this->paginate($this->Sections);
 
         $this->set(compact('sections'));
@@ -34,7 +37,7 @@ class SectionsController extends AppController
     public function view($id = null)
     {
         $section = $this->Sections->get($id, [
-            'contain' => []
+            'contain' => ['Module']
         ]);
 
         $this->set('section', $section);
@@ -59,7 +62,8 @@ class SectionsController extends AppController
                 $this->Flash->error(__('The section could not be saved. Please, try again.'));
             }
         }
-        $this->set(compact('section'));
+        $module = $this->Sections->Module->find('list', ['limit' => 200]);
+        $this->set(compact('section', 'module'));
         $this->set('_serialize', ['section']);
     }
 
@@ -85,7 +89,8 @@ class SectionsController extends AppController
                 $this->Flash->error(__('The section could not be saved. Please, try again.'));
             }
         }
-        $this->set(compact('section'));
+        $module = $this->Sections->Module->find('list', ['limit' => 200]);
+        $this->set(compact('section', 'module'));
         $this->set('_serialize', ['section']);
     }
 

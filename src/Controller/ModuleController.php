@@ -25,13 +25,29 @@ class ModuleController extends AppController
     }
 
     /**
-     * View method
+    * View method
+    *
+    * @param string|null $id Module id.
+    * @return \cake\Network\Response\null
+    * @throws \Cake\Datasource\Exception\RecordNotFoundException when record not found.
+    */
+    public function view($id = null){
+      $module = $this->Module->get($id, [
+        'contain' => ['Sections']
+      ]);
+
+      $this->set('module', $module);
+      $this->set('_serialize', ['module']);
+    }
+
+    /**
+     * AdminView method
      *
      * @param string|null $id Module id.
      * @return \Cake\Network\Response|null
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
-    public function view($id = null)
+    public function adminview($id = null)
     {
         $module = $this->Module->get($id, [
             'contain' => ['Sections']
