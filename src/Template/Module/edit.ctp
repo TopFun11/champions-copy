@@ -40,6 +40,9 @@ $this->end();
     <legend><?= __('Edit {0}', ['Module']) ?></legend>
     <?php
     echo $this->Form->input('title');
+    echo $this->Form->input('description');
+    echo $this->Form->input('icon');
+    echo $this->Form->input('banner');
     ?>
 </fieldset>
 <?= $this->Form->button(__("Save")); ?>

@@ -40,6 +40,18 @@ $this->end();
             <td><?= __('Id') ?></td>
             <td><?= $this->Number->format($module->id) ?></td>
         </tr>
+        <tr>
+            <td><?= __('Description') ?></td>
+            <td><?= h($module->description) ?></td>
+        </tr>
+        <tr>
+            <td><?= __('Icon') ?></td>
+            <td><?= h($module->icon) ?></td>
+        </tr>
+        <tr>
+            <td><?= __('Banner') ?></td>
+            <td><?= h($module->banner) ?></td>
+        </tr>
     </table>
 </div>
 
