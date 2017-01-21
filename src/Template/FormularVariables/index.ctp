@@ -34,9 +34,20 @@ $this->start('tb_actions');
                 <?= $formularVariable->has('question') ? $this->Html->link($formularVariable->question->id, ['controller' => 'Question', 'action' => 'view', $formularVariable->question->id]) : '' ?>
             </td>
 
-              <td><?= $formularVariable->Order ?>
-                <?= $this->Html->link('', ['action' => 'moveup', $formularVariable->id], ['title' => __('Up'), 'class' => 'btn btn-default glyphicon glyphicon-arrow-up']) ?>
-                <?= $this->Html->link('', ['action' => 'movedown', $formularVariable->id], ['title' => __('Down'), 'class' => 'btn btn-default glyphicon glyphicon-arrow-down']) ?></td>
+              <td>
+                <?php
+                $upStyle = "";
+                $downStyle = "";
+                if ($this->Number->format($formularVariable->orderNumber) == 0){
+                    $upStyle = "disabled";
+                }
+                if ($this->Number->format($formularVariable->orderNumber) >= count($formularVariables) - 1){
+                    $downStyle = "disabled";
+                }
+
+                 ?>
+                <?= $this->Html->link('', ['action' => 'moveup', $formularVariable->id], ['title' => __('Up'), 'class' => 'btn btn-default glyphicon glyphicon-arrow-up ' . $upStyle])?>
+                <?= $this->Html->link('', ['action' => 'movedown', $formularVariable->id], ['title' => __('Down'), 'class' => 'btn btn-default glyphicon glyphicon-arrow-down ' . $downStyle]) ?></td>
             <td class="actions">
                 <?= $this->Html->link('', ['action' => 'view', $formularVariable->id], ['title' => __('View'), 'class' => 'btn btn-default glyphicon glyphicon-eye-open']) ?>
                 <?= $this->Html->link('', ['action' => 'edit', $formularVariable->id], ['title' => __('Edit'), 'class' => 'btn btn-default glyphicon glyphicon-pencil']) ?>

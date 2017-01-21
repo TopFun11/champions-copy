@@ -20,7 +20,7 @@ class FormularVariablesController extends AppController
     {
         $this->paginate = [
             'contain' => ['Formular', 'Question'],
-            'order' => ['Formular.orderNumber' => 'ASC']
+            'order' => ['FormularVariables.orderNumber' => 'asc']
         ];
         $formularVariables = $this->paginate($this->FormularVariables);
 
@@ -31,31 +31,47 @@ class FormularVariablesController extends AppController
 
     public function moveUp($id = null){
       $var = $this->FormularVariables->get($id);
+        if($var->orderNumber < 1){
+          $this->Flash->error(__('Could not move the position up'));
+          return $this->redirect(['action' => 'index']);
+        }
 
         $var->orderNumber = $var->orderNumber - 1;
+        $chngVar = $this->FormularVariables->find()->where(["formular_id" => $var->formular_id, 'orderNumber' => $var->orderNumber])->first();
 
         if ($this->FormularVariables->save($var)) {
-          $chngVar = $this->FormularVariables->find()->where(["formular_id" => $var->formular_id, 'orderNumber' => $var->orderNumber])->first();
-          $chngVar->orderNumber = $chngVar->orderNumber + 2;
-          if($this->FormularVariables->save($chngVar)){
-            $this->Flash->success(__('Possion moved up'));
-            return $this->redirect(['action' => 'index']);
+          if($chngVar != null){
+
+            $chngVar->orderNumber = $chngVar->orderNumber + 1;
+            if($this->FormularVariables->save($chngVar)){
+              $this->Flash->success(__('Possion moved up'));
+              return $this->redirect(['action' => 'index']);
+            }
+          }else{
+              return $this->redirect(['action' => 'index']);
           }
-        
       }
     }
 
     public function moveDown($id = null){
       $var = $this->FormularVariables->get($id);
-
+      $vars = $this->FormularVariables->find()->where(['formular_id' => $var->formular_id])->all();
+      if($var->orderNumber > count($vars)){
+        $this->Flash->error(__('Could not move the position down'));
+        return $this->redirect(['action' => 'index']);
+      }
       $var->orderNumber = $var->orderNumber + 1;
+      $chngVar = $this->FormularVariables->find()->where(["formular_id" => $var->formular_id, 'orderNumber' => $var->orderNumber])->first();
 
       if ($this->FormularVariables->save($var)) {
-        $chngVar = $this->FormularVariables->find()->where(["formular_id" => $var->formular_id, 'orderNumber' => $var->orderNumber])->first();
-        $chngVar->orderNumber = $chngVar->orderNumber - 2;
-        if($this->FormularVariables->save($chngVar)){
-          $this->Flash->success(__('Possion moved down'));
-          return $this->redirect(['action' => 'index']);
+        if($chngVar != null){
+          $chngVar->orderNumber = $chngVar->orderNumber - 1;
+          if($this->FormularVariables->save($chngVar)){
+            $this->Flash->success(__('Possion moved down'));
+            return $this->redirect(['action' => 'index']);
+          }
+        }else{
+            return $this->redirect(['action' => 'index']);
         }
       }
     }
@@ -87,7 +103,7 @@ class FormularVariablesController extends AppController
         $formularVariable = $this->FormularVariables->newEntity();
         if ($this->request->is('post')) {
             $formularVariable = $this->FormularVariables->patchEntity($formularVariable, $this->request->data);
-            $count = $this->FormularVariables->find()->where(['formular_id' => $formularVariable->Formular_id])->all();
+            $count = $this->FormularVariables->find()->where(['formular_id' => $formularVariable->formular_id])->all();
             $formularVariable->orderNumber = count($count);
             if ($this->FormularVariables->save($formularVariable)) {
                 $this->Flash->success(__('The formular variable has been saved.'));
