@@ -67,10 +67,11 @@ class ModuleController extends AppController
         $module = $this->Module->newEntity();
         if ($this->request->is('post')) {
             $module = $this->Module->patchEntity($module, $this->request->data);
-            if ($this->Module->save($module)) {
+            $result = $this->Module->save($module);
+            if ($result) {
                 $this->Flash->success(__('The module has been saved.'));
 
-                return $this->redirect(['action' => 'index']);
+                return $this->redirect(["controller" => "Module",'action'=>'edit/'.$result->id]);
             } else {
                 $this->Flash->error(__('The module could not be saved. Please, try again.'));
             }

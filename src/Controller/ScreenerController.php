@@ -27,6 +27,23 @@ class ScreenerController extends AppController
         $this->set('_serialize', ['screener']);
     }
 
+    public function ajaxadd(){
+      $screener = $this->Screener->newEntity();
+      if ($this->request->is('post')) {
+          $screener = $this->Screener->patchEntity($screener, $this->request->data);
+          if ($this->Screener->save($screener)) {
+              $this->Flash->success(__('The screener has been saved.'));
+
+              return $this->redirect(['action' => 'index']);
+          } else {
+              $this->Flash->error(__('The screener could not be saved. Please, try again.'));
+          }
+      }
+      $module = $this->Screener->Module->find('list', ['limit' => 200]);
+      $this->set(compact('screener', 'module'));
+      $this->set('_serialize', ['screener']);
+    }
+
     /**
      * View method
      *

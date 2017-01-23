@@ -138,3 +138,16 @@ li {
 .user-form-buttons{
   padding-top: 10px;
 }
+
+.ed-display {
+  border: 1px solid #CCC;
+}
+.glyph-buttons {
+  font-size:18px;
+  color:red;
+}
+
+.glyph-buttons i {
+  padding-left:5px;
+  padding-right:5px;
+}

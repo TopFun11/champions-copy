@@ -42,7 +42,7 @@ $this->end();
         </tr>
         <tr>
             <td><?= __('Description') ?></td>
-            <td><?= h($module->description) ?></td>
+            <td><?= h($module->desc) ?></td>
         </tr>
         <tr>
             <td><?= __('Icon') ?></td>

@@ -33,6 +33,9 @@ $cakeDescription = 'Champions for Health';
     <?= $this->fetch('script') ?>
 </head>
 <body>
+  <div id="alert_placeholder">
+    <!--what?!-->
+  </div>
   <div id="custom-bootstrap-menu" class="navbar navbar-default " role="navigation">
       <div class="container">
           <div class="navbar-header">
@@ -60,12 +63,14 @@ $cakeDescription = 'Champions for Health';
   </div>
     <?= $this->Flash->render() ?>
     <div class="container clearfix">
-        <?= $this->fetch('content') ?>
+    <?= $this->fetch('content') ?>
     </div>
     <footer class="footer">
       <div class="container">
         <a href="/accessibility">Accessibility</a><br/><a href="/terms">Terms of use</a><br/><a href="/privacy">Privacy statement</a><br/><a href="#">Back to top</a>
       </div>
     </footer>
+    <script src="http://cdn.tinymce.com/4/tinymce.min.js"></script>
+    <script src="/webroot/js/app.js"/>
 </body>
 </html>
