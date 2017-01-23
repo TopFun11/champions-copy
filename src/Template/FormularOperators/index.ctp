@@ -13,8 +13,10 @@ $this->start('tb_actions');
     <thead>
         <tr>
             <th><?= $this->Paginator->sort('id'); ?></th>
+            <th><?= $this->Paginator->sort('orderNumber'); ?></th>
             <th><?= $this->Paginator->sort('formular_id'); ?></th>
             <th><?= $this->Paginator->sort('operator'); ?></th>
+            <th><?= $this->Paginator->sort('orderNumber'); ?></th>
             <th class="actions"><?= __('Actions'); ?></th>
         </tr>
     </thead>
@@ -22,9 +24,25 @@ $this->start('tb_actions');
         <?php foreach ($formularOperators as $formularOperator): ?>
         <tr>
             <td><?= $this->Number->format($formularOperator->id) ?></td>
+            <td><?= $this->Number->format($formularOperator->orderNumber) ?></td>
             <td>
                 <?= $formularOperator->has('formular') ? $this->Html->link($formularOperator->formular->name, ['controller' => 'Formular', 'action' => 'view', $formularOperator->formular->id]) : '' ?>
             </td>
+            <td>
+            <?php
+            $upStyle = "";
+            $downStyle = "";
+            if ($this->Number->format($formularOperator->orderNumber) == 0){
+                $upStyle = "disabled";
+            }
+            if ($this->Number->format($formularOperator->orderNumber) >= count($formularOperators) - 1){
+                $downStyle = "disabled";
+            }
+
+             ?>
+            <?= $this->Html->link('', ['action' => 'moveup', $formularOperator->id], ['title' => __('Up'), 'class' => 'btn btn-default glyphicon glyphicon-arrow-up ' . $upStyle])?>
+            <?= $this->Html->link('', ['action' => 'movedown', $formularOperator->id], ['title' => __('Down'), 'class' => 'btn btn-default glyphicon glyphicon-arrow-down ' . $downStyle]) ?></td>
+          </td>
             <td><?= h($formularOperator->operator) ?></td>
             <td class="actions">
                 <?= $this->Html->link('', ['action' => 'view', $formularOperator->id], ['title' => __('View'), 'class' => 'btn btn-default glyphicon glyphicon-eye-open']) ?>

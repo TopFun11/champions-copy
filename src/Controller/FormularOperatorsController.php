@@ -27,6 +27,53 @@ class FormularOperatorsController extends AppController
         $this->set('_serialize', ['formularOperators']);
     }
 
+    public function moveUp($id = null){
+      $var = $this->FormularOperators->get($id);
+        if($var->orderNumber < 1){
+          $this->Flash->error(__('Could not move the position up'));
+          return $this->redirect(['action' => 'index']);
+        }
+
+        $var->orderNumber = $var->orderNumber - 1;
+        $chngVar = $this->FormularOperators->find()->where(["formular_id" => $var->formular_id, 'orderNumber' => $var->orderNumber])->first();
+
+        if ($this->FormularOperators->save($var)) {
+          if($chngVar != null){
+
+            $chngVar->orderNumber = $chngVar->orderNumber + 1;
+            if($this->FormularOperators->save($chngVar)){
+              $this->Flash->success(__('Possion moved up'));
+              return $this->redirect(['action' => 'index']);
+            }
+          }else{
+              return $this->redirect(['action' => 'index']);
+          }
+      }
+    }
+
+    public function moveDown($id = null){
+      $var = $this->FormularOperators->get($id);
+      $vars = $this->FormularOperators->find()->where(['formular_id' => $var->formular_id])->all();
+      if($var->orderNumber > count($vars)){
+        $this->Flash->error(__('Could not move the position down'));
+        return $this->redirect(['action' => 'index']);
+      }
+      $var->orderNumber = $var->orderNumber + 1;
+      $chngVar = $this->FormularOperators->find()->where(["formular_id" => $var->formular_id, 'orderNumber' => $var->orderNumber])->first();
+
+      if ($this->FormularOperators->save($var)) {
+        if($chngVar != null){
+          $chngVar->orderNumber = $chngVar->orderNumber - 1;
+          if($this->FormularOperators->save($chngVar)){
+            $this->Flash->success(__('Possion moved down'));
+            return $this->redirect(['action' => 'index']);
+          }
+        }else{
+            return $this->redirect(['action' => 'index']);
+        }
+      }
+    }
+
     /**
      * View method
      *
@@ -53,9 +100,12 @@ class FormularOperatorsController extends AppController
     {
         $formularOperator = $this->FormularOperators->newEntity();
         if ($this->request->is('post')) {
+
             $formularOperator = $this->FormularOperators->patchEntity($formularOperator, $this->request->data);
+            $count = $this->FormularOperators->find()->where(['formular_id' => $formularOperator->formular_id])->all();
+            $formularOperator->orderNumber = count($count);
             if ($this->FormularOperators->save($formularOperator)) {
-                $this->Flash->success(__('The formular operator has been saved.'));
+                $this->Flash->success(__('The formular operator has been saved.' . count($count) . ' ' . $formularOperator->formular_id));
 
                 return $this->redirect(['action' => 'index']);
             } else {

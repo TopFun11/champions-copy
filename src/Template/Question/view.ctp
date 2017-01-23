@@ -22,6 +22,7 @@ $this->start('tb_sidebar');
 <?php
 $this->end();
 ?>
+<?= $question ?>
 <div class="panel panel-default">
     <!-- Panel header -->
     <div class="panel-heading">
@@ -42,4 +43,3 @@ $this->end();
         </tr>
     </table>
 </div>
-

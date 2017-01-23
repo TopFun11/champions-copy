@@ -15,7 +15,7 @@ $this->start('tb_actions');
     <thead>
         <tr>
           <th><?= $this->Paginator->sort('id'); ?></th>
-            <th><?= $this->Paginator->sort('order'); ?></th>
+            <th><?= $this->Paginator->sort('orderNumber'); ?></th>
             <th><?= $this->Paginator->sort('formular_id'); ?></th>
             <th><?= $this->Paginator->sort('question_id'); ?></th>
             <th><?= $this->Paginator->sort('orderNumber'); ?></th>

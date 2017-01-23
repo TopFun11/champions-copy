@@ -36,5 +36,6 @@ class AppView extends UIView
      */
     public function initialize()
     {
+      $this->loadHelper('QuestionAnswer');
     }
 }

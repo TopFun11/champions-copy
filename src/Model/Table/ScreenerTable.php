@@ -40,7 +40,7 @@ class ScreenerTable extends Table
             'foreignKey' => 'module_id',
             'joinType' => 'INNER'
         ]);
-
+        $this->hasMany('Question');
     }
 
     /**

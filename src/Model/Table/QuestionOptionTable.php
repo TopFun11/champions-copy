@@ -55,8 +55,8 @@ class QuestionOptionTable extends Table
             ->allowEmpty('id', 'create');
 
         $validator
-            ->requirePresence('description', 'create')
-            ->notEmpty('description');
+            ->requirePresence('text', 'create')
+            ->notEmpty('text');
 
         $validator
             ->integer('value')
