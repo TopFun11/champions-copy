@@ -100,6 +100,7 @@ class FormularOperatorsController extends AppController
     {
         $formularOperator = $this->FormularOperators->newEntity();
         if ($this->request->is('post')) {
+
             $formularOperator = $this->FormularOperators->patchEntity($formularOperator, $this->request->data);
             $count = $this->FormularOperators->find()->where(['formular_id' => $formularOperator->formular_id])->all();
             $formularOperator->orderNumber = count($count);

@@ -17,7 +17,9 @@ $this->start('tb_actions');
         </tr>
     </thead>
     <tbody>
+
         <?php foreach ($question as $question): ?>
+          <?= $question ?>
         <tr>
             <td><?= $this->Number->format($question->id) ?></td>
             <td><?= h($question->question) ?></td>

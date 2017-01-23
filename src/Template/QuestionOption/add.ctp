@@ -23,7 +23,7 @@ $this->end();
 <fieldset>
     <legend><?= __('Add {0}', ['Question Option']) ?></legend>
     <?php
-    echo $this->Form->input('description');
+    echo $this->Form->input('text');
     echo $this->Form->input('value');
     echo $this->Form->input('orderNumber');
     echo $this->Form->input('question_id', ['options' => $question]);

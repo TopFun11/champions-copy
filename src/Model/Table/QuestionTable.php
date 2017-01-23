@@ -40,6 +40,7 @@ class QuestionTable extends Table
             'foreignKey' => 'screener_id',
             'joinType' => 'INNER'
         ]);
+        $this->hasMany('QuestionOption');
     }
 
     /**

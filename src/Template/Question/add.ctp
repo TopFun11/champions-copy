@@ -21,7 +21,7 @@ $this->end();
     <?php
     echo $this->Form->input('question');
     echo $this->Form->input('screener_id', ['options' => $screener]);
-    echo $this->Form->input('type', ['options' => ['Amount', 'Yes/No', 'Number range']]);
+    echo $this->Form->input('type', ['options' => ['Amount', 'Range', 'Multiple choice']]);
     ?>
 </fieldset>
 <?= $this->Form->button(__("Add")); ?>
