@@ -31,7 +31,7 @@ class QuestionAnswerHelper extends Helper{
   }
 
   private function displayAmount($question){
-    return $this->Form->text('answer');
+    return $this->Form->text('answer['.$question->id.']');
   }
 
   private function displayRadio($question){
@@ -41,14 +41,14 @@ class QuestionAnswerHelper extends Helper{
       $options[$i] = ['value' => $op->value, 'text' => $op->text];
     }
 
-    return $this->Form->radio('answer', $options);
+    return $this->Form->radio('answer['.$question->id.']', $options);
   }
 
   private function displayMultipleChoice($question){
     $html = "";
 
     foreach($question->question_option as $op){
-      $html = $html . "<label>".$op->text. $this->Form->checkbox('answer', ['hiddenField' => false, 'label' => 'bob']) . "</label>";
+      $html = $html . "<label>". $this->Form->checkbox('answer['.$question->id.'-'.$op->id.']', ['hiddenField' => false, 'label' => 'bob']).$op->text . "</label>";
     }
 
     return $html;

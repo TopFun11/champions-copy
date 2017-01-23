@@ -34,6 +34,13 @@ class RecordingSystem extends AbstractMigration
       ])
       ->addIndex('screener_id')
       ->addForeignKey('screener_id', 'screener', 'id')
+      ->addColumn('user_id', 'integer', [
+        'length' => 9,
+        'default' => null,
+        'null' => false
+      ])
+      ->addIndex('user_id')
+      ->addForeignKey('user_id', 'users', 'id')
       ->create();
 
       $recordTable = $this->table("record");
@@ -44,6 +51,18 @@ class RecordingSystem extends AbstractMigration
       ])
       ->addIndex('recordset_id')
       ->addForeignKey('recordset_id', 'recordset', 'id')
+      ->addColumn("answer", 'string', [
+        'length' => 255,
+        'default' => null,
+        'null' => true
+      ])
+      ->addColumn("question_option_id", 'integer', [
+        'length' => 9,
+        'default' => null,
+        'null' => true
+      ])
+      ->addIndex('question_option_id')
+      ->addForeignKey('question_option_id', "question_option", 'id')
       ->create();
 
     }

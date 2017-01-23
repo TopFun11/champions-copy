@@ -26,7 +26,9 @@ $this->start('tb_sidebar');
 <?php
 $this->end();
 ?>
+
 <div class="panel panel-default">
+  <?= $record ?>
     <!-- Panel header -->
     <div class="panel-heading">
         <h3 class="panel-title"><?= h($record->id) ?></h3>
@@ -40,6 +42,13 @@ $this->end();
             <td><?= __('Id') ?></td>
             <td><?= $this->Number->format($record->id) ?></td>
         </tr>
+        <tr>
+          <td><?= __('Answer') ?></td>
+          <td><?= $record->answer?></td>
+        </tr>
+        <tr>
+          <td><?= __('Option') ?></td>
+          <td><?= $record->option_id?></td>
+        </tr>
     </table>
 </div>
-
