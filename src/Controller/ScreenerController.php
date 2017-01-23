@@ -45,26 +45,7 @@ class ScreenerController extends AppController
     }
 
 
-    /**
-     * take method
-     *
-     * @param string|null $id Screener id.
-     * @return \Cake\Network\Response|null
-     * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
-     */
-    public function take($id = null)
-    {
-        $screener = $this->Screener->get($id, [
-            'contain' => [
-              'Module',
-              'Question' => [
-                'QuestionOption'
-              ]]
-        ]);
 
-        $this->set('screener', $screener);
-        $this->set('_serialize', ['screener']);
-    }
 
     /**
      * View method
