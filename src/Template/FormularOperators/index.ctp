@@ -27,6 +27,7 @@ $this->start('tb_actions');
             <td><?= $this->Number->format($formularOperator->orderNumber) ?></td>
             <td>
                 <?= $formularOperator->has('formular') ? $this->Html->link($formularOperator->formular->name, ['controller' => 'Formular', 'action' => 'view', $formularOperator->formular->id]) : '' ?>
+                <?= h($formularOperator->formular->calculate()); ?>
             </td>
             <td>
             <?php
