@@ -29,4 +29,10 @@ class Formular extends Entity
         '*' => true,
         'id' => false
     ];
+
+    public function calculate() {
+      $parser = new \Math\Parser();
+      $expression = '1 + 5 - 2';
+      return $parser->evaluate($expression);
+    }
 }

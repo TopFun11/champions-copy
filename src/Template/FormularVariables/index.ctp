@@ -29,9 +29,11 @@ $this->start('tb_actions');
             <td><?= $this->Number->format($formularVariable->orderNumber) ?></td>
             <td>
                 <?= $formularVariable->has('formular') ? $this->Html->link($formularVariable->formular->name, ['controller' => 'Formular', 'action' => 'view', $formularVariable->formular->id]) : '' ?>
+                
             </td>
             <td>
                 <?= $formularVariable->has('question') ? $this->Html->link($formularVariable->question->id, ['controller' => 'Question', 'action' => 'view', $formularVariable->question->id]) : '' ?>
+
             </td>
 
               <td>
