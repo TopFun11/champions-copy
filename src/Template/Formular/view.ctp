@@ -49,6 +49,10 @@ $this->end();
             <td><?= $formular->has('screener') ? $this->Html->link($formular->screener->Name, ['controller' => 'Screener', 'action' => 'view', $formular->screener->id]) : '' ?></td>
         </tr>
         <tr>
+          <td><?= __('Formula')?></td>
+          <td><?= $formular->formula ?></td>
+        </tr>
+        <tr>
             <td><?= __('Id') ?></td>
             <td><?= $this->Number->format($formular->id) ?></td>
         </tr>

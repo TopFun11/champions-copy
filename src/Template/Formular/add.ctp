@@ -33,6 +33,7 @@ $this->end();
     <?php
     echo $this->Form->input('name');
     echo $this->Form->input('screener_id', ['options' => $screener]);
+    echo $this->Form->input('formula');
     ?>
 </fieldset>
 <?= $this->Form->button(__("Add")); ?>

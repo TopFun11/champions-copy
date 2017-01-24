@@ -26,6 +26,7 @@ $this->start('tb_sidebar');
 <?php
 $this->end();
 ?>
+
 <div class="panel panel-default">
     <!-- Panel header -->
     <div class="panel-heading">
@@ -40,6 +41,13 @@ $this->end();
             <td><?= __('Id') ?></td>
             <td><?= $this->Number->format($recordset->id) ?></td>
         </tr>
+        <tr>
+            <td><?= __('User') ?></td>
+            <td><?= $recordset->has('user') ? $this->Html->link($recordset->user->username, ['controller' => 'user', 'action' => 'view', $recordset->user->id]) : '' ?></td>
+        </tr>
+        <tr>
+            <td><?= __('Screener Score') ?></td>
+            <td><?= $recordset->has('screener') ? $recordset->screener->formular->calculate($recordset->record) : '' ?></td>
+        </tr>
     </table>
 </div>
-

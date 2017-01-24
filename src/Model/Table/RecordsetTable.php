@@ -40,6 +40,11 @@ class RecordsetTable extends Table
             'foreignKey' => 'screener_id',
             'joinType' => 'INNER'
         ]);
+        $this->belongsTo('Users', [
+          'foreignKey' => 'user_id',
+          'joinType' => 'INNER'
+        ]);
+        $this->hasMany("Record");
     }
 
     /**

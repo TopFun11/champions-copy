@@ -40,6 +40,7 @@ class RecordTable extends Table
             'foreignKey' => 'recordset_id',
             'joinType' => 'INNER'
         ]);
+        $this->belongsTo("Question");
     }
 
     /**

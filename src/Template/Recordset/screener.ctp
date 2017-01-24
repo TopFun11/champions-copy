@@ -26,6 +26,8 @@ $this->start('tb_sidebar');
 <?php
 $this->end();
 ?>
+<?= $this->Form->create($recordset); ?>
+<?=  $this->Form->hidden('screener_id', ['value' => $screener->id]); ?>
 <div class="panel panel-default">
     <!-- Panel header -->
     <div class="panel-heading">
@@ -42,3 +44,5 @@ $this->end();
 
   <?php endforeach;?>
 </div>
+<?= $this->Form->button(__("Complete")); ?>
+<?= $this->Form->end() ?>

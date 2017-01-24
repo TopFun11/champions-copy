@@ -39,7 +39,10 @@ class UsersTable extends Table
           'className' => 'Module',
           'through' => 'userenrollment',
         ]);
-
+        $this->hasMany("Recordset", [
+          'className' => 'Recordset',
+          'through' => 'recordset'
+        ]);
         $this->addBehavior('Timestamp');
     }
 

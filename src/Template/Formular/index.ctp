@@ -14,6 +14,7 @@ $this->start('tb_actions');
         <tr>
             <th><?= $this->Paginator->sort('id'); ?></th>
             <th><?= $this->Paginator->sort('name'); ?></th>
+            <th><?= $this->Paginator->sort('formula'); ?></th>
             <th class="actions"><?= __('Actions'); ?></th>
         </tr>
     </thead>
@@ -22,6 +23,7 @@ $this->start('tb_actions');
         <tr>
             <td><?= $this->Number->format($formular->id) ?></td>
             <td><?= h($formular->name) ?></td>
+            <td><?= h($formular->formula)?></td>
             <td class="actions">
                 <?= $this->Html->link('', ['action' => 'view', $formular->id], ['title' => __('View'), 'class' => 'btn btn-default glyphicon glyphicon-eye-open']) ?>
                 <?= $this->Html->link('', ['action' => 'edit', $formular->id], ['title' => __('Edit'), 'class' => 'btn btn-default glyphicon glyphicon-pencil']) ?>
