@@ -54,7 +54,12 @@ class QuestionController extends AppController
             if ($this->Question->save($question)) {
                 $this->Flash->success(__('The question has been saved.'));
 
-                return $this->redirect(['action' => 'index']);
+                if(!$this->request->is('ajax')) {
+                  return $this->redirect(['action' => 'index']);
+                }
+                //Ajax stuff Here
+                $this->set(compact('question', 'screener'));
+                $this->set('_serialize', ['question']);
             } else {
                 $this->Flash->error(__('The question could not be saved. Please, try again.'));
             }

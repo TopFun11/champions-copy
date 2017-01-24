@@ -54,7 +54,7 @@ class QuestionOptionController extends AppController
         $questionOption = $this->QuestionOption->newEntity();
         if ($this->request->is('post')) {
             $questionOption = $this->QuestionOption->patchEntity($questionOption, $this->request->data);
-            $count = $this->QuestionOption->find()->where(['formular_id' => $questionOption->screener_id])->all();
+            $count = $this->QuestionOption->find()->where(['question_id' => $questionOption->screener_id])->all();
             if ($this->QuestionOption->save($questionOption)) {
                 $this->Flash->success(__('The question option has been saved.'));
 
@@ -84,7 +84,11 @@ class QuestionOptionController extends AppController
             $questionOption = $this->QuestionOption->patchEntity($questionOption, $this->request->data);
             if ($this->QuestionOption->save($questionOption)) {
                 $this->Flash->success(__('The question option has been saved.'));
-
+                if(!$this->request->is('ajax')) {
+                  return $this->redirect(['action' => 'index']);
+                }
+                $this->set(compact('questionOption', 'question'));
+                $this->set('_serialize', ['questionOption']);
                 return $this->redirect(['action' => 'index']);
             } else {
                 $this->Flash->error(__('The question option could not be saved. Please, try again.'));

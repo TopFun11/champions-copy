@@ -58,12 +58,12 @@ function addAnotherScreenerOption(){
   $("#newBox").attr("id","");
   var newBox = document.createElement("input");
   newBox.setAttribute("type","text");
-  newBox.setAttribute("class","form-control multioption-text");
+  newBox.setAttribute("class","form-control multioption-text-box");
   newBox.setAttribute("id","newBox");
   newBox.setAttribute("placeholder","The answer as displayed to the user");
   var newBoxValue = document.createElement("input");
   newBoxValue.setAttribute("type","text");
-  newBoxValue.setAttribute("class","form-control multioption-value");
+  newBoxValue.setAttribute("class","form-control multioption-value-box");
   newBoxValue.setAttribute("id","newBox");
   newBoxValue.setAttribute("placeholder","Score used in calculation");
   $(newBoxValue).change(function() {
@@ -233,6 +233,67 @@ $(document).on("change","#screener-question-type", function() {
       console.log("Switch fell through (┛◉Д◉)┛彡┻━┻")
   }
 })
+
+function addQuestion() {
+  var cb = genAl;
+  var screenerID = $("#module-screener").val();
+  var screenerquestion = $("#screener-question").val();
+  var screenerquestiontype = $("#screener-question-type").val();
+  $.ajax({
+    url: '/question/add.json',
+    type: 'POST',
+    data: {screener_id: screenerID, question: screenerquestion, type:screenerquestiontype},
+    success: function(data)
+    {
+      console.log("Question added " +data);
+      if(cb!=null) {
+        $("#question-being-worked-on").val(data.question.id);
+        cb("success","Question added!");
+      }
+    },
+    error: function(data)
+    {
+      if(cb!=null) {
+        cb("danger","Something went seriously wrong, and the Question wasn't added. Please contact us.");
+
+      }
+    }
+  });
+}
+
+function addOption() {
+  var questionID = $("#question-being-worked-on").val();
+  var options = [];
+  var optionScore = [];
+  $(".multioption-text-box").each(function() {options.push(this.value)});
+  $(".multioption-value-box").each(function() {optionScore.push(this.value)});
+  console.log(options+optionScore);
+  for(var i=0;i<options.length;i++) {
+    if(options[i]!="") {
+      console.log("Question {0} is {1} with value{2}".format(i,options[i],optionScore[i]))
+      $.ajax({
+        url: '/QuestionOption/add.json',
+        type: 'POST',
+        data: {question: questionID, value:optionScore[i],text:options[i]},
+        success: function(data)
+        {
+          console.log("Question added " +data);
+          if(cb!=null) {
+            $("#question-being-worked-on").val(data.question.id);
+            cb("success","Question added!");
+          }
+        },
+        error: function(data)
+        {
+          if(cb!=null) {
+            cb("danger","Something went seriously wrong, and the Question wasn't added. Please contact us.");
+
+          }
+        }
+      });
+    }
+  }
+}
 
 //TODO: Make thing that can validate a screener (ie check there is at least one question and that there are at least two options for option type answers) - should then call createScreener()
 //TODO: Refactor screener stuff so screener can only be created if validation critereon are met

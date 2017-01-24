@@ -126,6 +126,7 @@ $this->end();
           <input type="hidden" id="module-id" value="<?=$this->Number->format($module->id)?>"/>
           <input type="hidden" id="module-name" value="<?=h($module->title)?>"/>
           <input type="hidden" id="module-screener" value="<?=$module->has('screener') ? $this->Number->format($module->screener->id) : "ass"?>"/>
+          <input type="hidden" id="question-being-worked-on"/>
           <div class="form-group">
             <!--TODO: Add code to allow editing of questions, options, etc-->
             <div class="row">
