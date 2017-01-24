@@ -99,7 +99,7 @@ $this->end();
         </div>
       </div>
       <div class="col-xs-1 text-right">
-        <div class="btn btn-sm btn-success md-button" onclick="toggleModuleCreatorField(this)">
+        <div class="btn btn-sm btn-success md-button" onclick="openPartEditor(this)">
           Add/Edit
         </div>
       </div>
@@ -110,6 +110,7 @@ $this->end();
       <div class="col-xs-11 ed-display">
         <div class="ed-preview">
           No Screener
+
           <!--<table class="table">
             <thead>
               <tr>
@@ -122,7 +123,9 @@ $this->end();
           </table>-->
         </div>
         <div class="ed-editor">
-
+          <input type="hidden" id="module-id" value="<?=$this->Number->format($module->id)?>"/>
+          <input type="hidden" id="module-name" value="<?=h($module->title)?>"/>
+          <input type="hidden" id="module-screener" value="<?=$module->has('screener') ? $this->Number->format($module->screener->id) : ""?>"/>
           <!--<div class="form-group">
             <label for="usr">Question:</label>
             <input type="text" class="form-control" id="usr">
@@ -147,7 +150,7 @@ $this->end();
         </div>
       </div>
       <div class="col-xs-1">
-        <div class="btn btn-sm btn-success" onclick="toggleModuleCreatorField(this)">
+        <div class="btn btn-sm btn-success" onclick="openPartEditor(this)">
           Add/Edit
         </div>
       </div>

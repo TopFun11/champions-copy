@@ -133,3 +133,74 @@ addAnotherScreenerOption();
 $(".ed-editor").hide();
 //$("#sc").hide();
 $("#sd").hide();
+
+
+function openPartEditor(sender) {
+  var id = "#"+sender.parentNode.parentNode.id;
+  console.log("Opening: "+ $(id));
+  $(id+">.ed-display>.ed-preview").slideUp();
+  $(id+">.ed-display>.ed-editor").slideDown();
+  if(id=="#md") {
+    $(sender).text("Save").removeClass("btn-success").addClass("btn-danger").attr('onclick','createModule(this)');
+  } else if(id=="#sc"){
+    $(sender).text("Save").removeClass("btn-success").addClass("btn-danger").attr('onclick','createScreener()');
+  }
+}
+
+function createScreener() {
+  if($("#module-screener").val() !="") {
+    return editScreener();
+  }
+  var cb = bootstrap_alert;
+  var moduleID = $("#module-id").val();
+  var moduleName = $("#module-name").val();
+  console.log("Creating screener for module "+ moduleName + " - ID "+moduleID);
+  $.ajax({
+    url: '/screener/add.json',
+    type: 'POST',
+    data: {Name: "Questions for Module " + moduleName, module_id:moduleID},
+    success: function(data)
+    {
+      console.log(data);
+      $("#module-screener").val(data.screener.id);
+      if(cb!=null) {
+        cb.success("Screener saved!");
+
+      }
+    },
+    error: function(data)
+    {
+      if(cb!=null) {
+        cb.danger("Something went seriously wrong, and the Screener wasn't saved. Please contact us.");
+
+      }
+    }
+  });
+}
+
+function editScreener() {
+  var cb = bootstrap_alert;
+  var moduleID = $("#module-id").val();
+  var moduleName = $("#module-name").val();
+  var screenerID = $("#module-screener").val();
+  console.log("Creating screener for module "+ moduleName + " - ID "+moduleID);
+  $.ajax({
+    url: '/screener/edit/'+screenerID+'.json',
+    type: 'POST',
+    data: {id: screenerID, Name: "Questions for Module " + moduleName, module_id:moduleID},
+    success: function(data)
+    {
+      console.log(data);
+      if(cb!=null) {
+        cb.success("Screener updated!");
+      }
+    },
+    error: function(data)
+    {
+      if(cb!=null) {
+        cb.danger("Something went seriously wrong, and the Screener wasn't updated. Please contact us.");
+
+      }
+    }
+  });
+}

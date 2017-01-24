@@ -16,16 +16,6 @@ class ScreenerController extends AppController
      *
      * @return \Cake\Network\Response|null
      */
-    public function index()
-    {
-        $this->paginate = [
-            'contain' => ['Module']
-        ];
-        $screener = $this->paginate($this->Screener);
-
-        $this->set(compact('screener'));
-        $this->set('_serialize', ['screener']);
-    }
 
     public function ajaxadd(){
       $screener = $this->Screener->newEntity();
@@ -76,15 +66,30 @@ class ScreenerController extends AppController
             $screener = $this->Screener->patchEntity($screener, $this->request->data);
             if ($this->Screener->save($screener)) {
                 $this->Flash->success(__('The screener has been saved.'));
-
-                return $this->redirect(['action' => 'index']);
+                if(!$this->request->is('ajax')) {
+                  return $this->redirect(['action' => 'index']);
+                }
+                //Ajax stuff Here
+                $this->set(compact('screener'));
+                $this->set('_serialize', ['screener']);
             } else {
                 $this->Flash->error(__('The screener could not be saved. Please, try again.'));
             }
         }
+
         $module = $this->Screener->Module->find('list', ['limit' => 200]);
         $this->set(compact('screener', 'module'));
         $this->set('_serialize', ['screener']);
+    }
+    public function index()
+    {
+      $this->paginate = [
+        'contain' => ['Module']
+      ];
+      $screener = $this->paginate($this->Screener);
+
+      $this->set(compact('screener'));
+      $this->set('_serialize', ['screener']);
     }
 
     /**
