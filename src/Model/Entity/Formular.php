@@ -30,9 +30,55 @@ class Formular extends Entity
         'id' => false
     ];
 
-    public function calculate() {
+    private function insertVariables($src, $records){
+      $pos = strpos($src, "$");
+      if($pos === false){
+        return $src;
+      }
+
+      $posEnd = strpos($src, " ", $pos);
+      if(!$posEnd){
+        $posEnd = strlen($src);
+      }
+      $id = substr($src, $pos+1, $posEnd-$pos);
+      $bob = "tree";
+      $multichoice = false;
+      $sum = 0;
+      foreach($records as $record){
+        //return $posEnd;
+        if($id == $record->question_id){
+
+          $val = $record->answer;
+          if($val == ""){
+            $total = 0;
+            for($i = 0; $i < count($record->question->question_option);$i++){
+              if($record->question_option_id == $record->question->question_option[$i]->id){
+                $multichoice = true;
+                $total = $record->question->question_option[$i]->value;
+              }
+            }
+            $sum += $total;
+          }
+          if(!$multichoice){
+            return $this->insertVariables(str_replace("$".$id, ' ' . $val . ' ', $src), $records);
+          }
+        }
+      }
+      if($multichoice){
+        return $this->insertVariables(str_replace("$".$id, ' ' . $sum . ' ', $src), $records);
+      }
+      return $src;
+    }
+
+    private function parse($records){
+      $formula = $this->formula;
+
+
+    }
+
+    public function calculate($records) {
       $parser = new \Math\Parser();
-      $expression = '1 + 5 - 2';
-      return $parser->evaluate($expression);
+      $vars = $this->insertVariables($this->formula, $records);
+      return  $vars .' = '. $parser->evaluate($vars);
     }
 }

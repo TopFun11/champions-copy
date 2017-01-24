@@ -41,6 +41,7 @@ class ScreenerTable extends Table
             'joinType' => 'INNER'
         ]);
         $this->hasMany('Question');
+        $this->hasOne('Formular');
     }
 
     /**

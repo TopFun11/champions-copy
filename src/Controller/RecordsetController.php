@@ -67,6 +67,7 @@ class RecordsetController extends AppController
         foreach ($screener->question as $question) {
             $record = $this->Record->newEntity();
             $record->recordset_id = $recId;
+            $record->question_id = $question->id;
             //Horrible magic number that asks is the question type not multiple choice
             if($question->type != 2){
                 $record->answer = $data->answer[$question->id];
@@ -82,7 +83,8 @@ class RecordsetController extends AppController
                 $rec = $this->Record->newEntity();
                 //Set the id
                 $rec->recordset_id = $recId;
-                $rec->option_id = $op->id;
+                $rec->question_option_id = $op->id;
+                $rec->question_id = $question->id;
                 if(!$this->Record->save($rec)){
                   $this->Flash->error(__('There was a problem submitting your record, please try again.Mult'));
                   return $this->redirect(["action" => 'index']);
@@ -110,7 +112,7 @@ class RecordsetController extends AppController
     public function view($id = null)
     {
         $recordset = $this->Recordset->get($id, [
-            'contain' => ['Screener', 'Users']
+            'contain' => ['Screener' => ['Formular'], 'Users', 'Record' => ['Question' => ['QuestionOption']]]
         ]);
 
         $this->set('recordset', $recordset);
