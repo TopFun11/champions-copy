@@ -89,8 +89,9 @@ class ModuleController extends AppController
      */
     public function edit($id = null)
     {
+      //#Done:0 Ensure Screeners are being loaded as data within this controller
         $module = $this->Module->get($id, [
-            'contain' => []
+            'contain' => ["Screener" => ['Question' => ['QuestionOption']]]
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $module = $this->Module->patchEntity($module, $this->request->data);

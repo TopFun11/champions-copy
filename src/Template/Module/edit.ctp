@@ -125,28 +125,52 @@ $this->end();
         <div class="ed-editor">
           <input type="hidden" id="module-id" value="<?=$this->Number->format($module->id)?>"/>
           <input type="hidden" id="module-name" value="<?=h($module->title)?>"/>
-          <input type="hidden" id="module-screener" value="<?=$module->has('screener') ? $this->Number->format($module->screener->id) : ""?>"/>
-          <!--<div class="form-group">
-            <label for="usr">Question:</label>
-            <input type="text" class="form-control" id="usr">
-
-            <label for="usr">Type:</label>
-            <select class="for</div>
- choice</option>
-              <option>Radio box</option>
-            </select>
+          <input type="hidden" id="module-screener" value="<?=$module->has('screener') ? $this->Number->format($module->screener->id) : "ass"?>"/>
+          <div class="form-group">
+            <!--TODO: Add code to allow editing of questions, options, etc-->
             <div class="row">
-              <div class="col-xs-10 multioption-text">
+              <div class="col-xs-12">
+                <!--TODO: Add code to display questions attached to screener along with edit and delete options-->
+                <h3>Step 1: Set the pass threshold</h3>
+              </div>
+              <div class="col-xs-12">
+                <label for="module-screener-threshold">Screener Pass threshold - This is the pass value that is calculated by the formula. 0 means there is no failure.</label>
+                <input type="number" id="module-screener-threshold" class="form-control"  value="<?=$module->has('screener') ? $this->Number->format($module->screener->threshold) : "0"?>"/>
+              </div>
+              <div class="col-xs-12">
+                <h3>Step 2: Add a question</h3>
+                <!--TODO: Go ahead and create code to firstly allow user to input and then to iteratively add each option to the question-->
+              </div>
+              <div class="col-xs-12">
+                <label for="screener-question">Question:</label>
+                <input type="text" class="form-control" id="screener-question">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12">
+              <h3>Step 3: Define how users should answer your question</h3>
+            </div>
+            <div class="col-xs-12">
+              <label for="screener-question-type">Type (How the user will answer the question):</label>
+              <select id="screener-question-type" class="form-control">
+                <option value=0>Textbox/Numerical value</option>
+                <option value=1>Radio buttons (Single choice)</option>
+                <option value=2>Checkboxes (Multiple choice)</option>
+              </select>
+            </div>
+            <div class="option-input">
+              <div class="col-xs-9 multioption-text">
                 <label for="multioption">Options user can pick from:</label>
               </div>
-              <div class="col-xs-2 multioption-value">
+              <div class="col-xs-3 multioption-value">
                 <label for="multioption">Score:</label>
               </div>
             </div>
           </div>
           <div class="btn btn-success btn-sm">
             Save question
-          </div>-->
+          </div>
         </div>
       </div>
       <div class="col-xs-1">

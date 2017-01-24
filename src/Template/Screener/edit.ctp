@@ -41,6 +41,7 @@ $this->end();
     <?php
     echo $this->Form->input('Name');
     echo $this->Form->input('module_id', ['options' => $module]);
+    echo $this->Form->input('threshold');
     ?>
 </fieldset>
 <?= $this->Form->button(__("Save")); ?>

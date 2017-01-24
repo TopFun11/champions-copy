@@ -63,6 +63,7 @@ return [
      *   The salt value is also used as the encryption key.
      *   You should treat it as extremely sensitive data.
      */
+     //TODO:40 Change salt
     'Security' => [
         'salt' => env('SECURITY_SALT', 'da8890205f852a2afca429cb9663d09e58247e8d41bc324d71abdbd5781aec0c'),
     ],
@@ -229,6 +230,7 @@ return [
              * the following line and set the port accordingly
              */
             //'port' => 'non_standard_port_number',
+            //#TODO:30 Change db password to something more secure
             'username' => 'cakephp',
             'password' => 'poptarts',
             'database' => 'cake-sql',

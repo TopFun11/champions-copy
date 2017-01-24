@@ -1,0 +1,13 @@
+bin/
+logs/
+node_modules/
+plugins/
+tests/
+tmp/
+vendor/
+webroot/js/bootstrap/
+webroot/js/jquery/
+webroot/css/bootstrap/
+webroot/css/fonts/
+webroot/css/base.css
+webroot/css/cake.css

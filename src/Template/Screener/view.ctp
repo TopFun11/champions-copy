@@ -44,6 +44,8 @@ $this->end();
             <td><?= __('Id') ?></td>
             <td><?= $this->Number->format($screener->id) ?></td>
         </tr>
+        <tr>
+            <td>Threshold value</td>
+            <td><?= $this->Number->format($screener->threshold)?> </td>
     </table>
 </div>
-

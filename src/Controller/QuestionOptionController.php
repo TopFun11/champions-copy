@@ -54,6 +54,7 @@ class QuestionOptionController extends AppController
         $questionOption = $this->QuestionOption->newEntity();
         if ($this->request->is('post')) {
             $questionOption = $this->QuestionOption->patchEntity($questionOption, $this->request->data);
+            $count = $this->QuestionOption->find()->where(['formular_id' => $questionOption->screener_id])->all();
             if ($this->QuestionOption->save($questionOption)) {
                 $this->Flash->success(__('The question option has been saved.'));
 
