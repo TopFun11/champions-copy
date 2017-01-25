@@ -37,6 +37,7 @@ $this->end();
       foreach($mod->sections as $j => $sec){
         echo $sec;
         $secs[$j + $i * count($module)] = ['value' => $sec->id, 'text' => $sec->title];
+
       }
     }
     echo $this->Form->input('section_id', ['options' => $secs]);

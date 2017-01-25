@@ -10,7 +10,12 @@ use App\Controller\AppController;
  */
 class QuestionController extends AppController
 {
+    public function initialize(){
+      parent::initialize();
 
+      $this->loadModel('Screener');
+      $this->loadModel('Exercise');
+    }
     /**
      * Index method
      *
@@ -67,8 +72,8 @@ class QuestionController extends AppController
                 $this->Flash->error(__('The question could not be saved. Please, try again.' . $question));
             }
         }
-        $screener = $this->Question->Screener->find('all', ['limit' => 200]);
-        $exercise = $this->Question->Exercise->find('all', ['limit' => 200]);
+        $screener = $this->Screener->find('all', ['limit' => 200]);
+        $exercise = $this->Exercise->find('all', ['limit' => 200])->contain('Sections');
         $this->set(compact('question', 'screener', 'exercise'));
         $this->set('_serialize', ['question']);
     }

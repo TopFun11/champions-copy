@@ -70,7 +70,7 @@ $cakeDescription = 'Champions for Health';
         <a href="/accessibility">Accessibility</a><br/><a href="/terms">Terms of use</a><br/><a href="/privacy">Privacy statement</a><br/><a href="#">Back to top</a>
       </div>
     </footer>
-    <script src="http://cdn.tinymce.com/4/tinymce.min.js"></script>
     <script src="/webroot/js/app.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/tinymce/4.5.2/tinymce.min.js"></script>
 </body>
 </html>

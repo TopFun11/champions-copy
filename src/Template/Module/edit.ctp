@@ -46,6 +46,7 @@ $this->end();
   $this->end();
   $this->start('tb_sidebar');
   ?>
+
   <ul class="nav nav-sidebar">
       <li><?= $this->Html->link(__('List Module'), ['action' => 'index']) ?></li>
       <li><?= $this->Html->link(__('List Sections'), ['controller' => 'Sections', 'action' => 'index']) ?> </li>
@@ -54,6 +55,7 @@ $this->end();
   <?php
   $this->end();
   ?>
+  <pre><?= h($module) ?></pre>
   <div class="container">
     <?= $this->Form->create($module); ?>
     <div class="row">
@@ -89,7 +91,7 @@ $this->end();
       <label for="usr">Module description:</label>
       <div class="col-xs-11 ed-display">
         <div class="module-section ed-preview">
-          No description
+          <?=$module->has('description_text') ? $module->description_text : "ass"?>
         </div>
         <div class="ed-editor">
           <label for="comment">Module description:</label>
@@ -110,17 +112,37 @@ $this->end();
       <div class="col-xs-11 ed-display">
         <div class="ed-preview">
           No Screener
-
-          <!--<table class="table">
+          <h3>Screener details</h3>
+          <table class="table">
+            <div class="row">
+              <div class="col-xs-12">
+                Pass threshold: 0
+              </div>
+            </div>
+          <h3>Question details</h3>
+          <table class="table">
             <thead>
               <tr>
                 <th>Question</th>
-                <th>Answer type</th>
+                <th>Type</th>
+                <th>Options</th>
               </tr>
             </thead>
             <tbody>
-            </tbody>
-          </table>-->
+          <?php foreach($module->screener->question as $question):?>
+            <tr>
+              <td><?=h($question->question)?></td>
+              <td><?=h($question->type)?></td>
+              <td>
+                
+                <?php foreach($question->question_option as $qo):?>
+                  <?=h($qo->text)?>,
+                <?php endforeach; ?>
+              </td>
+            </tr>
+          <?php endforeach;?>
+          </tbody>
+        </table>
         </div>
         <div class="ed-editor">
           <input type="hidden" id="module-id" value="<?=$this->Number->format($module->id)?>"/>
@@ -145,6 +167,9 @@ $this->end();
               <div class="col-xs-12">
                 <label for="screener-question">Question:</label>
                 <input type="text" class="form-control" id="screener-question">
+                <div class="btn btn-success" onclick="addQuestion()">
+                  Save question
+                </div>
               </div>
             </div>
           </div>
@@ -161,6 +186,7 @@ $this->end();
               </select>
             </div>
             <div class="option-input">
+
               <div class="col-xs-9 multioption-text">
                 <label for="multioption">Options user can pick from:</label>
               </div>
@@ -168,9 +194,12 @@ $this->end();
                 <label for="multioption">Score:</label>
               </div>
             </div>
+            <div class="col-xs-12">
+
+            <div class="btn btn-success" onclick="addQuestion()">
+              Save Options
+            </div>
           </div>
-          <div class="btn btn-success btn-sm">
-            Save question
           </div>
         </div>
       </div>

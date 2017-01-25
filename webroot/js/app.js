@@ -262,6 +262,7 @@ function addQuestion() {
 }
 
 function addOption() {
+  var cb = genAl;
   var questionID = $("#question-being-worked-on").val();
   var options = [];
   var optionScore = [];
@@ -274,7 +275,7 @@ function addOption() {
       $.ajax({
         url: '/QuestionOption/add.json',
         type: 'POST',
-        data: {question: questionID, value:optionScore[i],text:options[i]},
+        data: {question_id: questionID, value:optionScore[i],text:options[i]},
         success: function(data)
         {
           console.log("Question added " +data);
@@ -295,6 +296,6 @@ function addOption() {
   }
 }
 
-//TODO: Make thing that can validate a screener (ie check there is at least one question and that there are at least two options for option type answers) - should then call createScreener()
-//TODO: Refactor screener stuff so screener can only be created if validation critereon are met
-//TODO: Create thing that can save questions and options in logical fashion
+//TODO:20 Make thing that can validate a screener (ie check there is at least one question and that there are at least two options for option type answers) - should then call createScreener()
+//TODO:30 Refactor screener stuff so screener can only be created if validation critereon are met
+//#Done:0 Create thing that can save questions and options in logical fashion
