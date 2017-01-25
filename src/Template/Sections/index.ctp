@@ -8,7 +8,11 @@ $this->start('tb_actions');
     <li><?= $this->Html->link(__('New Module'), ['controller' => 'Module', 'action' => 'add']); ?></li>
 <?php $this->end(); ?>
 <?php $this->assign('tb_sidebar', '<ul class="nav nav-sidebar">' . $this->fetch('tb_actions') . '</ul>'); ?>
-
+<pre><?php
+foreach($sections as $sec){
+  echo $sec . '<hr />';
+}
+ ?></pre>
 <table class="table table-striped" cellpadding="0" cellspacing="0">
     <thead>
         <tr>
@@ -16,6 +20,7 @@ $this->start('tb_actions');
             <th><?= $this->Paginator->sort('title'); ?></th>
             <th><?= $this->Paginator->sort('content'); ?></th>
             <th><?= $this->Paginator->sort('module_id'); ?></th>
+            <th><?= $this->Paginator->sort('section_id'); ?></th>
             <th class="actions"><?= __('Actions'); ?></th>
         </tr>
     </thead>
@@ -27,6 +32,9 @@ $this->start('tb_actions');
             <td><?= h($section->content) ?></td>
             <td>
                 <?= $section->has('module') ? $this->Html->link($section->module->title, ['controller' => 'Module', 'action' => 'view', $section->module->id]) : '' ?>
+            </td>
+            <td>
+                <?= $section->has('section') ? $this->Html->link($section->section->title, ['controller' => 'Sections', 'action' => 'view', $section->section_id]) : '' ?>
             </td>
             <td class="actions">
                 <?= $this->Html->link('', ['action' => 'view', $section->id], ['title' => __('View'), 'class' => 'btn btn-default glyphicon glyphicon-eye-open']) ?>

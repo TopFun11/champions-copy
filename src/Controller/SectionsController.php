@@ -39,7 +39,8 @@ class SectionsController extends AppController
         $section = $this->Sections->get($id, [
             'contain' => ['Module']
         ]);
-
+        $sections = $this->Sections->find("all")->where(['section_id' => $section->id]);
+        $section->sections = $sections;
         $this->set('section', $section);
         $this->set('_serialize', ['section']);
     }
@@ -62,7 +63,7 @@ class SectionsController extends AppController
                 $this->Flash->error(__('The section could not be saved. Please, try again.'));
             }
         }
-        $module = $this->Sections->Module->find('list', ['limit' => 200]);
+        $module = $this->Sections->Module->find('all', ['limit' => 200])->contain('Sections');
         $this->set(compact('section', 'module'));
         $this->set('_serialize', ['section']);
     }
