@@ -27,6 +27,7 @@ $cakeDescription = 'Champions for Health';
     <?= $this->Html->meta('icon') ?>
     <?= $this->Html->css('/webroot/css/bootstrap/bootstrap.min.css'); ?>
     <?= $this->Html->css('/webroot/css/champions/app.css'); ?>
+    <?= $this->Html->css('/webroot/css/bootstrap/bootstrap-treeview.css')?>
     <?= $this->Html->script(['/webroot/js/jquery/jquery.min.js', '/webroot/js/bootstrap/bootstrap.min.js']); ?>
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
@@ -70,6 +71,7 @@ $cakeDescription = 'Champions for Health';
         <a href="/accessibility">Accessibility</a><br/><a href="/terms">Terms of use</a><br/><a href="/privacy">Privacy statement</a><br/><a href="#">Back to top</a>
       </div>
     </footer>
+    <script src="/webroot/js/bootstrap-treeview.js"></script>
     <script src="/webroot/js/app.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/tinymce/4.5.2/tinymce.min.js"></script>
 </body>

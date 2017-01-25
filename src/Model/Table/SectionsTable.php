@@ -44,6 +44,7 @@ class SectionsTable extends Table
           'className' => 'Section',
           'foreignKey' => 'section_id'
         ]);
+        $this->hasOne('Exercise');
     }
 
     /**

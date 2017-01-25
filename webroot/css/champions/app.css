@@ -139,9 +139,7 @@ li {
   padding-top: 10px;
 }
 
-.ed-display {
-  border: 1px solid #CCC;
-}
+.ed-display {}
 .glyph-buttons {
   font-size:18px;
   color:red;

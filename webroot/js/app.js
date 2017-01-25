@@ -1,18 +1,17 @@
 $(document).ready(function(){
   tinymce.init({
     selector:'#description_text',
-    height: 250,
+    height: 200,
     theme: 'modern',
     plugins: [
         'advlist autolink lists link image charmap print preview hr anchor pagebreak',
         'searchreplace wordcount visualblocks visualchars code fullscreen',
         'insertdatetime media nonbreaking save table contextmenu directionality',
-        'template paste textcolor colorpicker textpattern imagetools codesample'
+        'template paste textcolor colorpicker textpattern imagetools'
       ],
-    toolbar: 'undo redo | insert | styleselect | bold italic | alignleft \
+    toolbar: 'fullscreen | undo redo | insert | styleselect | bold italic | alignleft \
               aligncenter alignright alignjustify | bullist numlist outdent \
-              indent | link image',
-    toolbar2: 'print preview media | forecolor backcolor emoticons | codesample',
+              indent | forecolor backcolor | link image | print preview media ',
     image_advtab: true,
     });
 });
@@ -127,7 +126,6 @@ addAnotherOption();
 addAnotherScreenerOption();
 $(".ed-editor").hide();
 //$("#sc").hide();
-$("#sd").hide();
 
 
 function openPartEditor(sender) {
@@ -299,3 +297,45 @@ function addOption() {
 //TODO:20 Make thing that can validate a screener (ie check there is at least one question and that there are at least two options for option type answers) - should then call createScreener()
 //TODO:30 Refactor screener stuff so screener can only be created if validation critereon are met
 //#Done:0 Create thing that can save questions and options in logical fashion
+
+
+var tree = [
+  {
+    text: "Parent 1",
+    nodes: [
+      {
+        text: "Child 1",
+        nodes: [
+          {
+            text: "Grandchild 1"
+          },
+          {
+            text: "Grandchild 2"
+          }
+        ]
+      },
+      {
+        text: "Child 2"
+      }
+    ]
+  },
+  {
+    text: "Parent 2"
+  },
+  {
+    text: "Parent 3"
+  },
+  {
+    text: "Parent 4"
+  },
+  {
+    text: "Parent 5"
+  }
+];
+
+function getTree() {
+  // Some logic to retrieve, or generate tree structure
+  return tree;
+}
+
+$('#tree').treeview({data: getTree()});
