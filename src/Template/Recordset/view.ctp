@@ -26,7 +26,7 @@ $this->start('tb_sidebar');
 <?php
 $this->end();
 ?>
-
+<?= $recordset ?>
 <div class="panel panel-default">
     <!-- Panel header -->
     <div class="panel-heading">

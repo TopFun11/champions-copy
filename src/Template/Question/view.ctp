@@ -41,5 +41,9 @@ $this->end();
             <td><?= __('Screener Id') ?></td>
             <td><?= $this->Number->format($question->screener_id) ?></td>
         </tr>
+        <tr>
+            <td><?= __('Exercise Id') ?></td>
+            <td><?= $this->Number->format($question->exercise_id) ?></td>
+        </tr>
     </table>
 </div>

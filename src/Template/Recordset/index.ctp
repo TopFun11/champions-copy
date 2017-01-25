@@ -8,12 +8,11 @@ $this->start('tb_actions');
     <li><?= $this->Html->link(__('New Screener'), ['controller' => 'Screener', 'action' => 'add']); ?></li>
 <?php $this->end(); ?>
 <?php $this->assign('tb_sidebar', '<ul class="nav nav-sidebar">' . $this->fetch('tb_actions') . '</ul>'); ?>
-
+<?= count($recordset) ?>
 <table class="table table-striped" cellpadding="0" cellspacing="0">
     <thead>
         <tr>
             <th><?= $this->Paginator->sort('id'); ?></th>
-            <th><?= $this->Paginator->sort('screener_id'); ?></th>
             <th class="actions"><?= __('Actions'); ?></th>
         </tr>
     </thead>
@@ -21,9 +20,6 @@ $this->start('tb_actions');
         <?php foreach ($recordset as $recordset): ?>
         <tr>
             <td><?= $this->Number->format($recordset->id) ?></td>
-            <td>
-                <?= $recordset->has('screener') ? $this->Html->link($recordset->screener->Name, ['controller' => 'Screener', 'action' => 'view', $recordset->screener->id]) : '' ?>
-            </td>
             <td class="actions">
                 <?= $this->Html->link('', ['action' => 'view', $recordset->id], ['title' => __('View'), 'class' => 'btn btn-default glyphicon glyphicon-eye-open']) ?>
                 <?= $this->Html->link('', ['action' => 'edit', $recordset->id], ['title' => __('Edit'), 'class' => 'btn btn-default glyphicon glyphicon-pencil']) ?>

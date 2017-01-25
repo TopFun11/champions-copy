@@ -70,12 +70,6 @@ class Formular extends Entity
       return $src;
     }
 
-    private function parse($records){
-      $formula = $this->formula;
-
-
-    }
-
     public function calculate($records) {
       $parser = new \Math\Parser();
       $vars = $this->insertVariables($this->formula, $records);

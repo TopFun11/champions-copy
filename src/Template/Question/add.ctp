@@ -15,12 +15,27 @@ $this->start('tb_sidebar');
 <?php
 $this->end();
 ?>
+<?= $screener ?>
 <?= $this->Form->create($question); ?>
 <fieldset>
     <legend><?= __('Add {0}', ['Question']) ?></legend>
     <?php
+
+    //Section stuff
+    $screens = ['value' => 'null'];
+    foreach($screener as $i => $screen){
+      $screens[$i+1] = ['value' => $screen->id, 'text' => $screen->title];
+    }
+
+    //Exercise stuff
+    $exe = ['value' => 'null'];
+    foreach($exercise as $i => $ex){
+      $exe[$i+1] = ["value" => $ex->id];
+    }
+
     echo $this->Form->input('question');
-    echo $this->Form->input('screener_id', ['options' => $screener]);
+    echo $this->Form->input('screener_id', ['options' =>   $screens]);
+    echo $this->Form->input('exercise_id', ['options' => $exe]);
     echo $this->Form->input('type', ['options' => ['Amount', 'Range', 'Multiple choice']]);
     ?>
 </fieldset>

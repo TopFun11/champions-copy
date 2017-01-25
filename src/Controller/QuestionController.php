@@ -50,8 +50,10 @@ class QuestionController extends AppController
     {
         $question = $this->Question->newEntity();
         if ($this->request->is('post')) {
+          $question->exercise_id = 0;
             $question = $this->Question->patchEntity($question, $this->request->data);
-            if ($this->Question->save($question)) {
+            $result = $this->Question->save($question);
+            if ($result) {
                 $this->Flash->success(__('The question has been saved.'));
 
                 if(!$this->request->is('ajax')) {
@@ -61,11 +63,13 @@ class QuestionController extends AppController
                 $this->set(compact('question', 'screener'));
                 $this->set('_serialize', ['question']);
             } else {
-                $this->Flash->error(__('The question could not be saved. Please, try again.'));
+
+                $this->Flash->error(__('The question could not be saved. Please, try again.' . $question));
             }
         }
-        $screener = $this->Question->Screener->find('list', ['limit' => 200]);
-        $this->set(compact('question', 'screener'));
+        $screener = $this->Question->Screener->find('all', ['limit' => 200]);
+        $exercise = $this->Question->Exercise->find('all', ['limit' => 200]);
+        $this->set(compact('question', 'screener', 'exercise'));
         $this->set('_serialize', ['question']);
     }
 

@@ -14,6 +14,7 @@ class RecordsetController extends AppController
   public function initialize(){
     parent::initialize();
     $this->loadModel('Screener');
+    $this->loadModel('Exercise');
     $this->loadModel('Record');
   }
 
@@ -25,7 +26,7 @@ class RecordsetController extends AppController
     public function index()
     {
         $this->paginate = [
-            'contain' => ['Screener']
+            'contain' => []
         ];
         $recordset = $this->paginate($this->Recordset);
 
@@ -101,6 +102,77 @@ class RecordsetController extends AppController
       $this->set('_serialize', ['screener']);
     }
 
+    /**
+     * Exercise method
+     *
+     * @param string|null $id Screener id.
+     * @return \Cake\Network\Response|null
+     * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
+     */
+    public function exercise($id = null)
+    {
+      $recordset = $this->Recordset->newEntity();
+      $data = $this->Recordset->newEntity();
+      $exercise = $this->Exercise->get($id, [
+          'contain' => [
+            'Sections',
+            'Question' => [
+              'QuestionOption'
+            ]]
+      ]);
+      if($this->request->is("post")){
+        //var_dump($this->request->data);
+        //die();
+        //Put request data in to data oject
+        $data = $this->Recordset->patchEntity($data, $this->request->data);
+        $recordset->exercise_id = $data->exercise_id;
+        $recordset->user_id = $this->Auth->user('id');
+        //Saving record set
+        $rsetResult = $this->Recordset->save($recordset);
+        $recId = $rsetResult->id;
+        if(!$rsetResult){
+          //If we couldn't save
+          $this->Flash->error(__('There was a problem submitting your recordset, please try again.'));
+          return $this->redirect(["action" => 'index']);
+        }
+        foreach ($exercise->question as $question) {
+            $record = $this->Record->newEntity();
+            $record->recordset_id = $recId;
+            $record->question_id = $question->id;
+            //Horrible magic number that asks is the question type not multiple choice
+            if($question->type != 2){
+                $record->answer = $data->answer[$question->id];
+                //Save the record
+                if(!$this->Record->save($record)){
+                  $this->Flash->error(__('There was a problem submitting your record, please try again.Norm'));
+                  return $this->redirect(["action" => 'index']);
+                }
+            }else{
+              //If we are a multiple choice - Loop through question options
+              foreach($question->question_option as $op){
+                //Create a new record
+                $rec = $this->Record->newEntity();
+                //Set the id
+                $rec->recordset_id = $recId;
+                $rec->question_option_id = $op->id;
+                $rec->question_id = $question->id;
+                if(!$this->Record->save($rec)){
+                  $this->Flash->error(__('There was a problem submitting your record, please try again.Mult'));
+                  return $this->redirect(["action" => 'index']);
+                }
+              }
+            }
+
+        }
+
+        $this->Flash->success(__('Recordset saved' . $recordset));
+        return $this->redirect(["action" => 'index']);
+      }
+
+      $this->set('exercise', $exercise);
+      $this->set('recordset', $recordset);
+      $this->set('_serialize', ['screener']);
+    }
 
     /**
      * View method
@@ -111,11 +183,24 @@ class RecordsetController extends AppController
      */
     public function view($id = null)
     {
-        $recordset = $this->Recordset->get($id, [
-            'contain' => ['Screener' => ['Formular'], 'Users', 'Record' => ['Question' => ['QuestionOption']]]
-        ]);
+        $recordset = null;
+        $tmp = $this->Recordset->get($id, [
+            'contain' => [],
 
+        ]);
+        if($tmp->exercise_id != null){
+          $recordset = $this->Recordset->get($id, [
+              'contain' => ['Exercise', 'Users'],
+          ]);
+          $this->set('recordset', $recordset);
+        }else{
+          $recordset = $this->Recordset->get($id, [
+              'contain' => ['Screener' => ['Formular'], 'Users', 'Record'],
+          ]);
         $this->set('recordset', $recordset);
+        }
+
+
         $this->set('_serialize', ['recordset']);
     }
 
