@@ -14,6 +14,8 @@ $this->start('tb_sidebar');
     <li><?= $this->Html->link(__('New Section'), ['controller' => 'Sections', 'action' => 'add']) ?> </li>
 <?php
 $this->end();
+
+
 ?>
 <div class="container">
   <?= $this->Form->create($module); ?>

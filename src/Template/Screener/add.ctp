@@ -20,13 +20,27 @@ $this->start('tb_sidebar');
 $this->end();
 ?>
 <?= $this->Form->create($screener); ?>
-<fieldset>
-    <legend><?= __('Add {0}', ['Screener']) ?></legend>
-    <?php
-    echo $this->Form->input('Name');
-    echo $this->Form->input('module_id', ['options' => $module]);
-    echo $this->Form->input('threshold');
-    ?>
-</fieldset>
-<?= $this->Form->button(__("Add")); ?>
+<div class="form-group">
+  <!--TODO: Add code to allow editing of questions, options, etc-->
+  <div class="row">
+    <div class="col-xs-12">
+      <!--TODO: Add code to display questions attached to screener along with edit and delete options-->
+      <h3>Step 1: Create a screener</h3>
+    </div>
+    <div class="col-xs-9">
+      <label for="module_id">Module to associate this screener with:</label>
+      <?=  $this->Form->input('module_id', ['options' => $module,'class="form-control"','label'=>false]) ?>
+    </div>
+    <div class="col-xs-3">
+      <label for="module_id">Threshold for pass:</label>
+      <input type="number" id="threshold" name="threshold" class="form-control" placeholder="Pass threshold"/>
+      <input type="hidden" id="Name" name="Name" value="Screener"/>
+    </div>
+    <div class="col-xs-12 text-center">
+      <br/>
+      <?= $this->Form->button("Add questions to this Screener", ['class="btn btn-success btn-lg"']); ?>
+    </div>
+  </div>
+</div>
+</div>
 <?= $this->Form->end() ?>

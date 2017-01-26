@@ -8,11 +8,11 @@ $this->start('tb_actions');
     <li><?= $this->Html->link(__('New Module'), ['controller' => 'Module', 'action' => 'add']); ?></li>
 <?php $this->end(); ?>
 <?php $this->assign('tb_sidebar', '<ul class="nav nav-sidebar">' . $this->fetch('tb_actions') . '</ul>'); ?>
-<pre><?php
-foreach($sections as $sec){
-  echo h($sec) . '<hr />';
-}
- ?></pre>
+<?php
+//foreach($sections as $sec){
+  //echo h($sec) . '<hr />';
+//}
+ ?>
 <table class="table table-striped" cellpadding="0" cellspacing="0">
     <thead>
         <tr>
