@@ -49,9 +49,19 @@ class EmailStuff extends AbstractMigration
         'null' => false
       ])
       ->create();
+
+      $profile = $this->table('profile');
+      $profile->addColumn('unsubscribed', 'boolean', [
+        'default' => false
+      ])
+      ->update();
     }
 
     public function down(){
       $this->dropTable('messages');
+
+      $profile = $this->table('profile');
+      $profile->removeColumn('unsubscribed')
+      ->update();
     }
 }
