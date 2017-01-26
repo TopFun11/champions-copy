@@ -22,6 +22,11 @@ use Cake\Controller\Component\AuthComponent;
          $this->Auth->allow(['add','logout']);
      }
 
+     public function initialize(){
+       parent::initialize();
+       $this->loadModel('Profile');
+     }
+
      public function login()
      {
          if ($this->request->is('post')) {
@@ -56,6 +61,12 @@ use Cake\Controller\Component\AuthComponent;
          $user = $this->Users->newEntity();
          if ($this->request->is('post')) {
              $user = $this->Users->patchEntity($user, $this->request->data);
+             $profile = $this->Users->Profile->newEntity();
+             $profile->image = "testface.png";
+             $profile->email = 'a@b.com';
+             $profile->phone_number = "0352452345";
+
+             $user->profile = $profile;
              if($user){
                if($new && $user->role == "patient"){
                  $user->role = "new patient";

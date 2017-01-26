@@ -44,6 +44,7 @@ class UsersTable extends Table
           'through' => 'recordset'
         ]);
         $this->addBehavior('Timestamp');
+        $this->hasOne('Profile');
     }
 
     /**
