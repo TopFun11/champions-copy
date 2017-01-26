@@ -111,7 +111,7 @@ class RecordsetController extends AppController
      */
     public function exercise($id = null)
     {
-      $recordset = $this->Recordset->newEntity();
+      $edit = [];
       $data = $this->Recordset->newEntity();
       $exercise = $this->Exercise->get($id, [
           'contain' => [
@@ -120,11 +120,32 @@ class RecordsetController extends AppController
               'QuestionOption'
             ]]
       ]);
-      if($this->request->is("post")){
-        //var_dump($this->request->data);
-        //die();
+      $weekNum = date("w");
+      if($this->request->is("post") || $this->request->is("put")){
+        //TODO remove magic number
+        if($exercise->type == 1){
+          $recordset = $this->Recordset->find("all")->where(['Recordset.user_id' => $this->Auth->user('id'),
+           'exercise_id' => $id])->contain(['Exercise'=>[ 'Question' => ['QuestionOption']], 'Record'])->first();
+           if(!$recordset){
+               $recordset = $this->Recordset->newEntity();
+               $recordset->created = date('Y-m-d H:i:s');
+           }
+        }else if($exercise->type == 2){
+          //TODO remove magic number
+          //Check to see if we are handeling a weekly exercise
+
+          $recordset = $this->Recordset->find("all")->where(['Recordset.user_id' => $this->Auth->user('id'),
+           'exercise_id' => $id, 'week' => $weekNum])->contain(['Exercise'=>[ 'Question' => ['QuestionOption']], 'Record'])->first();
+           if(!$recordset){
+               $recordset = $this->Recordset->newEntity();
+               $recordset->created = date('Y-m-d H:i:s');
+               $recordset->week = $weekNum;
+           }
+        }
+        $recordset->modified = date('Y-m-d H:i:s');
         //Put request data in to data oject
         $data = $this->Recordset->patchEntity($data, $this->request->data);
+
         $recordset->exercise_id = $data->exercise_id;
         $recordset->user_id = $this->Auth->user('id');
         //Saving record set
@@ -135,18 +156,27 @@ class RecordsetController extends AppController
           $this->Flash->error(__('There was a problem submitting your recordset, please try again.'));
           return $this->redirect(["action" => 'index']);
         }
+
         foreach ($exercise->question as $question) {
-            $record = $this->Record->newEntity();
+            $record = $recordset->getRecord($question->id);
+            if($record == null){
+              $record = $this->Record->newEntity();
+            }
+
+
             $record->recordset_id = $recId;
             $record->question_id = $question->id;
             //Horrible magic number that asks is the question type not multiple choice
+            //TODO make static vars for this stuff
             if($question->type != 2){
                 $record->answer = $data->answer[$question->id];
                 //Save the record
                 if(!$this->Record->save($record)){
+
                   $this->Flash->error(__('There was a problem submitting your record, please try again.Norm'));
                   return $this->redirect(["action" => 'index']);
                 }
+
             }else{
               //If we are a multiple choice - Loop through question options
               foreach($question->question_option as $op){
@@ -167,10 +197,28 @@ class RecordsetController extends AppController
 
         $this->Flash->success(__('Recordset saved' . $recordset));
         return $this->redirect(["action" => 'index']);
+      }else{
+        if($exercise->type == 1){
+            $edit = $this->Recordset->find("all")->where(['Recordset.user_id' => $this->Auth->user('id'),
+             'exercise_id' => $id])->contain(['Exercise'=>[ 'Question' => ['QuestionOption']], 'Record'])->first();
+             if(!$edit){
+                 $edit = $this->Recordset->newEntity();
+             }
+        }else if($exercise->type == 2){
+          $edit = $this->Recordset->find("all")->where(['Recordset.user_id' => $this->Auth->user('id'),
+           'exercise_id' => $id, 'week' => $weekNum])->contain(['Exercise'=>[ 'Question' => ['QuestionOption']], 'Record'])->first();
+           if(!$edit){
+               $edit = $this->Recordset->newEntity();
+               $edit->created = date('Y-m-d H:i:s');
+               $edit->week = $weekNum;
+           }
+        }
+
       }
 
+
       $this->set('exercise', $exercise);
-      $this->set('recordset', $recordset);
+      $this->set('recordset', $edit);
       $this->set('_serialize', ['screener']);
     }
 

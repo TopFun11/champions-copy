@@ -27,4 +27,14 @@ class Recordset extends Entity
         '*' => true,
         'id' => false
     ];
+
+    public function getRecord($question_id){
+      foreach($this->record as $record){
+
+        if($record->question_id == $question_id){
+          return $record;
+        }
+      }
+      return null;
+    }
 }

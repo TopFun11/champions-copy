@@ -26,6 +26,17 @@ $this->start('tb_sidebar');
 <?php
 $this->end();
 ?>
+<?php
+  //Mapping Records to a map[Question_ID][Record]
+  $map = [];
+  if(isset($recordset)){
+    foreach($recordset->record as $record){
+      $map[$record->question_id] = $record;
+    }
+  }
+
+
+ ?>
 <?= $this->Form->create($recordset); ?>
 <?=  $this->Form->hidden('exercise_id', ['value' => $exercise->id]); ?>
 <div class="panel panel-default">
@@ -39,7 +50,11 @@ $this->end();
           <p><?= $question->question ?></p>
         </div>
         <div>
-          <?= $this->QuestionAnswer->display($question);?>
+          <?php if(array_key_exists($question->id, $map)){
+            echo $this->QuestionAnswer->display($question, $map[$question->id]->answer);
+          }else{
+            echo $this->QuestionAnswer->display($question);
+          }?>
         </div>
 
   <?php endforeach;?>
