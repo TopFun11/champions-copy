@@ -54,13 +54,23 @@ $this->end();
   <?php
   $this->end();
   ?>
-  <pre><?= h($module) ?></pre>
+  <!--<pre><?=h($module)?></pre>
+  <pre><?=$module->sections?></pre>-->
+  <input type="hidden" value='<?= h($module) ?>' id="moduleDataSet"/>
   <div class="container">
     <?= $this->Form->create($module); ?>
     <div class="row">
-      <div class="col-xs-12">
-        <h3>Module editor</h3>
+      <div class="col-xs-6">
+        <h1>Module editor</h1>
       </div>
+      <div class="col-xs-6 text-right">
+        <br/>
+        <div onClick="submitModuleForm(this)"class="btn btn-success text-right">
+           <span style="vertical-align:top;font-size:19px;" class="glyphicon glyphicon-ok-sign"></span> Save changes to module
+        </div>
+      </div>
+    </div>
+    <div class="row">
       <div class="col-xs-4">
         <div class="form-group">
           <label for="usr">Module name:</label>
@@ -96,42 +106,55 @@ $this->end();
         </div>
       </div>
     </div>
-    <hr/>
     <?= $this->Form->end() ?>
+
+    <br/>
     <div class="row" id="sc">
       <div class="col-xs-6 ed-display">
         <h4>Screener questionnaire:</h4>
       </div>
       <div class="col-xs-6 ed-display text-right">
-        <div class="btn btn-success">
-          Add a screener to this module
+        <div class="btn btn-default">
+           <span style="vertical-align:top;font-size:17px;" class="glyphicon glyphicon-plus"></span> Add a screener to this module
         </div>
       </div>
     </div>
+    <br/>
     <div class="row" id="sc">
-      <div class="col-xs-6 ed-display">
+      <div class="col-xs-12">
         <h4>Module sections:</h4>
-      </div>
-      <div class="col-xs-6 ed-display text-right">
-        <div class="btn btn-success">
-          Add a section
-        </div>
       </div>
       <div class="col-xs-12">
         <div class="panel panel-default">
-            <!-- Panel header -->
-            <h1>lol</h1>
+            <div id="tree"></div>
         </div>
       </div>
-    </div>
-
-
-    <div class="row" id="sda">
-      <label for="usr">Module sections:</label>
-      <div class="col-xs-11 ed-display">
-        <div class="module-section ed-preview">
-          <div id="tree"></div>
+      <div class="col-xs-12 ed-display text-right">
+        <div class="btn btn-default">
+           <span style="vertical-align:top;font-size:17px;" class="glyphicon glyphicon-plus"></span> Add a section
         </div>
       </div>
     </div>
   </div>
+  <?php
+    $treeData = [];
+   ?>
+<script type="text/javascript">
+  var treeData = [<?php
+  foreach($module->sections as $i => $section){
+    echo "{ text: \"$section->title\",nodes: [";
+    foreach ($section->sections as $j => $subsection) {
+      echo "{text: \"$subsection->title\"}";
+      if($j < count($section->sections)){
+        echo ',';
+      }
+    }
+    echo "]}";
+    if($i < count($section->sections)){
+      echo ',';
+    }else{
+      echo '';
+    }
+  }
+   ?>];
+</script>

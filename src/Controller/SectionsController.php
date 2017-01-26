@@ -19,9 +19,14 @@ class SectionsController extends AppController
     public function index()
     {
         $this->paginate = [
-            'contain' => ['Module']
+            'conditions' => ["not"=>['Sections.module_id IS'=>null]]
         ];
+
         $sections = $this->paginate($this->Sections);
+        foreach($sections as $section) {
+          $subsections = $this->Sections->find("all")->where(["section_id"=>$section->id]);
+          $section->sections=$subsections;
+        }
 
         $this->set(compact('sections'));
         $this->set('_serialize', ['sections']);

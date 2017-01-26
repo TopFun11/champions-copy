@@ -77,7 +77,7 @@ class ExerciseTable extends Table
      */
     public function buildRules(RulesChecker $rules)
     {
-        $rules->add($rules->existsIn(['section_id'], 'Sections'));
+        //$rules->add($rules->existsIn(['section_id'], 'Sections'));
 
         return $rules;
     }

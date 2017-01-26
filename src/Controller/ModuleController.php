@@ -10,7 +10,10 @@ use App\Controller\AppController;
  */
 class ModuleController extends AppController
 {
-
+    public function initialize() {
+      parent::initialize();
+      $this->loadModel("Sections");
+    }
     /**
      * Index method
      *
@@ -90,9 +93,15 @@ class ModuleController extends AppController
     public function edit($id = null)
     {
       //#Done:10 Ensure Screeners are being loaded as data within this controller
-        $module = $this->Module->get($id, [
-            'contain' => ["Screener" => ['Question' => ['QuestionOption']],"Sections"=>["Exercise"]]
-        ]);
+      $module = $this->Module->get($id, [
+          'contain' => ["Screener" => ['Question' => ['QuestionOption']]]
+      ]);
+      $sections = $this->Sections->find('all')->where(["module_id"=>$module->id,"section_id IS" =>NULL]);
+      foreach($sections as $section) {
+        $temp = $this->Sections->find("all")->where(["section_id"=>$section->id]);
+        $section->sections=$temp;
+      }
+      $module->sections=$sections;
 
         if ($this->request->is(['patch', 'post', 'put'])) {
             $module = $this->Module->patchEntity($module, $this->request->data);

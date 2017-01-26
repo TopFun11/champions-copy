@@ -28,10 +28,10 @@ $this->end();
     echo $this->Form->input('content');
     $mods = [];
     foreach($module as $i => $mod){
-      $mods[$i] = ['value' => $mod->id, 'text'=> $mod->title];
+      $mods[$i+1] = ['value' => $mod->id, 'text'=> $mod->title];
     }
-    echo $this->Form->input('module_id', ['options' => $mods]);
-    $secs = [''=>'null'];
+    echo $this->Form->select('module_id', $mods, ['empty' => true]);
+    $secs = [];
     foreach($module as $i => $mod){
       echo $mod;
       foreach($mod->sections as $j => $sec){
@@ -40,7 +40,7 @@ $this->end();
 
       }
     }
-    echo $this->Form->input('section_id', ['options' => $secs]);
+    echo $this->Form->select('section_id',  $secs,['empty' => true]);
     ?>
 </fieldset>
 <?= $this->Form->button(__("Add")); ?>

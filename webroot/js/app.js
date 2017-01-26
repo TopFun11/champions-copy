@@ -334,8 +334,35 @@ var tree = [
 ];
 
 function getTree() {
-  // Some logic to retrieve, or generate tree structure
-  return tree;
+  var magiTree = [];
+  //var moduleData = JSON.parse();
+  console.log($("#treeData").val());
+  var sectionData = moduleData.sections;
+  var numOfSections = moduleData.sections.length;
+  //alert(numOfSections);
+  for(var i=0;i<numOfSections;i++) {
+
+    if(sectionData[i].section_id==null) {
+      magiTree.push(makeText(sectionData[i].id, sectionData[i].title));
+    } else {
+      for(var j=0;j<magiTree.length;i++) {
+        alert(magiTree[i].section_id + " " + sectionData[i].section_id);
+      }
+    }
+  }
+  alert(JSON.stringify(magiTree));
+  return magiTree;
 }
 
-$('#tree').treeview({data: getTree()});
+function makeText(secid, title) {
+  return{section_id:secid, text:title};
+}
+
+function makeNode(secidArray, titleArray) {
+  var nodeTree = [];
+  for(var i=0;i<secidArray.length;i++) {
+    nodeTree.push(makeText(secidArray[i],titleArray[i]));
+  }
+  return{nodes: nodeTree}
+}
+$('#tree').treeview({data: treeData});

@@ -10,7 +10,7 @@ $this->start('tb_actions');
 <?php $this->assign('tb_sidebar', '<ul class="nav nav-sidebar">' . $this->fetch('tb_actions') . '</ul>'); ?>
 <pre><?php
 foreach($sections as $sec){
-  echo $sec . '<hr />';
+  echo h($sec) . '<hr />';
 }
  ?></pre>
 <table class="table table-striped" cellpadding="0" cellspacing="0">
