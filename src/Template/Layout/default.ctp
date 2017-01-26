@@ -35,7 +35,7 @@ $cakeDescription = 'Champions for Health';
 </head>
 <body>
   <div id="alert_placeholder">
-    <!--what?!-->
+    <?= $this->Flash->render() ?>
   </div>
   <div id="custom-bootstrap-menu" class="navbar navbar-default " role="navigation">
       <div class="container">
@@ -62,9 +62,7 @@ $cakeDescription = 'Champions for Health';
           </div>
       </div>
   </div>
-  <?=$this->fetch('tb_actions');
-  $this->end();?>
-    <?= $this->Flash->render() ?>
+
     <div class="container clearfix">
     <?= $this->fetch('content') ?>
     </div>
@@ -73,8 +71,6 @@ $cakeDescription = 'Champions for Health';
         <a href="/accessibility">Accessibility</a><br/><a href="/terms">Terms of use</a><br/><a href="/privacy">Privacy statement</a><br/><a href="#">Back to top</a>
       </div>
     </footer>
-    <script src="/webroot/js/bootstrap-treeview.js"></script>
     <script src="/webroot/js/app.js"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/tinymce/4.5.2/tinymce.min.js"></script>
 </body>
 </html>

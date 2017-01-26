@@ -1,6 +1,5 @@
 <?php
-$this->extend('../Layout/TwitterBootstrap/dashboard');
-
+$this->layout = 'adminDefault';
 $this->start('tb_actions');
 ?>
     <li><?= $this->Html->link(__('List Question Option'), ['action' => 'index']) ?></li>

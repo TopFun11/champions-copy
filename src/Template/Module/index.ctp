@@ -1,10 +1,10 @@
 <?php
 /* @var $this \Cake\View\View */
-$this->extend('../Layout/TwitterBootstrap/dashboard');
+$this->layout = 'adminDefault';
 $this->start('tb_actions');
 ?>
     <li><?= $this->Html->link(__('New Module'), ['action' => 'add']); ?></li>
-    <li><?= $this->Html->link(__('List Sections'), ['controller' => 'Sections', 'action' => 'index']); ?></li>
+    <li><?= $this->Html->link(__('View all sections'), ['controller' => 'Sections', 'action' => 'index']); ?></li>
     <li><?= $this->Html->link(__('New Section'), ['controller' => 'Sections', 'action' => 'add']); ?></li>
 <?php $this->end(); ?>
 <?php $this->assign('tb_sidebar', '<ul class="nav nav-sidebar">' . $this->fetch('tb_actions') . '</ul>'); ?>

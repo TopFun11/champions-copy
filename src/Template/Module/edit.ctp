@@ -1,5 +1,5 @@
 <?php
-
+$this->layout = 'adminDefault';
 $this->start('tb_actions');
 ?>
     <li><?=

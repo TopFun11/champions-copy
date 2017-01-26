@@ -1,5 +1,5 @@
 <?php
-$this->extend('../Layout/TwitterBootstrap/dashboard');
+$this->layout = 'adminDefault';
 
 
 $this->start('tb_actions');

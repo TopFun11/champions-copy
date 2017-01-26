@@ -1,5 +1,5 @@
 <?php
-//$this->extend('../Layout/TwitterBootstrap/dashboard');
+$this->layout = 'adminDefault';
 $this->start('tb_actions');
 ?>
     <li><?= $this->Html->link(__('List Module'), ['action' => 'index']) ?></li>
@@ -9,11 +9,9 @@ $this->start('tb_actions');
 $this->end();
 $this->start('tb_sidebar');
 ?>
-<ul class="nav nav-sidebar">
     <li><?= $this->Html->link(__('List Module'), ['action' => 'index']) ?></li>
     <li><?= $this->Html->link(__('List Sections'), ['controller' => 'Sections', 'action' => 'index']) ?> </li>
     <li><?= $this->Html->link(__('New Section'), ['controller' => 'Sections', 'action' => 'add']) ?> </li>
-</ul>
 <?php
 $this->end();
 ?>

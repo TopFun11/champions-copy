@@ -1,5 +1,5 @@
 <!-- File: src/Template/Users/login.ctp -->
-
+$this->layout = 'adminDefault';
 
 <div class="container">
     <div class="user-form">

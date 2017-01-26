@@ -1,6 +1,5 @@
 <?php
-$this->extend('../Layout/TwitterBootstrap/dashboard');
-
+$this->layout = 'adminDefault';
 $this->start('tb_actions');
 ?>
     <li><?= $this->Html->link(__('List Sections'), ['action' => 'index']) ?></li>
@@ -25,9 +24,7 @@ $this->end();
     <div class="col-xs-12">
       <h1>Add a screener</h1>
     </div>
-    <?=
-    $this->fetch('tb_actions');
-    $this->end();?>
+
 
   </div>
 </div>

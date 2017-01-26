@@ -1,5 +1,5 @@
 <?php
-$this->extend('../Layout/TwitterBootstrap/dashboard');
+$this->layout = 'adminDefault';
 
 $this->start('tb_actions');
 ?>
@@ -22,7 +22,7 @@ $this->end();
 <?= $this->Form->create($recordset); ?>
 <fieldset>
     <legend><?= __('Add {0}', ['Recordset']) ?></legend>
-    
+
     <?php
     echo $this->Form->input('screener_id', ['options' => $screener]);
     ?>

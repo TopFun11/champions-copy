@@ -1,5 +1,5 @@
 <?php
-$this->extend('../Layout/TwitterBootstrap/dashboard');
+$this->layout = 'adminDefault';
 
 $this->start('tb_actions');
 ?>
@@ -33,7 +33,7 @@ $this->end();
     $exe = ['value' => 'null'];
     foreach($exercise as $i => $ex){
       $exe[$ex->id] = $ex->section->title;
-      
+
     }
 
 

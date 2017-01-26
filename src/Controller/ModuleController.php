@@ -94,7 +94,7 @@ class ModuleController extends AppController
     {
       //#Done:10 Ensure Screeners are being loaded as data within this controller
       $module = $this->Module->get($id, [
-          'contain' => ["Screener" => ['Question' => ['QuestionOption']]]
+          'contain' => ["Screener" => ['Question' => ['QuestionOption']]] 
       ]);
 
 

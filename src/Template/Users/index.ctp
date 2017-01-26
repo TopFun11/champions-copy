@@ -1,6 +1,6 @@
 <?php
 /* @var $this \Cake\View\View */
-$this->extend('../Layout/TwitterBootstrap/dashboard');
+$this->layout = 'adminDefault';
 $this->start('tb_actions');
 ?>
     <li><?= $this->Html->link(__('New User'), ['action' => 'add']); ?></li>
