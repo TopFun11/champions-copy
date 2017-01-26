@@ -45,7 +45,7 @@ class MessagesFixture extends TestFixture
             'subject' => 'Lorem ipsum dolor sit amet',
             'content' => 'Lorem ipsum dolor sit amet, aliquet feugiat. Convallis morbi fringilla gravida, phasellus feugiat dapibus velit nunc, pulvinar eget sollicitudin venenatis cum nullam, vivamus ut a sed, mollitia lectus. Nulla vestibulum massa neque ut et, id hendrerit sit, feugiat in taciti enim proin nibh, tempor dignissim, rhoncus duis vestibulum nunc mattis convallis.',
             'sent' => 1,
-            'scheduled_time' => '2017-01-26 12:06:39'
+            'scheduled_time' => '2017-01-26 12:10:24'
         ],
     ];
 }
