@@ -7,13 +7,13 @@ use Cake\View\Helper;
 class QuestionAnswerHelper extends Helper{
   public $helpers = ['Form'];
 
-  public function display($question){
+  public function display($question, $value = null){
     $html = (string)$question->type;
 
     switch($question->type){
       //Amount type
       case 0:
-        $html = $this->displayAmount($question);
+        $html = $this->displayAmount($question, $value);
         break;
       //Radio
       case 1:
@@ -30,8 +30,8 @@ class QuestionAnswerHelper extends Helper{
     return $html;
   }
 
-  private function displayAmount($question){
-    return $this->Form->text('answer['.$question->id.']');
+  private function displayAmount($question, $value = null){
+    return $this->Form->text('answer['.$question->id.']', ['value' => $value]);
   }
 
   private function displayRadio($question){
