@@ -64,7 +64,7 @@ $cakeDescription = 'Champions for Health';
           <ul class="dropdown-menu">
             <?= $this->Fetch("tb_sidebar");?>
             <li role="separator" class="divider"></li>
-            <li><a href="#">Log out</a></li>
+            <li><a href="/users/logout">Log out</a></li>
           </ul>
           <li><a href="#"><i class="glyphicon glyphicon-user"></i></a></li>
         </li>
