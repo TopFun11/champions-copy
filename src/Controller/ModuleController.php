@@ -2,6 +2,8 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+// In a controller or table method.
+use Cake\ORM\TableRegistry;
 
 /**
  * Module Controller
@@ -13,6 +15,9 @@ class ModuleController extends AppController
     public function initialize() {
       parent::initialize();
       $this->loadModel("Sections");
+      $this->loadModel("Recordset");
+      $this->loadModel("Screener");
+      $this->loadModel("Enrollment");
     }
     /**
      * Index method
@@ -58,6 +63,31 @@ class ModuleController extends AppController
 
         $this->set('module', $module);
         $this->set('_serialize', ['module']);
+    }
+
+    public function enroll($id = null){
+      $userId = $this->Auth->user('id');
+      $module = $this->Module->get($id, ['contain' => ['Screener']]);
+      if(!$module){
+        throw new NotFoundException(__("Module not found."));
+      }
+      $recordset = $this->Recordset->find('all')->where(["user_id" => $userId, "screener_id" => $module->screener->id])->first();
+      if(!$recordset){
+        return $this->redirect(["controller" => 'recordset', 'action' => 'screener/'.$module->screener->id]);
+      }
+
+      $enrollment = TableRegistry::get("userenrollment");
+      $enrolled = $enrollment->find("all")->where(['user_id' => $userId, 'module_id'=>$module->id])->first();
+      if(!$enrolled){
+        $enroll = $enrollment->newEntity();
+        $enroll->module_id = $module->id;
+        $enroll->user_id = $userId;
+        if($enrollment->save($enroll)){
+          die("You win!");
+        }
+      }else{
+        die("Already enrolled");
+      }
     }
 
     /**
