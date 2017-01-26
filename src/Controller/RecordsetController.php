@@ -57,6 +57,8 @@ class RecordsetController extends AppController
         $data = $this->Recordset->patchEntity($data, $this->request->data);
         $recordset->screener_id = $data->screener_id;
         $recordset->user_id = $this->Auth->user('id');
+        $recordset->created = date('Y-m-d H:i:s');
+        $recordset->modified = date('Y-m-d H:i:s');
         //Saving record set
         $rsetResult = $this->Recordset->save($recordset);
         $recId = $rsetResult->id;
@@ -94,7 +96,7 @@ class RecordsetController extends AppController
             }
 
         }
-        return $this->redirect(["action" => 'index']);
+        return $this->redirect(["controller" => "module","action" => 'enroll/'.$screener->module->id]);
       }
 
       $this->set('screener', $screener);
