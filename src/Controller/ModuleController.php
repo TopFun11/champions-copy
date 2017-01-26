@@ -96,16 +96,13 @@ class ModuleController extends AppController
       $module = $this->Module->get($id, [
           'contain' => ["Screener" => ['Question' => ['QuestionOption']]]
       ]);
-      $sections = $this->Sections->find('all')->where(["module_id"=>$module->id,"section_id IS" =>NULL]);
-      foreach($sections as $section) {
-        $temp = $this->Sections->find("all")->where(["section_id"=>$section->id]);
-        $section->sections=$temp;
-      }
-      $module->sections=$sections;
+
 
         if ($this->request->is(['patch', 'post', 'put'])) {
             $module = $this->Module->patchEntity($module, $this->request->data);
-            if ($this->Module->save($module)) {
+            //die(var_dump($module));
+            $result = $this->Module->save($module);
+            if ($result) {
                 $this->Flash->success(__('The module has been saved.'));
 
                 return $this->redirect(['action' => 'index']);
@@ -113,6 +110,12 @@ class ModuleController extends AppController
                 $this->Flash->error(__('The module could not be saved. Please, try again.'));
             }
         }
+        $sections = $this->Sections->find('all')->where(["module_id"=>$module->id,"section_id IS" =>NULL]);
+        foreach($sections as $section) {
+          $temp = $this->Sections->find("all")->where(["section_id"=>$section->id]);
+          $section->sections=$temp;
+        }
+        $module->sections=$sections;
         $this->set(compact('module'));
         $this->set('_serialize', ['module']);
     }

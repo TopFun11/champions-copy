@@ -62,6 +62,8 @@ $cakeDescription = 'Champions for Health';
           </div>
       </div>
   </div>
+  <?=$this->fetch('tb_actions');
+  $this->end();?>
     <?= $this->Flash->render() ?>
     <div class="container clearfix">
     <?= $this->fetch('content') ?>

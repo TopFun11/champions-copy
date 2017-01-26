@@ -20,7 +20,17 @@ $this->start('tb_sidebar');
 $this->end();
 ?>
 <?= $this->Form->create($section); ?>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h1>Add a screener</h1>
+    </div>
+    <?=
+    $this->fetch('tb_actions');
+    $this->end();?>
 
+  </div>
+</div>
 <fieldset>
     <legend><?= __('Add {0}', ['Section']) ?></legend>
     <?php
