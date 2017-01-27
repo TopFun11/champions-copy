@@ -30,32 +30,6 @@ $this->end();
 </div>
 
 <?= $this->Form->create($section); ?>
-<fieldset>
-    <legend><?= __('Add {0}', ['Section']) ?></legend>
-    <?php
-    echo $this->Form->input('title');
-    echo $this->Form->input('content');
-    $mods = [];
-    foreach($module as $i => $mod){
-      $mods[$i+1] = ['value' => $mod->id, 'text'=> $mod->title];
-    }
-    echo $this->Form->select('module_id', $mods, ['empty' => true,'class'=>'form-control']);
-    $secs = [];
-    foreach($module as $i => $mod){
-
-      foreach($mod->sections as $j => $sec){
-
-        $secs[$j + $i * count($module)] = ['value' => $sec->id, 'text' => $sec->title];
-
-      }
-    }
-    echo $this->Form->select('section_id',  $secs,['empty' => true]);
-    ?>
-</fieldset>
-<?= $this->Form->button(__("Add")); ?>
-<?= $this->Form->end() ?>
-
-
 <div class="form-group">
   <!--TODO: Add code to allow editing of questions, options, etc-->
   <div class="row">
@@ -65,14 +39,14 @@ $this->end();
     </div>
     <div class="col-xs-12">
       <label for="module_id">Section title</label>
-      <?=  $this->Form->input('title', ['options' => $module,'class="form-control"','label'=>false]) ?>
+      <?php echo $this->Form->input('title', ['class="form-control"','label'=>false]) ?>
     </div>
     <div class="col-xs-12">
       <?= $this->Form->input('content',['id'=>'description_text']) ?>
     </div>
     <div class="col-xs-6">
       <label for="module_id">Associate with module:</label>
-      <?=
+      <?php
       $mods = [];
       foreach($module as $i => $mod){
         $mods[$i+1] = ['value' => $mod->id, 'text'=> $mod->title];
@@ -81,8 +55,8 @@ $this->end();
       ?>
     </div>
     <div class="col-xs-6">
-      <label for="module_id">Associate with module:</label>
-      <?=
+      <label for="module_id">Associate with Screener:</label>
+      <?php
       $secs = [];
       foreach($module as $i => $mod){
         foreach($mod->sections as $j => $sec){
@@ -94,7 +68,9 @@ $this->end();
     </div>
     <div class="col-xs-12 text-center">
       <br/>
-      <?= $this->Form->button("Save changes", ['class="btn btn-success btn-lg"']); ?>
+      <div class="btn btn-lg btn-success" onClick="submitTinymce(this)">
+        Save screener
+      </div>
     </div>
   </div>
 </div>

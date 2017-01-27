@@ -215,7 +215,6 @@ function editScreener() {
     }
   });
 }
-
 $(document).on("change","#screener-question-type", function() {
   switch($("#screener-question-type").val()) {
     case "0":
@@ -366,3 +365,10 @@ function makeNode(secidArray, titleArray) {
   return{nodes: nodeTree}
 }
 $('#tree').treeview({data: treeData});
+
+
+function submitTinymce(sender) {
+  tinyMCE.triggerSave(false, true);
+  var form = $(sender).closest('form');
+  form.submit();
+}

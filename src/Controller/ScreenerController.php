@@ -59,11 +59,16 @@ class ScreenerController extends AppController
      *
      * @return \Cake\Network\Response|void Redirects on successful add, renders view otherwise.
      */
-    public function add()
+    public function add($id = null)
     {
         $screener = $this->Screener->newEntity();
+        if($id == null){
+          throw NotFoundException("Module not found");
+          return;
+        }
         if ($this->request->is('post')) {
             $screener = $this->Screener->patchEntity($screener, $this->request->data);
+            $screener->module_id = $id;
             if ($this->Screener->save($screener)) {
                 $this->Flash->success(__('The screener has been saved.'));
                 if(!$this->request->is('ajax')) {
