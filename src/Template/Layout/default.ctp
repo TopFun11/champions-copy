@@ -54,10 +54,24 @@ $cakeDescription = 'Champions for Health';
                   </li>
               </ul>
               <ul class="nav navbar-nav navbar-right">
+                <?php
+                $user = $this->request->session()->read('Auth.User');
+
+                if(!$user){
+
+                ?>
                   <li><a href="/users/login">Login</a>
                   </li>
                   <li><a href="/users/add">Register</a>
                   </li>
+                  <?php
+                }else{ ?>
+                  <li><a href="/users/dashboard">Dashboard</a>
+                  </li>
+                  <li><a href="/users/logout">Logout</a>
+                  </li>
+                <?php }
+                  ?>
               </ul>
           </div>
       </div>

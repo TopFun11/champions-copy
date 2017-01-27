@@ -106,6 +106,16 @@ $this->end();
         </div>
       </div>
     </div>
+    <div class="row" id="md">
+      <div class="col-xs-12 ed-display">
+        <div class="con-preview">
+          <label for="content">Module content:</label>
+          <?php
+          echo $this->Form->textarea('content',['class="form-control"','label'=>false, 'id' => 'content']);
+          ?>
+        </div>
+      </div>
+    </div>
     <?= $this->Form->end() ?>
 
     <br/>
