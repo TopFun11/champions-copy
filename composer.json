@@ -11,7 +11,8 @@
         "cakephp/migrations": "^1.6",
         "cakephp/plugin-installer": "*",
         "friendsofcake/bootstrap-ui": "^0.5.2",
-        "aboyadzhiev/php-math-parser": "dev-master"
+        "aboyadzhiev/php-math-parser": "dev-master",
+        "cakemanager/cakephp-utils": "1.0.x-dev"
     },
     "require-dev": {
         "psy/psysh": "@stable",

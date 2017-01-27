@@ -46,6 +46,9 @@ class ModuleTable extends Table
         $this->belongsToMany('Users', [
           'through' => 'userenrollment',
         ]);
+        $this->hasMany('Files', [
+          'foreignKey' => 'module_id'
+        ]);
     }
 
     /**
