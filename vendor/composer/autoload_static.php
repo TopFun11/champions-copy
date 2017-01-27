@@ -26,6 +26,10 @@ class ComposerStaticInit8b49fd99963f4242f7b4298daee240ae
         array (
             'XdgBaseDir\\' => 11,
         ),
+        'U' => 
+        array (
+            'Utils\\' => 6,
+        ),
         'S' => 
         array (
             'Symfony\\Polyfill\\Mbstring\\' => 26,
@@ -95,6 +99,10 @@ class ComposerStaticInit8b49fd99963f4242f7b4298daee240ae
         'XdgBaseDir\\' => 
         array (
             0 => __DIR__ . '/..' . '/dnoegel/php-xdg-base-dir/src',
+        ),
+        'Utils\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/cakemanager/cakephp-utils/src',
         ),
         'Symfony\\Polyfill\\Mbstring\\' => 
         array (

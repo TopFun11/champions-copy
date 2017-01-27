@@ -124,7 +124,7 @@ $this->end();
         <h4>Screener questionnaire:</h4>
       </div>
       <div class="col-xs-6 ed-display text-right">
-        <a class="btn btn-default" href="/screener/add">
+        <a class="btn btn-default" href="/screener/add/<?php echo $module->id ?>">
            <span style="vertical-align:top;font-size:17px;" class="glyphicon glyphicon-plus"></span> Add a screener to this module
         </a>
       </div>

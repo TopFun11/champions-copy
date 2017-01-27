@@ -12,7 +12,7 @@
         "cakephp/plugin-installer": "*",
         "friendsofcake/bootstrap-ui": "^0.5.2",
         "aboyadzhiev/php-math-parser": "dev-master",
-        "cakemanager/cakephp-utils": "1.0.x-dev"
+        "cakemanager/cakephp-utils": "dev-master"
     },
     "require-dev": {
         "psy/psysh": "@stable",

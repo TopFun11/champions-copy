@@ -66,6 +66,7 @@ class ScreenerController extends AppController
           throw NotFoundException("Module not found");
           return;
         }
+
         if ($this->request->is('post')) {
             $screener = $this->Screener->patchEntity($screener, $this->request->data);
             $screener->module_id = $id;
@@ -82,8 +83,8 @@ class ScreenerController extends AppController
             }
         }
 
-        $module = $this->Screener->Module->find('list', ['limit' => 200]);
-        $this->set(compact('screener', 'module'));
+        $moduleid = $id;
+        $this->set(compact('screener', 'moduleid'));
         $this->set('_serialize', ['screener']);
     }
     public function index()

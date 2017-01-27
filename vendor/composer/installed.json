@@ -2135,5 +2135,47 @@
             "math parser",
             "shunting-yard algorithm"
         ]
+    },
+    {
+        "name": "cakemanager/cakephp-utils",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/cakemanager/cakephp-utils.git",
+            "reference": "e9ca228ccfe3bb1fe756a99d408838500e1c8002"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/cakemanager/cakephp-utils/zipball/e9ca228ccfe3bb1fe756a99d408838500e1c8002",
+            "reference": "e9ca228ccfe3bb1fe756a99d408838500e1c8002",
+            "shasum": ""
+        },
+        "require": {
+            "cakephp/cakephp": "~3.0",
+            "php": ">=5.4"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "*"
+        },
+        "time": "2016-01-07T12:58:27+00:00",
+        "type": "cakephp-plugin",
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "Utils\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Bob Mulder",
+                "email": "bobmulder@outlook.com"
+            }
+        ],
+        "description": "Plugin for CakePHP 3.x with useful components and behaviors"
     }
 ]
