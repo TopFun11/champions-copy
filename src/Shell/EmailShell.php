@@ -8,7 +8,7 @@ use Cake\ORM\TableRegistry;
 use Cake\Log\Log;
 
 define('EMAIL', 0);
-define('ADDRESS', 'champforhealth@gmail.com')
+define('ADDRESS', 'champforhealth@gmail.com');
 
 class EmailShell extends Shell{
 
