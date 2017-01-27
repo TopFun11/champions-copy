@@ -27,12 +27,31 @@ use Cake\Controller\Component\AuthComponent;
        $this->loadModel('Profile');
      }
 
+     public function dashboard(){
+       $userId = $this->Auth->user("id");
+       $user = $this->Users->get($userId, [
+         'contain' => ['Module', 'Recordset' => [
+           'conditions' => ['not' => ['exercise_id' => 'null']],
+           'Exercise' => ['Sections' => ['Sections' => [
+             'conditions' => ['not' => ['section_id' => null]]
+           ], 'Module']]]
+         ]
+       ]);
+       $this->set("user", $user);
+     }
+
      public function login()
      {
          if ($this->request->is('post')) {
              $user = $this->Auth->identify();
              if ($user) {
                  $this->Auth->setUser($user);
+
+                 $userId = $this->Auth->user("id");
+                 $userO = $this->Users->get($userId);
+                 $userO->last_logged_in = date('Y-m-d H:i:s');
+                 $this->Users->save($userO);
+
                  return $this->redirect($this->Auth->redirectUrl());
              }
              $this->Flash->error(__('Invalid username or password, try again'));

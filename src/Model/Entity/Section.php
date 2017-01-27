@@ -29,4 +29,14 @@ class Section extends Entity
         '*' => true,
         'id' => false
     ];
+
+    public function getModule(){
+      if($this->module_id === null){
+        echo "<pre>" . h($this) . "</pre>";
+        die();
+        return $this->section->getModule();
+      }else{
+        return $this->module;
+      }
+    }
 }

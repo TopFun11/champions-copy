@@ -28,6 +28,8 @@ $this->end();
 
   </div>
 </div>
+
+<?= $this->Form->create($section); ?>
 <fieldset>
     <legend><?= __('Add {0}', ['Section']) ?></legend>
     <?php
@@ -54,7 +56,6 @@ $this->end();
 <?= $this->Form->end() ?>
 
 
-<?= $this->Form->create($section); ?>
 <div class="form-group">
   <!--TODO: Add code to allow editing of questions, options, etc-->
   <div class="row">
