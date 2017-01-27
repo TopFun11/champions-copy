@@ -33,6 +33,19 @@ class ModuleController extends AppController
     }
 
     /**
+     * Explore method
+     *
+     * @return \Cake\Network\Response|null
+     */
+    public function explore()
+    {
+        $module = $this->paginate($this->Module);
+
+        $this->set(compact('module'));
+        $this->set('_serialize', ['module']);
+    }
+
+    /**
     * View method
     *
     * @param string|null $id Module id.
@@ -49,16 +62,33 @@ class ModuleController extends AppController
     }
 
     /**
-     * AdminView method
+     * Dashboard method
      *
      * @param string|null $id Module id.
      * @return \Cake\Network\Response|null
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
-    public function adminview($id = null)
+    public function Dashboard($id = null)
     {
         $module = $this->Module->get($id, [
-            'contain' => ['Sections']
+            'contain' => ['Sections', 'Users']
+        ]);
+
+        $this->set('module', $module);
+        $this->set('_serialize', ['module']);
+    }
+
+    /**
+     * Overview method
+     *
+     * @param string|null $id Module id.
+     * @return \Cake\Network\Response|null
+     * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
+     */
+    public function Overview($id = null)
+    {
+        $module = $this->Module->get($id, [
+            'contain' => ['Sections', 'Users']
         ]);
 
         $this->set('module', $module);
@@ -124,7 +154,7 @@ class ModuleController extends AppController
     {
       //#Done:10 Ensure Screeners are being loaded as data within this controller
       $module = $this->Module->get($id, [
-          'contain' => ["Screener" => ['Question' => ['QuestionOption']]] 
+          'contain' => ["Screener" => ['Question' => ['QuestionOption']]]
       ]);
 
 
