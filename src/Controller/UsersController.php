@@ -50,6 +50,13 @@ use Cake\Controller\Component\AuthComponent;
                  $userId = $this->Auth->user("id");
                  $userO = $this->Users->get($userId);
                  $userO->last_logged_in = date('Y-m-d H:i:s');
+
+                 $profile = $this->Profile->find("all")->where(['user_id' => $userId])->first();
+
+                 if(!$profile){
+                   return $this->redirect(["action" => 'add', 'controller' => 'profile']);
+                 }
+
                  $this->Users->save($userO);
 
                  return $this->redirect($this->Auth->redirectUrl());
@@ -85,16 +92,16 @@ use Cake\Controller\Component\AuthComponent;
              $profile->email = 'a@b.com';
              $profile->phone_number = "0352452345";
 
-             $user->profile = $profile;
              if($user){
                if($new && $user->role == "patient"){
                  $user->role = "new patient";
                }
-               if ($this->Users->save($user)) {
+               $result = $this->Users->save($user);
+               if ($result) {
                    $this->Flash->success(__('The user has been saved.'));
                    return $this->redirect(['action' => 'add']);
                }
-               $this->Flash->error(__('Unable to add the user.'));
+               $this->Flash->error(__('Unable to add the user.' . var_dump($result)));
              }else{
                $this->Flash->error(__('Error validating request'));
              }
