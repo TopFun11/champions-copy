@@ -33,19 +33,19 @@ class ContentFields extends AbstractMigration
       ])
       ->update();
 
-    $sectionTable = $this->Table('sections');
+    /*$sectionTable = $this->Table('sections');
       $sectionTable->addColumn('content', 'text', [
         'default' => null,
         'null' => true
       ])
-      ->update();
+      ->update();*/
     }
 
     public function down(){
       $moduleTable = $this->Table('module');
       $moduleTable->removeColumn('content')->update();
 
-      $sectionTable = $this->Table('sections');
-      $sectionTable->removeColumn('content')->update();
+      /*$sectionTable = $this->Table('sections');
+      $sectionTable->removeColumn('content')->update();*/
     }
 }
