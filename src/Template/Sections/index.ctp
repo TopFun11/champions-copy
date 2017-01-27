@@ -13,6 +13,9 @@ $this->start('tb_actions');
   //echo h($sec) . '<hr />';
 //}
  ?>
+ <div class="row">
+   <div class="col-xs-12">
+     <h1> Sections </h1>
 <table class="table table-striped" cellpadding="0" cellspacing="0">
     <thead>
         <tr>
@@ -52,4 +55,6 @@ $this->start('tb_actions');
         <?= $this->Paginator->next(__('next') . ' >') ?>
     </ul>
     <p><?= $this->Paginator->counter() ?></p>
+</div>
+</div>
 </div>

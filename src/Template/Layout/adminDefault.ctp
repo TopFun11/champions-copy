@@ -35,7 +35,7 @@ $cakeDescription = 'Champions for Health';
 </head>
 <body>
   <div id="alert_placeholder">
-    <!--what?!-->
+    <?= $this->Flash->render() ?>
   </div>
 <nav class="navbar navbar-default">
   <div class="container">
