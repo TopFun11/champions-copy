@@ -4,4 +4,3 @@
 /node_modules
 .directory
 *.log
-composer.lock
