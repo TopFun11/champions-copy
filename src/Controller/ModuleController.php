@@ -26,6 +26,10 @@ class ModuleController extends AppController
      */
     public function index()
     {
+        if($this->Auth->user('role') !=  "admin"){
+          $this->Flash->Error("You are not authorised to view this section");
+          return $this->redirect(["action" => "", "controller" => "pages"]);
+        }
         $module = $this->paginate($this->Module);
 
         $this->set(compact('module'));
@@ -39,7 +43,21 @@ class ModuleController extends AppController
      */
     public function explore()
     {
-        $module = $this->paginate($this->Module);
+        $userRole = $this->Auth->user('role');
+        $module = [];
+        if($userRole == "student"){
+          $module = $this->Module->find("all", [
+            'conditions' => [
+              'not' => [
+                'required_role' => 'new student'
+              ]
+              ]
+          ]);
+        }else{
+          $module = $this->Module->find("all");
+        }
+
+
 
         $this->set(compact('module'));
         $this->set('_serialize', ['module']);
@@ -56,7 +74,11 @@ class ModuleController extends AppController
       $module = $this->Module->get($id, [
         'contain' => ['Sections', 'Users']
       ]);
-
+      if($module->required_role == "new student"){
+        if($userRole != "new student"){
+            return $this->redirect(["action" => "explore", "controller" => "module"]);
+        }
+      }
       $this->set('module', $module);
       $this->set('_serialize', ['module']);
     }
@@ -91,6 +113,12 @@ class ModuleController extends AppController
             'contain' => ['Sections', 'Users']
         ]);
 
+        if($module->required_role == "new student"){
+          if($userRole != "new student"){
+              return $this->redirect(["action" => "explore", "controller" => "module"]);
+          }
+        }
+
         $this->set('module', $module);
         $this->set('_serialize', ['module']);
     }
@@ -101,6 +129,13 @@ class ModuleController extends AppController
       if(!$module){
         throw new NotFoundException(__("Module not found."));
       }
+
+      if($module->required_role == "new student"){
+        if($userRole != "new student"){
+            return $this->redirect(["action" => "explore", "controller" => "module"]);
+        }
+      }
+
       $recordset = $this->Recordset->find('all')->where(["user_id" => $userId, "screener_id" => $module->screener->id])->first();
       if(!$recordset){
         return $this->redirect(["controller" => 'recordset', 'action' => 'screener/'.$module->screener->id]);
@@ -157,6 +192,10 @@ class ModuleController extends AppController
           'contain' => ["Screener" => ['Question' => ['QuestionOption']]]
       ]);
 
+      if($this->Auth->user('role') !=  "admin"){
+        $this->Flash->Error("You are not authorised to view this section");
+        return $this->redirect(["action" => "", "controller" => "pages"]);
+      }
 
         if ($this->request->is(['patch', 'post', 'put'])) {
             $module = $this->Module->patchEntity($module, $this->request->data);
@@ -189,6 +228,10 @@ class ModuleController extends AppController
      */
     public function delete($id = null)
     {
+      if($this->Auth->user('role') !=  "admin"){
+        $this->Flash->Error("You are not authorised to view this section");
+        return $this->redirect(["action" => "", "controller" => "pages"]);
+      }
         $this->request->allowMethod(['post', 'delete']);
         $module = $this->Module->get($id);
         if ($this->Module->delete($module)) {

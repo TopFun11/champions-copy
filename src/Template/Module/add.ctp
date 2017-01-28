@@ -47,6 +47,14 @@ $this->end();
         ?>
       </div>
     </div>
+    <div class="col-xs-4">
+      <div class="form-group">
+        <label for="required_role">Role required:</label>
+        <?php
+        echo $this->Form->input('required_role',['class="form-control"','label'=>false]);
+        ?>
+      </div>
+    </div>
   </div>
   <div class="row" id="md">
     <label for="usr">Module description:</label>
