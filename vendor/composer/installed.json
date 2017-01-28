@@ -1722,85 +1722,6 @@
         ]
     },
     {
-        "name": "composer/composer",
-        "version": "1.3.1",
-        "version_normalized": "1.3.1.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/composer/composer.git",
-            "reference": "91dbca556764dcece45e1ba3aab14de2deaa9fec"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/composer/composer/zipball/91dbca556764dcece45e1ba3aab14de2deaa9fec",
-            "reference": "91dbca556764dcece45e1ba3aab14de2deaa9fec",
-            "shasum": ""
-        },
-        "require": {
-            "composer/ca-bundle": "^1.0",
-            "composer/semver": "^1.0",
-            "composer/spdx-licenses": "^1.0",
-            "justinrainbow/json-schema": "^1.6 || ^2.0 || ^3.0 || ^4.0",
-            "php": "^5.3.2 || ^7.0",
-            "psr/log": "^1.0",
-            "seld/cli-prompt": "^1.0",
-            "seld/jsonlint": "^1.4",
-            "seld/phar-utils": "^1.0",
-            "symfony/console": "^2.7 || ^3.0",
-            "symfony/filesystem": "^2.7 || ^3.0",
-            "symfony/finder": "^2.7 || ^3.0",
-            "symfony/process": "^2.7 || ^3.0"
-        },
-        "require-dev": {
-            "phpunit/phpunit": "^4.5 || ^5.0.5",
-            "phpunit/phpunit-mock-objects": "^2.3 || ^3.0"
-        },
-        "suggest": {
-            "ext-openssl": "Enabling the openssl extension allows you to access https URLs for repositories and packages",
-            "ext-zip": "Enabling the zip extension allows you to unzip archives",
-            "ext-zlib": "Allow gzip compression of HTTP requests"
-        },
-        "time": "2017-01-07T17:08:51+00:00",
-        "bin": [
-            "bin/composer"
-        ],
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "1.3-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "Composer\\": "src/Composer"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Nils Adermann",
-                "email": "naderman@naderman.de",
-                "homepage": "http://www.naderman.de"
-            },
-            {
-                "name": "Jordi Boggiano",
-                "email": "j.boggiano@seld.be",
-                "homepage": "http://seld.be"
-            }
-        ],
-        "description": "Composer helps you declare, manage and install dependencies of PHP projects, ensuring you have the right stack everywhere.",
-        "homepage": "https://getcomposer.org/",
-        "keywords": [
-            "autoload",
-            "dependency",
-            "package"
-        ]
-    },
-    {
         "name": "zendframework/zend-diactoros",
         "version": "1.3.10",
         "version_normalized": "1.3.10.0",
@@ -1989,55 +1910,6 @@
         ]
     },
     {
-        "name": "cakephp/bake",
-        "version": "1.2.12",
-        "version_normalized": "1.2.12.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/cakephp/bake.git",
-            "reference": "a52c3919d6e1521eb9396dcf239b24aa4e6522ed"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/cakephp/bake/zipball/a52c3919d6e1521eb9396dcf239b24aa4e6522ed",
-            "reference": "a52c3919d6e1521eb9396dcf239b24aa4e6522ed",
-            "shasum": ""
-        },
-        "require": {
-            "cakephp/cakephp": ">=3.2.0 <4.0.0",
-            "cakephp/plugin-installer": "*",
-            "php": ">=5.5.9"
-        },
-        "require-dev": {
-            "cakephp/cakephp-codesniffer": "^2.1",
-            "phpunit/phpunit": "*"
-        },
-        "time": "2017-01-22T18:32:37+00:00",
-        "type": "cakephp-plugin",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "Bake\\": "src"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "CakePHP Community",
-                "homepage": "https://github.com/cakephp/bake/graphs/contributors"
-            }
-        ],
-        "description": "Bake plugin for CakePHP 3.0",
-        "homepage": "https://github.com/cakephp/bake",
-        "keywords": [
-            "bake",
-            "cakephp"
-        ]
-    },
-    {
         "name": "friendsofcake/bootstrap-ui",
         "version": "v0.5.2",
         "version_normalized": "0.5.2.0",
@@ -2177,5 +2049,133 @@
             }
         ],
         "description": "Plugin for CakePHP 3.x with useful components and behaviors"
+    },
+    {
+        "name": "cakephp/bake",
+        "version": "1.2.13",
+        "version_normalized": "1.2.13.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/cakephp/bake.git",
+            "reference": "28d9a67d41fec773dc618d0b639c3b3d74b17eaf"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/cakephp/bake/zipball/28d9a67d41fec773dc618d0b639c3b3d74b17eaf",
+            "reference": "28d9a67d41fec773dc618d0b639c3b3d74b17eaf",
+            "shasum": ""
+        },
+        "require": {
+            "cakephp/cakephp": ">=3.2.0 <4.0.0",
+            "cakephp/plugin-installer": "*",
+            "php": ">=5.5.9"
+        },
+        "require-dev": {
+            "cakephp/cakephp-codesniffer": "^2.1",
+            "phpunit/phpunit": "*"
+        },
+        "time": "2017-01-26T02:57:18+00:00",
+        "type": "cakephp-plugin",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Bake\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "CakePHP Community",
+                "homepage": "https://github.com/cakephp/bake/graphs/contributors"
+            }
+        ],
+        "description": "Bake plugin for CakePHP 3.0",
+        "homepage": "https://github.com/cakephp/bake",
+        "keywords": [
+            "bake",
+            "cakephp"
+        ]
+    },
+    {
+        "name": "composer/composer",
+        "version": "1.3.2",
+        "version_normalized": "1.3.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/composer/composer.git",
+            "reference": "e7569edb4a5eadcbb2e4ad5ed753282260f281df"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/composer/composer/zipball/e7569edb4a5eadcbb2e4ad5ed753282260f281df",
+            "reference": "e7569edb4a5eadcbb2e4ad5ed753282260f281df",
+            "shasum": ""
+        },
+        "require": {
+            "composer/ca-bundle": "^1.0",
+            "composer/semver": "^1.0",
+            "composer/spdx-licenses": "^1.0",
+            "justinrainbow/json-schema": "^1.6 || ^2.0 || ^3.0 || ^4.0",
+            "php": "^5.3.2 || ^7.0",
+            "psr/log": "^1.0",
+            "seld/cli-prompt": "^1.0",
+            "seld/jsonlint": "^1.4",
+            "seld/phar-utils": "^1.0",
+            "symfony/console": "^2.7 || ^3.0",
+            "symfony/filesystem": "^2.7 || ^3.0",
+            "symfony/finder": "^2.7 || ^3.0",
+            "symfony/process": "^2.7 || ^3.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^4.5 || ^5.0.5",
+            "phpunit/phpunit-mock-objects": "^2.3 || ^3.0"
+        },
+        "suggest": {
+            "ext-openssl": "Enabling the openssl extension allows you to access https URLs for repositories and packages",
+            "ext-zip": "Enabling the zip extension allows you to unzip archives",
+            "ext-zlib": "Allow gzip compression of HTTP requests"
+        },
+        "time": "2017-01-27T17:23:42+00:00",
+        "bin": [
+            "bin/composer"
+        ],
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.3-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Composer\\": "src/Composer"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Nils Adermann",
+                "email": "naderman@naderman.de",
+                "homepage": "http://www.naderman.de"
+            },
+            {
+                "name": "Jordi Boggiano",
+                "email": "j.boggiano@seld.be",
+                "homepage": "http://seld.be"
+            }
+        ],
+        "description": "Composer helps you declare, manage and install dependencies of PHP projects, ensuring you have the right stack everywhere.",
+        "homepage": "https://getcomposer.org/",
+        "keywords": [
+            "autoload",
+            "dependency",
+            "package"
+        ]
     }
 ]

@@ -220,7 +220,6 @@ Type::build('datetime')
 if (Configure::read('debug')) {
     Plugin::load('DebugKit', ['bootstrap' => true]);
     Plugin::load('Migrations');
-    Plugin::load('Utils')
 }
 
 Plugin::load('BootstrapUI');
