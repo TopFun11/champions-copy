@@ -21,7 +21,7 @@ $this->end();
     <?php
 
     //Section stuff
-    $screens = ["null" => "null"];
+    $screens = [];
     foreach($screener as $i => $screen){
       $tmp = [$screen->id =>$screen->Name];
       $screens[$screen->id] = $screen->Name ;
@@ -30,7 +30,7 @@ $this->end();
 
 
     //Exercise stuff
-    $exe = ['value' => 'null'];
+    $exe = [];
     foreach($exercise as $i => $ex){
       $exe[$ex->id] = $ex->section->title;
 
@@ -38,7 +38,7 @@ $this->end();
 
 
     echo $this->Form->input('question');
-    echo $this->Form->input('screener_id', ['options' =>   $screens]);
+    echo $this->Form->input('screener_id', ['options' =>   $screens, 'empty' => true] );
     echo $this->Form->input('exercise_id', ['options' => $exe]);
     echo $this->Form->input('type', ['options' => ['Amount', 'Range', 'Multiple choice']]);
     ?>

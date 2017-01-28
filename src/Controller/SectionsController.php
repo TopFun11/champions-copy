@@ -62,7 +62,6 @@ class SectionsController extends AppController
             $section = $this->Sections->patchEntity($section, $this->request->data);
             if ($this->Sections->save($section)) {
                 $this->Flash->success(__('The section has been saved.'));
-
                 return $this->redirect(['action' => 'index']);
             } else {
                 $this->Flash->error(__('The section could not be saved. Please, try again.'));
