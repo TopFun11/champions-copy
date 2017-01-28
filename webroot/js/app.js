@@ -108,13 +108,14 @@ String.prototype.format = function()
 };
 
 //ALERT STUFF
-var alertHTML='<div class="alert alert-{0}"><span><div class="container"> \
-            <div class="row"><div class="col-xs-12"> \
-            <a class="close" data-dismiss="alert">×</a> \
-            <i class="glyphicon glyphicon-info-sign"></i> \
-            {1}</div></div></div></span></div>';
+
 
 function genAl(alertType, message) {
+  var alertHTML='<div class="alert alert-{0}"><span><div class="container"> \
+              <div class="row"><div class="col-xs-12"> \
+              <a class="close" data-dismiss="alert">×</a> \
+              <i class="glyphicon glyphicon-info-sign"></i> \
+              {1}</div></div></div></span></div>';
     $('#alert_placeholder').html(alertHTML.format(alertType,message))
     .slideDown().delay(alertDelay).slideUp();
 }
@@ -156,27 +157,25 @@ function closePartEditor(sender) {
 
 
 function createScreener() {
-  if($("#module-screener").val() !="") {
-    console.log("Check passed");
-    return editScreener();
-  }
+  //if($("#module-screener").val() !="") {
+    //console.log("Check passed");
+    //return editScreener();
+//}
   var cb = genAl;
   var moduleID = $("#module-id").val();
-  var moduleName = $("#module-name").val();
   var moduleScreenerThreshold = $("#module-screener-threshold").val();
-  console.log(moduleName + " - ID "+moduleID + " T:" + moduleScreenerThreshold);
+  console.log(moduleID + " - ID "+moduleID + " T:" + moduleScreenerThreshold);
   $.ajax({
-    url: '/screener/add.json',
+    url: '/screener/add/'+moduleID+'.json',
     type: 'POST',
-    data: {Name: "Questions for Module " + moduleName, module_id:moduleID, threshold: moduleScreenerThreshold},
+    data: {Name: "Questions for Module "+moduleID, module_id:moduleID, threshold: moduleScreenerThreshold},
     success: function(data)
     {
-      console.log(data);
-      $("#module-screener").val(data.screener.id);
+      console.log($(data));
       if(cb!=null) {
         cb("success","Screener saved!");
-
       }
+      window.location.href = "/screener/edit/"+data.screener.id;
     },
     error: function(data)
     {
@@ -215,52 +214,60 @@ function editScreener() {
     }
   });
 }
+$(".option-input").hide();
 $(document).on("change","#screener-question-type", function() {
   switch($("#screener-question-type").val()) {
     case "0":
-      console.log("Switching to Textbox input")
+      console.log("Switching to Textbox input");
+      $(".option-input").hide();
       break;
     case "1":
       console.log("Switching to Radio buttons - Allow creating options");
+      $(".option-input").show();
       break;
     case "2":
       console.log("Switching to Checkboxes - Allow creating options");
+      $(".option-input").show();
       break;
     default:
-      console.log("Switch fell through (┛◉Д◉)┛彡┻━┻")
+      console.log("Switch fell through (┛◉Д◉)┛彡┻━┻");
   }
 })
 
-function addQuestion() {
-  var cb = genAl;
+function addScreenerQuestion(cb) {
+  var alertGen = genAl;
   var screenerID = $("#module-screener").val();
   var screenerquestion = $("#screener-question").val();
   var screenerquestiontype = $("#screener-question-type").val();
   $.ajax({
     url: '/question/add.json',
     type: 'POST',
-    data: {screener_id: screenerID, question: screenerquestion, type:screenerquestiontype},
+    data: {exercise_id: "", screener_id: screenerID, question: screenerquestion, type:screenerquestiontype},
     success: function(data)
     {
       console.log("Question added " +data);
-      if(cb!=null) {
         $("#question-being-worked-on").val(data.question.id);
-        cb("success","Question added!");
-      }
+        console.log("before callback!");
+        alertGen("success","Question added!");
+        if(cb!=null) {
+
+          cb();
+        }
     },
     error: function(data)
     {
       if(cb!=null) {
-        cb("danger","Something went seriously wrong, and the Question wasn't added. Please contact us.");
-
+        alertGen("danger","Something went seriously wrong, and the Question wasn't added. Please contact us.");
       }
     }
   });
 }
 
+var ajaxArray = [];
 function addOption() {
   var cb = genAl;
   var questionID = $("#question-being-worked-on").val();
+  console.log("After callback" + questionID);
   var options = [];
   var optionScore = [];
   $(".multioption-text-box").each(function() {options.push(this.value)});
@@ -269,7 +276,7 @@ function addOption() {
   for(var i=0;i<options.length;i++) {
     if(options[i]!="") {
       console.log("Question {0} is {1} with value{2}".format(i,options[i],optionScore[i]))
-      $.ajax({
+      var ajaxReq = $.ajax({
         url: '/QuestionOption/add.json',
         type: 'POST',
         data: {question_id: questionID, value:optionScore[i],text:options[i]},
@@ -284,20 +291,67 @@ function addOption() {
         error: function(data)
         {
           if(cb!=null) {
-            cb("danger","Something went seriously wrong, and the Question wasn't added. Please contact us.");
-
+            cb("danger","Something went seriously wrong, and the Options for your question weren't added. Please contact us.");
           }
         }
       });
+      ajaxArray.push(ajaxReq);
     }
+  }
+  $.when(ajaxArray).then(function() {
+    resetQuestionForm();
+  });
+}
+function resetQuestionForm() {
+  $(".multioption-text-box").each(function() {this.remove()});
+  $(".multioption-value-box").each(function() {this.remove()});
+  $("#screener-question").val("");
+  $("#screener-question-type").val("0");
+  addAnotherScreenerOption();
+  $(".option-input").hide();
+}
+//$('#tree').treeview({data: treeData});
+
+function processQuestion() {
+  var question = $("#screener-question").val();
+  var questiontype = $("#screener-question-type").val();
+  if(question!="") {
+    if(questiontype!=0 && $(".multioption-text-box").length == 0) {
+      genAl("warning","Please add some options!");
+      return;
+    } else if(questiontype!=0){
+      console.log("Adding question and option");
+      addScreenerQuestion(addOption);
+    } else {
+      console.log("Just adding question");
+      addScreenerQuestion();
+    }
+    addQuestionToTable(question, questiontype, parseQuestionForDisplay);
   }
 }
 
-$('#tree').treeview({data: treeData});
-
-
+function parseQuestionForDisplay() {
+  var question = $("#screener-question").val();
+  var questiontype = $("#screener-question-type").val();
+  var options = [];
+  var optionScore = [];
+  var optionsOptionScoreDisplay = "";
+  $(".multioption-text-box").each(function() {options.push(this.value)});
+  $(".multioption-value-box").each(function() {optionScore.push(this.value)});
+    for(var i=0;i<options.length;i++) {
+      if(options[i]!=""){
+      optionsOptionScoreDisplay += "{0}({1}), ".format(options[i],optionScore[i]);
+    }
+  }
+  return optionsOptionScoreDisplay;
+}
 function submitTinymce(sender) {
   tinyMCE.triggerSave(false, true);
   var form = $(sender).closest('form');
   form.submit();
+}
+
+
+function addQuestionToTable(question, qtype, qoptions) {
+  $("#questions-added").append("<tr><td>{0}</td><td>{1}</td><td>{2}</td></tr>".format(question,qtype,qoptions));
 }

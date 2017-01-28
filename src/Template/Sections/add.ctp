@@ -22,7 +22,7 @@ $this->end();
 <div class="container">
   <div class="row">
     <div class="col-xs-12">
-      <h1>Add a screener</h1>
+      <h1>Add a section</h1>
     </div>
 
 
@@ -69,7 +69,7 @@ $this->end();
     <div class="col-xs-12 text-center">
       <br/>
       <div class="btn btn-lg btn-success" onClick="submitTinymce(this)">
-        Save screener
+        Save section
       </div>
     </div>
   </div>

@@ -63,7 +63,7 @@ class ScreenerController extends AppController
     {
         $screener = $this->Screener->newEntity();
         if($id == null){
-          throw NotFoundException("Module not found");
+          throw new NotFoundException("Module not found");
           return;
         }
 
