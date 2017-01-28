@@ -2,6 +2,7 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Cake\Controller\Component\AuthComponent;
 
 /**
  * Recordset Controller
@@ -16,6 +17,7 @@ class RecordsetController extends AppController
     $this->loadModel('Screener');
     $this->loadModel('Exercise');
     $this->loadModel('Record');
+    $this->loadModel('Profile');
   }
 
     /**
@@ -197,6 +199,16 @@ class RecordsetController extends AppController
 
         }
 
+        //Add 5 points to user profile
+        //TODO get rid of magic numbers
+        $profile = $this->Profile->find("all")->where(['user_id' => $this->Auth->user('id')])->first();
+        $profile->points = $profile->points + 5;
+        if($this->hasDoneExerciseFor(10)){
+          $profile->points = $profile->points + 10;
+        }
+        //Saving profile
+        $this->Profile->save($profile);
+
         $this->Flash->success(__('Recordset saved' . $recordset));
         return $this->redirect(["action" => 'index']);
       }else{
@@ -222,6 +234,27 @@ class RecordsetController extends AppController
       $this->set('exercise', $exercise);
       $this->set('recordset', $edit);
       $this->set('_serialize', ['screener']);
+    }
+    /**
+     * hasDoneExerciseFor method
+     *
+     * Returns whether or not a user has completed an exercise for a specified amount of weeks
+     * @param string|null $id Recordset id.
+     * @return Boolean
+     *
+     */
+    private function hasDoneExerciseFor($weeks){
+      $userId = $this->Auth->user('id');
+      $week = date("w");
+      for($i = 0; $i < $weeks;$i++){
+        $tmp = $week - $i;
+        $exercise = $this->Recordset->find("all")->where(['user_id' => $userId, 'week' => $tmp])->first();
+        if(!$exercise){
+          return false;
+        }
+      }
+
+      return true;
     }
 
     /**

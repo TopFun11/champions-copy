@@ -37,9 +37,7 @@ class ProfileController extends AppController
     public function view()
     {
         $id = $this->Auth->user("id");
-        $profile = $this->Profile->get($id, [
-            'contain' => ['Users']
-        ]);
+        $profile = $this->Profile->find("all")->where(['user_id' => $this->Auth->user("id")])->first();
 
         $this->set('profile', $profile);
         $this->set('_serialize', ['profile']);
@@ -85,7 +83,8 @@ class ProfileController extends AppController
      */
     public function edit()
     {
-      $profile = $this->Profile->find()->where(['user_id' => $this->Auth->user("id")]);
+      $profile = $this->Profile->find("all")->where(['user_id' => $this->Auth->user("id")])->first();
+
       if(!$profile){
         throw NotFoundException("User profile not found");
       }

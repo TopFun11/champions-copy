@@ -30,8 +30,10 @@ $this->end();
   //Mapping Records to a map[Question_ID][Record]
   $map = [];
   if(isset($recordset)){
-    foreach($recordset->record as $record){
-      $map[$record->question_id] = $record;
+    if(isset($recordset->record)){
+      foreach($recordset->record as $record){
+        $map[$record->question_id] = $record;
+      }
     }
   }
 

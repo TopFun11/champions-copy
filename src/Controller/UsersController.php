@@ -52,12 +52,14 @@ use Cake\Controller\Component\AuthComponent;
                  $userO->last_logged_in = date('Y-m-d H:i:s');
 
                  $profile = $this->Profile->find("all")->where(['user_id' => $userId])->first();
+                 $this->Users->save($userO);
 
                  if(!$profile){
                    return $this->redirect(["action" => 'add', 'controller' => 'profile']);
                  }
 
-                 $this->Users->save($userO);
+                 $profile->points = $profile->points + 1;
+                 $this->Profile->save($profile);
 
                  return $this->redirect($this->Auth->redirectUrl());
              }
