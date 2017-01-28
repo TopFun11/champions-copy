@@ -50,7 +50,7 @@ $cakeDescription = 'Champions for Health';
                   </li>
                   <li><a href="/about">About us</a>
                   </li>
-                  <li><a href="/module">Explore Modules</a>
+                  <li><a href="/module/explore">Explore Modules</a>
                   </li>
               </ul>
               <ul class="nav navbar-nav navbar-right">

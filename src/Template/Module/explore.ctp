@@ -1,41 +1,30 @@
 <?php
 /* @var $this \Cake\View\View */
-$this->layout = 'adminDefault';
-$this->start('tb_actions');
 ?>
-    <li><?= $this->Html->link(__('New Module'), ['action' => 'add']); ?></li>
-    <li><?= $this->Html->link(__('View all sections'), ['controller' => 'Sections', 'action' => 'index']); ?></li>
-    <li><?= $this->Html->link(__('New Section'), ['controller' => 'Sections', 'action' => 'add']); ?></li>
-<?php $this->end(); ?>
-<?php $this->assign('tb_sidebar', '<ul class="nav nav-sidebar">' . $this->fetch('tb_actions') . '</ul>'); ?>
+<div class="container">
+    <div class="c4h-home-jumbo jumbotron" style="background-image:url('/webroot/img/headers/home/bg.jpg')">
+        <h1>Champions for Health</h1>
+        <p>A healthier you, means a healthier Wales.</p>
+    </div>
+</div>
 
-<table class="table table-striped" cellpadding="0" cellspacing="0">
-    <thead>
-        <tr>
-            <th><?= $this->Paginator->sort('id'); ?></th>
-            <th><?= $this->Paginator->sort('title'); ?></th>
-            <th class="actions"><?= __('Actions'); ?></th>
-        </tr>
-    </thead>
-    <tbody>
-        <?php foreach ($module as $module): ?>
-        <tr>
-            <td><?= $this->Number->format($module->id) ?></td>
-            <td><?= h($module->title) ?></td>
-            <td class="actions">
-                <?= $this->Html->link('', ['action' => 'view', $module->id], ['title' => __('View'), 'class' => 'btn btn-default glyphicon glyphicon-eye-open']) ?>
-                <?= $this->Html->link('', ['action' => 'edit', $module->id], ['title' => __('Edit'), 'class' => 'btn btn-default glyphicon glyphicon-pencil']) ?>
-                <?= $this->Form->postLink('', ['action' => 'delete', $module->id], ['confirm' => __('Are you sure you want to delete # {0}?', $module->id), 'title' => __('Delete'), 'class' => 'btn btn-default glyphicon glyphicon-trash']) ?>
-            </td>
-        </tr>
-        <?php endforeach; ?>
-    </tbody>
-</table>
-<div class="paginator">
-    <ul class="pagination">
-        <?= $this->Paginator->prev('< ' . __('previous')) ?>
-        <?= $this->Paginator->numbers(['before' => '', 'after' => '']) ?>
-        <?= $this->Paginator->next(__('next') . ' >') ?>
-    </ul>
-    <p><?= $this->Paginator->counter() ?></p>
+
+<div class="container">
+    <div class="row">
+      <?php foreach($module as $module): ?>
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="c4h-home-module">
+                <div class="c4h-home-image">
+                    <img class="img-responsive" src="<?= h($module->icon) ?>" />
+                </div>
+                <div class="c4h-home-header">
+                    <?= h($module->title) ?>
+                </div>
+                <div class="c4h-home-text">
+                    <?= $module->description_text ?>
+                </div>
+            </div>
+        </div>
+      <?php endforeach; ?>
+    </div>
 </div>
