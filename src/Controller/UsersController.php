@@ -88,20 +88,26 @@ use Cake\Controller\Component\AuthComponent;
         $new = rand(0, 1) == 1;
          $user = $this->Users->newEntity();
          if ($this->request->is('post')) {
+           //die(var_dump($this->request->data));
              $user = $this->Users->patchEntity($user, $this->request->data);
              $profile = $this->Users->Profile->newEntity();
              $profile->image = "testface.png";
              $profile->email = 'a@b.com';
              $profile->phone_number = "0352452345";
+             if(!$this->request->data['consent']){
+               $this->Flash->error(__("You must consent in order to use this website."));
+               //$this->set('user', $user);
+               return;
+             }
 
              if($user){
-               if($new && $user->role == "patient"){
-                 $user->role = "new patient";
+               if($new && $user->role == "student"){
+                 $user->role = "new student";
                }
                $result = $this->Users->save($user);
                if ($result) {
                    $this->Flash->success(__('The user has been saved.'));
-                   return $this->redirect(['action' => 'add']);
+                   return $this->redirect(['action' => 'login']);
                }
                $this->Flash->error(__('Unable to add the user.' . var_dump($result)));
              }else{

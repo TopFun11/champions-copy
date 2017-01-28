@@ -3,6 +3,8 @@ namespace App\Controller;
 
 use App\Controller\AppController;
 use Cake\Controller\Component\AuthComponent;
+use Cake\Core\App;
+use Cake\Network\Exception\NotFoundException;
 /**
  * Profile Controller
  *
@@ -50,7 +52,7 @@ class ProfileController extends AppController
      */
     public function add()
     {
-        $profile = $this->Profile->find()->where(['user_id' => $this->Auth->user("id")]);
+        $profile = $this->Profile->find("all")->where(['user_id' => $this->Auth->user("id")])->first();
         if(!$profile){
           $profile = $this->Profile->newEntity();
         }else{
@@ -86,7 +88,7 @@ class ProfileController extends AppController
       $profile = $this->Profile->find("all")->where(['user_id' => $this->Auth->user("id")])->first();
 
       if(!$profile){
-        throw NotFoundException("User profile not found");
+        throw new NotFoundException("User profile not found");
       }
         if ($this->request->is(['patch', 'post', 'put'])) {
             $profile = $this->Profile->patchEntity($profile, $this->request->data);
