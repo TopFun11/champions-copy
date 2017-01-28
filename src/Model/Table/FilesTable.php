@@ -41,7 +41,9 @@ class FilesTable extends Table
             'joinType' => 'INNER'
         ]);
 
-        $this->addBehavior('Utils.Uploadable', ['path']);
+        $this->addBehavior('Utils.Uploadable', [
+          'path' 
+        ]);
     }
 
     /**

@@ -12,5 +12,6 @@
  * @since         0.10.0
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
+define("webroot", realpath(dirname(__FILE__)));
 
 require 'webroot' . DIRECTORY_SEPARATOR . 'index.php';

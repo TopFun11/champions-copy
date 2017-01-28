@@ -53,7 +53,18 @@ class FilesController extends AppController
     {
         $file = $this->Files->newEntity();
         if ($this->request->is('post')) {
-            $file = $this->Files->patchEntity($file, $this->request->data);
+            //$file = $this->Files->patchEntity($file, $this->request->data);
+            $file->name = $this->request->data["file"]["name"];
+            $file->module_id = $this->request->data['module_id'];
+            $setNewFileName = time() . "_" . rand(000000, 999999);
+            $ext = substr(strtolower(strrchr($file->name, '.')), 1); //get the extension
+            $file->path = WWW_ROOT . 'uploads/' . $setNewFileName . '.' . $ext;
+
+            //die(var_dump($this->request->data));
+            error_reporting(E_ALL);
+            ini_set("display_errors", 1);
+              move_uploaded_file('' . $this->request->data['file']['tmp_name'], $file->path);
+              //die();
             if ($this->Files->save($file)) {
                 $this->Flash->success(__('The file has been saved.'));
 

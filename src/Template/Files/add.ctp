@@ -23,8 +23,8 @@ $this->end();
 <fieldset>
     <legend><?= __('Add {0}', ['File']) ?></legend>
     <?php
-    echo $this->Form->input('name');
-    echo $this->Form->input('path', ['type' => 'file']);
+    //echo $this->Form->input('name');
+    echo $this->Form->input('file', ['type' => 'file']);
     echo $this->Form->input('module_id', ['options' => $module]);
     ?>
 </fieldset>
