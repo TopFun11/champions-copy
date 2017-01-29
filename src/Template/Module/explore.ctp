@@ -22,7 +22,7 @@
                             <?= $module->description_text ?>
                         </p>
                         <div class="more">
-                            <a href="#" title="Title Link">
+                            <a href="/module/overview/<?=$module->id?>" title="Title Link">
                                   Read More <i class="fa fa-angle-double-right"></i>
                             </a>
                         </div>

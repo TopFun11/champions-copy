@@ -1,3 +1,6 @@
+@import "//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css";
+@import "http://fonts.googleapis.com/css?family=Roboto:400,500";
+
 .c4h-logo {
   max-width:200px;
   margin-top:-7px;
@@ -115,11 +118,6 @@ body {
   text-align: justify;
 }
 
-p {
-  font-size: 18px;
-}
-
-
 li {
   font-size: 18px;
 }
@@ -178,9 +176,6 @@ hr:before {
     padding-top: 30px;
     padding-bottom: 30px;
 }
-
-@import "//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css";
-@import "http://fonts.googleapis.com/css?family=Roboto:400,500";
 
 .box>.icon {
     text-align: center;
@@ -263,4 +258,8 @@ hr:before {
 
 .box .space {
     height: 30px;
+}
+
+.enroll-buttons{
+    text-align: center;
 }

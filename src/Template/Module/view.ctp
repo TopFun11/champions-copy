@@ -30,7 +30,7 @@ $this->end();
         </tr>
         <tr>
             <td><?= __('Description') ?></td>
-            <td><?= h($module->desc) ?></td>
+            <td><?= ($module->description_text) ?></td>
         </tr>
         <tr>
             <td><?= __('Icon') ?></td>
