@@ -1,6 +1,5 @@
 <?php
-$this->extend('../Layout/TwitterBootstrap/dashboard');
-
+$this->layout = 'adminDefault';
 $this->start('tb_actions');
 ?>
     <li><?= $this->Html->link(__('List Exercise'), ['action' => 'index']) ?></li>
@@ -27,13 +26,24 @@ $this->start('tb_sidebar');
 <?php
 $this->end();
 ?>
-<?= $this->Form->create($exercise); ?>
-<fieldset>
-    <legend><?= __('Add {0}', ['Exercise']) ?></legend>
-    <?php
-    echo $this->Form->input('section_id', ['options' => $sections]);
-    echo $this->Form->input('type');
-    ?>
-</fieldset>
-<?= $this->Form->button(__("Add")); ?>
+
+<div class="row">
+  <div class="col-xs-12">
+    <h1>Exercise creator</h1>
+  <?= $this->Form->create($exercise); ?>
+  <fieldset>
+      <legend><?= __('Add {0}', ['Exercise']) ?></legend>
+      <?php
+      echo $this->Form->input('section_id', ['options' => $sections, 'class'=>'form-control']);
+      ?>
+      <select class="form-control" id="type">
+        <option value="1">Can take exercise once only</option>
+        <option value="2">Exercise is done weekly</option>
+      </select>
+  </fieldset>
+  <div class="btn btn-success" onClick="createExercise()">
+    Add questions to exercise
+  </div>
+</div>
+</div>
 <?= $this->Form->end() ?>

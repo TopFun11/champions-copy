@@ -57,7 +57,11 @@ class ExerciseController extends AppController
             if ($this->Exercise->save($exercise)) {
                 $this->Flash->success(__('The exercise has been saved.'));
 
-                return $this->redirect(['action' => 'index']);
+                if(!$this->request->is('ajax')) {
+                  return $this->redirect(['action' => 'index']);
+                }
+                $this->set(compact('exercise', 'sections'));
+                $this->set('_serialize', ['exercise']);
             }
             $this->Flash->error(__('The exercise could not be saved. Please, try again.'));
         }

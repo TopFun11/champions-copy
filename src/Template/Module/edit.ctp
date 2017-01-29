@@ -124,9 +124,11 @@ $this->end();
         <h4>Screener questionnaire:</h4>
       </div>
       <div class="col-xs-6 ed-display text-right">
-        <a class="btn btn-default" href="/screener/add/<?php echo $module->id ?>">
-           <span style="vertical-align:top;font-size:17px;" class="glyphicon glyphicon-plus"></span> Add a screener to this module
-        </a>
+        <?php if(!$module->has("screener")){
+          echo("<a class='btn btn-default' href='/screener/add/".$module->id."'><span style='vertical-align:top;font-size:17px;' class='glyphicon glyphicon-plus'></span> Add a screener</a>");
+        } else {
+          echo("<a class='btn btn-default' href='/screener/edit/".$module->screener->id."'><span style='vertical-align:top;font-size:17px;' class='glyphicon glyphicon-cog'></span> Edit screener</a>");
+         }?>
       </div>
     </div>
     <br/>
@@ -140,31 +142,32 @@ $this->end();
         </div>
       </div>
       <div class="col-xs-12 ed-display text-right">
-        <div class="btn btn-default">
+        <!--TODO: Pass module id to section adder-->
+        <a href="/sections/add">
+          <div class="btn btn-default">
            <span style="vertical-align:top;font-size:17px;" class="glyphicon glyphicon-plus"></span> Add a section
         </div>
+      </a>
       </div>
     </div>
   </div>
-  <?php
-    $treeData = [];
-   ?>
-<script type="text/javascript">
-  var treeData = [<?php
-  foreach($module->sections as $i => $section){
-    echo "{ text: \"$section->title\",nodes: [";
-    foreach ($section->sections as $j => $subsection) {
-      echo "{text: \"$subsection->title\"}";
-      if($j < count($section->sections)){
-        echo ',';
-      }
-    }
-    echo "]}";
-    if($i < count($section->sections)){
-      echo ',';
-    }else{
-      echo '';
-    }
-  }
-   ?>];
-</script>
+  <script>
+  $(document).ready(function(){
+    tinymce.init({
+      selector:'#description_text',
+      height: 200,
+      theme: 'modern',
+      plugins: [
+          'advlist autolink lists link image charmap print preview hr anchor pagebreak',
+          'searchreplace wordcount visualblocks visualchars code fullscreen',
+          'insertdatetime media nonbreaking save table contextmenu directionality',
+          'template paste textcolor colorpicker textpattern imagetools'
+        ],
+      toolbar: 'fullscreen | undo redo | insert | styleselect | bold italic | alignleft \
+                aligncenter alignright alignjustify | bullist numlist outdent \
+                indent | forecolor backcolor | link image | print preview media ',
+      image_advtab: true,
+      });
+  });
+  </script>
+  <input type="hidden" id="question-being-worked-on"/>

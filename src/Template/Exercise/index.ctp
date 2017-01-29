@@ -2,6 +2,8 @@
 /* @var $this \Cake\View\View */
 $this->extend('../Layout/TwitterBootstrap/dashboard');
 $this->start('tb_actions');
+$this->layout = 'adminDefault';
+
 ?>
     <li><?= $this->Html->link(__('New Exercise'), ['action' => 'add']); ?></li>
     <li><?= $this->Html->link(__('List Sections'), ['controller' => 'Sections', 'action' => 'index']); ?></li>

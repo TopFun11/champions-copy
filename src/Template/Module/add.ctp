@@ -69,3 +69,24 @@ $this->end();
   </div>
   <?= $this->Form->end() ?>
 </div>
+<!--tinymc-->
+
+<script>
+$(document).ready(function(){
+  tinymce.init({
+    selector:'#description_text',
+    height: 200,
+    theme: 'modern',
+    plugins: [
+        'advlist autolink lists link image charmap print preview hr anchor pagebreak',
+        'searchreplace wordcount visualblocks visualchars code fullscreen',
+        'insertdatetime media nonbreaking save table contextmenu directionality',
+        'template paste textcolor colorpicker textpattern imagetools'
+      ],
+    toolbar: 'fullscreen | undo redo | insert | styleselect | bold italic | alignleft \
+              aligncenter alignright alignjustify | bullist numlist outdent \
+              indent | forecolor backcolor | link image | print preview media ',
+    image_advtab: true,
+    });
+});
+</script>

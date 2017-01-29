@@ -51,11 +51,11 @@ $this->end();
       foreach($module as $i => $mod){
         $mods[$i+1] = ['value' => $mod->id, 'text'=> $mod->title];
       }
-      echo $this->Form->select('module_id', $mods, ['empty' => true,'class'=>'form-control']);
+      echo $this->Form->select('module_id', $mods, ['empty' => true,'class'=>'form-control','id'=>'module_id']);
       ?>
     </div>
     <div class="col-xs-6">
-      <label for="module_id">Associate with Screener:</label>
+      <label for="module_id">Make child of section:</label>
       <?php
       $secs = [];
       foreach($module as $i => $mod){
@@ -63,7 +63,7 @@ $this->end();
           $secs[$j + $i * count($module)] = ['value' => $sec->id, 'text' => $sec->title];
         }
       }
-      echo $this->Form->select('section_id',  $secs,['empty' => true,'class'=>'form-control']);
+      echo $this->Form->select('section_id',  $secs,['empty' => true,'class'=>'form-control','id'=>'section_id']);
       ?>
     </div>
     <div class="col-xs-12 text-center">
@@ -71,8 +71,30 @@ $this->end();
       <div class="btn btn-lg btn-success" onClick="submitTinymce(this)">
         Save section
       </div>
+      <div class="btn btn-lg btn-success" onClick="createSection()">
+        Add exercise to section
+      </div>
     </div>
   </div>
 </div>
 </div>
 <?= $this->Form->end() ?>
+<script>
+$(document).ready(function(){
+  tinymce.init({
+    selector:'#description_text',
+    height: 200,
+    theme: 'modern',
+    plugins: [
+        'advlist autolink lists link image charmap print preview hr anchor pagebreak',
+        'searchreplace wordcount visualblocks visualchars code fullscreen',
+        'insertdatetime media nonbreaking save table contextmenu directionality',
+        'template paste textcolor colorpicker textpattern imagetools'
+      ],
+    toolbar: 'fullscreen | undo redo | insert | styleselect | bold italic | alignleft \
+              aligncenter alignright alignjustify | bullist numlist outdent \
+              indent | forecolor backcolor | link image | print preview media ',
+    image_advtab: true,
+    });
+});
+</script>

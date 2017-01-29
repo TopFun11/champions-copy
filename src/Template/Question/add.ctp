@@ -39,7 +39,7 @@ $this->end();
 
     echo $this->Form->input('question');
     echo $this->Form->input('screener_id', ['options' =>   $screens, 'empty' => true] );
-    echo $this->Form->input('exercise_id', ['options' => $exe]);
+    echo $this->Form->input('exercise_id', ['options' => $exe, 'empty' => true]);
     echo $this->Form->input('type', ['options' => ['Amount', 'Range', 'Multiple choice']]);
     ?>
 </fieldset>

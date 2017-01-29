@@ -1,23 +1,4 @@
-$(document).ready(function(){
-  tinymce.init({
-    selector:'#description_text',
-    height: 200,
-    theme: 'modern',
-    plugins: [
-        'advlist autolink lists link image charmap print preview hr anchor pagebreak',
-        'searchreplace wordcount visualblocks visualchars code fullscreen',
-        'insertdatetime media nonbreaking save table contextmenu directionality',
-        'template paste textcolor colorpicker textpattern imagetools'
-      ],
-    toolbar: 'fullscreen | undo redo | insert | styleselect | bold italic | alignleft \
-              aligncenter alignright alignjustify | bullist numlist outdent \
-              indent | forecolor backcolor | link image | print preview media ',
-    image_advtab: true,
-    });
-});
-
 var toggleState = {};
-
 function toggleModuleCreatorField(sender) {
   var id = "#"+sender.parentNode.parentNode.id;
   console.log("the ID is "+id);
@@ -39,40 +20,32 @@ function toggleModuleCreatorField(sender) {
     toggleState[id].toggle = true;
   }
 }
-
-function addAnotherOption(){
-  $("#newBox").attr("id","");
-  var newBox = document.createElement("input");
-  newBox.setAttribute("type","text");
-  newBox.setAttribute("class","form-control multioption");
-  newBox.setAttribute("id","newBox");
-  $(newBox).change(function() {
-    addAnotherOption();
-  });
-  var x = $(".multioption-input").append(newBox);
-  $("#newBox").focus();
-}
-
-function addAnotherScreenerOption(){
+var tabIndex = 10;
+function addAnotherScreenerOption(exercise){
   $("#newBox").attr("id","");
   var newBox = document.createElement("input");
   newBox.setAttribute("type","text");
   newBox.setAttribute("class","form-control multioption-text-box");
   newBox.setAttribute("id","newBox");
   newBox.setAttribute("placeholder","The answer as displayed to the user");
+  newBox.setAttribute("tabindex",tabIndex);
   var newBoxValue = document.createElement("input");
-  newBoxValue.setAttribute("type","text");
-  newBoxValue.setAttribute("class","form-control multioption-value-box");
+  newBoxValue.setAttribute("type","number");
+  newBoxValue.setAttribute("class","form-control multioption-value-box numeric");
   newBoxValue.setAttribute("id","newBox");
   newBoxValue.setAttribute("placeholder","Score used in calculation");
+  newBoxValue.setAttribute("tabindex",tabIndex+1);
   $(newBoxValue).change(function() {
     addAnotherScreenerOption();
   });
-  $("#newBox").focus();
   $(".multioption-text").append(newBox);
   $(".multioption-value").append(newBoxValue);
+  $("#newBox").focus();
+  tabIndex=tabIndex+2;
 }
-
+$(document).on("input", ".numeric", function() {
+    this.value = this.value.replace(/[^\d\.\-]/g,'');
+});
 function submitModuleForm(inid) {
   var id = $(inid).closest("form");
   var cb = genAl;
@@ -108,8 +81,6 @@ String.prototype.format = function()
 };
 
 //ALERT STUFF
-
-
 function genAl(alertType, message) {
   var alertHTML='<div class="alert alert-{0}"><span><div class="container"> \
               <div class="row"><div class="col-xs-12"> \
@@ -123,7 +94,6 @@ function genAl(alertType, message) {
 
 
 //INIT STUFF, SHOULD REFACTOR.
-addAnotherOption();
 addAnotherScreenerOption();
 $(".ed-editor").hide();
 //$("#sc").hide();
@@ -157,10 +127,6 @@ function closePartEditor(sender) {
 
 
 function createScreener() {
-  //if($("#module-screener").val() !="") {
-    //console.log("Check passed");
-    //return editScreener();
-//}
   var cb = genAl;
   var moduleID = $("#module-id").val();
   var moduleScreenerThreshold = $("#module-screener-threshold").val();
@@ -245,12 +211,38 @@ function addScreenerQuestion(cb) {
     data: {exercise_id: "", screener_id: screenerID, question: screenerquestion, type:screenerquestiontype},
     success: function(data)
     {
-      console.log("Question added " +data);
+      console.log("Question added!!!! " +data);
         $("#question-being-worked-on").val(data.question.id);
         console.log("before callback!");
         alertGen("success","Question added!");
         if(cb!=null) {
+          cb();
+        }
+    },
+    error: function(data)
+    {
+        alertGen("danger","Something went seriously wrong, and the Question wasn't added. Please contact us.");
+    }
+  });
+}
 
+function addExerciseQuestion(cb) {
+  var alertGen = genAl;
+  var exerciseID = $("#module-exercise").val();
+  var screenerquestion = $("#screener-question").val();
+  var screenerquestiontype = $("#screener-question-type").val();
+  $.ajax({
+    url: '/question/add.json',
+    type: 'POST',
+    data: {exercise_id: exerciseID, screener_id: "", question: screenerquestion, type:screenerquestiontype},
+    success: function(data)
+    {
+      console.log(data);
+      /*TODO: FUCK BROKE */
+        $("#question-being-worked-on").val(data.question.id);
+        console.log("The question to work on is" + data.question.id);
+        alertGen("success","Question added!");
+        if(cb!=null) {
           cb();
         }
     },
@@ -321,10 +313,20 @@ function processQuestion() {
       return;
     } else if(questiontype!=0){
       console.log("Adding question and option");
-      addScreenerQuestion(addOption);
+      if($("#module-exercise").val()!=null) {
+        addExerciseQuestion(addOption);
+      } else {
+        addScreenerQuestion(addOption);
+      }
     } else {
       console.log("Just adding question");
-      addScreenerQuestion();
+      if($("#module-exercise").val()!=null) {
+        console.log("exercise");
+        addExerciseQuestion();
+      } else {
+        console.log("screener");
+        addScreenerQuestion();
+      }
     }
     addQuestionToTable(question, questiontype, parseQuestionForDisplay);
   }
@@ -354,4 +356,77 @@ function submitTinymce(sender) {
 
 function addQuestionToTable(question, qtype, qoptions) {
   $("#questions-added").append("<tr><td>{0}</td><td>{1}</td><td>{2}</td></tr>".format(question,qtype,qoptions));
+}
+
+
+
+function createSection() {
+  //if($("#module-screener").val() !="") {
+    //console.log("Check passed");
+    //return editScreener();
+//}
+  tinyMCE.triggerSave(false, true);
+  var cb = genAl;
+  var sectionTitle = "";
+  var sectionContent = "";
+  var moduleID = "";
+  var parentSectionID = "";
+  sectionTitle = $("#title").val();
+  sectionContent = $("#description_text").val();
+  moduleID = $("#module_id").val();
+  parentSectionID = $("#section_id").val();
+  if(sectionTitle==""||sectionContent=="") {
+    cb("warning","Enter a title and content");
+    return;
+  } else if (moduleID!=""&&parentSectionID!=""){
+    cb("warning","Please only associate this section with either a module (root section) or another section (it's parent)");
+    return;
+  }
+  //console.log(moduleID + " - ID "+moduleID + " T:" + moduleScreenerThreshold);
+  $.ajax({
+    url: '/sections/add.json',
+    type: 'POST',
+    data: {title: sectionTitle,content: sectionContent,module_id:moduleID,section_id:parentSectionID},
+    success: function(data)
+    {
+      console.log($(data));
+      if(cb!=null) {
+        cb("success","Screener saved!");
+      }
+      window.location.href = "/exercise/add/";
+    },
+    error: function(data)
+    {
+      if(cb!=null) {
+        cb("success", "Something went seriously wrong, and the Section wasn't saved. Please contact us.");
+      }
+    }
+  });
+}
+
+function createExercise() {
+  var sectionID = $("#section-id").val();
+  var typeID = $("#type").val();
+  if(sectionID==""||typeID==""){
+    genAl("warning","Specify both the type as well as the section to associate it with.");
+    return;
+  }
+  $.ajax({
+    url: '/exercise/add.json',
+    type: 'POST',
+    data: {"section-id":sectionID,"type":typeID},
+    success: function(data)
+    {
+      console.log($(data));
+
+        genAl("success","Exercise saved!");
+
+      window.location.href = "/exercise/edit/"+data.exercise.id;
+    },
+    error: function(data)
+    {
+        genAl("success", "Something went seriously wrong, and the Exercise wasn't saved. Please contact us.");
+    }
+  });
+
 }
