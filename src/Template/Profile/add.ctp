@@ -1,6 +1,4 @@
 <?php
-$this->extend('../Layout/TwitterBootstrap/dashboard');
-
 $this->start('tb_actions');
 ?>
     <li><?= $this->Html->link(__('List Profile'), ['action' => 'index']) ?></li>
@@ -20,12 +18,21 @@ $this->start('tb_sidebar');
 $this->end();
 ?>
 <?= $this->Form->create($profile); ?>
-<fieldset>
-    <legend><?= __('Add {0}', ['Profile']) ?></legend>
-    <?php
-    echo $this->Form->input('email');
-    echo $this->Form->input('phone_number');
-    ?>
-</fieldset>
-<?= $this->Form->button(__("Add")); ?>
+<div class="row">
+  <div class="col-xs-12">
+    <h1>Add your phone number and email address</h1>
+    <p class="lead">We will only use these to send occasional reminders and helpful information to you.</p>
+    <?= $this->Form->create($profile); ?>
+    <fieldset>
+        <?php
+        echo $this->Form->input('email',['class'=>'form-control','type'=>'email','placeholder'=>'joebloggs@email.com']);
+        echo $this->Form->input('phone_number',['class'=>'form-control','type'=>'tel','placeholder'=>'Telephone number']);
+        ?>
+    </fieldset>
+  </div>
+  <div class="col-sm-12 text-center">
+    <br/>
+    <?= $this->Form->button(__('Finish registration'), ['class' => 'btn btn-success btn-lg']); ?>
+  </div>
+</div>
 <?= $this->Form->end() ?>

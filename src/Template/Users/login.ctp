@@ -1,7 +1,5 @@
 <!-- File: src/Template/Users/login.ctp -->
-$this->layout = 'adminDefault';
 
-<div class="container">
     <div class="user-form">
         <div class="row">
             <div class="col-sm-12 login-form">
@@ -21,5 +19,4 @@ $this->layout = 'adminDefault';
           </div>
         </div>
     </div>
-  </div>
 <?= $this->Form->end() ?>

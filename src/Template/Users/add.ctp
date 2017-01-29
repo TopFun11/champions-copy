@@ -16,9 +16,11 @@ $this->start('tb_sidebar');
 $this->end();
 ?>
 <?= $this->Form->create($user); ?>
+<div class="row">
+  <div class="col-xs-12">
 <div id="consent">
-<div class="panel pre-scrollable">
-<p>Thank you for joining us!</p>
+<div class="panel panel-default">
+<h1>Thank you for joining us!</h1>
 <p>
 Before you start your journey please read the following information carefully.
 Champions for Health, is a web-based, health promotion campaign developed by
@@ -28,7 +30,7 @@ to help staff improve their own health and wellbeing. It is designed to be used 
 help resource. This website is not supported by a therapist.
 Champions for health will be available free of charge for a period of 12 weeks.
 If you decide to register to take part you will be able to choose two health challenges to
-take part in:
+take part in:</p>
 <ul>
   <li>Weight optimization</li>
   <li>Five a day</li>
@@ -36,36 +38,50 @@ take part in:
   <li>Smoking cessation</li>
   <li>Physical activity</li>
 </ul>
-Half of those who register will also be given access to a new emotional wellbeing module
+<p>Half of those who register will also be given access to a new emotional wellbeing module
 which has been developed in collaboration with staff from ABMU.
 This is a 12 week module which will be released weekly. It includes activities to try out,
 video and audio resources and downloadable information. It is interactive.
 You will not know if you have access to the wellbeing module until after you complete
 the registration process. This is because staff are randomly allocated to receive it to
-avoid any bias.
-You will be asked to enter in your activity for all of the modules you select.
-By registering as a user on this website for you are agreeing to participate in
+avoid any bias.</p>
+<p>You will be asked to enter in your activity for all of the modules you select.</p>
+<p>By registering as a user on this website for you are agreeing to participate in
 this health and wellbeing programme and you are giving permission for your
-data to be evaluated by the research team at Swansea University.
-All data will be anonymous. We will not know who has entered the data.
-You will be free to withdraw at any time without consequence. However your data will
-remain in the study.
-</p>
+data to be evaluated by the research team at Swansea University.</p>
+<p>All data will be anonymous. We will not know who has entered the data.</p>
+<p>You will be free to withdraw at any time without consequence. However your data will
+remain in the study.</p>
 </div>
+<div class="text-center">
 <label>I give my consent <input id="consent_check" type="checkbox" name="consent" />
 </div>
+</div></div></div>
+
 <div style="display:none;" id="reg">
-<fieldset>
-    <legend><?= __('Add {0}', ['User']) ?></legend>
-    <?php
-    echo $this->Form->input('username');
-    echo $this->Form->input('password');
-    echo $this->Form->input('role', [
-      'options' => ['admin' => 'Admin', 'student' => 'Student']
-    ]);
-    ?>
-</fieldset>
-<?= $this->Form->button(__("Add")); ?>
+<div class="user-form">
+    <div class="row">
+        <div class="col-sm-12 login-form">
+                <?= $this->Flash->render('auth') ?>
+                <?= $this->Form->create() ?>
+                <h2 class="form-signin-heading">Begin your journey</h2>
+                <label for="inputEmail" class="sr-only">Email address</label>
+                <?= $this->Form->input('username',['label' => false, 'class' => 'form-control','placeholder'=>"Email Address", 'required'=>true,'autofocus'=>true,'type'=>'email']) ?>
+                <label for="inputPassword" class="sr-only">Password</label>
+                <?= $this->Form->input('password', ['label' => false, 'class' => 'form-control','placeholder'=>'Password','required'=>true]) ?>
+                <?php     echo $this->Form->input('role', [
+                      'options' => ['admin' => 'Admin', 'student' => 'Student'], 'class'=>'form-control'
+                    ]);?>
+                <br/>
+        </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12 text-right">
+        <?= $this->Form->button(__('Register'), ['class' => 'btn btn-success btn-lg']); ?>
+      </div>
+    </div>
+</div>
+
 </div>
 <?= $this->Form->end() ?>
 
