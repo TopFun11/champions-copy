@@ -65,8 +65,8 @@ remain in the study.</p>
                 <?= $this->Flash->render('auth') ?>
                 <?= $this->Form->create() ?>
                 <h2 class="form-signin-heading">Begin your journey</h2>
-                <label for="inputEmail" class="sr-only">Email address</label>
-                <?= $this->Form->input('username',['label' => false, 'class' => 'form-control','placeholder'=>"Email Address", 'required'=>true,'autofocus'=>true,'type'=>'email']) ?>
+                <label for="inputEmail" class="sr-only">Username</label>
+                <?= $this->Form->input('username',['label' => false, 'class' => 'form-control','placeholder'=>"Username", 'required'=>true,'autofocus'=>true]) ?>
                 <label for="inputPassword" class="sr-only">Password</label>
                 <?= $this->Form->input('password', ['label' => false, 'class' => 'form-control','placeholder'=>'Password','required'=>true]) ?>
                 <?php     echo $this->Form->input('role', [
