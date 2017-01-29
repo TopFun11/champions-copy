@@ -17,7 +17,7 @@
 
   <div class="row">
     <div class="enroll-buttons">
-      <a href="/module/dashboard/<?=$module->id?>" title="Title Link">
+      <a href="/module/enroll/<?=$module->id?>" title="Title Link">
             <div class="btn btn-success">
               Enroll on <?= ($module->title) ?>
             </div>

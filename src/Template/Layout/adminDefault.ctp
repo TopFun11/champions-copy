@@ -26,6 +26,7 @@ $cakeDescription = 'Champions for Health';
     </title>
     <?= $this->Html->meta('icon') ?>
     <?= $this->Html->css('/webroot/css/bootstrap/bootstrap.min.css'); ?>
+    <?= $this->Html->css('/webroot/css/champions/register.css'); ?>
     <?= $this->Html->css('/webroot/css/champions/app.css'); ?>
     <?= $this->Html->css('/webroot/css/bootstrap-treeview.css')?>
     <?= $this->Html->script(['/webroot/js/jquery/jquery.min.js', '/webroot/js/bootstrap/bootstrap.min.js']); ?>
