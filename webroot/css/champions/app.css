@@ -365,3 +365,11 @@ hr:before {
     padding-right: 200px;
     padding-left: 200px;
 }
+
+/*Modal */
+@media (min-width: 768px) {
+    .modal-xl {
+        width: 90%;
+        max-width: 1300px;
+    }
+}

@@ -47,11 +47,12 @@ $this->end();
             <div class="col-sm-9 rightContent">
               <?php foreach($user->module as $module): ?>
                 <div class="col-sm-3">
-                  <div class="panel-heading">
-                    <?= $this->Html->link($module->title, ['controller' => 'module', 'action' => 'dashboard', $module->id], ['title' => __($module->title)]); ?>
-                  </div>
+
                     <div class="panel panel-default my_panel">
-                        <div class="panel-body">
+                      <div class="panel-heading">
+                        <h4><?= $this->Html->link($module->title, ['controller' => 'module', 'action' => 'dashboard', $module->id], ['title' => __($module->title)]); ?></h4>
+                      </div>
+                        <div class="panel-icon">
                             <img src="<?= $module->icon ?>" alt="" class="img-responsive center-block" />
                         </div>
                         <div class="panel-footer">
