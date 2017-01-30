@@ -14,20 +14,43 @@ $this->start('tb_sidebar');
     <li><?= $this->Html->link(__('New Section'), ['controller' => 'Sections', 'action' => 'add']) ?> </li>
 <?php
 $this->end();
-
-
 ?>
-<div class="container">
-  <div class="jumbotron">
-    <img src="<?= h($module->banner) ?>" />
-  </div>
+
   <div class="row">
-    <div class="col-lg-12">
-      <h2><?= h($module->title) ?></h2>
+    <div class="c4h-home-jumbo jumbotron" style="background-image:url('<?= ($module->banner) ?>')">
+        <h1><?= ($module->title) ?></h1>
+        <p> Tagline here </p>
     </div>
   </div>
   <div class="row">
-    <?= $module->content ?>
-  </div>
+    <ul class="nav nav-pills">
+      <?php
+        $active = false;
+        foreach($module->sections as $section):
+        if (!$active):
+          $active = true;
+      ?>
+      <li class="active"><a data-toggle="pill" href="#s<?= $section->id ?>"><?= $section->title;?></a></li>
+    <?php else: ?>
+      <li><a data-toggle="pill" href="#s<?= $section->id ?>"><?= $section->title;?></a></li>
+    <?php endif; endforeach; ?>
+    </ul>
+    <div class="tab-content">
 
-</div>
+    <?php
+        foreach($module->sections as $section):
+        if ($active):
+          $active = false;
+    ?>
+          <div id="s<?= $section->id ?>" class="tab-pane fade in active">
+            <?= $section->content;?>
+          </div>
+          <?php
+        else:
+          ?>
+          <div id="s<?= $section->id ?>" class="tab-pane fade">
+            <?= $section->content;?>
+          </div>
+        <?php endif; endforeach; ?>
+        </div>
+  </div>

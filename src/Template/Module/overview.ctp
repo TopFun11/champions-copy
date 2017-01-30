@@ -1,10 +1,11 @@
 
-  <div class="row">
+    <div class="row">
       <div class="c4h-home-jumbo jumbotron" style="background-image:url('<?= ($module->banner) ?>')">
           <h1><?= ($module->title) ?></h1>
           <p> Tagline here </p>
       </div>
-  </div>
+    </div>
+
 
   <div class="row">
 
