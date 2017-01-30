@@ -48,6 +48,7 @@ $cakeDescription = 'Champions for Health';
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
+      <a class="navbar-brand" href="/"><i class="glyphicon glyphicon-menu-left"></i></a>
       <a class="navbar-brand" href="#">C4H Admin</a>
     </div>
 
@@ -67,7 +68,6 @@ $cakeDescription = 'Champions for Health';
             <li role="separator" class="divider"></li>
             <li><a href="/users/logout">Log out</a></li>
           </ul>
-          <li><a href="#"><i class="glyphicon glyphicon-user"></i></a></li>
         </li>
       </ul>
     </div><!-- /.navbar-collapse -->

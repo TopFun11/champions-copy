@@ -70,6 +70,8 @@ $cakeDescription = 'Champions for Health';
                   </li>
                   <li><a href="/users/logout">Logout</a>
                   </li>
+                  <li><a class="navbar-brand" href="/module"><i class="glyphicon glyphicon-menu-right"></i></a>
+                  </li>
                 <?php }
                   ?>
               </ul>
