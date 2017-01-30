@@ -90,7 +90,7 @@ use Cake\Controller\Component\AuthComponent;
          if ($this->request->is('post')) {
            //die(var_dump($this->request->data));
              $user = $this->Users->patchEntity($user, $this->request->data);
-             
+
              if(!$this->request->data['consent']){
                $this->Flash->error(__("You must consent in order to use this website."));
                //$this->set('user', $user);
@@ -115,7 +115,14 @@ use Cake\Controller\Component\AuthComponent;
 
 
          }
+         $options = [];
+         if($this->Auth->user("role") == "admin"){
+           $options = ['admin' => 'Admin', 'student' => 'Student'];
+         }else{
+           $options = ['student' => 'Student'];
+         }
          $this->set('user', $user);
+         $this->set('options', $options);
      }
 
  }
