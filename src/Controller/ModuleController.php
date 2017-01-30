@@ -113,6 +113,7 @@ class ModuleController extends AppController
             'contain' => ['Sections', 'Users']
         ]);
         $userId = $this->Auth->user('id');
+        $enrollment = TableRegistry::get("userenrollment");
         $enrolled = $enrollment->find("all")->where(['user_id' => $userId, 'module_id'=>$module->id])->first();
 
         if($enrolled){
