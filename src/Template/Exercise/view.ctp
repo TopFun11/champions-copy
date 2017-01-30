@@ -1,5 +1,4 @@
 <?php
-$this->extend('../Layout/TwitterBootstrap/dashboard');
 $this->layout = 'adminDefault';
 
 

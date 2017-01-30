@@ -193,7 +193,6 @@ hr:before {
     border-radius: 50%;
     background: #63B76C;
     vertical-align: middle;
-    padding: 10px;
 }
 
 .box>.icon:hover>.image {

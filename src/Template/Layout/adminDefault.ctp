@@ -59,6 +59,7 @@ $cakeDescription = 'Champions for Health';
         <li><a href="/screener/">Screeners</a></li>
         <li><a href="/sections/">Sections</a></li>
         <li><a href="/users/">Users</a></li>
+        <li><a href="/exercise/">Exercises</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
@@ -76,7 +77,7 @@ $cakeDescription = 'Champions for Health';
 <div class="container clearfix">
 <?= $this->fetch('content') ?>
 </div>
-
+<br/><br/>
 <footer class="footer">
   <div class="container">
     <a href="/accessibility">Accessibility</a><br/><a href="/terms">Terms of use</a><br/><a href="/privacy">Privacy statement</a><br/><a href="#">Back to top</a>

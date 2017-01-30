@@ -24,10 +24,35 @@ $this->end();
         <p> Tagline here </p>
     </div>
   </div>
-
   <div class="row">
+    <ul class="nav nav-pills">
+      <?php
+        $active = false;
+        foreach($module->sections as $section):
+        if (!$active):
+          $active = true;
+      ?>
+      <li class="active"><a data-toggle="pill" href="#s<?= $section->id ?>"><?= $section->title;?></a></li>
+    <?php else: ?>
+      <li><a data-toggle="pill" href="#s<?= $section->id ?>"><?= $section->title;?></a></li>
+    <?php endif; endforeach; ?>
+    </ul>
+    <div class="tab-content">
+
     <?php
         foreach($module->sections as $section):
-          echo $section->content;
-        endforeach; ?>
+        if ($active):
+          $active = false;
+    ?>
+          <div id="s<?= $section->id ?>" class="tab-pane fade in active">
+            <?= $section->content;?>
+          </div>
+          <?php
+        else:
+          ?>
+          <div id="s<?= $section->id ?>" class="tab-pane fade">
+            <?= $section->content;?>
+          </div>
+        <?php endif; endforeach; ?>
+        </div>
   </div>
