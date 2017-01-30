@@ -73,7 +73,6 @@ class SmsShell extends Shell{
 						->where(['user_id' => $user->id])->first();
 			$name = $user->username;
 			$to = $profile['phone_number'];
-			debug($profile);
 			if($to && $to != ''){
 				try{
 					$msg = str_replace('%name%', $name, WELCOME_MSG);
