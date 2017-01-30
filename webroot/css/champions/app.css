@@ -263,3 +263,106 @@ hr:before {
 .enroll-buttons{
     text-align: center;
 }
+
+/* WELL-BEING PAGE */
+
+#module-game {
+    position: relative;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.mg-container {
+    position: absolute;
+    width: 278px;
+    display: table-row;
+}
+
+
+/* ICONS */
+
+.mg-icon-right {
+    float: left;
+}
+
+.mg-icon {
+    cursor: pointer;
+    background-color: #ACE3DF;
+    border-radius: 50%;
+    width: 128px;
+    height: 128px;
+    transition: background-color 0.5s ease;
+}
+
+.mg-icon>img {
+    transition: background-color 0.5s ease;
+    margin: 0 auto;
+}
+
+.mg-icon-left {
+    float: right;
+}
+
+.mg-fade {
+    opacity: 1;
+    transition: opacity .25s ease-in-out;
+    -moz-transition: opacity .25s ease-in-out;
+    -webkit-transition: opacity .25s ease-in-out;
+}
+
+.mg-fade:hover {
+    opacity: 0.5;
+}
+
+.mg-icon-left:hover {
+    background-color: #D5F1EF;
+}
+
+.mg-text {
+    width: 150px;
+    font-family: 'Gloria Hallelujah', cursive;
+    font-size: 14pt;
+    font-weight: normal;
+    height: 128px;
+    display: table-cell;
+    vertical-align: middle;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.hruler {
+    margin-top: 50px;
+    height: 1px;
+    width: 100%;
+    background-color: #000000;
+}
+
+.placeholder-padding {
+    padding-top: 50px;
+}
+
+.mobsphere {
+    background-color: #ACE3DF;
+    border-radius: 50%;
+    width: 128px;
+    height: 128px;
+    padding: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.mobimodule {
+    padding-top: 30px;
+    font-family: "Gloria Hallelujah", cursive;
+}
+
+.mobsphere-locked {
+    background-color: #809296;
+    cursor: context-menu;
+}
+
+#yoga-girl {
+    padding-top: 200px;
+    padding-right: 200px;
+    padding-left: 200px;
+}
