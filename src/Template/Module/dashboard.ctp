@@ -1,5 +1,7 @@
 <?php
-
+if($module->theme) {
+  $this->layout = $module->theme;
+}
 $this->start('tb_actions');
 ?>
     <li><?= $this->Html->link(__('List Module'), ['action' => 'index']) ?></li>

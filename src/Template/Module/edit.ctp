@@ -104,6 +104,14 @@ $this->end();
         </div>
       </div>
     </div>
+    <div class="col-xs-4">
+      <div class="form-group">
+        <label for="required_role">Theme:</label>
+        <?php
+        echo $this->Form->input('theme',['class="form-control"','label'=>false]);
+        ?>
+      </div>
+    </div>
     <div class="row" id="md">
       <div class="col-xs-12 ed-display">
         <div class="ed-preview">

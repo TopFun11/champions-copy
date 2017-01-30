@@ -112,6 +112,12 @@ class ModuleController extends AppController
         $module = $this->Module->get($id, [
             'contain' => ['Sections', 'Users']
         ]);
+        $userId = $this->Auth->user('id');
+        $enrolled = $enrollment->find("all")->where(['user_id' => $userId, 'module_id'=>$module->id])->first();
+
+        if($enrolled){
+          return $this->redirect(["action" => "dashboard/".$module->id, "controller" => "module"]);
+        }
 
         if($module->required_role == "new student"){
           if($userRole != "new student"){
@@ -135,12 +141,12 @@ class ModuleController extends AppController
             return $this->redirect(["action" => "explore", "controller" => "module"]);
         }
       }
-
-      $recordset = $this->Recordset->find('all')->where(["user_id" => $userId, "screener_id" => $module->screener->id])->first();
-      if(!$recordset){
-        return $this->redirect(["controller" => 'recordset', 'action' => 'screener/'.$module->screener->id]);
+      if($module->screener){
+        $recordset = $this->Recordset->find('all')->where(["user_id" => $userId, "screener_id" => $module->screener->id])->first();
+        if(!$recordset){
+          return $this->redirect(["controller" => 'recordset', 'action' => 'screener/'.$module->screener->id]);
+        }
       }
-
       $enrollment = TableRegistry::get("userenrollment");
       $enrolled = $enrollment->find("all")->where(['user_id' => $userId, 'module_id'=>$module->id])->first();
       if(!$enrolled){
@@ -148,10 +154,10 @@ class ModuleController extends AppController
         $enroll->module_id = $module->id;
         $enroll->user_id = $userId;
         if($enrollment->save($enroll)){
-          die("You win!");
+          return $this->redirect(["controller" => "module", "action" => "dashboard/".$module->id]);
         }
       }else{
-        die("Already enrolled");
+        return $this->redirect(["controller" => "module", "action" => "dashboard/".$module->id]);
       }
     }
 
