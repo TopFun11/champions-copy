@@ -1,4 +1,5 @@
 <?php
+//TODO: Comments and tidy
 namespace App\Shell;
 use \DateTime;
 
@@ -9,21 +10,28 @@ use Cake\Log\Log;
 
 define('EMAIL', 0);
 define('ADDRESS', 'champforhealth@gmail.com');
+define('NAME', 'Champions for Health');
+define('WELCOME_SUBJECT', 'Welcome to Champions for Health!');
+define('INACTIVE_SUBJECT', 'We Miss You @ Champions for Health');
+define('INACTIVE_TIME', '-1 week');
+define('TIME_FORMAT', 'Y-m-d\TH:i:sP');
 
 class EmailShell extends Shell{
 
 	//Send all scheduled emails.
 	public function main(){
-		$table = TableRegistry::get('Messages');
+		$msgTable = TableRegistry::get('Messages');
 		$date = new DateTime();
-		$query = $table->find()
-			->where(['sent' => false, 'type' => EMAIL, 'scheduled_time <=' => $date->format('Y-m-d\TH:i:sP')]);
+		$query = $msgTable->find()
+			->where(['sent' => false, 'type' => EMAIL, 'scheduled_time <=' => $date->format(TIME_FORMAT)]);
 
 		foreach($query as $msg){
 			try{
 				$this->msg($msg->subject, $msg->content);
 				$msg->sent = true;
-				$table->save($msg);
+				if(!$msgTable->save($msg)){
+					Log::write('error', 'Sent email status failed: ' . $msg);
+				}
 			} catch (Exception $e) {
 				Log::write('error', 'Email failed: ' . $msg);
 			}
@@ -31,61 +39,103 @@ class EmailShell extends Shell{
 	}
 
 	public function msg($subject = 'Champions for Health', $message = ' '){
-		$table = TableRegistry::get('Profile');
-		$query = $table->find()
+		$profileTable = TableRegistry::get('Profile');
+		$query = $profileTable->find()
 				->where(['unsubscribed' => false]);
 
-		foreach($query as $user){
-			try{
-				$address = $user->email;
-				$name = TableRegistry::get('Users')->get($user->user_id)->username;
-				$email = new Email('default');
-				$email->template('unsubscribe', 'default')
-					->emailFormat('html')
-					->viewVars(['content' => $message, 'title' => $subject,
-							'name' => $name, 'address' => $address, 'unsub' => 'Unsub Link'])
-					->from([ADDRESS => 'Champions for Health'])
-					->to($address)
-					->subject($subject)
-					->send();
-			}catch(Exception $e){
-				Log::write('error', 'Email failed: profile(' . $user->id . '), address(' . $user->email . ')');
+		foreach($query as $profile){
+			$address = $profile->email;
+			$name = TableRegistry::get('Users')->get($profile->user_id)->username;
+			if(filter_var($address, FILTER_VALIDATE_EMAIL)){
+				try{
+					$email = new Email('default');
+					$email->template('unsubscribe', 'default')
+						->emailFormat('html')
+						->viewVars(['content' => $message, 'title' => $subject,
+								'name' => $name, 'address' => $address, 'unsub' => 'http://champions-for-health.swansea.ac.uk/profile'])
+						->from([ADDRESS => NAME])
+						->to($address)
+						->subject($subject)
+						->send();
+				}catch(Exception $e){
+					Log::write('error', 'Email failed: profile(' . $profile->id . '), address(' . $profile->email . ')');
+				}
 			}
 		}
     }
 
 	public function welcome(){
 		$tableUsers = TableRegistry::get('Users');
-		$date = new DateTime();
-		$date->modify('-10 minutes');
-		$query = $tableUsers->find()->where(['created >=' => $date->format('Y-m-d\TH:i:sP')]);
+		$query = $tableUsers->find()->where(['received_welcome_email ' => false]);
 		
 		foreach($query as $user){
 			$profile = TableRegistry::get('Profile')->find()->where(['user_id' => $user->id])->first();
 			$name = $user->username;
 			$address = $profile->email;
-			
-			$email = new Email('default');
-			$email->template('welcome', 'default')
-				->emailFormat('html')
-				->viewVars(['title' => 'Welcome to Champions for Health!', 'content' => '', 'name' => $name, 'unsub' => 'Unsub Link'])
-				->from([ADDRESS => 'Champions for Health'])
-				->to($address)
-				->subject('Welcome to Champions for Health!')
-				->send();
+			if(filter_var($address, FILTER_VALIDATE_EMAIL)){
+				try{
+					$email = new Email('default');
+					$email->template('welcome', 'default')
+						->emailFormat('html')
+						->viewVars(['title' => WELCOME_SUBJECT, 'content' => '', 'name' => $name, 'unsub' => 'http://champions-for-health.swansea.ac.uk/profile'])
+						->from([ADDRESS => NAME])
+						->to($address)
+						->subject(WELCOME_SUBJECT)
+						->send();
+						
+					$user->received_welcome_email = true;
+					if(!$tableUsers->save($user)){
+						Log::write('error', 'Welcome email status failed: ' . $user);
+					}
+				}catch(Exception $e){
+					Log::write('error', 'Welcome Email failed: profile(' . $profile->id . '), address(' . $profile->email . ')');
+				}
+			}
 		}
 	}
 	
 	public function inactive(){
-		//TODO: Message when inactive, needs DB.
+		$tableUsers = TableRegistry::get('Users');
+		$date = new DateTime();
+		$date->modify(INACTIVE_TIME);
+		$query = $tableUsers->find()
+					->where(['received_inactive_email' => false, 'last_logged_in <=' => $date->format(TIME_FORMAT)]);
+		
+		foreach($query as $user){
+			$profile = TableRegistry::get('Profile')->find()
+							->where(['user_id' => $user->id])->first();
+			
+			$address = $profile->email;
+			$name = $user->username;
+			if(filter_var($address, FILTER_VALIDATE_EMAIL)){
+				try{
+					$email = new Email('default');
+					$email->template('inactive', 'default')
+						->emailFormat('html')
+						->viewVars(['content' => '', 'title' => INACTIVE_SUBJECT,
+									'name' => $name, 'address' => $address, 'unsub' => 'http://champions-for-health.swansea.ac.uk/profile'])
+						->from([ADDRESS => NAME])
+						->to($address)
+						->subject(INACTIVE_SUBJECT)
+						->send();
+					$user->received_inactive_email = true;
+					if(!$tableUsers->save($user)){
+						Log::write('error', 'Inactive email status failed: ' . $user);
+					}
+				}catch(Exception $e){
+					Log::write('error', 'Inactive Email failed: profile(' . $profile->id . '), address(' . $profile->email . ')');
+				}
+			}
+		}
 	}
 	
+	//Schedule an email to be sent
 	//Time Format: mm/dd/yyyyThh:mm:ss
 	public function schedule($subject = 'Champions for Health', $message = '', $time){
 		$date = new DateTime($time);
 		$date = $date->format('Y-m-d H:i:s');
-		$table = TableRegistry::get('Messages');
-		$newMsg = $table->newEntity();
+		$msgTable = TableRegistry::get('Messages');
+		$newMsg = $msgTable->newEntity();
 
 		$newMsg->type = EMAIL;
 		$newMsg->subject = $subject;
@@ -93,8 +143,23 @@ class EmailShell extends Shell{
 		$newMsg->sent = false;
 		$newMsg->scheduled_time = $date;
 
-		if(!$table->save($newMsg)){
+		if(!$msgTable->save($newMsg)){
 			Log::write('error', 'Email schedule fail: ' . $newMsg);
+		}
+	}
+	
+	//Check if account has become active after being inactive.
+	public function active(){
+		$tableUsers = TableRegistry::get('Users');
+		$date = new DateTime();
+		$date->modify(INACTIVE_TIME);
+		$query = $tableUsers->find()
+					->where(['received_inactive_email' => true, 'last_logged_in >' => $date->format(TIME_FORMAT)]);
+		foreach($query as $user){
+			$user->received_inactive_email = false;
+			if(!$tableUsers->save($user)){
+				Log::write('error', 'Inactive email status failed: ' . $user);
+			}
 		}
 	}
 }
