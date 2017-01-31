@@ -40,7 +40,7 @@ $cakeDescription = 'Champions for Health';
   <div id="custom-bootstrap-menu" class="navbar navbar-default " role="navigation">
       <div class="container">
           <div class="navbar-header">
-              <a class="navbar-brand" href="#"><img src="/webroot/img/logo.png" class="c4h-logo" /></a>
+              <a class="navbar-brand" href="/"><img src="/webroot/img/logo.png" class="c4h-logo" /></a>
               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-menubuilder"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
           </button>
           </div>
@@ -66,12 +66,23 @@ $cakeDescription = 'Champions for Health';
                   </li>
                   <?php
                 }else{ ?>
-                  <li><a href="/users/dashboard">Dashboard</a>
+                  <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+
+                      <li><a href="/profile/view">Profile</a>
+                      </li>
+                      <li><a href="/users/dashboard">Dashboard</a>
+                      </li>
+                      <li role="separator" class="divider"></li>
+                      <li><a href="/module">Admin Panel</a>
+                      </li>
+                      <li><a href="/users/logout">Log out</a>
+                      </li>
+                    </ul>
                   </li>
-                  <li><a href="/users/logout">Logout</a>
-                  </li>
-                  <li><a class="navbar-brand" href="/module"><i class="glyphicon glyphicon-menu-right"></i></a>
-                  </li>
+
+
                 <?php }
                   ?>
               </ul>
