@@ -1,4 +1,4 @@
-<?php $this->layout = 'adminDefault'; $this->start('tb_actions'); ?>
+<?php $this->start('tb_actions'); ?>
 <li>
     <?=$this->Html->link(__('List Users'), ['action' => 'index']) ?></li>
 <?php $this->end(); $this->start('tb_sidebar'); ?>
