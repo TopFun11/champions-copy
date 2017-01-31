@@ -31,8 +31,8 @@ function makeModalHeader($title) {
   return sprintf($modalWrapper,$title);
 }
 function makeAccordionHeader($id, $title) {
-  $accHeader = "<div class='panel-heading'><h4 class='panel-title'><a data-toggle='collapse' data-parent='#a%s' href='#a%s'>%s</a></h4></div>";
-  return sprintf($accHeader,$id,$id,$title);
+  $accHeader = "<div class='panel-heading'><h4 class='panel-title'><a data-toggle='collapse' data-parent='#accordion' href='#a%s'>%s</a></h4></div>";
+  return sprintf($accHeader,$id,$title);
 }
 function makeAccordionBody($id, $content) {
   $accBody = "<div id='a%s' class='panel-collapse collapse'><div class='panel-body'>%s</div></div>";
@@ -52,23 +52,49 @@ function makeAccordionBody($id, $content) {
           echo startModal($section->title);
           echo makeModalHeader($section->title);
           echo $section->content;
-          echo("<div class='panel-group' id='accordion'><div class='panel panel-default'>");
+
+          $firstTab = true;
           foreach($section->sections as $l1child) {
+            echo("<div class='panel-group' id='accordion'><div class='panel panel-default'>"); //1
             echo makeAccordionHeader($l1child->id,$l1child->title);
-            echo sprintf("<div id='a%s' class='panel-collapse collapse'><div class='panel-body'>",$l1child->id);
+            if($firstTab) {
+              echo sprintf("<div id='a%s' class='panel-collapse collapse in'><div class='panel-body'>",$l1child->id); //2,3
+              $firstTab=false;
+            } else {
+              echo sprintf("<div id='a%s' class='panel-collapse collapse'><div class='panel-body'>",$l1child->id); //2,3
+            }
             echo("<ul class='nav nav-tabs'>");
+            $expand = true;
+
+            //generates tabs
             foreach($l1child->sections as $l2child) {
-              echo(sprintf("<li><a data-toggle='tab' href='#b%s'>%s</a></li>",$l2child->id,$l2child->title));
+              if($expand) {
+                echo(sprintf("<li class='active'><a data-toggle='tab' href='#b%s'>%s</a></li>",$l2child->id,$l2child->title));
+                $expand = false;
+              } else {
+                echo(sprintf("<li><a data-toggle='tab' href='#b%s'>%s</a></li>",$l2child->id,$l2child->title));
+              }
             }
             echo("</ul>");
-            echo("<div class='tab-content'>");
+            echo("<div class='tab-content'>"); //4
+
+            //this generates the content within said tabs
             foreach($l1child->sections as $l2child) {
-              echo(sprintf("<div id='b%s' class='tab-pane fade'>",$l2child->id));
+              if(!$expand){
+                echo(sprintf("<div id='b%s' class='tab-pane fade in active'>",$l2child->id)); //5
+                $expand=true;
+              } else {
+                echo(sprintf("<div id='b%s' class='tab-pane fade'>",$l2child->id)); //5
+              }
               echo($l2child->content);
               echo("</div>");
             }
-            echo("</div></div></div>");
+            echo("</div>");//1
+            echo("</div>");//2
+            echo("</div>");//3
+            echo("</div>");//4
+            echo("</div>");//4
+
           }
-          echo("</div></div>");
           echo endModal();
         } ?>
