@@ -1,6 +1,10 @@
 @import "//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css";
 @import "http://fonts.googleapis.com/css?family=Roboto:400,500";
 
+body {
+    line-height: 200%;
+}
+
 .c4h-logo {
   max-width:200px;
   margin-top:-7px;
@@ -153,17 +157,6 @@ hr {
   border-style: solid;
   border-color: #8c8b8b;
   border-width: 1px 0 0 0;
-  border-radius: 20px;
-}
-hr:before {
-  display: block;
-  content: "";
-  height: 30px;
-  margin-top: -31px;
-  border-style: solid;
-  border-color: #8c8b8b;
-  border-width: 0 0 1px 0;
-  border-radius: 20px;
 }
 
 .leftContent {
@@ -372,4 +365,8 @@ hr:before {
         width: 90%;
         max-width: 1300px;
     }
+}
+
+.home-title{
+  text-align: center;
 }

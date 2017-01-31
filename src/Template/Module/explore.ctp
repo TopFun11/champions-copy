@@ -18,12 +18,9 @@
                     <div class="image"><img class="img-responsive" src="<?= h($module->icon) ?>" /></div>
                     <div class="info">
                         <h3 class="title"><?= h($module->title) ?></h3>
-
                           <p>
                               <?= $module->description_text ?>
                           </p>
-                        
-
                         <div class="more">
                             <a href="/module/overview/<?=$module->id?>" title="Title Link">
                                   Read More <i class="fa fa-angle-double-right"></i>
