@@ -93,8 +93,18 @@ class ModuleController extends AppController
     public function Dashboard($id = null)
     {
         $module = $this->Module->get($id, [
-            'contain' => ['Sections', 'Users']
+            'contain' => ['Users']
         ]);
+
+        $sections = $this->Sections->find("all")->where(["module_id" => $module->id]);
+        foreach($sections as $section){
+          $section->sections = $this->Sections->find("all")->where(['section_id' => $section->id]);
+          foreach ($section->sections as $subsec) {
+            $subsec->sections = $this->Sections->find("all")->where(['section_id' => $subsec->id]);
+          }
+        }
+
+        $module->sections = $sections;
 
         $this->set('module', $module);
         $this->set('_serialize', ['module']);

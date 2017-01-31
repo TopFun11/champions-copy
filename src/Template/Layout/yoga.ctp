@@ -118,7 +118,7 @@ $cakeDescription = 'Champions for Health';
               </div>
               <div class="mg-container" style="top:120px;left:570px;">
                   <div class="mg-icon mg-icon-right wb">
-                      <a href="#" data-toggle="modal" data-target="#galleryModal">
+                      <a href="#" data-toggle="modal" data-target="#nature">
                           <img class="img-responsive mg-fade" src="/webroot/img/my-icons-collection/png/mountain.png">
                       </a>
                   </div>
@@ -128,7 +128,7 @@ $cakeDescription = 'Champions for Health';
               </div>
               <div class="mg-container" style="top:300px;left:650px;">
                   <div class="mg-icon mg-icon-right wb">
-                      <a href="#" data-toggle="modal" data-target="#actModal">
+                      <a href="#" data-toggle="modal" data-target="#act">
                           <img class="img-responsive mg-fade" src="/webroot/img/my-icons-collection/png/test.png">
                       </a>
                   </div>
@@ -138,7 +138,6 @@ $cakeDescription = 'Champions for Health';
               </div>
           </div>
       </div>
-
     </div>
     <br/><br/>
     <footer class="footer">
