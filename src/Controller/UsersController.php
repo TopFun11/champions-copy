@@ -119,7 +119,7 @@ use Cake\Controller\Component\AuthComponent;
          if($this->Auth->user("role") == "admin"){
            $options = ['admin' => 'Admin', 'student' => 'Student'];
          }else{
-           $options = ['student' => 'Student'];
+           $options = ['admin' => 'Admin','student' => 'Student'];
          }
          $this->set('user', $user);
          $this->set('options', $options);
