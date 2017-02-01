@@ -39,4 +39,14 @@ class Section extends Entity
         return $this->module;
       }
     }
+
+    public function isLocked(){
+      if($this->unlock_date == null){
+        return false;
+      }
+      if(new DateTime() > $this->unlock_date){
+        return false;
+      }
+      return true;
+    }
 }
