@@ -21,7 +21,7 @@
              echo $this->Form->input('phone_number', ['class'=>'form-control','type'=>'tel','placeholder'=>'Telephone number']);
              ?>
              <label> Health board and hospital location: </label>
-                <select name="health-board" class="form-control">
+                <select name="hospital" class="form-control">
                    <option value="singleton">Singleton Hospital</option>
                    <option value="moriston">Moriston Hospital</option>
                    <option value="neath port talbot">Neath Port Talbot Hospital</option>
@@ -38,7 +38,7 @@
 
              <div class="form-group">
                 <label> Age Band: </label>
-                   <select name="Age" class="form-control">
+                   <select name="age" class="form-control">
                       <option value="band1">18-25</option>
                       <option value="band2">26-35</option>
                       <option value="band3">36-45</option>
@@ -75,17 +75,17 @@
 
             <div class="form-group">
               <label>In general would you say your health is:</label><br/>
-              <label class="radio-inline"><input type="radio" name="health" value="excellent">Excellent</label>
-              <label class="radio-inline"><input type="radio" name="health" value="vgood">Very Good</label>
-              <label class="radio-inline"><input type="radio" name="health" value="good">Good</label>
-              <label class="radio-inline"><input type="radio" name="health" value="fair">Fair</label>
-              <label class="radio-inline"><input type="radio" name="health" value="poor">Poor</label>
+              <label class="radio-inline"><input type="radio" name="general_health" value="excellent">Excellent</label>
+              <label class="radio-inline"><input type="radio" name="general_health" value="vgood">Very Good</label>
+              <label class="radio-inline"><input type="radio" name="general_health" value="good">Good</label>
+              <label class="radio-inline"><input type="radio" name="general_health" value="fair">Fair</label>
+              <label class="radio-inline"><input type="radio" name="general_health" value="poor">Poor</label>
             </div>
 
             <div class="form-group">
               <label>Do (did) you supervise any other employees?</label><br/>
-              <label class="radio-inline"><input type="radio" name="supervise" value="yes">Yes</label>
-              <label class="radio-inline"><input type="radio" name="supervise" value="no">No</label>
+              <label class="radio-inline"><input type="radio" name="supervises" value="yes">Yes</label>
+              <label class="radio-inline"><input type="radio" name="supervises" value="no">No</label>
             </div>
 
             <div class="form-group">
@@ -106,12 +106,12 @@
 
           <div class="form-group">
             <label>In the last 6 months, how many days were you off work for health reasons?</label>
-            <input type="text" class="form-control" name="days of sickness" placeholder="Number of sick days">
+            <input type="text" class="form-control" name="days_off_work" placeholder="Number of sick days">
           </div>
 
           <div class="form-group">
             <label>In the last 6 months, how many spells of sickness absence lasting a week or more have you experienced?</label>
-            <input type="text" class="form-control" name="spells of sickness" placeholder="Number of spell sickness">
+            <input type="text" class="form-control" name="absences_lasting_a_week" placeholder="Number of spell sickness">
           </div>
 
           <div class="form-group">
@@ -131,17 +131,17 @@
                 <th>10</th>
               </tr></thead>
               <tbody><tr>
-                <td><input type="radio" name="performance" value="0"></td>
-                <td><input type="radio" name="performance" value="1"></td>
-                <td><input type="radio" name="performance" value="2"></td>
-                <td><input type="radio" name="performance" value="3"></td>
-                <td><input type="radio" name="performance" value="4"></td>
-                <td><input type="radio" name="performance" value="5"></td>
-                <td><input type="radio" name="performance" value="6"></td>
-                <td><input type="radio" name="performance" value="7"></td>
-                <td><input type="radio" name="performance" value="8"></td>
-                <td><input type="radio" name="performance" value="9"></td>
-                <td><input type="radio" name="performance" value="10"></td>
+                <td><input type="radio" name="work_performance" value="0"></td>
+                <td><input type="radio" name="work_performance" value="1"></td>
+                <td><input type="radio" name="work_performance" value="2"></td>
+                <td><input type="radio" name="work_performance" value="3"></td>
+                <td><input type="radio" name="work_performance" value="4"></td>
+                <td><input type="radio" name="work_performance" value="5"></td>
+                <td><input type="radio" name="work_performance" value="6"></td>
+                <td><input type="radio" name="work_performance" value="7"></td>
+                <td><input type="radio" name="work_performance" value="8"></td>
+                <td><input type="radio" name="work_performance" value="9"></td>
+                <td><input type="radio" name="work_performance" value="10"></td>
               </tr></tbody>
             </table>
           </div>
@@ -178,115 +178,115 @@
               <th>All of the time</th>
               <tr>
                 <td>I've been feeling optimistic about the Future</td>
-                <td><input type="radio" name="optimistic" value="1"></td>
-                <td><input type="radio" name="optimistic" value="2"></td>
-                <td><input type="radio" name="optimistic" value="3"></td>
-                <td><input type="radio" name="optimistic" value="4"></td>
-                <td><input type="radio" name="optimistic" value="5"></td>
+                <td><input type="radio" name="wembs_optimism" value="1"></td>
+                <td><input type="radio" name="wembs_optimism" value="2"></td>
+                <td><input type="radio" name="wembs_optimism" value="3"></td>
+                <td><input type="radio" name="wembs_optimism" value="4"></td>
+                <td><input type="radio" name="wembs_optimism" value="5"></td>
               </tr>
               <tr>
                 <td>I've been feeling useful</td>
-                <td><input type="radio" name="useful" value="1"></td>
-                <td><input type="radio" name="useful" value="2"></td>
-                <td><input type="radio" name="useful" value="3"></td>
-                <td><input type="radio" name="useful" value="4"></td>
-                <td><input type="radio" name="useful" value="5"></td>
+                <td><input type="radio" name="wembs_useful" value="1"></td>
+                <td><input type="radio" name="wembs_useful" value="2"></td>
+                <td><input type="radio" name="wembs_useful" value="3"></td>
+                <td><input type="radio" name="wembs_useful" value="4"></td>
+                <td><input type="radio" name="wembs_useful" value="5"></td>
               </tr>
               <tr>
                 <td>I've been feeling relaxed</td>
-                <td><input type="radio" name="relaxed" value="1"></td>
-                <td><input type="radio" name="relaxed" value="2"></td>
-                <td><input type="radio" name="relaxed" value="3"></td>
-                <td><input type="radio" name="relaxed" value="4"></td>
-                <td><input type="radio" name="relaxed" value="5"></td>
+                <td><input type="radio" name="wembs_relaxed" value="1"></td>
+                <td><input type="radio" name="wembs_relaxed" value="2"></td>
+                <td><input type="radio" name="wembs_relaxed" value="3"></td>
+                <td><input type="radio" name="wembs_relaxed" value="4"></td>
+                <td><input type="radio" name="wembs_relaxed" value="5"></td>
               </tr>
               <tr>
                 <td>I've been feeling interested in other people</td>
-                <td><input type="radio" name="interested in people" value="1"></td>
-                <td><input type="radio" name="interested in people" value="2"></td>
-                <td><input type="radio" name="interested in people" value="3"></td>
-                <td><input type="radio" name="interested in people" value="4"></td>
-                <td><input type="radio" name="interested in people" value="5"></td>
+                <td><input type="radio" name="wembs_interested_in_people" value="1"></td>
+                <td><input type="radio" name="wembs_interested_in_people" value="2"></td>
+                <td><input type="radio" name="wembs_interested_in_people" value="3"></td>
+                <td><input type="radio" name="wembs_interested_in_people" value="4"></td>
+                <td><input type="radio" name="wembs_interested_in_people" value="5"></td>
               </tr>
               <tr>
                 <td>I've had energy to spare</td>
-                <td><input type="radio" name="energy" value="1"></td>
-                <td><input type="radio" name="energy" value="2"></td>
-                <td><input type="radio" name="energy" value="3"></td>
-                <td><input type="radio" name="energy" value="4"></td>
-                <td><input type="radio" name="energy" value="5"></td>
+                <td><input type="radio" name="wembs_spare_energy" value="1"></td>
+                <td><input type="radio" name="wembs_spare_energy" value="2"></td>
+                <td><input type="radio" name="wembs_spare_energy" value="3"></td>
+                <td><input type="radio" name="wembs_spare_energy" value="4"></td>
+                <td><input type="radio" name="wembs_spare_energy" value="5"></td>
               </tr>
               <tr>
                 <td>I've been dealing with problems well</td>
-                <td><input type="radio" name="dealing with problems" value="1"></td>
-                <td><input type="radio" name="dealing with problems" value="2"></td>
-                <td><input type="radio" name="dealing with problems" value="3"></td>
-                <td><input type="radio" name="dealing with problems" value="4"></td>
-                <td><input type="radio" name="dealing with problems" value="5"></td>
+                <td><input type="radio" name="wembs_dealing_with_problems_well" value="1"></td>
+                <td><input type="radio" name="wembs_dealing_with_problems_well" value="2"></td>
+                <td><input type="radio" name="wembs_dealing_with_problems_well" value="3"></td>
+                <td><input type="radio" name="wembs_dealing_with_problems_well" value="4"></td>
+                <td><input type="radio" name="wembs_dealing_with_problems_well" value="5"></td>
               </tr>
               <tr>
                 <td>I've been thinking clearly</td>
-                <td><input type="radio" name="thinking clearly" value="1"></td>
-                <td><input type="radio" name="thinking clearly" value="2"></td>
-                <td><input type="radio" name="thinking clearly" value="3"></td>
-                <td><input type="radio" name="thinking clearly" value="4"></td>
-                <td><input type="radio" name="thinking clearly" value="5"></td>
+                <td><input type="radio" name="wembs_thinking_clearly" value="1"></td>
+                <td><input type="radio" name="wembs_thinking_clearly" value="2"></td>
+                <td><input type="radio" name="wembs_thinking_clearly" value="3"></td>
+                <td><input type="radio" name="wembs_thinking_clearly" value="4"></td>
+                <td><input type="radio" name="wembs_thinking_clearly" value="5"></td>
               </tr>
               <tr>
                 <td>I've been feeling good about myself</td>
-                <td><input type="radio" name="feeling good" value="1"></td>
-                <td><input type="radio" name="feeling good" value="2"></td>
-                <td><input type="radio" name="feeling good" value="3"></td>
-                <td><input type="radio" name="feeling good" value="4"></td>
-                <td><input type="radio" name="feeling good" value="5"></td>
+                <td><input type="radio" name="wembs_good_about_self" value="1"></td>
+                <td><input type="radio" name="wembs_good_about_self" value="2"></td>
+                <td><input type="radio" name="wembs_good_about_self" value="3"></td>
+                <td><input type="radio" name="wembs_good_about_self" value="4"></td>
+                <td><input type="radio" name="wembs_good_about_self" value="5"></td>
               </tr>
               <tr>
                 <td>I've been feeling close to other people</td>
-                <td><input type="radio" name="close to other people" value="1"></td>
-                <td><input type="radio" name="close to other people" value="2"></td>
-                <td><input type="radio" name="close to other people" value="3"></td>
-                <td><input type="radio" name="close to other people" value="4"></td>
-                <td><input type="radio" name="close to other people" value="5"></td>
+                <td><input type="radio" name="wembs_close_to_others" value="1"></td>
+                <td><input type="radio" name="wembs_close_to_others" value="2"></td>
+                <td><input type="radio" name="wembs_close_to_others" value="3"></td>
+                <td><input type="radio" name="wembs_close_to_others" value="4"></td>
+                <td><input type="radio" name="wembs_close_to_others" value="5"></td>
               </tr>
               <tr>
                 <td>I've been feeling confident</td>
-                <td><input type="radio" name="confident" value="1"></td>
-                <td><input type="radio" name="confident" value="2"></td>
-                <td><input type="radio" name="confident" value="3"></td>
-                <td><input type="radio" name="confident" value="4"></td>
-                <td><input type="radio" name="confident" value="5"></td>
+                <td><input type="radio" name="wembs_feeling_confident" value="1"></td>
+                <td><input type="radio" name="wembs_feeling_confident" value="2"></td>
+                <td><input type="radio" name="wembs_feeling_confident" value="3"></td>
+                <td><input type="radio" name="wembs_feeling_confident" value="4"></td>
+                <td><input type="radio" name="wembs_feeling_confident" value="5"></td>
               </tr>
               <tr>
                 <td>I've been able to make up my own mind about things</td>
-                <td><input type="radio" name="make up my own mind" value="1"></td>
-                <td><input type="radio" name="make up my own mind" value="2"></td>
-                <td><input type="radio" name="make up my own mind" value="3"></td>
-                <td><input type="radio" name="make up my own mind" value="4"></td>
-                <td><input type="radio" name="make up my own mind" value="5"></td>
+                <td><input type="radio" name="wembs_make_mind_up" value="1"></td>
+                <td><input type="radio" name="wembs_make_mind_up" value="2"></td>
+                <td><input type="radio" name="wembs_make_mind_up" value="3"></td>
+                <td><input type="radio" name="wembs_make_mind_up" value="4"></td>
+                <td><input type="radio" name="wembs_make_mind_up" value="5"></td>
               </tr>
               <tr>
                 <td>I've been feeling loved</td>
-                <td><input type="radio" name="loved" value="1"></td>
-                <td><input type="radio" name="loved" value="2"></td>
-                <td><input type="radio" name="loved" value="3"></td>
-                <td><input type="radio" name="loved" value="4"></td>
-                <td><input type="radio" name="loved" value="5"></td>
+                <td><input type="radio" name="wembs_loved" value="1"></td>
+                <td><input type="radio" name="wembs_loved" value="2"></td>
+                <td><input type="radio" name="wembs_loved" value="3"></td>
+                <td><input type="radio" name="wembs_loved" value="4"></td>
+                <td><input type="radio" name="wembs_loved" value="5"></td>
               </tr>
               <tr>
                 <td>I've been feeling interested in new things</td>
-                <td><input type="radio" name="interested in new things" value="1"></td>
-                <td><input type="radio" name="interested in new things" value="2"></td>
-                <td><input type="radio" name="interested in new things" value="3"></td>
-                <td><input type="radio" name="interested in new things" value="4"></td>
-                <td><input type="radio" name="interested in new things" value="5"></td>
+                <td><input type="radio" name="wembs_interested_in_new_things" value="1"></td>
+                <td><input type="radio" name="wembs_interested_in_new_things" value="2"></td>
+                <td><input type="radio" name="wembs_interested_in_new_things" value="3"></td>
+                <td><input type="radio" name="wembs_interested_in_new_things" value="4"></td>
+                <td><input type="radio" name="wembs_interested_in_new_things" value="5"></td>
               </tr>
               <tr>
                 <td>I've been feeling cheerful</td>
-                <td><input type="radio" name="cheerful" value="1"></td>
-                <td><input type="radio" name="cheerful" value="2"></td>
-                <td><input type="radio" name="cheerful" value="3"></td>
-                <td><input type="radio" name="cheerful" value="4"></td>
-                <td><input type="radio" name="cheerful" value="5"></td>
+                <td><input type="radio" name="wembs_cheerful" value="1"></td>
+                <td><input type="radio" name="wembs_cheerful" value="2"></td>
+                <td><input type="radio" name="wembs_cheerful" value="3"></td>
+                <td><input type="radio" name="wembs_cheerful" value="4"></td>
+                <td><input type="radio" name="wembs_cheerful" value="5"></td>
               </tr>
             </table>
           </div>
@@ -324,31 +324,31 @@
             <tbody>
               <tr>
                 <td>Feeling nervous, anxious or on edge</td>
-                <td><input type="radio" name="nervous" value="0"></td>
-                <td><input type="radio" name="nervous" value="1"></td>
-                <td><input type="radio" name="nervous" value="2"></td>
-                <td><input type="radio" name="nervous" value="3"></td>
+                <td><input type="radio" name="phq_anxious" value="0"></td>
+                <td><input type="radio" name="phq_anxious" value="1"></td>
+                <td><input type="radio" name="phq_anxious" value="2"></td>
+                <td><input type="radio" name="phq_anxious" value="3"></td>
               </tr>
               <tr>
                 <td>Not being able to stop or control worrying</td>
-                <td><input type="radio" name="worrying" value="0"></td>
-                <td><input type="radio" name="worrying" value="1"></td>
-                <td><input type="radio" name="worrying" value="2"></td>
-                <td><input type="radio" name="worrying" value="3"></td>
+                <td><input type="radio" name="phq_worrying" value="0"></td>
+                <td><input type="radio" name="phq_worrying" value="1"></td>
+                <td><input type="radio" name="phq_worrying" value="2"></td>
+                <td><input type="radio" name="phq_worrying" value="3"></td>
               </tr>
               <tr>
                 <td>Little interest or pleasure in doing things</td>
-                <td><input type="radio" name="little interest" value="0"></td>
-                <td><input type="radio" name="little interest" value="1"></td>
-                <td><input type="radio" name="little interest" value="2"></td>
-                <td><input type="radio" name="little interest" value="3"></td>
+                <td><input type="radio" name="phq_interest_please" value="0"></td>
+                <td><input type="radio" name="phq_interest_please" value="1"></td>
+                <td><input type="radio" name="phq_interest_please" value="2"></td>
+                <td><input type="radio" name="phq_interest_please" value="3"></td>
               </tr>
               <tr>
                 <td>Feeling down, depressed or hopeless</td>
-                <td><input type="radio" name="down" value="0"></td>
-                <td><input type="radio" name="down" value="1"></td>
-                <td><input type="radio" name="down" value="2"></td>
-                <td><input type="radio" name="down" value="3"></td>
+                <td><input type="radio" name="phq_depressed" value="0"></td>
+                <td><input type="radio" name="phq_depressed" value="1"></td>
+                <td><input type="radio" name="phq_depressed" value="2"></td>
+                <td><input type="radio" name="phq_depressed" value="3"></td>
               </tr></tbody>
             </table>
           </div>
@@ -357,7 +357,7 @@
     </div>
   </div>
 </div>
-</form>
+
 
 <div class="container">
   <div class="col-md-10 text-right">
