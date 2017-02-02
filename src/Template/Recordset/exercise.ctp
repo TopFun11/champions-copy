@@ -27,17 +27,22 @@ $this->start('tb_sidebar');
 $this->end();
 ?>
 <?php
+//die("<pre>" . h($recordset) . "</pre>");
   //Mapping Records to a map[Question_ID][Record]
   $map = [];
   if(isset($recordset)){
     if(isset($recordset->record)){
       foreach($recordset->record as $record){
-        $map[$record->question_id] = $record;
+        if($record->question_option_id == null){
+            $map[$record->question_id] = $record;
+        }else{
+          $map["$record->question_id-$record->question_option_id"] = $record;
+        }
       }
     }
   }
 
-
+//die("<pre>" . var_dump($map) . "</pre>");
  ?>
 <?= $this->Form->create($recordset); ?>
 <?=  $this->Form->hidden('exercise_id', ['value' => $exercise->id]); ?>
@@ -52,10 +57,23 @@ $this->end();
           <p><?= $question->question ?></p>
         </div>
         <div>
-          <?php if(array_key_exists($question->id, $map)){
-            echo $this->QuestionAnswer->display($question, $map[$question->id]->answer);
+          <?php
+          if($question->type != 2){
+            if(array_key_exists($question->id, $map)){
+              echo $this->QuestionAnswer->display($question, $map[$question->id]->answer);
+            }else{
+              echo $this->QuestionAnswer->display($question);
+            }
+
           }else{
-            echo $this->QuestionAnswer->display($question);
+            $ops = [];
+            foreach($question->question_option as $i => $op){
+              if(array_key_exists("$question->id-$op->id", $map)){
+                $ops[$op->id] = $map["$question->id-$op->id"]->answer;
+              }
+            }
+            //die("ops: " . $ops);
+            echo $this->QuestionAnswer->display($question, $ops);
           }?>
         </div>
 

@@ -80,7 +80,7 @@ class ExerciseController extends AppController
     public function edit($id = null)
     {
         $exercise = $this->Exercise->get($id, [
-            'contain' => []
+            'contain' => ['Question' => ['QuestionOption']]
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $exercise = $this->Exercise->patchEntity($exercise, $this->request->data);

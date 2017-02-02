@@ -28,11 +28,18 @@ class Recordset extends Entity
         'id' => false
     ];
 
-    public function getRecord($question_id){
+    public function getRecord($question_id, $opId = null){
       if($this->record == null)return;
       foreach($this->record as $record){
 
         if($record->question_id == $question_id){
+          if($opId != null){
+            if($opId == $record->question_option_id){
+              return $record;
+            }else{
+              continue;
+            }
+          }
           return $record;
         }
       }

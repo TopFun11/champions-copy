@@ -185,11 +185,16 @@ class RecordsetController extends AppController
               //If we are a multiple choice - Loop through question options
               foreach($question->question_option as $op){
                 //Create a new record
-                $rec = $this->Record->newEntity();
+                $rec = $recordset->getRecord($question->id, $op->id);
+                if(!$rec){
+                    $rec = $this->Record->newEntity();
+                }
                 //Set the id
                 $rec->recordset_id = $recId;
                 $rec->question_option_id = $op->id;
                 $rec->question_id = $question->id;
+                $rec->answer = array_key_exists("$question->id-$op->id", $data->answer) ? $data->answer["$question->id-$op->id"] : false;
+
                 if(!$this->Record->save($rec)){
                   $this->Flash->error(__('There was a problem submitting your record, please try again.Mult'));
                   return $this->redirect(["action" => 'index']);

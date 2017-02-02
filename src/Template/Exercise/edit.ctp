@@ -43,6 +43,7 @@ $this->start('tb_sidebar');
 <?php
 $this->end();
 ?>
+<pre><?= h($exercise) ?></pre>
 <div class="row">
   <div class="col-xs-12">
     <h1>Exercise editor</h1>
@@ -102,6 +103,16 @@ $this->end();
         </tr>
       </thead>
       <tbody id="questions-added">
+        <?php foreach($exercise->question as $question): ?>
+          <tr>
+            <td><?= h($question->question)?></td>
+            <td><?= h($question->type)?></td>
+            <td>
+              <?php foreach($question->question_option as $i => $option): ?>
+                <?= h($option->text) ?>(<?= h($option->value) ?>) <?= $i == count($question->question_option) - 1 ? "" : "," ?>
+              <?php endforeach; ?>
+          </tr>
+        <?php endforeach; ?>
       </tbody>
     </table>
   </div>
