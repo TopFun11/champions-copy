@@ -34,9 +34,9 @@ $this->end();
   <fieldset>
       <legend><?= __('Add {0}', ['Exercise']) ?></legend>
       <?php
-      echo $this->Form->input('section_id', ['options' => $sections, 'class'=>'form-control']);
+      echo $this->Form->input('section_id', ['options' => $sections]);
       ?>
-      <select class="form-control" id="type">
+      <select class="form-control" id="type" name="type">
         <option value="1">Can take exercise once only</option>
         <option value="2">Exercise is done weekly</option>
       </select>
@@ -46,4 +46,3 @@ $this->end();
   </div>
 </div>
 </div>
-<?= $this->Form->end() ?>

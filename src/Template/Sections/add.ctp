@@ -58,8 +58,8 @@ $this->end();
       <label for="module_id">Make child of section:</label>
       <?php
       $secs = [];
-      foreach($module as $i => $section){
-        $secs[$i * count($module)] = ['value' => $section->id, 'text' => $section->title];
+      foreach($section as $i => $sec){
+        $secs[$i * count($section)] = ['value' => $sec->id, 'text' => $sec->title];
       }
       echo $this->Form->select('section_id',  $secs,['empty' => true,'class'=>'form-control','id'=>'section_id']);
       ?>

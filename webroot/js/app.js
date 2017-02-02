@@ -405,8 +405,9 @@ function createSection() {
 }
 
 function createExercise() {
-  var sectionID = $("#section-id").val();
-  var typeID = $("#type").val();
+  var sectionID = $("#section-id").find(":selected").val();
+  var typeID = $('#type').find(":selected").val();
+  console.log(sectionID+", "+typeID);
   if(sectionID==""||typeID==""){
     genAl("warning","Specify both the type as well as the section to associate it with.");
     return;
@@ -414,14 +415,14 @@ function createExercise() {
   $.ajax({
     url: '/exercise/add.json',
     type: 'POST',
-    data: {"section-id":sectionID,"type":typeID},
+    data: {"section_id":sectionID,"type":typeID},
     success: function(data)
     {
       console.log($(data));
 
         genAl("success","Exercise saved!");
 
-      window.location.href = "/exercise/edit/"+data.exercise.id;
+      //window.location.href = "/exercise/edit/"+data.exercise.id;
     },
     error: function(data)
     {
@@ -429,4 +430,62 @@ function createExercise() {
     }
   });
 
+}
+
+$("#exerciseForm").on("submit", function(event){
+  event.preventDefault();
+  var formData = $(this).serialize();
+  var exID = $("input[name='exercise_id']", this).val();
+  $.ajax({
+    url: '/recordset/exercise/'+exID,
+    type: 'POST',
+    data: formData,
+    success: function(data) {
+      console.log($(data));
+      alert("Data saved.");
+    },
+    error: function(data) {
+      console.log($(data));
+      alert("Error saving data. Please contact us.");
+    }
+  })
+});
+
+//Loads pre-existing recordsets
+$(document).ready(function(){
+  $(".section-exercises").each(function() {
+    var exID = $("input[name='exercise_id']",this).val();
+    $.ajax({
+      url: '/recordset/exercise/'+exID+".json",
+      type: 'GET',
+      success: function(data) {
+        loadDataIntoExerciseForm(data.recordset);
+      },
+      error: function(data) {
+        alert(data);
+      }
+    })
+  });
+});
+
+//loads data into relevant fields.
+function loadDataIntoExerciseForm(recordset) {
+  var exID = recordset.exercise_id;
+  var records = recordset.record;
+  var questions = recordset.exercise.question;
+  for(var i=0;i<records.length;i++) {
+    var questionID = records[i].question_id;
+    var questionType;
+    //getting questionID
+    for(var j=0;j<questions.length;j++) {
+      if(questions[j].id==questionID){
+        questionType = questions[j].type;
+      }
+    }
+    if(records[i].answer != null) {
+      $("textarea[name='answer["+questionID+"]']").val(records[i].answer);
+    }
+
+    //not handling checkboxes or radiobuttons yet, seeing as they don't work anyway
+  }
 }

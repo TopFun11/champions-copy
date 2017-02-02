@@ -71,9 +71,10 @@ class SectionsController extends AppController
                 $this->Flash->error(__('The section could not be saved. Please, try again.'));
             }
         }
-        $module = $this->Sections->find('all', ['limit' => 200]);
+        $section = $this->Sections->find('all', ['limit' => 200]);
+        $module = $this->Module->find('all', ['limit' => 200]);
         $this->set(compact('section', 'module'));
-        $this->set('_serialize', ['section']);
+        $this->set('_serialize', ['section','module']);
     }
 
     /**
@@ -121,5 +122,9 @@ class SectionsController extends AppController
         }
 
         return $this->redirect(['action' => 'index']);
+    }
+    public function initialize(){
+      parent::initialize();
+      $this->loadModel('Module');
     }
 }

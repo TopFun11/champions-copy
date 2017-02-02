@@ -233,7 +233,7 @@ class RecordsetController extends AppController
 
       $this->set('exercise', $exercise);
       $this->set('recordset', $edit);
-      $this->set('_serialize', ['screener']);
+      $this->set('_serialize', ['recordset']);
     }
     /**
      * hasDoneExerciseFor method

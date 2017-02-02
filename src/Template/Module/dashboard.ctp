@@ -79,6 +79,7 @@ function makeAccordionBody($id, $content) {
             echo("<div class='tab-content'>"); //4
 
             //this generates the content within said tabs
+
             foreach($l1child->sections as $l2child) {
               if(!$expand){
                 echo(sprintf("<div id='b%s' class='tab-pane fade in active'>",$l2child->id)); //5
@@ -87,6 +88,21 @@ function makeAccordionBody($id, $content) {
                 echo(sprintf("<div id='b%s' class='tab-pane fade'>",$l2child->id)); //5
               }
               echo($l2child->content);
+              if(isset($l2child->exercises->question)) {
+                echo("<form id='exerciseForm' class='section-exercises' name='exerciseForm'>");
+                echo("<input type='hidden' name='exercise_id' value='".$l2child->exercises->id."'/>");
+                $qnum = 1;
+                foreach($l2child->exercises->question as $question){
+
+                  echo("<h4>Question ".$qnum."</h4>");
+                  $qnum++;
+                  echo($question->question);
+                  echo $this->QuestionAnswer->display($question);
+                }
+                echo("<div class='text-center'><button type='submit' class='btn btn-success' id='".$l2child->exercises->id."'>Save answers</button></div><hr/>");
+                echo("</form>");
+              }
+
               echo("</div>");
             }
             echo("</div>");//1

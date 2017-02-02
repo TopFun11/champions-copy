@@ -29,7 +29,7 @@ $this->end();
         echo $this->Form->input('phone_number',['class'=>'form-control','type'=>'tel','placeholder'=>'Telephone number']);
         ?>
         <label> Health board and hospital location:
-        <select name="health-board" class="form-control">
+        <select name="hospital" class="form-control">
           <option value="singleton">Singleton Hospital</option>
           <option value="moriston">Moriston Hospital</option>
           <option value="neath port talbot">Neath Port Talbot Hospital</option>
@@ -50,32 +50,32 @@ $this->end();
                 <div class="row">
                     <div class="col-sm-4">
                         <label class="radio-inline">
-                            <input type="radio" id="age" value="band1">18-25
+                            <input type="radio" id="age" name="age" value="band1">18-25
                         </label>
                     </div>
                     <div class="col-sm-4">
                         <label class="radio-inline">
-                            <input type="radio" id="age" value="band2">26-35
+                            <input type="radio" id="age" name="age" value="band2">26-35
                         </label>
                     </div>
                     <div class="col-sm-4">
                         <label class="radio-inline">
-                            <input type="radio" id="age" value="band3">36-45
+                            <input type="radio" id="age" name="age" value="band3">36-45
                         </label>
                     </div>
                     <div class="col-sm-4">
                         <label class="radio-inline">
-                            <input type="radio" id="age" value="band4">46-55
+                            <input type="radio" id="age" name="age" value="band4">46-55
                         </label>
                     </div>
                     <div class="col-sm-4">
                         <label class="radio-inline">
-                            <input type="radio" id="age" value="band5">56-65
+                            <input type="radio" id="age" name="age" value="band5">56-65
                         </label>
                     </div>
                     <div class="col-sm-4">
                         <label class="radio-inline">
-                            <input type="radio" id="age" value="band6">65+
+                            <input type="radio" id="age" name="age" value="band6">65+
                         </label>
                     </div>
                 </div>
