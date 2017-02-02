@@ -131,8 +131,5 @@ class SectionsController extends AppController
 
         return $this->redirect(['action' => 'index']);
     }
-    public function initialize(){
-      parent::initialize();
-      $this->loadModel('Module');
-    }
+
 }

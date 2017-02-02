@@ -116,6 +116,9 @@ class ModuleController extends AppController
 
         $this->set('module', $module);
         $this->set('_serialize', ['module']);
+        if($module->theme != ""){
+          $this->render("dashboard-yoga");
+        }
     }
 
     /**
