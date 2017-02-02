@@ -18,6 +18,9 @@ $this->start('tb_sidebar');
 $this->end();
 ?>
 
+<!--<pre>
+<?= h($module); ?>
+</pre>-->
   <div class="row">
     <div class="c4h-home-jumbo jumbotron" style="background-image:url('<?= ($module->banner) ?>')">
         <h1><?= ($module->title) ?></h1>
@@ -46,12 +49,22 @@ $this->end();
     ?>
           <div id="s<?= $section->id ?>" class="tab-pane fade in active">
             <?= $section->content;?>
+            <?php if($section->exercises != null):
+              echo $this->Exercise->display($section->exercises);
+              ?>
+
+             <?php endif;  ?>
           </div>
           <?php
         else:
           ?>
           <div id="s<?= $section->id ?>" class="tab-pane fade">
             <?= $section->content;?>
+            <?php if($section->exercises != null):
+              echo $this->Exercise->display($section->exercises);
+              ?>
+
+             <?php endif;  ?>
           </div>
         <?php endif; endforeach; ?>
         </div>

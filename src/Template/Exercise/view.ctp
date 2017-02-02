@@ -34,6 +34,7 @@ $this->start('tb_sidebar');
 <?php
 $this->end();
 ?>
+<?= h($exercise); ?>
 <div class="panel panel-default">
     <!-- Panel header -->
     <div class="panel-heading">
@@ -42,7 +43,7 @@ $this->end();
     <table class="table table-striped" cellpadding="0" cellspacing="0">
         <tr>
             <td><?= __('Section') ?></td>
-            <td><?= $exercise->has('section') ? $this->Html->link($exercise->section->title, ['controller' => 'Sections', 'action' => 'view', $exercise->section->id]) : '' ?></td>
+            <td><?= $exercise->has('section') ? $this->Html->link($exercise->section->title, ['controller' => 'Sections', 'action' => 'view', $exercise->section->id]) : 'bob' ?></td>
         </tr>
         <tr>
             <td><?= __('Id') ?></td>

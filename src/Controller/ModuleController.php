@@ -4,6 +4,7 @@ namespace App\Controller;
 use App\Controller\AppController;
 // In a controller or table method.
 use Cake\ORM\TableRegistry;
+use Cake\Controller\Component\AuthComponent;
 
 /**
  * Module Controller
@@ -93,6 +94,7 @@ class ModuleController extends AppController
      */
     public function Dashboard($id = null)
     {
+        $userId = $this->Auth->user("id");
         $module = $this->Module->get($id, [
             'contain' => ['Users']
         ]);
@@ -101,13 +103,13 @@ class ModuleController extends AppController
 
         foreach($sections as $section){
           $section->sections = $this->Sections->find("all")->where(['section_id' => $section->id]);
-          $section->exercises = $this->Exercise->find("all", ['contain' => ['Question'=>['QuestionOption']]])->where(['section_id' => $section->id])->first();
+          $section->exercises = $this->Exercise->find("all", ['contain' => ['Recordset' => ["conditions" => ["user_id" => $userId], 'Record'],'Question'=>['QuestionOption']]])->where(['section_id' => $section->id])->first();
           foreach ($section->sections as $subsec) {
             $subsec->sections = $this->Sections->find("all")->where(['section_id' => $subsec->id]);
-            $subsec->exercises = $this->Exercise->find("all", ['contain' => ['Question'=>['QuestionOption']]])->where(['section_id' => $subsec->id])->first();
+            $subsec->exercises = $this->Exercise->find("all", ['contain' => ['Recordset' => ['Record'],'Question'=>['QuestionOption']]])->where(['section_id' => $subsec->id])->first();
             foreach ($subsec->sections as $subsubsec) {
               $subsubsec->sections = $this->Sections->find("all")->where(['section_id' => $subsubsec->id]);
-              $subsubsec->exercises = $this->Exercise->find("all", ['contain' => ['Question'=>['QuestionOption']]])->where(['section_id' => $subsubsec->id])->first();
+              $subsubsec->exercises = $this->Exercise->find("all", ['contain' => ['Recordset' => ['Record'], 'Question'=>['QuestionOption']]])->where(['section_id' => $subsubsec->id])->first();
             }
           }
         }

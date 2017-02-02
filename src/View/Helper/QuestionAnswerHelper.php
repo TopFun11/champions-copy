@@ -51,8 +51,7 @@ class QuestionAnswerHelper extends Helper{
 
     }
     echo("<div class='col-xs-12'>");
-    return $this->Form->radio('answer['.$question->id.']', $options,['class' => 'form-control']);
-    echo("</div>");
+    return $this->Form->radio('answer['.$question->id.']', $options,['class' => 'form-control']) ."</div>";
   }
 
   private function displayMultipleChoice($question, $values = null){
