@@ -31,26 +31,28 @@ class QuestionAnswerHelper extends Helper{
   }
 
   private function displayAmount($question, $value = null){
-    return $this->Form->text('answer['.$question->id.']', ['value' => $value]);
+    return $this->Form->textarea('answer['.$question->id.']', ['value' => $value, 'class' => 'form-control']);
   }
 
   private function displayRadio($question){
     $options = [];
     for($i = 0; $i < count($question->question_option);$i++){
+
       $op = $question->question_option[$i];
+      ;
       $options[$i] = ['value' => $op->value, 'text' => $op->text];
     }
-
-    return $this->Form->radio('answer['.$question->id.']', $options);
+    echo("<div class='col-xs-12'>");
+    return $this->Form->radio('answer['.$question->id.']', $options,['class' => 'form-control']);
+    echo("</div>");
   }
 
   private function displayMultipleChoice($question){
     $html = "";
 
     foreach($question->question_option as $op){
-      $html = $html . "<label>". $this->Form->checkbox('answer['.$question->id.'-'.$op->id.']', ['hiddenField' => false, 'label' => 'bob']).$op->text . "</label>";
+      $html = $html . "<div class='checkbox'><label>". $this->Form->checkbox('answer['.$question->id.'-'.$op->id.']', ['hiddenField' => false]).$op->text . "</label></div>";
     }
-
     return $html;
   }
 

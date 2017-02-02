@@ -18,6 +18,7 @@ class ModuleController extends AppController
       $this->loadModel("Recordset");
       $this->loadModel("Screener");
       $this->loadModel("Enrollment");
+      $this->loadModel("Exercise");
     }
     /**
      * Index method
@@ -97,10 +98,17 @@ class ModuleController extends AppController
         ]);
 
         $sections = $this->Sections->find("all")->where(["module_id" => $module->id]);
+
         foreach($sections as $section){
           $section->sections = $this->Sections->find("all")->where(['section_id' => $section->id]);
+          $section->exercises = $this->Exercise->find("all", ['contain' => ['Question'=>['QuestionOption']]])->where(['section_id' => $section->id])->first();
           foreach ($section->sections as $subsec) {
             $subsec->sections = $this->Sections->find("all")->where(['section_id' => $subsec->id]);
+            $subsec->exercises = $this->Exercise->find("all", ['contain' => ['Question'=>['QuestionOption']]])->where(['section_id' => $subsec->id])->first();
+            foreach ($subsec->sections as $subsubsec) {
+              $subsubsec->sections = $this->Sections->find("all")->where(['section_id' => $subsubsec->id]);
+              $subsubsec->exercises = $this->Exercise->find("all", ['contain' => ['Question'=>['QuestionOption']]])->where(['section_id' => $subsubsec->id])->first();
+            }
           }
         }
 

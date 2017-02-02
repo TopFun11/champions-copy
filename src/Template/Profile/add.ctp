@@ -72,7 +72,7 @@
       </div>
       <div class="panel panel-primary">
         <div class="panel-body">
-            
+
             <div class="form-group">
               <label>In general would you say your health is:</label><br/>
               <label class="radio-inline"><input type="radio" name="health" value="excellent">Excellent</label>
