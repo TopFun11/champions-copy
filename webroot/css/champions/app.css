@@ -1,5 +1,6 @@
 @import "//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css";
 @import "http://fonts.googleapis.com/css?family=Roboto:400,500";
+@import('https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.0/css/bootstrap.min.css')
 
 body {
     line-height: 200%;
@@ -369,4 +370,47 @@ hr {
 
 .user-profile-buttons{
   text-align: center;
+}
+
+/*Registration */
+.wemwbs-table{
+	width:100%;
+}
+
+.wemwbs-table td{
+  text-align: center;
+  padding: 7px;
+}
+
+.general-health{
+	width:100%;
+}
+
+.general-health td{
+  text-align: center;
+  padding: 7px;
+}
+
+.occupation{
+  margin: 14px 10px;
+}
+
+.work-performance > tbody {
+  text-align: center;
+}
+
+.work-performance-header > th {
+  text-align: center ;
+}
+
+.occupation{
+  margin: 14px 10px;
+}
+
+.work-performance{
+  text-align: center;
+}
+
+.radio-extra{
+  padding-left: 30px;
 }

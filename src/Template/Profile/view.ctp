@@ -27,7 +27,7 @@
    <div class="col-sm-3">
       <div class="row">
          <div class="col-sm-6">
-            <img class="img-responsive" src="<?= $profile->image ?>" />
+            <img class="img-responsive" src="/webroot/img/trophy.jpg">
          </div>
          <div class="col-sm-6">
             <div class="row">
