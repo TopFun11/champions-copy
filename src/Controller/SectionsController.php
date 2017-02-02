@@ -11,6 +11,13 @@ use App\Controller\AppController;
 class SectionsController extends AppController
 {
 
+
+    public function initialize(){
+      parent::initialize();
+
+      $this->loadModel("Module");
+    }
+
     /**
      * Index method
      *
@@ -71,8 +78,9 @@ class SectionsController extends AppController
                 $this->Flash->error(__('The section could not be saved. Please, try again.'));
             }
         }
-        $module = $this->Sections->find('all', ['limit' => 200]);
-        $this->set(compact('section', 'module'));
+        $module = $this->Module->find("all");
+        $sections = $this->Sections->find('all', ['limit' => 200]);
+        $this->set(compact('section', 'module', 'sections'));
         $this->set('_serialize', ['section']);
     }
 
