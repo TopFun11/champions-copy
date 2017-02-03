@@ -10,7 +10,7 @@
   <div class="row">
 
               <div class="headerbox-header">
-                  <h3>Intro title here</h3>
+                  <h3><?= ($module->title) ?></h3>
               </div>
               <p> <?= ($module->content) ?> </p>
 
