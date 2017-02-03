@@ -25,8 +25,8 @@
 </p><p><strong>Acknowledgements and thanks (Champions wellbeing phase developments):</strong></p>
 <ul>
   <li>Those ABMU staff who contributed to the design developed of the new materials </li>
-<li>Dr Nic Hooper, who reviewed the wellbeing resources, <a href="nichooper.com">visit his website for further information.</a> </li>
-<li>Viki Metzler is a freelance Illustrator, Cartoonist and Painter based in Swansea, Wales. <a href="www.vikicartoons.com">Visit her website for further details.</a> </li>
+<li>Dr Nic Hooper, who reviewed the wellbeing resources, <a href="http://www.nichooper.com">visit his website for further information.</a> </li>
+<li>Viki Metzler is a freelance Illustrator, Cartoonist and Painter based in Swansea, Wales. <a href="http://www.vikicartoons.com">Visit her website for further details.</a> </li>
 <li>All the programme developers who contributed to the development of the website. </li>
 </ul>
       </div>
