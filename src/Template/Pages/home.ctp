@@ -67,7 +67,7 @@
                                     A healthy weight is key to a healthy lifestyle! Take this health challenge if you are looking to make positive changes to your weight or are wanting that extra bit of motivation to keep going with your healthy weight resolutions. Register to find out more.
                                   </p>
                                   <div class="more">
-                                      <a href="#" title="Title Link">
+                                      <a href="/module/overview/3" title="Title Link">
                                               Read More <i class="fa fa-angle-double-right"></i>
                                           </a>
                                   </div>
@@ -88,7 +88,7 @@
 
                                       </p>
                                   <div class="more">
-                                      <a href="http://champions-for-health.swansea.ac.uk:8080/module/overview/2" title="Title Link">
+                                      <a href="/module/overview/2" title="Title Link">
                                                     Read More <i class="fa fa-angle-double-right"></i>
                                           </a>
                                   </div>
