@@ -203,6 +203,7 @@ hr {
     background: rgba(0, 0, 0, 0.04);
     border: 1px solid #e0e0e0;
     padding: 15px 0 10px 0;
+
 }
 
 .box>.icon:hover>.info {
@@ -224,6 +225,7 @@ hr {
     color: #666;
     line-height: 1.5em;
     margin: 20px;
+    min-height: 150px;
 }
 
 .box>.icon:hover>.info>h3.title, .box>.icon:hover>.info>p, .box>.icon:hover>.info>.more>a {
@@ -252,6 +254,8 @@ hr {
 .enroll-buttons{
     text-align: center;
 }
+
+
 
 /* WELL-BEING PAGE */
 
