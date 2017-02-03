@@ -47,7 +47,7 @@
                                     Eating 5-a-day can improve your health! Take this health challenge if you are looking to maximise your intake of fruit and vegetables and boost your overall health. Register to find out more.
                                   </p>
                                   <div class="more">
-                                      <a href="#" title="Title Link">
+                                      <a href="/module/overview/5" title="Title Link">
                                                 Read More <i class="fa fa-angle-double-right"></i>
                                           </a>
                                   </div>
