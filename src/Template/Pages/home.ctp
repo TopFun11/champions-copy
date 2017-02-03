@@ -88,7 +88,7 @@
 
                                       </p>
                                   <div class="more">
-                                      <a href="#" title="Title Link">
+                                      <a href="http://champions-for-health.swansea.ac.uk:8080/module/overview/2" title="Title Link">
                                                     Read More <i class="fa fa-angle-double-right"></i>
                                           </a>
                                   </div>
