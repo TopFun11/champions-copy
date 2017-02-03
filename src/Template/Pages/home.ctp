@@ -112,7 +112,7 @@
 
                                       </p>
                                   <div class="more">
-                                      <a href="#" title="Title Link">
+                                      <a href="/module/overview/4" title="Title Link">
                                                     Read More <i class="fa fa-angle-double-right"></i>
                                           </a>
                                   </div>
