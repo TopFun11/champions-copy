@@ -2,7 +2,7 @@
     <div class="row">
       <div class="c4h-home-jumbo jumbotron" style="background-image:url('<?= ($module->banner) ?>')">
           <h1><?= ($module->title) ?></h1>
-          <p> Tagline here </p>
+          <p> <?= ($module->description_text) ?> </p>
       </div>
     </div>
 
@@ -12,7 +12,7 @@
               <div class="headerbox-header">
                   <h3>Intro title here</h3>
               </div>
-              <p> <?= ($module->description_text) ?> </p>
+              <p> <?= ($module->content) ?> </p>
 
   </div>
 
