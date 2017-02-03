@@ -10,6 +10,7 @@
 
 
 <div class="container">
+<p>Welcome to Champions wellbeing, please select your health challenges. Click read more and then enrol to take part.</p>
     <div class="row">
       <?php foreach($module as $module): ?>
         <div class="col-xs-12 col-sm-4 col-md-4">
