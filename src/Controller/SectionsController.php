@@ -107,9 +107,10 @@ class SectionsController extends AppController
                 $this->Flash->error(__('The section could not be saved. Please, try again.'));
             }
         }
-        $module = $this->Sections->Module->find('list', ['limit' => 200]);
-        $this->set(compact('section', 'module'));
-        $this->set('_serialize', ['section']);
+        $sections = $this->Sections->find('all', ['limit' => 200]);
+        $module = $this->Module->find('all', ['limit' => 200]);
+        $this->set(compact('section', 'module', 'sections'));
+        $this->set('_serialize', ['section','module', 'sections']);
     }
 
     /**
