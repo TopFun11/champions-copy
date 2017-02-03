@@ -422,7 +422,7 @@ function createExercise() {
 
         genAl("success","Exercise saved!");
 
-      //window.location.href = "/exercise/edit/"+data.exercise.id;
+      window.location.href = "/exercise/edit/"+data.exercise.id;
     },
     error: function(data)
     {
