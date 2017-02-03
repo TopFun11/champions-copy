@@ -48,7 +48,7 @@ class SmsShell extends Shell{
 			$to = $user->phone_number;
 			$name = TableRegistry::get('Users')->get($user->user_id)->username;
 			$msg = str_replace('%name%', $name, $message);
-			if($to && $to != ''){
+			if($to && strlen($to) >= 10){
 				try{
 				$client->messages->create(
 					$to,
@@ -69,25 +69,28 @@ class SmsShell extends Shell{
 		$client = new Client(TWILIO_SID, TWILIO_TOK);
 		
 		foreach($query as $user){
-			$profile = TableRegistry::get('Profile')->find()
+			$profileQuery = TableRegistry::get('Profile')->find()
 						->where(['user_id' => $user->id])->first();
-			$name = $user->username;
-			$to = $profile['phone_number'];
-			if($to && $to != ''){
-				try{
-					$msg = str_replace('%name%', $name, WELCOME_MSG);
-					$client->messages->create(
-						$to,
-						array('from' => TWILIO_NUM,
-							'body' => $msg
-						)
-					);
-					$user->received_welcome_sms = true;
-					if(!$tableUsers->save($user)){
-						Log::write('error', 'Welcome SMS status failed: ' . $user);
+			
+			foreach($profileQuery as $profile){
+				$name = $user->username;
+				$to = $profile->phone_number;
+				if($to && strlen($to) >= 10){
+					try{
+						$msg = str_replace('%name%', $name, WELCOME_MSG);
+						$client->messages->create(
+							$to,
+							array('from' => TWILIO_NUM,
+								'body' => $msg
+							)
+						);
+						$user->received_welcome_sms = true;
+						if(!$tableUsers->save($user)){
+							Log::write('error', 'Welcome SMS status failed: ' . $user);
+						}
+					}catch(Exception $e){
+						Log::write('error', 'Welcome SMS failed: ' . $e);
 					}
-				}catch(Exception $e){
-					Log::write('error', 'Welcome SMS failed: ' . $e);
 				}
 			}
 		}
@@ -101,27 +104,31 @@ class SmsShell extends Shell{
 					->where(['received_inactive_sms' => false, 'last_logged_in <=' => $date->format(TIME_FORMAT)]);
 		
 		foreach($query as $user){
-			$profile = TableRegistry::get('Profile')->find()
+			$profileQuery = TableRegistry::get('Profile')->find()
 							->where(['user_id' => $user->id])->first();
 			
-			$to = $profile->phone_number;
-			$name = $user->username;
-			try{
-				$msg = str_replace('%name%', $name, INACTIVE_MSG);
-				$client->messages->create(
-					$to,
-					array('from' => TWILIO_NUM,
-						'body' => $msg
-					)
-				);
-				$user->received_inactive_sms = true;
-				if(!$tableUsers->save($user)){
-					Log::write('error', 'Inactive SMS status failed: ' . $user);
+			foreach($profileQuery as $profile){
+				$to = $profile->phone_number;
+				$name = $user->username;
+				if($to && strlen($to) >= 10){
+					try{
+						$msg = str_replace('%name%', $name, INACTIVE_MSG);
+						$client->messages->create(
+							$to,
+							array('from' => TWILIO_NUM,
+								'body' => $msg
+							)
+						);
+						$user->received_inactive_sms = true;
+						if(!$tableUsers->save($user)){
+							Log::write('error', 'Inactive SMS status failed: ' . $user);
+						}
+					}catch(Exception $e){
+						Log::write('error', 'Inactive SMS failed: profile(' . $profile->id . '), phone_number(' . $profile->phone_number . ')');
+					}
 				}
-			}catch(Exception $e){
-				Log::write('error', 'Inactive SMS failed: profile(' . $profile->id . '), phone_number(' . $profile->phone_number . ')');
 			}
-	}
+		}
 	}
 	
 	//Schedule an sms to be sent
