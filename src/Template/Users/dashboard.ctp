@@ -23,9 +23,9 @@
             <img class="img-responsive" src="/webroot/img/trophy.jpg">
          </div>
          <div class="col-sm-6">
-            <?= $user->username ?>
+            <strong><?= $user->username ?></strong>
             <br/>
-            POINTS HERE
+            <?= h($profile->points)?> points
          </div>
       </div>
       <br/>
@@ -59,9 +59,9 @@
             </div>
             <div class="panel-footer">
                <?= $module->description_text ?>
-               <div class="btn btn-success">
+               <!--<div class="btn btn-success">
                   Add Weekly Record
-               </div>
+               </div>-->
             </div>
          </div>
       </div>

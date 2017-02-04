@@ -422,7 +422,7 @@ function createExercise() {
 
         genAl("success","Exercise saved!");
 
-      window.location.href = "/exercise/edit/"+data.exercise.id;
+      //window.location.href = "/exercise/edit/"+data.exercise.id;
     },
     error: function(data)
     {
@@ -489,3 +489,33 @@ function loadDataIntoExerciseForm(recordset) {
     //not handling checkboxes or radiobuttons yet, seeing as they don't work anyway
   }
 }
+
+
+//Validates that email being entered into profile page is of correct format.
+function validateNHSEmail(email){
+    if(/^\"?[\w-_\.]*\"?@wales\.nhs\.uk$/.test(email)) {
+      return true;
+    } else if(email=="nic.hooper@uwe.ac.uk") {
+      return true;
+    } else if(email=="a.john@swansea.ac.uk") {
+      return true;
+    } else if(email=="menna.brown@swansea.ac.uk") {
+      return true;
+    } else {
+      return false;
+    }
+}
+
+$("#profile-add").submit(function (e) {
+
+    var formId = this.id;  // "this" is a reference to the submitted form
+    var email = validateNHSEmail($("#email").val());
+    if(!email) {
+      e.preventDefault();
+      alert("Sorry - this pilot is only open to people with valid @wales.nhs.uk email addresses at the moment.");
+    } else {
+      if($("#phone-number").val()=="") {
+        $("#phone-number").val("0");
+      }
+    }
+});

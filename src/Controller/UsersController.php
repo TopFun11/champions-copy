@@ -37,6 +37,8 @@ use Cake\Controller\Component\AuthComponent;
            ], 'Module']]]
          ]
        ]);
+       $profile = $this->Profile->find("all")->where(['user_id' => $this->Auth->user("id")])->first();
+       $this->set('profile', $profile);
        $this->set("user", $user);
      }
 

@@ -31,7 +31,7 @@
          </div>
          <div class="col-sm-6">
             <div class="row">
-               <p>USERNAME HERE</p>
+               <strong><?= $user->username ?></strong>
             </div>
             <div class="row">
                <?= $this->Number->format($profile->points) ?> points
@@ -88,12 +88,9 @@
          </div>
         </div>
       <div class="row user-profile-buttons">
-        <div class="btn btn-info">
-            Edit My Profile
-        </div>
-        <div class="btn btn-success">
+        <a href="/users/dashboard"><div class="btn btn-success">
             My Dashboard
-        </div>
+        </div></a>
 
       </div>
    </div>

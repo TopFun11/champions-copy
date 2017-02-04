@@ -1,4 +1,4 @@
-<?= $this->Form->create($profile); ?>
+<?= $this->Form->create($profile, ['id' => 'profile-add']); ?>
 <div class="container">
   <div class="col-md-10">
       <h1>Registration Form</h1>
@@ -17,11 +17,11 @@
       <div class="panel panel-primary">
         <div class="panel-body">
           <?php
-             echo $this->Form->input('email', ['class'=>'form-control','type'=>'email','placeholder'=>'joebloggs@email.com']);
-             echo $this->Form->input('phone_number', ['class'=>'form-control','type'=>'tel','placeholder'=>'Telephone number']);
+             echo $this->Form->input('email', ['class'=>'form-control','type'=>'email','placeholder'=>'joebloggs@email.com','label'=>'Email*']);
+             echo $this->Form->input('phone_number', ['class'=>'form-control','type'=>'tel','placeholder'=>'Telephone number', 'required' => false, 'label'=>'Phone number (Optional)']);
              ?>
-             <label> Health board and hospital location: </label>
-                <select name="hospital" class="form-control">
+             <label> Health board and hospital location:* </label>
+                <select name="hospital" class="form-control" required>
                    <option value="singleton">Singleton Hospital</option>
                    <option value="moriston">Moriston Hospital</option>
                    <option value="neath port talbot">Neath Port Talbot Hospital</option>
@@ -32,13 +32,12 @@
                    <option value="bon-y-maen">Bon-y-maen</option>
                    <option value="phillips parade">Phillips Parade</option>
                    <option value="gellunudd">Gellunudd</option>
-                   <option value="other">Other, Please specify</option>
                 </select>
 
 
              <div class="form-group">
-                <label> Age Band: </label>
-                   <select name="age" class="form-control">
+                <label> Age Band:* </label>
+                   <select name="age" class="form-control" required>
                       <option value="band1">18-25</option>
                       <option value="band2">26-35</option>
                       <option value="band3">36-45</option>
@@ -49,8 +48,8 @@
              </div>
 
              <div class="form-group">
-               <label> Gender: </label>
-                  <select name="gender" class="form-control">
+               <label> Gender:* </label>
+                  <select name="gender" class="form-control" required>
                      <option value="female">Female</option>
                      <option value="male">Male</option>
                      <option value="unknown">Prefer not to say</option>
@@ -74,8 +73,8 @@
         <div class="panel-body">
 
             <div class="form-group">
-              <label>In general would you say your health is:</label><br/>
-              <label class="radio-inline"><input type="radio" name="general_health" value="excellent">Excellent</label>
+              <label>In general would you say your health is:* </label><br/>
+              <label class="radio-inline"><input type="radio" name="general_health" value="excellent" required>Excellent</label>
               <label class="radio-inline"><input type="radio" name="general_health" value="vgood">Very Good</label>
               <label class="radio-inline"><input type="radio" name="general_health" value="good">Good</label>
               <label class="radio-inline"><input type="radio" name="general_health" value="fair">Fair</label>
@@ -83,14 +82,14 @@
             </div>
 
             <div class="form-group">
-              <label>Do (did) you supervise any other employees?</label><br/>
-              <label class="radio-inline"><input type="radio" name="supervises" value="yes">Yes</label>
+              <label>Do (did) you supervise any other employees?*</label><br/>
+              <label class="radio-inline"><input type="radio" name="supervises" value="yes" required>Yes</label>
               <label class="radio-inline"><input type="radio" name="supervises" value="no">No</label>
             </div>
 
             <div class="form-group">
-              <label>Occupation:</label><br/>
-              <input type="radio" name="occupation" value="excellent">Professional Occupation
+              <label>Occupation:* </label><br/>
+              <input type="radio" name="occupation" value="excellent" required>Professional Occupation
               <br/><div class="radio-extra">Teacher, nurse, physiotherapist, social worker, welfare officer, software designer, accountant, solicitor, medical practitioner, scientist<br/></div>
               <input type="radio" name="occupation" value="excellent">Clerical and intermediate occupations
               <br/><div class="radio-extra">Secretary, personal assistant, clerical worker, office clerk, call centre agent, nursing auxiliary, nursery nurse<br/></div>
@@ -105,17 +104,17 @@
           </div>
 
           <div class="form-group">
-            <label>In the last 6 months, how many days were you off work for health reasons?</label>
-            <input type="text" class="form-control" name="days_off_work" placeholder="Number of sick days">
+            <label>In the last 6 months, how many days were you off work for health reasons?*</label>
+            <input type="text" class="form-control" name="days_off_work" placeholder="Number of sick days" required>
           </div>
 
           <div class="form-group">
-            <label>In the last 6 months, how many spells of sickness absence lasting a week or more have you experienced?</label>
-            <input type="text" class="form-control" name="absences_lasting_a_week" placeholder="Number of spell sickness">
+            <label>In the last 6 months, how many spells of sickness absence lasting a week or more have you experienced?*</label>
+            <input type="text" class="form-control" name="absences_lasting_a_week" placeholder="Number of spell sickness" required>
           </div>
 
           <div class="form-group">
-            <label>Generally, over the past 30 days, how would you rate your performance at work?</label>
+            <label>Generally, over the past 30 days, how would you rate your performance at work?*</label>
             <table class="work-performance table table-striped">
               <thead><tr class="work-performance-header">
                 <th>0</th>
@@ -131,7 +130,7 @@
                 <th>10</th>
               </tr></thead>
               <tbody><tr>
-                <td><input type="radio" name="work_performance" value="0"></td>
+                <td><input type="radio" name="work_performance" value="0" required></td>
                 <td><input type="radio" name="work_performance" value="1"></td>
                 <td><input type="radio" name="work_performance" value="2"></td>
                 <td><input type="radio" name="work_performance" value="3"></td>
@@ -157,7 +156,7 @@
   <div class="col-md-10">
     <div class="panel-group">
       <div class="panel panel-primary">
-        <div class="panel-heading">Warwick-Edinburgh Mental Well-being Scale</div>
+        <div class="panel-heading">Warwick-Edinburgh Mental Well-being Scale*</div>
       </div>
       <div class="panel panel-primary">
         <div class="panel-body">
@@ -178,7 +177,7 @@
               <th>All of the time</th>
               <tr>
                 <td>I've been feeling optimistic about the Future</td>
-                <td><input type="radio" name="wembs_optimism" value="1"></td>
+                <td><input type="radio" name="wembs_optimism" value="1" required></td>
                 <td><input type="radio" name="wembs_optimism" value="2"></td>
                 <td><input type="radio" name="wembs_optimism" value="3"></td>
                 <td><input type="radio" name="wembs_optimism" value="4"></td>
@@ -186,7 +185,7 @@
               </tr>
               <tr>
                 <td>I've been feeling useful</td>
-                <td><input type="radio" name="wembs_useful" value="1"></td>
+                <td><input type="radio" name="wembs_useful" value="1" required></td>
                 <td><input type="radio" name="wembs_useful" value="2"></td>
                 <td><input type="radio" name="wembs_useful" value="3"></td>
                 <td><input type="radio" name="wembs_useful" value="4"></td>
@@ -194,7 +193,7 @@
               </tr>
               <tr>
                 <td>I've been feeling relaxed</td>
-                <td><input type="radio" name="wembs_relaxed" value="1"></td>
+                <td><input type="radio" name="wembs_relaxed" value="1" required></td>
                 <td><input type="radio" name="wembs_relaxed" value="2"></td>
                 <td><input type="radio" name="wembs_relaxed" value="3"></td>
                 <td><input type="radio" name="wembs_relaxed" value="4"></td>
@@ -202,7 +201,7 @@
               </tr>
               <tr>
                 <td>I've been feeling interested in other people</td>
-                <td><input type="radio" name="wembs_interested_in_people" value="1"></td>
+                <td><input type="radio" name="wembs_interested_in_people" value="1" required></td>
                 <td><input type="radio" name="wembs_interested_in_people" value="2"></td>
                 <td><input type="radio" name="wembs_interested_in_people" value="3"></td>
                 <td><input type="radio" name="wembs_interested_in_people" value="4"></td>
@@ -210,7 +209,7 @@
               </tr>
               <tr>
                 <td>I've had energy to spare</td>
-                <td><input type="radio" name="wembs_spare_energy" value="1"></td>
+                <td><input type="radio" name="wembs_spare_energy" value="1" required></td>
                 <td><input type="radio" name="wembs_spare_energy" value="2"></td>
                 <td><input type="radio" name="wembs_spare_energy" value="3"></td>
                 <td><input type="radio" name="wembs_spare_energy" value="4"></td>
@@ -218,7 +217,7 @@
               </tr>
               <tr>
                 <td>I've been dealing with problems well</td>
-                <td><input type="radio" name="wembs_dealing_with_problems_well" value="1"></td>
+                <td><input type="radio" name="wembs_dealing_with_problems_well" value="1" required></td>
                 <td><input type="radio" name="wembs_dealing_with_problems_well" value="2"></td>
                 <td><input type="radio" name="wembs_dealing_with_problems_well" value="3"></td>
                 <td><input type="radio" name="wembs_dealing_with_problems_well" value="4"></td>
@@ -226,7 +225,7 @@
               </tr>
               <tr>
                 <td>I've been thinking clearly</td>
-                <td><input type="radio" name="wembs_thinking_clearly" value="1"></td>
+                <td><input type="radio" name="wembs_thinking_clearly" value="1" required></td>
                 <td><input type="radio" name="wembs_thinking_clearly" value="2"></td>
                 <td><input type="radio" name="wembs_thinking_clearly" value="3"></td>
                 <td><input type="radio" name="wembs_thinking_clearly" value="4"></td>
@@ -234,7 +233,7 @@
               </tr>
               <tr>
                 <td>I've been feeling good about myself</td>
-                <td><input type="radio" name="wembs_good_about_self" value="1"></td>
+                <td><input type="radio" name="wembs_good_about_self" value="1" required></td>
                 <td><input type="radio" name="wembs_good_about_self" value="2"></td>
                 <td><input type="radio" name="wembs_good_about_self" value="3"></td>
                 <td><input type="radio" name="wembs_good_about_self" value="4"></td>
@@ -242,7 +241,7 @@
               </tr>
               <tr>
                 <td>I've been feeling close to other people</td>
-                <td><input type="radio" name="wembs_close_to_others" value="1"></td>
+                <td><input type="radio" name="wembs_close_to_others" value="1" required></td>
                 <td><input type="radio" name="wembs_close_to_others" value="2"></td>
                 <td><input type="radio" name="wembs_close_to_others" value="3"></td>
                 <td><input type="radio" name="wembs_close_to_others" value="4"></td>
@@ -250,7 +249,7 @@
               </tr>
               <tr>
                 <td>I've been feeling confident</td>
-                <td><input type="radio" name="wembs_feeling_confident" value="1"></td>
+                <td><input type="radio" name="wembs_feeling_confident" value="1" required></td>
                 <td><input type="radio" name="wembs_feeling_confident" value="2"></td>
                 <td><input type="radio" name="wembs_feeling_confident" value="3"></td>
                 <td><input type="radio" name="wembs_feeling_confident" value="4"></td>
@@ -258,7 +257,7 @@
               </tr>
               <tr>
                 <td>I've been able to make up my own mind about things</td>
-                <td><input type="radio" name="wembs_make_mind_up" value="1"></td>
+                <td><input type="radio" name="wembs_make_mind_up" value="1" required></td>
                 <td><input type="radio" name="wembs_make_mind_up" value="2"></td>
                 <td><input type="radio" name="wembs_make_mind_up" value="3"></td>
                 <td><input type="radio" name="wembs_make_mind_up" value="4"></td>
@@ -266,7 +265,7 @@
               </tr>
               <tr>
                 <td>I've been feeling loved</td>
-                <td><input type="radio" name="wembs_loved" value="1"></td>
+                <td><input type="radio" name="wembs_loved" value="1" required></td>
                 <td><input type="radio" name="wembs_loved" value="2"></td>
                 <td><input type="radio" name="wembs_loved" value="3"></td>
                 <td><input type="radio" name="wembs_loved" value="4"></td>
@@ -274,7 +273,7 @@
               </tr>
               <tr>
                 <td>I've been feeling interested in new things</td>
-                <td><input type="radio" name="wembs_interested_in_new_things" value="1"></td>
+                <td><input type="radio" name="wembs_interested_in_new_things" value="1" required></td>
                 <td><input type="radio" name="wembs_interested_in_new_things" value="2"></td>
                 <td><input type="radio" name="wembs_interested_in_new_things" value="3"></td>
                 <td><input type="radio" name="wembs_interested_in_new_things" value="4"></td>
@@ -282,7 +281,7 @@
               </tr>
               <tr>
                 <td>I've been feeling cheerful</td>
-                <td><input type="radio" name="wembs_cheerful" value="1"></td>
+                <td><input type="radio" name="wembs_cheerful" value="1" required></td>
                 <td><input type="radio" name="wembs_cheerful" value="2"></td>
                 <td><input type="radio" name="wembs_cheerful" value="3"></td>
                 <td><input type="radio" name="wembs_cheerful" value="4"></td>
@@ -312,7 +311,7 @@
           </div>
 
           <div class="form-group">
-            <label>Over the <u>last 2 weeks</u> how often have you been bothered by the following problems?</label>
+            <label>Over the <u>last 2 weeks</u> how often have you been bothered by the following problems?*</label>
             <table class="work-performance table table-striped">
               <thead><tr class="work-performance-header">
               <th></th>
@@ -324,28 +323,28 @@
             <tbody>
               <tr>
                 <td>Feeling nervous, anxious or on edge</td>
-                <td><input type="radio" name="phq_anxious" value="0"></td>
+                <td><input type="radio" name="phq_anxious" value="0" required></td>
                 <td><input type="radio" name="phq_anxious" value="1"></td>
                 <td><input type="radio" name="phq_anxious" value="2"></td>
                 <td><input type="radio" name="phq_anxious" value="3"></td>
               </tr>
               <tr>
                 <td>Not being able to stop or control worrying</td>
-                <td><input type="radio" name="phq_worrying" value="0"></td>
+                <td><input type="radio" name="phq_worrying" value="0" required></td>
                 <td><input type="radio" name="phq_worrying" value="1"></td>
                 <td><input type="radio" name="phq_worrying" value="2"></td>
                 <td><input type="radio" name="phq_worrying" value="3"></td>
               </tr>
               <tr>
                 <td>Little interest or pleasure in doing things</td>
-                <td><input type="radio" name="phq_interest_please" value="0"></td>
+                <td><input type="radio" name="phq_interest_please" value="0" required></td>
                 <td><input type="radio" name="phq_interest_please" value="1"></td>
                 <td><input type="radio" name="phq_interest_please" value="2"></td>
                 <td><input type="radio" name="phq_interest_please" value="3"></td>
               </tr>
               <tr>
                 <td>Feeling down, depressed or hopeless</td>
-                <td><input type="radio" name="phq_depressed" value="0"></td>
+                <td><input type="radio" name="phq_depressed" value="0" required></td>
                 <td><input type="radio" name="phq_depressed" value="1"></td>
                 <td><input type="radio" name="phq_depressed" value="2"></td>
                 <td><input type="radio" name="phq_depressed" value="3"></td>
