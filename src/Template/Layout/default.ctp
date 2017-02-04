@@ -75,8 +75,6 @@ $cakeDescription = 'Champions for Health';
                       <li><a href="/users/dashboard">Dashboard</a>
                       </li>
                       <li role="separator" class="divider"></li>
-                      <li><a href="/module">Admin Panel</a>
-                      </li>
                       <li><a href="/users/logout">Log out</a>
                       </li>
                     </ul>
