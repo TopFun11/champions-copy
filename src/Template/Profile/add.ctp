@@ -32,7 +32,6 @@
                    <option value="bon-y-maen">Bon-y-maen</option>
                    <option value="phillips parade">Phillips Parade</option>
                    <option value="gellunudd">Gellunudd</option>
-                   <option value="other">Other, Please specify</option>
                 </select>
 
 
