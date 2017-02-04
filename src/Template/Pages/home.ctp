@@ -11,7 +11,7 @@
                   <div class="col-xs-12 col-sm-6 col-lg-6 left-Panel">
                       <h3 class="home-title">What is Champions for Health?</h3>
                       <p>
-                          Champions for Health is an all-Wales campaign which is encouraging NHS staff to become healthier and also encourage the public to do the same. Registration is currently open to staff within Betsi Cadwaladr University Health Board and Velindre NHS Trust.
+                          Champions for Health is an all-Wales campaign which is encouraging NHS staff to become healthier and also encourages the public to do the same. Registration is currently open to staff within Abertawe Bro Morgannwg University Health Board.
                       </p>
 
                   </div>
@@ -19,9 +19,8 @@
                   <div class="col-xs-12 col-sm-6 col-lg-6 left-Panel">
                       <h3 class="home-title">What will taking part involve?</h3>
                       <p>
-                          If you choose to take part, you will need to submit some basic personal information to complete the online registration process. You will then be asked to complete five brief self-assessments of your current lifestyle. </p>
-                      <p>You will be asked to select which lifestyle topic areas you’d like to focus on, and then chart your progress towards your personal goals. You will also be asked some online evaluation-based questions at the beginning and end of the
-                          campaign which will help assess how effective it has been.
+                          If you choose to take part, you will need to submit some basic personal information to complete the online registration process. </p>
+                      <p>You will be asked to select which lifestyle topic areas you’d like to focus on, and then chart your progress towards your personal goals. You will also be asked some online evaluation-based questions at the end of the campaign which will help assess how effective it has been and help us improve it in the future.
                       </p>
                   </div>
 
