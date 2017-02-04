@@ -50,6 +50,7 @@
                     <?=$this->Flash->render('auth') ?>
 
                         <h2>Registration Form</h2>
+                        <p class="lead">You may only register if you are a registered NHS Wales Healthcare Professional, and have a valid @wales.nhs.uk email address</p>
                         <div class="form-group">
                             <label for="userName" class="col-sm-3 control-label">User Name</label>
                             <div class="col-sm-9">
@@ -57,22 +58,9 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="email" class="col-sm-3 control-label">Email</label>
-                            <div class="col-sm-9">
-                                <input type="email" id="email" placeholder="Email" class="form-control">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="password" class="col-sm-3 control-label">Password</label>
+                            <label for="password" class="col-sm-3 control-label">Desired Password</label>
                             <div class="col-sm-9">
                                 <?=$this->Form->input('password', ['label' => false, 'class' => 'form-control','placeholder'=>'Password','required'=>true]) ?>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="password2" class="col-sm-3 control-label">Confirm Password</label>
-                            <div class="col-sm-9">
-                                <input type="password" id="password2" placeholder="Password" class="form-control">
                             </div>
                         </div>
 
@@ -108,5 +96,8 @@
                         $("#consent").hide();
                         $("#reg").show();
                     });
+                    if($("#password").length != 0) {
+                      $("#password").pwstrength();
+                    }
                 });
             </script>
