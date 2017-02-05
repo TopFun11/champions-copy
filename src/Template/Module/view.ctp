@@ -40,6 +40,10 @@ $this->end();
             <td><?= __('Banner') ?></td>
             <td><?= h($module->banner) ?></td>
         </tr>
+        <tr>
+            <td><?= __('Content') ?></td>
+            <td><?= h($module->content) ?></td>
+        </tr>
     </table>
 </div>
 

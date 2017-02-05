@@ -519,3 +519,5 @@ $("#profile-add").submit(function (e) {
       }
     }
 });
+
+$('.lazyYT').lazyYT();

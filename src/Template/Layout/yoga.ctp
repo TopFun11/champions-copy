@@ -25,6 +25,7 @@ $cakeDescription = 'Champions for Health';
         <?= $this->fetch('title') ?>
     </title>
     <?= $this->Html->meta('icon') ?>
+    <?= $this->Html->css('/webroot/css/lazyYT.css'); ?>
     <?= $this->Html->css('/webroot/css/bootstrap/bootstrap.min.css'); ?>
     <?= $this->Html->css('/webroot/css/champions/app.css'); ?>
     <?= $this->Html->css('/webroot/css/bootstrap-treeview.css')?>
@@ -145,6 +146,7 @@ $cakeDescription = 'Champions for Health';
         <a href="/accessibility">Accessibility</a><br/><a href="/terms">Terms of use</a><br/><a href="/privacy">Privacy statement</a><br/><a href="#">Back to top</a>
       </div>
     </footer>
+    <script src="/webroot/js/lazyYT.js"></script>
     <script src="/webroot/js/app.js"></script>
 </body>
 </html>
