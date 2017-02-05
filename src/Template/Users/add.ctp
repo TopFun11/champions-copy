@@ -13,7 +13,8 @@
             <div id="consent">
                 <div class="panel panel-default">
                     <h1>Thank you for joining us!</h1>
-                    <p>
+		    <img src="../../../webroot/img/hospitalstaff.png" alt="Hospital staff" height="200">
+		    <p>
                         Before you start your journey please read the following information carefully. Champions for Health, is a web-based, health promotion campaign developed by Public Health Wales (PHW) and staff at Swansea University Medical School. This website contains information and resources which have been specifically developed to help staff improve their own health and wellbeing. It is designed to be used as a self- help resource. This website is not supported by a therapist. Champions for health will be available free of charge for a period of 12 weeks. If you decide to register to take part you will be able to choose two health challenges to take part in:
                     </p>
                     <ul>
