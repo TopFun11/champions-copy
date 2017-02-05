@@ -23,7 +23,7 @@
 </p><p>The programme also links with existing local and national initiatives by directing participants to available resources, contacts, and interventions. The aim is to spread awareness that health behaviour can change using a structured and purposeful approach.
 </p><p><strong>Acknowledgements and thanks (Champions wellbeing phase developments):</strong></p>
 <ul>
-  <li>Those ABMU staff who contributed to the design developed of the new materials </li>
+  <li>Those ABMU staff who contributed to the design and development of the new resources </li>
 <li>Dr Nic Hooper, who reviewed the wellbeing resources, <a href="http://www.nichooper.com">visit his website for further information.</a> </li>
 <li>Viki Metzler is a freelance Illustrator, Cartoonist and Painter based in Swansea, Wales. <a href="http://www.vikicartoons.com">Visit her website for further details.</a> </li>
 <li>All the programme developers who contributed to the development of the website. </li>
