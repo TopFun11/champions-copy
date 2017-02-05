@@ -66,7 +66,7 @@ class RecordsetController extends AppController
         $recId = $rsetResult->id;
         if(!$rsetResult){
           //If we couldn't save
-          $this->Flash->error(__('There was a problem submitting your recordset, please try again.'));
+          $this->Flash->error(__('There was a problem submitting your data, please try again.'));
           return $this->redirect(["action" => 'index']);
         }
         foreach ($screener->question as $question) {
@@ -78,7 +78,7 @@ class RecordsetController extends AppController
                 $record->answer = $data->answer[$question->id];
                 //Save the record
                 if(!$this->Record->save($record)){
-                  $this->Flash->error(__('There was a problem submitting your record, please try again.Norm'));
+                  $this->Flash->error(__('There was a problem submitting your data, please try again.Norm'));
                   return $this->redirect(["action" => 'index']);
                 }
             }else{
@@ -91,7 +91,7 @@ class RecordsetController extends AppController
                 $rec->question_option_id = $op->id;
                 $rec->question_id = $question->id;
                 if(!$this->Record->save($rec)){
-                  $this->Flash->error(__('There was a problem submitting your record, please try again.Mult'));
+                  $this->Flash->error(__('There was a problem submitting your data, please try again.Mult'));
                   return $this->redirect(["action" => 'index']);
                 }
               }
@@ -157,7 +157,7 @@ class RecordsetController extends AppController
         $recId = $rsetResult->id;
         if(!$rsetResult){
           //If we couldn't save
-          $this->Flash->error(__('There was a problem submitting your recordset, please try again.'));
+          $this->Flash->error(__('There was a problem submitting your data, please try again.'));
           return $this->redirect(["action" => 'index']);
         }
 
@@ -177,7 +177,7 @@ class RecordsetController extends AppController
                 //Save the record
                 if(!$this->Record->save($record)){
 
-                  $this->Flash->error(__('There was a problem submitting your record, please try again.Norm'));
+                  $this->Flash->error(__('There was a problem submitting your data, please try again.Norm'));
                   return $this->redirect(["action" => 'index']);
                 }
 
@@ -196,7 +196,7 @@ class RecordsetController extends AppController
                 $rec->answer = array_key_exists("$question->id-$op->id", $data->answer) ? $data->answer["$question->id-$op->id"] : false;
 
                 if(!$this->Record->save($rec)){
-                  $this->Flash->error(__('There was a problem submitting your record, please try again.Mult'));
+                  $this->Flash->error(__('There was a problem submitting your data, please try again.Mult'));
                   return $this->redirect(["action" => 'index']);
                 }
               }
@@ -214,7 +214,7 @@ class RecordsetController extends AppController
         //Saving profile
         $this->Profile->save($profile);
 
-        $this->Flash->success(__('Recordset saved' . $recordset));
+        $this->Flash->success(__('Data saved. Thank you.'));
         return $this->redirect(["action" => 'index']);
       }else{
         if($exercise->type == 1){
@@ -303,11 +303,11 @@ class RecordsetController extends AppController
         if ($this->request->is('post')) {
             $recordset = $this->Recordset->patchEntity($recordset, $this->request->data);
             if ($this->Recordset->save($recordset)) {
-                $this->Flash->success(__('The recordset has been saved.'));
+                $this->Flash->success(__('The data has been saved.'));
 
                 return $this->redirect(['action' => 'index']);
             } else {
-                $this->Flash->error(__('The recordset could not be saved. Please, try again.'));
+                $this->Flash->error(__('The data could not be saved. Please, try again.'));
             }
         }
         $screener = $this->Recordset->Screener->find('list', ['limit' => 200]);
@@ -330,11 +330,11 @@ class RecordsetController extends AppController
         if ($this->request->is(['patch', 'post', 'put'])) {
             $recordset = $this->Recordset->patchEntity($recordset, $this->request->data);
             if ($this->Recordset->save($recordset)) {
-                $this->Flash->success(__('The recordset has been saved.'));
+                $this->Flash->success(__('The data has been saved.'));
 
                 return $this->redirect(['action' => 'index']);
             } else {
-                $this->Flash->error(__('The recordset could not be saved. Please, try again.'));
+                $this->Flash->error(__('The data could not be saved. Please, try again.'));
             }
         }
         $screener = $this->Recordset->Screener->find('list', ['limit' => 200]);
@@ -354,9 +354,9 @@ class RecordsetController extends AppController
         $this->request->allowMethod(['post', 'delete']);
         $recordset = $this->Recordset->get($id);
         if ($this->Recordset->delete($recordset)) {
-            $this->Flash->success(__('The recordset has been deleted.'));
+            $this->Flash->success(__('The data has been deleted.'));
         } else {
-            $this->Flash->error(__('The recordset could not be deleted. Please, try again.'));
+            $this->Flash->error(__('The data could not be deleted. Please, try again.'));
         }
 
         return $this->redirect(['action' => 'index']);
