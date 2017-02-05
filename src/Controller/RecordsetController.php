@@ -67,7 +67,7 @@ class RecordsetController extends AppController
         if(!$rsetResult){
           //If we couldn't save
           $this->Flash->error(__('There was a problem submitting your recordset, please try again.'));
-          return $this->redirect(["users" => 'dashboard']);
+          return $this->redirect(["action" => 'index']);
         }
         foreach ($screener->question as $question) {
             $record = $this->Record->newEntity();
@@ -79,7 +79,7 @@ class RecordsetController extends AppController
                 //Save the record
                 if(!$this->Record->save($record)){
                   $this->Flash->error(__('There was a problem submitting your record, please try again.Norm'));
-                  return $this->redirect(["users" => 'dashboard']);
+                  return $this->redirect(["action" => 'index']);
                 }
             }else{
               //If we are a multiple choice - Loop through question options
@@ -92,7 +92,7 @@ class RecordsetController extends AppController
                 $rec->question_id = $question->id;
                 if(!$this->Record->save($rec)){
                   $this->Flash->error(__('There was a problem submitting your record, please try again.Mult'));
-                  return $this->redirect(["users" => 'dashboard']);
+                  return $this->redirect(["action" => 'index']);
                 }
               }
             }
@@ -158,7 +158,7 @@ class RecordsetController extends AppController
         if(!$rsetResult){
           //If we couldn't save
           $this->Flash->error(__('There was a problem submitting your recordset, please try again.'));
-          return $this->redirect(["users" => 'dashboard']);
+          return $this->redirect(["action" => 'index']);
         }
 
         foreach ($exercise->question as $question) {
@@ -178,21 +178,26 @@ class RecordsetController extends AppController
                 if(!$this->Record->save($record)){
 
                   $this->Flash->error(__('There was a problem submitting your record, please try again.Norm'));
-                  return $this->redirect(["users" => 'dashboard']);
+                  return $this->redirect(["action" => 'index']);
                 }
 
             }else{
               //If we are a multiple choice - Loop through question options
               foreach($question->question_option as $op){
                 //Create a new record
-                $rec = $this->Record->newEntity();
+                $rec = $recordset->getRecord($question->id, $op->id);
+                if(!$rec){
+                    $rec = $this->Record->newEntity();
+                }
                 //Set the id
                 $rec->recordset_id = $recId;
                 $rec->question_option_id = $op->id;
                 $rec->question_id = $question->id;
+                $rec->answer = array_key_exists("$question->id-$op->id", $data->answer) ? $data->answer["$question->id-$op->id"] : false;
+
                 if(!$this->Record->save($rec)){
                   $this->Flash->error(__('There was a problem submitting your record, please try again.Mult'));
-                  return $this->redirect(["users" => 'dashboard']);
+                  return $this->redirect(["action" => 'index']);
                 }
               }
             }
@@ -210,7 +215,7 @@ class RecordsetController extends AppController
         $this->Profile->save($profile);
 
         $this->Flash->success(__('Recordset saved' . $recordset));
-        return $this->redirect(["users" => 'dashboard']);
+        return $this->redirect(["action" => 'index']);
       }else{
         if($exercise->type == 1){
             $edit = $this->Recordset->find("all")->where(['Recordset.user_id' => $this->Auth->user('id'),
@@ -233,7 +238,7 @@ class RecordsetController extends AppController
 
       $this->set('exercise', $exercise);
       $this->set('recordset', $edit);
-      $this->set('_serialize', ['screener']);
+      $this->set('_serialize', ['recordset']);
     }
     /**
      * hasDoneExerciseFor method
