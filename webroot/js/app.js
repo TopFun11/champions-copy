@@ -432,7 +432,7 @@ function createExercise() {
 
 }
 
-$("#exerciseForm").on("submit", function(event){
+$(".section-exercises").on("submit", function(event){
   event.preventDefault();
   var formData = $(this).serialize();
   var exID = $("input[name='exercise_id']", this).val();
@@ -442,7 +442,7 @@ $("#exerciseForm").on("submit", function(event){
     data: formData,
     success: function(data) {
       console.log($(data));
-      alert("Data saved.");
+      alert("Data saved. Thanking you!");
     },
     error: function(data) {
       console.log($(data));
