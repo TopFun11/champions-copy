@@ -93,8 +93,7 @@ $cakeDescription = 'Champions for Health';
   ga('send', 'pageview');
 
 </script>
-<script src="/webroot/js/bootstrap-treeview.js"></script>
 <script src="/webroot/js/app.js"></script>
-<script src="http://cdnjs.cloudflare.com/ajax/libs/tinymce/4.5.2/tinymce.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/4.5.2/tinymce.min.js"></script>
 </body>
 </html>
