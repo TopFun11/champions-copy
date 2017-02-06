@@ -13,73 +13,80 @@
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
 
-$cakeDescription = 'Champions for Health';
-?>
-<!DOCTYPE html>
-<html>
-<head>
-    <?= $this->Html->charset() ?>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-        <?= $cakeDescription ?>:
-        <?= $this->fetch('title') ?>
-    </title>
-    <?= $this->Html->meta('icon') ?>
-    <?= $this->Html->css('/webroot/css/lazyYT.css'); ?>
-    <?= $this->Html->css('/webroot/css/bootstrap/bootstrap.min.css'); ?>
-    <?= $this->Html->css('/webroot/css/champions/app.css'); ?>
-    <?= $this->Html->css('/webroot/css/bootstrap-treeview.css')?>
-    <?= $this->Html->script(['/webroot/js/jquery/jquery.min.js', '/webroot/js/bootstrap/bootstrap.min.js']); ?>
-    <?= $this->fetch('meta') ?>
-    <?= $this->fetch('css') ?>
-    <?= $this->fetch('script') ?>
-</head>
-<body>
-  <div id="alert_placeholder">
-    <?= $this->Flash->render() ?>
-  </div>
-  <div id="custom-bootstrap-menu" class="navbar navbar-default " role="navigation">
-      <div class="container">
-          <div class="navbar-header">
-              <a class="navbar-brand" href="#"><img src="/webroot/img/logo.png" class="c4h-logo" /></a>
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-menubuilder"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
-          </button>
-          </div>
-          <div class="collapse navbar-collapse navbar-menubuilder">
-              <ul class="nav navbar-nav navbar-left">
-                  <li><a href="/">Home</a>
-                  </li>
-                  <li><a href="/about">About us</a>
-                  </li>
-                  <li><a href="/module/explore">Explore Modules</a>
-                  </li>
-              </ul>
-              <ul class="nav navbar-nav navbar-right">
-                <?php
-                $user = $this->request->session()->read('Auth.User');
+ $cakeDescription = 'Champions for Health';
+ ?>
+ <!DOCTYPE html>
+ <html>
+ <head>
+     <?= $this->Html->charset() ?>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>
+         <?= $cakeDescription ?>:
+         <?= $this->fetch('title') ?>
+     </title>
+     <?= $this->Html->meta('icon') ?>
+     <?= $this->Html->css('/webroot/css/bootstrap/bootstrap.min.css'); ?>
+     <?= $this->Html->css('/webroot/css/champions/app.css'); ?>
+     <?= $this->Html->css('/webroot/css/bootstrap-treeview.css')?>
+     <?= $this->Html->script(['/webroot/js/jquery/jquery.min.js', '/webroot/js/bootstrap/bootstrap.min.js', 'http://cdnjs.cloudflare.com/ajax/libs/pwstrength-bootstrap/2.0.6/pwstrength-bootstrap.min.js']); ?>
+     <?= $this->fetch('meta') ?>
+     <?= $this->fetch('css') ?>
+     <?= $this->fetch('script') ?>
+ </head>
+ <body>
+   <div id="alert_placeholder">
+     <?= $this->Flash->render() ?>
+   </div>
+   <div id="custom-bootstrap-menu" class="navbar navbar-default " role="navigation">
+       <div class="container">
+           <div class="navbar-header">
+               <a class="navbar-brand" href="/"><img src="/webroot/img/logo.png" class="c4h-logo" /></a>
+               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-menubuilder"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+           </button>
+           </div>
+           <div class="collapse navbar-collapse navbar-menubuilder">
+               <ul class="nav navbar-nav navbar-left">
+                   <li><a href="/">Home</a>
+                   </li>
+                   <li><a href="/about">About us</a>
+                   </li>
+                   <li><a href="/module/explore">Explore Modules</a>
+                   </li>
+               </ul>
+               <ul class="nav navbar-nav navbar-right">
+                 <?php
+                 $user = $this->request->session()->read('Auth.User');
 
-                if(!$user){
+                 if(!$user){
 
-                ?>
-                  <li><a href="/users/login">Login</a>
-                  </li>
-                  <li><a href="/users/add">Register</a>
-                  </li>
-                  <?php
-                }else{ ?>
-                  <li><a href="/users/dashboard">Dashboard</a>
-                  </li>
-                  <li><a href="/users/logout">Logout</a>
-                  </li>
-                  <li><a class="navbar-brand" href="/module"><i class="glyphicon glyphicon-menu-right"></i></a>
-                  </li>
-                <?php }
-                  ?>
-              </ul>
-          </div>
-      </div>
-  </div>
+                 ?>
+                   <li><a href="/users/login">Login</a>
+                   </li>
+                   <li><a href="/users/add">Register</a>
+                   </li>
+                   <?php
+                 }else{ ?>
+                   <li class="dropdown">
+                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> <span class="caret"></span></a>
+                     <ul class="dropdown-menu">
 
+                       <li><a href="/profile/view">Profile</a>
+                       </li>
+                       <li><a href="/users/dashboard">Dashboard</a>
+                       </li>
+                       <li role="separator" class="divider"></li>
+                       <li><a href="/users/logout">Log out</a>
+                       </li>
+                     </ul>
+                   </li>
+
+
+                 <?php }
+                   ?>
+               </ul>
+           </div>
+       </div>
+   </div>
     <div class="container clearfix">
       <?= $this->fetch('content') ?>
       <div class="row">
