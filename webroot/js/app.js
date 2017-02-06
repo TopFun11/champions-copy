@@ -462,7 +462,7 @@ $(document).ready(function(){
         loadDataIntoExerciseForm(data.recordset);
       },
       error: function(data) {
-        alert(data);
+        alert("woo");
       }
     })
   });
