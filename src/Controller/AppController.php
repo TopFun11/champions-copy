@@ -64,7 +64,6 @@ class AppController extends Controller
 
     public function beforeFilter(Event $event){
       parent::beforeFilter($event);
-      $this->Security->requireSecure();
       $this->Auth->allow(['display']);
     }
 
@@ -81,9 +80,5 @@ class AppController extends Controller
         ) {
             $this->set('_serialize', true);
         }
-    }
-    public function forceSSL()
-    {
-        return $this->redirect('https://' . env('SERVER_NAME') . $this->request->here);
     }
 }
