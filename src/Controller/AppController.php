@@ -63,6 +63,12 @@ class AppController extends Controller
     }
 
     public function beforeFilter(Event $event){
+      // Force to SSL
+      $this->request->addDetector('ssl', array(
+         'env' => 'HTTP_X_FORWARDED_PROTO',
+         'value' => 'https'
+      ));
+      if($_SERVER['HTTP_X_FORWARDED_PROTO'] == "http") {  return $this->redirect('https://' . env('SERVER_NAME') . $this->here); }
       $this->Auth->allow(['display']);
     }
 
