@@ -76,6 +76,7 @@ class ModuleController extends AppController
       $module = $this->Module->get($id, [
         'contain' => ['Sections', 'Users']
       ]);
+      $userRole = $this->Auth->user('role');
       if($module->required_role == "new student"){
         if($userRole != "new student"){
             return $this->redirect(["action" => "explore", "controller" => "module"]);
