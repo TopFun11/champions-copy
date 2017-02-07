@@ -156,6 +156,7 @@ class ModuleController extends AppController
     }
 
     public function enroll($id = null){
+      $userRole = $this->Auth->user('role');
       $userId = $this->Auth->user('id');
       $module = $this->Module->get($id, ['contain' => ['Screener']]);
       if(!$module){
