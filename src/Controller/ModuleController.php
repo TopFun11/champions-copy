@@ -133,6 +133,7 @@ class ModuleController extends AppController
      */
     public function Overview($id = null)
     {
+        $userRole = $this->Auth->user('role');
         $module = $this->Module->get($id, [
             'contain' => ['Sections', 'Users']
         ]);
