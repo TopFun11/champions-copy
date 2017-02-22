@@ -48,29 +48,46 @@
          <table class="table table-striped" cellpadding="0" cellspacing="0">
             <tr>
                <td><?= __('Age') ?></td>
-               <td><?= h($profile->age) ?></td>
+               <td>
+               <?php
+               switch ($profile->age=="band1") {
+                 case "band1":
+                  echo "18-25";
+                  break;
+                case "band2":
+                  echo "26-35";
+                  break;
+                case "band3":
+                  echo "36-45";
+                  break;
+                case "band4":
+                  echo "46-55";
+                  break;
+                case "band5":
+                  echo "56-65";
+                  break;
+                case "band6":
+                  echo "65+";
+                  break;
+                default:
+                  echo "Unspecified";
+                  break;
+               }
+               ?>
+               </td>
             </tr>
             <tr>
                <td><?= __('Gender') ?></td>
                <td><?= h($profile->gender) ?></td>
             </tr>
+            <tr>
+               <td><?= __('Health Board') ?></td>
+               <td><?= h($profile->hospital) ?></td>
+            </tr>
          </table>
        </div>
       </div>
       <div class="panel panel-primary">
-        <div class="panel-heading">
-          Medical Information
-        </div>
-        <div class="panel-body">
-          <table class="table table-striped" cellpadding="0" cellspacing="0">
-             <tr>
-                <td><?= __('Hospital') ?></td>
-                <td><?= h($profile->hospital) ?></td>
-             </tr>
-          </table>
-        </div>
-       </div>
-       <div class="panel panel-primary">
          <div class="panel-heading">
            Contact Details
          </div>
