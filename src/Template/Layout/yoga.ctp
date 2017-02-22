@@ -96,7 +96,7 @@
               </div>
               <div class="mg-container" style="top:300px;left:-100px;">
                   <div class="mg-icon mg-icon-left wb">
-                      <a href="#" data-toggle="modal" data-target="#fiveways">
+                      <a href="#" data-toggle="modal" data-target="#five-ways-to-wellbeing">
                           <img class="img-responsive mg-fade" src="/webroot/img/my-icons-collection/png/brain-1.png">
                       </a>
                   </div>

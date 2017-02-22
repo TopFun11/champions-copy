@@ -31,6 +31,7 @@ function makeModalHeader($title) {
   return sprintf($modalWrapper,$title);
 }
 function makeAccordionHeader($id, $title) {
+
   $accHeader = "<div class='panel-heading'><h4 class='panel-title'><a data-toggle='collapse' data-parent='#accordion' href='#a%s'>%s</a></h4></div>";
   return sprintf($accHeader,$id,$title);
 }
