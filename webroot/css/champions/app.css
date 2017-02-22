@@ -429,3 +429,10 @@ hr {
 .radio-extra {
     padding-left: 30px;
 }
+
+.edit-button > a {
+  color:#DDDDDD;
+}
+.edit-button > a:hover{
+  color:white;
+}

@@ -1,28 +1,3 @@
-<?php
-   $this->start('tb_actions');
-   ?>
-<li><?= $this->Html->link(__('Edit Profile'), ['action' => 'edit', $profile->id]) ?> </li>
-<li><?= $this->Form->postLink(__('Delete Profile'), ['action' => 'delete', $profile->id], ['confirm' => __('Are you sure you want to delete # {0}?', $profile->id)]) ?> </li>
-<li><?= $this->Html->link(__('List Profile'), ['action' => 'index']) ?> </li>
-<li><?= $this->Html->link(__('New Profile'), ['action' => 'add']) ?> </li>
-<li><?= $this->Html->link(__('List Users'), ['controller' => 'Users', 'action' => 'index']) ?> </li>
-<li><?= $this->Html->link(__('New User'), ['controller' => 'Users', 'action' => 'add']) ?> </li>
-<?php
-   $this->end();
-
-   $this->start('tb_sidebar');
-   ?>
-<ul class="nav nav-sidebar">
-   <li><?= $this->Html->link(__('Edit Profile'), ['action' => 'edit', $profile->id]) ?> </li>
-   <li><?= $this->Form->postLink(__('Delete Profile'), ['action' => 'delete', $profile->id], ['confirm' => __('Are you sure you want to delete # {0}?', $profile->id)]) ?> </li>
-   <li><?= $this->Html->link(__('List Profile'), ['action' => 'index']) ?> </li>
-   <li><?= $this->Html->link(__('New Profile'), ['action' => 'add']) ?> </li>
-   <li><?= $this->Html->link(__('List Users'), ['controller' => 'Users', 'action' => 'index']) ?> </li>
-   <li><?= $this->Html->link(__('New User'), ['controller' => 'Users', 'action' => 'add']) ?> </li>
-</ul>
-<?php
-   $this->end();
-   ?>
 <div class="row">
    <div class="col-sm-3">
       <div class="row">
@@ -89,10 +64,14 @@
       </div>
       <div class="panel panel-primary">
          <div class="panel-heading">
-           Contact Details
+           Contact Details <span class="pull-right edit-button"><a href="/profile/edit"> Edit <i class="glyphicon glyphicon-pencil"></i></a></span>
          </div>
          <div class="panel-body">
            <table class="table table-striped" cellpadding="0" cellspacing="0">
+             <tr>
+                <td><?= __('Subscribed to emails/text messages') ?></td>
+                <td><?php if($profile->unsubscribed){echo "No";}else {echo "Yes";} ?></td>
+             </tr>
               <tr>
                  <td><?= __('Email') ?></td>
                  <td><?= h($profile->email) ?></td>

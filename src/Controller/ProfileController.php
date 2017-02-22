@@ -91,7 +91,7 @@ class ProfileController extends AppController
     public function edit()
     {
       $profile = $this->Profile->find("all")->where(['user_id' => $this->Auth->user("id")])->first();
-
+      $user= $this->Users->find("all")->where(['id' => $this->Auth->user("id")])->first();
       if(!$profile){
         throw new NotFoundException("User profile not found");
       }
@@ -100,13 +100,14 @@ class ProfileController extends AppController
             if ($this->Profile->save($profile)) {
                 $this->Flash->success(__('The profile has been saved.'));
 
-                return $this->redirect(['action' => 'index']);
+                return $this->redirect(['action' => 'view']);
             }
             $this->Flash->error(__('The profile could not be saved. Please, try again.'));
         }
         $users = $this->Profile->Users->find('list', ['limit' => 200]);
         $this->set(compact('profile', 'users'));
-        $this->set('_serialize', ['profile']);
+        $this->set('user', $user);
+        $this->set('_serialize', ['profile', 'user']);
     }
 
     /**

@@ -1,47 +1,43 @@
-<?php
-$this->extend('../Layout/TwitterBootstrap/dashboard');
-
-$this->start('tb_actions');
-?>
-    <li><?=
-    $this->Form->postLink(
-        __('Delete'),
-        ['action' => 'delete', $profile->id],
-        ['confirm' => __('Are you sure you want to delete # {0}?', $profile->id)]
-    )
-    ?>
-    </li>
-    <li><?= $this->Html->link(__('List Profile'), ['action' => 'index']) ?></li>
-    <li><?= $this->Html->link(__('List Users'), ['controller' => 'Users', 'action' => 'index']) ?> </li>
-    <li><?= $this->Html->link(__('New User'), ['controller' => 'Users', 'action' => 'add']) ?> </li>
-<?php
-$this->end();
-
-$this->start('tb_sidebar');
-?>
-<ul class="nav nav-sidebar">
-    <li><?=
-    $this->Form->postLink(
-        __('Delete'),
-        ['action' => 'delete', $profile->id],
-        ['confirm' => __('Are you sure you want to delete # {0}?', $profile->id)]
-    )
-    ?>
-    </li>
-    <li><?= $this->Html->link(__('List Profile'), ['action' => 'index']) ?></li>
-    <li><?= $this->Html->link(__('List Users'), ['controller' => 'Users', 'action' => 'index']) ?> </li>
-    <li><?= $this->Html->link(__('New User'), ['controller' => 'Users', 'action' => 'add']) ?> </li>
-</ul>
-<?php
-$this->end();
-?>
 <?= $this->Form->create($profile); ?>
-<fieldset>
-    <legend><?= __('Edit {0}', ['Profile']) ?></legend>
-    <?php
-    echo $this->Form->input('email');
-    echo $this->Form->input('phone_number');
-    ?>
-</fieldset>
-<?= $this->Form->button(__("Save")); ?>
+<div class="row">
+  <div class="col-sm-3">
+     <div class="row">
+        <div class="col-sm-6">
+           <img class="img-responsive" src="/webroot/img/trophy.jpg">
+        </div>
+        <div class="col-sm-6">
+           <div class="row">
+              <strong><?= $user->username ?></strong>
+           </div>
+           <div class="row">
+              <?= $this->Number->format($profile->points) ?> points
+           </div>
+        </div>
+     </div>
+  </div>
+  <div class="col-xs-9">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+       Contact Details <span class="pull-right edit-button"><a href="/profile/view"> Cancel <i class="glyphicon glyphicon-trash"></i></a></span>
+      </div>
+      <div class="panel-body">
+       <table class="table table-striped" cellpadding="0" cellspacing="0">
+         <tr>
+            <td><?= __('Unsubscribe from emails and texts') ?><br/><em>Please note that you can always resubscribe later!</em></td>
+            <td><div class="checkbox"><?=$this->Form->input('unsubscribed',['label'=>'Yes, unsubscribe me. I know that I can resubscribe later.']) ?></div></td>
+         </tr>
+          <tr>
+             <td><?= __('Email') ?></td>
+             <td><?= $this->Form->input('email', ['class'=>'form-control','type'=>'email','label'=>false]) ?></td>
+          </tr>
+          <tr>
+             <td><?= __('Phone Number') ?></td>
+             <td><?= $this->Form->input('phone_number',['class'=>'form-control','type'=>'tel','label'=>false]) ?></td>
+          </tr>
+       </table>
+       <?= $this->Form->button(__("Save"),['class'=>'btn btn-success pull-right']); ?>
+      </div>
+    </div>
+  </div>
+</div>
 <?= $this->Form->end() ?>
