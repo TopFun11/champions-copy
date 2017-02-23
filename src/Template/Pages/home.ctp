@@ -141,7 +141,10 @@
                           <div class="space"></div>
                       </div>
                   </div>
-
+                  <?php if($authUser){
+                    
+                    if($authUser['role'] == "new student" || $authUser['role'] == "admin") {
+                      ?>
                   <div class="col-xs-12 col-sm-6 col-lg-4">
                       <div class="box">
                           <div class="icon">
@@ -162,5 +165,8 @@
                           <div class="space"></div>
                       </div>
                   </div>
+                  <?php
+                }}
+                ?>
               </div>
           </div>

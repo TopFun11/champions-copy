@@ -57,7 +57,7 @@ class PagesController extends AppController
             $subpage = $path[1];
         }
         $this->set(compact('page', 'subpage'));
-
+        $this->set('authUser', $this->Auth->user());
         try {
             $this->render(implode('/', $path));
         } catch (MissingTemplateException $e) {
