@@ -131,11 +131,11 @@ use Cake\Controller\Component\AuthComponent;
   {
   $this->request->allowMethod(['post','delete']);
     $user = $this->Users->get($id);
-  /* if ($this->Users->delete($user)){
+   if ($this->Users->delete($user)){
                    $this->Flash->success(__('The user with id: {0} has been deleted', h($id)));
-    return;
-   }*/
-   $result = $this->Users->delete($user);
+    return $this->redirect(['action'=>'index']);
+   }
+ //  $result = $this->Users->delete($user);
    
   }
 
