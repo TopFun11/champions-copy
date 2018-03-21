@@ -148,7 +148,7 @@ use Cake\Controller\Component\AuthComponent;
             $this->Flash->success(__('Your user has been updated.'));
             return $this->redirect(['action' => 'index']);
         }
-        $this->Flash->error(__('Unable to update your article.'));
+        $this->Flash->error(__('Unable to update.'));
     }
 
     $this->set('user', $user);
