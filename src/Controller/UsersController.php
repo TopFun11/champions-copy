@@ -129,7 +129,7 @@ use Cake\Controller\Component\AuthComponent;
   
   public function delete($id)  
   {
-   £this->request->allowMethod(['post','delete']);
+  $this->request->allowMethod(['post','delete']);
     $user = $this->Users->get($id);
   /* if ($this->Users->delete($user)){
                    $this->Flash->success(__('The user with id: {0} has been deleted', h($id)));
