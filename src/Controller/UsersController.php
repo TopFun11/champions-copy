@@ -126,5 +126,15 @@ use Cake\Controller\Component\AuthComponent;
          $this->set('user', $user);
          $this->set('options', $options);
      }
+  
+  public function delete($id)  
+  {
+    $user = $this->Users->get($id);
+   if ($this->Users->delete($user)){
+                   $this->Flash->success(__('The user with id: {0} has been deleted', h($id)));
+    return;
+   }
+   
+  }
 
  }
