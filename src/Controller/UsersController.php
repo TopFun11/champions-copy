@@ -138,5 +138,20 @@ use Cake\Controller\Component\AuthComponent;
  //  $result = $this->Users->delete($user);
    
   }
+  
+  public function edit($id)
+{
+    $user = $this->Users->get($id);
+    if ($this->request->is(['post', 'put'])) {
+        $this->Users->patchEntity($user, $this->request->getData());
+        if ($this->Users->save($user)) {
+            $this->Flash->success(__('Your user has been updated.'));
+            return $this->redirect(['action' => 'index']);
+        }
+        $this->Flash->error(__('Unable to update your article.'));
+    }
+
+    $this->set('user', $user);
+}
 
  }
