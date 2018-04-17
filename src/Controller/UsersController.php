@@ -141,7 +141,7 @@ use Cake\Controller\Component\AuthComponent;
   
     public function edit()
     {
-        $id = (int) $this->params['id'];
+        $id = (int) $this->request->params['pass'][0];
         $user = $this->Users->get($id);
         if ($this->request->is(['post', 'put'])) {
             $this->Users->patchEntity($user, $this->request->getData());
