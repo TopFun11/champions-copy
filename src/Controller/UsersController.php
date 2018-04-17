@@ -144,7 +144,7 @@ use Cake\Controller\Component\AuthComponent;
         $id = (int) $this->request->params['pass'][0];
         $user = $this->Users->get($id);
         if ($this->request->is(['post', 'put'])) {
-            $this->Users->patchEntity($user, $this->request->getData());
+            $this->Users->patchEntity($user, $this->request->data);
                 if ($this->Users->save($user)) {
                     $this->Flash->success(__('Your user has been updated.'));
                     return $this->redirect(['action' => 'index']);
