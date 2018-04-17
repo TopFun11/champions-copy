@@ -143,7 +143,7 @@ use Cake\Controller\Component\AuthComponent;
     exit("Show edit user view");
   }
   
-  public function edit($id)
+  /*public function edit($id)
 {
     $user = $this->Users->get($id);
     if ($this->request->is(['post', 'put'])) {
@@ -156,6 +156,6 @@ use Cake\Controller\Component\AuthComponent;
     }
 
     $this->set('user', $user);
-}
+}*/
 
  }
