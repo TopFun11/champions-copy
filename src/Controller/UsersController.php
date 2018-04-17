@@ -139,6 +139,10 @@ use Cake\Controller\Component\AuthComponent;
    
   }
   
+  public function edit() {
+    exit("Show edit user view");
+  }
+  
   public function edit($id)
 {
     $user = $this->Users->get($id);
