@@ -139,23 +139,19 @@ use Cake\Controller\Component\AuthComponent;
    
   }
   
-  public function edit() {
-    exit("Show edit user view");
-  }
-  
-  /*public function edit($id)
-{
-    $user = $this->Users->get($id);
-    if ($this->request->is(['post', 'put'])) {
-        $this->Users->patchEntity($user, $this->request->getData());
-        if ($this->Users->save($user)) {
-            $this->Flash->success(__('Your user has been updated.'));
-            return $this->redirect(['action' => 'index']);
+    public function edit()
+    {
+        $id = (int) $this->params['id'];
+        $user = $this->Users->get($id);
+        if ($this->request->is(['post', 'put'])) {
+            $this->Users->patchEntity($user, $this->request->getData());
+                if ($this->Users->save($user)) {
+                    $this->Flash->success(__('Your user has been updated.'));
+                    return $this->redirect(['action' => 'index']);
+                }
+            $this->Flash->error(__('Unable to update.'));
         }
-        $this->Flash->error(__('Unable to update.'));
+        $this->set('user', $user);
     }
-
-    $this->set('user', $user);
-}*/
 
  }
