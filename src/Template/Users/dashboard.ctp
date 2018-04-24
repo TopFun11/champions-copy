@@ -24,6 +24,7 @@
          </div>
          <div class="col-sm-6">
             <h2>hello</h2>
+            <br/>
             <strong><?= $user->username ?></strong>
             <br/>
             <?= h($profile->points)?> points
