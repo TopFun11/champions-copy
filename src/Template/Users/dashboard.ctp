@@ -23,6 +23,7 @@
             <img class="img-responsive" src="/webroot/img/trophy.jpg">
          </div>
          <div class="col-sm-6">
+            <h2>hello</h2>
             <strong><?= $user->username ?></strong>
             <br/>
             <?= h($profile->points)?> points
