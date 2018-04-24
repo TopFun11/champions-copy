@@ -27,7 +27,7 @@
             <br/>
             <strong><?= $user->username ?></strong>
             <br/>
-            <?= h($profile->points)?> 
+            <?= h($profile->points)?> points
          </div>
       </div>
       <br/>
