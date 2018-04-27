@@ -54,8 +54,6 @@ $this->end();
   <?php
   $this->end();
   ?>
-  <!--<pre><?=h($module)?></pre>
-  <pre><?=$module->sections?></pre>-->
   <input type="hidden" value='<?= h($module) ?>' id="moduleDataSet"/>
   <div class="container">
     <?= $this->Form->create($module); ?>
