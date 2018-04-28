@@ -13,24 +13,27 @@ class QuestionAnswerHelper extends Helper{
     switch($question->type){
       //Amount type
       case 0:
-        $html = $this->displayAmount($question, $value);
+        $html = $this->displayText($question, $value);
         break;
       //Radio
       case 1:
         $html = $this->displayRadio($question, $value);
-      break;
+        break;
       case 2:
         $html = $this->displayMultipleChoice($question, $value);
-      break;
+        break;
+      case 3:
+        $html = $this->displayAmount($question, $value);
+        break;
       default:
         //$html = $this->displayAmount($question);
-      break;
+        break;
     }
 
     return $html;
   }
 
-  private function displayAmount($question, $value = null){
+  private function displayText($question, $value = null){
     return $this->Form->textarea('answer['.$question->id.']', ['value' => $value, 'class' => 'form-control']);
   }
 
@@ -69,6 +72,10 @@ class QuestionAnswerHelper extends Helper{
       $html = $html . "<div class='checkbox'><label>". $this->Form->checkbox('answer['.$question->id.'-'.$op->id.']', ['hiddenField' => false]).$op->text . "</label></div>";
     }
     return $html;
+  }
+
+  private function displayAmount($question, $value = null) {
+    return $this->Form->input('answer['.$question->id.']', ['type' => 'number', 'value' => $value, 'class' => 'form-control']);
   }
 
 }

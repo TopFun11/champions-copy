@@ -65,9 +65,10 @@ $this->end();
       <input type="text" class="form-control" id="screener-question">
       <label for="screener-question-type">Type (How the user will answer the question):</label>
       <select id="screener-question-type" class="form-control">
-        <option value=0>Textbox/Numerical value</option>
+        <option value=0>Text value</option>
         <option value=1>Radio buttons (Single choice)</option>
         <option value=2>Checkboxes (Multiple choice)</option>
+        <option value=3>Numerical value</option>
       </select>
       <div class="option-input">
         <div class="row">
