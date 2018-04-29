@@ -70,6 +70,11 @@ class ProfileTable extends Table
 
         $validator
             ->requirePresence('phone_number', 'create')
+            ->add('phone_number', 'validFormat',
+            [
+                'rule' => array('custom', '/^([0-9 +\(\)]+)$/'),
+                'message' => 'Please enter a valid telephone number.'
+            ])
             ->notEmpty('phone_number');
 
         return $validator;
