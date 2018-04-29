@@ -75,7 +75,7 @@ class QuestionAnswerHelper extends Helper{
   }
 
   private function displayAmount($question, $value = null) {
-    return $this->Form->input('answer['.$question->id.']', ['type' => 'number', 'value' => $value, 'class' => 'form-control']);
+    return $this->Form->input('answer['.$question->id.']', ['type' => 'number', 'value' => $value, 'class' => 'form-control', 'label' => false]);
   }
 
 }
