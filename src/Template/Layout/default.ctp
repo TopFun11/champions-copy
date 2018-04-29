@@ -72,8 +72,16 @@ $cakeDescription = 'Champions for Health';
 
                       <li><a href="/profile/view">Profile</a>
                       </li>
-                      <li><a href="/users/dashboard">Dashboard</a>
+                      <li><a href="/users/dashboard">User Dashboard</a>
                       </li>
+                      <?php
+                      if("admin" == $user['role']) {
+                      ?>
+                      <li><a href="/module/index">Admin Dashboard</a>
+                      </li>
+                      <?php
+                      }
+                      ?>
                       <li role="separator" class="divider"></li>
                       <li><a href="/users/logout">Log out</a>
                       </li>
