@@ -19,7 +19,7 @@
 <div class="container user-dashboard">
     <div class="row greeting">
         <div class="col-md-12">
-            <h1>Good Afternoon, <?=$user->username?>.</h1>
+            <h1>Good <?=(date('H')<12?'Morning':date('H')<18?'Afternoon':'Evening')?>, <?=ucwords($user->username)?>.</h1>
         </div>
     </div>
     <div class="row">
@@ -45,7 +45,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4 module-enrolments">
             <h2>Your Modules</h2>
             <div>
                 <p>You are enrolled onto <?=count($user->module)?> modules</p>
@@ -54,7 +54,7 @@
                 (icon fa-fw) <?= $this->Html->link($module->title, ['controller' => 'module', 'action' => 'dashboard', $module->id], ['title' => __($module->title)]); ?>
                 <?php endforeach; ?>                
                 <hr>
-                <a href="#catalogue">(icon fa-fw) View Module Catalogue</a>
+                <a class="catalogue-link" href="#catalogue">(icon fa-fw) View Module Catalogue</a>
             </div>
         </div>
     </div>
