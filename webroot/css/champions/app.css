@@ -141,6 +141,27 @@ body {
     font-size: 1.5em;
 }
 
+.user-dashboard .module-enrolments div {
+    border: 1px solid black;
+    padding: .65em;
+}
+
+.user-dashboard .module-enrolments p {
+    text-align: center;
+}
+
+.user-dashboard .module-enrolments hr {
+    border: .1em solid #000;
+    background-color: #000;
+    width: 80%;
+    margin: 15px auto;
+}
+
+.user-dashboard .module-enrolments a.catalogue-link {
+    display: block;
+    text-align: center;
+}
+
 .dashboard-header {
     font-weight: bold;
 }
