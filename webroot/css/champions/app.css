@@ -114,6 +114,33 @@ body {
     padding: 10px 20px;
 }
 
+.user-dashboard hr {
+    height: .1em;
+}
+
+.user-dashboard .activity-summary span {
+    display: block;
+    float: right;
+    font-size: .55em;
+    font-weight: normal
+    padding-top: .7em;
+}
+
+.user-dashboard .trophies .trophy-icon {
+    width: 80px;
+    height: 80px;
+    background-color: #CCC;
+    border: 1px solid #AAA;
+    float: left;
+    margin: .5em;
+}
+
+.user-dashboard .activity-statistics .value {
+    font-weight: bold;
+    text-align: center;
+    font-size: 1.5em;
+}
+
 .dashboard-header {
     font-weight: bold;
 }
