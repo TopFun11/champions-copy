@@ -126,6 +126,11 @@ body {
     padding-top: .7em;
 }
 
+.user-dashboard .activity-summary > .row {
+    border: 1px solid black;
+    padding: 1.2em;
+}
+
 .user-dashboard .trophies .trophy-icon {
     width: 80px;
     height: 80px;
@@ -146,6 +151,11 @@ body {
     padding: .65em;
 }
 
+.user-dashboard .module-enrolments img {
+    width:  16px;
+    height: 16px;
+}
+
 .user-dashboard .module-enrolments p {
     text-align: center;
 }
@@ -160,6 +170,11 @@ body {
 .user-dashboard .module-enrolments a.catalogue-link {
     display: block;
     text-align: center;
+}
+
+.user-dashboard .trophies > .row {
+    border: 1px solid black;
+    padding: .65em;
 }
 
 .dashboard-header {

@@ -51,10 +51,16 @@
                 <p>You are enrolled onto <?=count($user->module)?> modules</p>
                 <?php foreach($user->module as $module): ?>
                 <hr>
-                (icon fa-fw) <?= $this->Html->link($module->title, ['controller' => 'module', 'action' => 'dashboard', $module->id], ['title' => __($module->title)]); ?>
-                <?php endforeach; ?>                
+                <img src="<?= $module->icon ?>" alt="Icon for the <?=addslashes($module->title)?> module"> <?= $this->Html->link($module->title, ['controller' => 'module', 'action' => 'dashboard', $module->id], ['title' => __($module->title)]); ?>
+                <?php endforeach;
+                if(0 == count($user->module)) {
+                ?>
+                <p>You are not enrolled onto any modules. To enrol onto a module, visit the <a href="/module/explore" title="View the module catalogue">module catalogue</a>.</p>
+                <?php
+                }
+                ?>
                 <hr>
-                <a class="catalogue-link" href="#catalogue">(icon fa-fw) View Module Catalogue</a>
+                <a class="catalogue-link" href="/module/explore">View Module Catalogue</a>
             </div>
         </div>
     </div>
