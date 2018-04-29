@@ -6,3 +6,5 @@
 *.log
 /vendor/
 *.lock
+webroot/uploads/*
+webroot/img/*
