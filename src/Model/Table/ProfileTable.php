@@ -77,6 +77,12 @@ class ProfileTable extends Table
             ])
             ->notEmpty('phone_number');
 
+        $validator
+            ->integer('days_off_work',  'Please enter a valid whole number for days off work');
+
+        $validator
+            ->integer('absences_lasting_a_week', 'Please enter a valid whole number for absences lasting a week');
+
         return $validator;
     }
 

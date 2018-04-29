@@ -105,12 +105,12 @@
 
           <div class="form-group">
             <label>In the last 6 months, how many days were you off work for health reasons?*</label>
-            <input type="text" class="form-control" name="days_off_work" placeholder="Number of sick days" required>
+            <input type="number" class="form-control" name="days_off_work" placeholder="Number of sick days" required>
           </div>
 
           <div class="form-group">
             <label>In the last 6 months, how many spells of sickness absence lasting a week or more have you experienced?*</label>
-            <input type="text" class="form-control" name="absences_lasting_a_week" placeholder="Number of spell sickness" required>
+            <input type="number" class="form-control" name="absences_lasting_a_week" placeholder="Number of spell sickness" required>
           </div>
 
           <div class="form-group">
