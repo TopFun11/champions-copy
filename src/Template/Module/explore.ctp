@@ -4,7 +4,7 @@
 <div class="container">
     <div class="c4h-home-jumbo jumbotron" style="background-image:url('/webroot/img/headers/home/bg.jpg')">
         <h1>Champions for Health</h1>
-        <p>A healthier you, means a healthier Wales.</p>
+        <p>A healthier you means a healthier Wales.</p>
     </div>
 </div>
 
