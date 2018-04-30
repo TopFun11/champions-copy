@@ -18,6 +18,11 @@ class ExerciseController extends AppController
      */
     public function index()
     {
+        if($this->Auth->user('role') !=  "admin"){
+            $this->Flash->Error("You are not authorised to view this section");
+            return $this->redirect(["action" => "", "controller" => "pages"]);
+        }
+
         $this->paginate = [
             'contain' => ['Sections']
         ];
@@ -36,6 +41,11 @@ class ExerciseController extends AppController
      */
     public function view($id = null)
     {
+        if($this->Auth->user('role') !=  "admin"){
+            $this->Flash->Error("You are not authorised to view this section");
+            return $this->redirect(["action" => "", "controller" => "pages"]);
+        }
+
         $exercise = $this->Exercise->get($id, [
             'contain' => ['Sections', 'Recordset', 'Question']
         ]);
@@ -51,6 +61,11 @@ class ExerciseController extends AppController
      */
     public function add()
     {
+        if($this->Auth->user('role') !=  "admin"){
+            $this->Flash->Error("You are not authorised to view this section");
+            return $this->redirect(["action" => "", "controller" => "pages"]);
+        }
+
         $exercise = $this->Exercise->newEntity();
         if ($this->request->is('post')) {
             $exercise = $this->Exercise->patchEntity($exercise, $this->request->data);
@@ -79,6 +94,11 @@ class ExerciseController extends AppController
      */
     public function edit($id = null)
     {
+        if($this->Auth->user('role') !=  "admin"){
+            $this->Flash->Error("You are not authorised to view this section");
+            return $this->redirect(["action" => "", "controller" => "pages"]);
+        }
+
         $exercise = $this->Exercise->get($id, [
             'contain' => ['Question' => ['QuestionOption']]
         ]);
@@ -105,6 +125,11 @@ class ExerciseController extends AppController
      */
     public function delete($id = null)
     {
+        if($this->Auth->user('role') !=  "admin"){
+            $this->Flash->Error("You are not authorised to view this section");
+            return $this->redirect(["action" => "", "controller" => "pages"]);
+        }
+
         $this->request->allowMethod(['post', 'delete']);
         $exercise = $this->Exercise->get($id);
         if ($this->Exercise->delete($exercise)) {

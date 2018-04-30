@@ -25,6 +25,11 @@ class SectionsController extends AppController
      */
     public function index()
     {
+        if($this->Auth->user('role') !=  "admin"){
+            $this->Flash->Error("You are not authorised to view this section");
+            return $this->redirect(["action" => "", "controller" => "pages"]);
+        }
+
         $this->paginate = [
             'conditions' => ["not"=>['Sections.module_id IS'=>null]]
         ];
@@ -48,6 +53,11 @@ class SectionsController extends AppController
      */
     public function view($id = null)
     {
+        if($this->Auth->user('role') !=  "admin"){
+            $this->Flash->Error("You are not authorised to view this section");
+            return $this->redirect(["action" => "", "controller" => "pages"]);
+        }
+
         $section = $this->Sections->get($id, [
             'contain' => ['Module']
         ]);
@@ -64,6 +74,11 @@ class SectionsController extends AppController
      */
     public function add()
     {
+        if($this->Auth->user('role') !=  "admin"){
+            $this->Flash->Error("You are not authorised to view this section");
+            return $this->redirect(["action" => "", "controller" => "pages"]);
+        }
+
         $section = $this->Sections->newEntity();
         if ($this->request->is('post')) {
             $section = $this->Sections->patchEntity($section, $this->request->data);
@@ -94,6 +109,11 @@ class SectionsController extends AppController
      */
     public function edit($id = null)
     {
+        if($this->Auth->user('role') !=  "admin"){
+            $this->Flash->Error("You are not authorised to view this section");
+            return $this->redirect(["action" => "", "controller" => "pages"]);
+        }
+
         $section = $this->Sections->get($id, [
             'contain' => []
         ]);
@@ -122,6 +142,11 @@ class SectionsController extends AppController
      */
     public function delete($id = null)
     {
+        if($this->Auth->user('role') !=  "admin"){
+            $this->Flash->Error("You are not authorised to view this section");
+            return $this->redirect(["action" => "", "controller" => "pages"]);
+        }
+
         $this->request->allowMethod(['post', 'delete']);
         $section = $this->Sections->get($id);
         if ($this->Sections->delete($section)) {

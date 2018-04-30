@@ -18,6 +18,10 @@ class ScreenerController extends AppController
      */
 
     public function ajaxadd(){
+      if($this->Auth->user('role') !=  "admin"){
+          $this->Flash->Error("You are not authorised to view this section");
+          return $this->redirect(["action" => "", "controller" => "pages"]);
+      }
       $screener = $this->Screener->newEntity();
       if ($this->request->is('post')) {
           $screener = $this->Screener->patchEntity($screener, $this->request->data);
@@ -61,6 +65,11 @@ class ScreenerController extends AppController
      */
     public function add($id = null)
     {
+        if($this->Auth->user('role') !=  "admin"){
+          $this->Flash->Error("You are not authorised to view this section");
+          return $this->redirect(["action" => "", "controller" => "pages"]);
+        }
+
         $screener = $this->Screener->newEntity();
         if($id == null){
           throw new NotFoundException("Module not found");
@@ -89,6 +98,10 @@ class ScreenerController extends AppController
     }
     public function index()
     {
+      if($this->Auth->user('role') !=  "admin"){
+          $this->Flash->Error("You are not authorised to view this section");
+          return $this->redirect(["action" => "", "controller" => "pages"]);
+      }
       $this->paginate = [
         'contain' => ['Module']
       ];
@@ -107,6 +120,10 @@ class ScreenerController extends AppController
      */
     public function edit($id = null)
     {
+        if($this->Auth->user('role') !=  "admin"){
+            $this->Flash->Error("You are not authorised to view this section");
+            return $this->redirect(["action" => "", "controller" => "pages"]);
+        }
         $screener = $this->Screener->get($id, [
             'contain' => ['Question']
         ]);
@@ -135,6 +152,10 @@ class ScreenerController extends AppController
      */
     public function delete($id = null)
     {
+        if($this->Auth->user('role') !=  "admin"){
+            $this->Flash->Error("You are not authorised to view this section");
+            return $this->redirect(["action" => "", "controller" => "pages"]);
+        }
         $this->request->allowMethod(['post', 'delete']);
         $screener = $this->Screener->get($id);
         if ($this->Screener->delete($screener)) {

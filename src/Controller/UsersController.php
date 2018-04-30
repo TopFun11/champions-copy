@@ -76,11 +76,19 @@ use Cake\Controller\Component\AuthComponent;
 
       public function index()
       {
+         if($this->Auth->user('role') !=  "admin"){
+             $this->Flash->Error("You are not authorised to view this section");
+             return $this->redirect(["action" => "", "controller" => "pages"]);
+         }
          $this->set('users', $this->Users->find('all'));
      }
 
      public function view($id)
      {
+         if($this->Auth->user('role') !=  "admin"){
+             $this->Flash->Error("You are not authorised to view this section");
+             return $this->redirect(["action" => "", "controller" => "pages"]);
+         }
          $user = $this->Users->get($id);
          $this->set(compact('user'));
      }
@@ -129,6 +137,10 @@ use Cake\Controller\Component\AuthComponent;
   
   public function delete($id)  
   {
+    if($this->Auth->user('role') !=  "admin"){
+        $this->Flash->Error("You are not authorised to view this section");
+        return $this->redirect(["action" => "", "controller" => "pages"]);
+    }
   $this->request->allowMethod(['post','delete']);
     $user = $this->Users->get($id);
    if ($this->Users->delete($user)){
@@ -139,8 +151,13 @@ use Cake\Controller\Component\AuthComponent;
    
   }
   
+    // Protected because it allows you to edit users other than current logged in user
     public function edit()
     {
+        if($this->Auth->user('role') !=  "admin"){
+            $this->Flash->Error("You are not authorised to view this section");
+            return $this->redirect(["action" => "", "controller" => "pages"]);
+        }
         $id = (int) $this->request->params['pass'][0];
         $user = $this->Users->get($id);
         if ($this->request->is(['post', 'put'])) {

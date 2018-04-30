@@ -195,6 +195,10 @@ class ModuleController extends AppController
      */
     public function add()
     {
+        if($this->Auth->user('role') !=  "admin"){
+          $this->Flash->Error("You are not authorised to view this section");
+          return $this->redirect(["action" => "", "controller" => "pages"]);
+        }
         $module = $this->Module->newEntity();
         if ($this->request->is('post')) {
             $module = $this->Module->patchEntity($module, $this->request->data);
