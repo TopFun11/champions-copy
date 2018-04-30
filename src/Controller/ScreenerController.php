@@ -108,7 +108,7 @@ class ScreenerController extends AppController
     public function edit($id = null)
     {
         $screener = $this->Screener->get($id, [
-            'contain' => []
+            'contain' => ['Question']
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $screener = $this->Screener->patchEntity($screener, $this->request->data);
@@ -121,7 +121,8 @@ class ScreenerController extends AppController
             }
         }
         $module = $this->Screener->Module->find('list', ['limit' => 200]);
-        $this->set(compact('screener', 'module'));
+        $questions = $this->Screener->Question->find()->where(['screener_id'=>(int)$id]);
+        $this->set(compact('screener', 'module', 'questions'));
         $this->set('_serialize', ['screener']);
     }
 

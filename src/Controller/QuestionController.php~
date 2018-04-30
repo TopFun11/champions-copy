@@ -119,11 +119,11 @@ class QuestionController extends AppController
         $questionOptions = $this->Question->QuestionOption->find()->where(['question_id'=>(int)$id]);
         if(0 < count($questionOptions)) {
             foreach($questionOptions as $qo) {
-                $this->Question->QuestionOption->delete($qo);
+                $this->Question->QuestionOption->delete($qo->id);
             }
         }
         // Remove question
-        if ($this->Question->delete($question)) {
+        if ($this->Question->delete($id)) {
             $this->Flash->success(__('The question has been deleted.'));
         } else {
             $this->Flash->error(__('The question could not be deleted. Please, try again.'));

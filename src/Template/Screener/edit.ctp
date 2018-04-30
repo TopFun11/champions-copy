@@ -98,6 +98,19 @@ $this->end();
         </tr>
       </thead>
       <tbody id="questions-added">
+        <?php
+        foreach($questions as $question) {
+        ?>
+        <tr>
+          <td><?=$question->question?></td>
+          <td><?=$question->type?></td>
+          <td>
+            <?= $this->Form->postLink('', ['controller' => 'Question', 'action' => 'delete', $question->id], ['confirm' => __('Are you sure you want to delete # {0}?', $question->id), 'title' => __('Delete'), 'class' => 'btn btn-default glyphicon glyphicon-trash', 'method' => 'DELETE']) ?>
+          </td>
+        </tr>
+        <?php
+        }
+        ?>
       </tbody>
     </table>
   </div>
