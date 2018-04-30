@@ -24,7 +24,11 @@
                           </p>
                         <div class="more">
                             <a href="/module/overview/<?=$module->id?>" title="Title Link">
-                                  Read More <i class="fa fa-angle-double-right"></i>
+                                <?php if ($module->enrolled > 0) { ?>
+                                    Read More <i class="fa fa-angle-double-right"></i>
+                                <?php } else { ?>
+                                    Enroll <i class="fa fa-angle-double-right"></i>
+                                <?php } ?>
                             </a>
                         </div>
                     </div>

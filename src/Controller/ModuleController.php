@@ -46,20 +46,26 @@ class ModuleController extends AppController
     public function explore()
     {
         $userRole = $this->Auth->user('role');
-        $module = [];
         if($userRole == "student"){
           $module = $this->Module->find("all", [
             'conditions' => [
               'not' => [
                 'required_role' => 'new student'
               ]
-              ]
+            ],
           ]);
         }else{
           $module = $this->Module->find("all");
         }
 
-
+        $userId = $this->Auth->user("id");
+        $module
+          ->select($this->Module)
+          ->select(['enrolled' => $module->func()->count('Users.id')])
+          ->leftJoinWith('Users', function ($q) use ($userId) {
+              return $q->where(['Users.id' => $userId]);
+          })
+          ->group(['Module.id']);
 
         $this->set(compact('module'));
         $this->set('_serialize', ['module']);

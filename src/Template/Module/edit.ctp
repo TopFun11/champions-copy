@@ -73,7 +73,7 @@ $this->end();
         <div class="form-group">
           <label for="usr">Module name:</label>
           <?php
-          echo $this->Form->input('title',['class="form-control"','label'=>false]);
+          echo $this->Form->input('title',['class'=>'form-control','label'=>false]);
           ?>
         </div>
       </div>
@@ -81,7 +81,7 @@ $this->end();
         <div class="form-group">
           <label for="usr">Icon path:</label>
           <?php
-          echo $this->Form->input('icon',['class="form-control"','label'=>false]);
+          echo $this->Form->input('icon',['class'=>'form-control','label'=>false]);
           ?>
         </div>
       </div>
@@ -89,7 +89,7 @@ $this->end();
         <div class="form-group">
           <label for="usr">Banner path:</label>
           <?php
-          echo $this->Form->input('banner',['class="form-control"','label'=>false]);
+          echo $this->Form->input('banner',['class'=>'form-control','label'=>false]);
           ?>
         </div>
       </div>
@@ -97,17 +97,25 @@ $this->end();
         <div class="form-group">
           <label for="required_role">Role required:</label>
           <?php
-          echo $this->Form->input('required_role',['class="form-control"','label'=>false]);
+          echo $this->Form->input('required_role',['class'=>'form-control','label'=>false]);
           ?>
         </div>
       </div>
-    </div>
-    <div class="col-xs-4">
-      <div class="form-group">
-        <label for="required_role">Theme:</label>
-        <?php
-        echo $this->Form->input('theme',['class="form-control"','label'=>false]);
-        ?>
+      <div class="col-xs-4">
+        <div class="form-group">
+          <label for="theme">Theme:</label>
+          <?php
+          echo $this->Form->input('theme',['class'=>'form-control','label'=>false]);
+          ?>
+        </div>
+      </div>
+      <div class="col-xs-4">
+        <div class="form-group">
+          <label for="featured">Featured:</label>
+          <?php
+          echo $this->Form->checkbox('featured',['class'=>'form-control','label'=>false]);
+          ?>
+        </div>
       </div>
     </div>
     <div class="row" id="md">

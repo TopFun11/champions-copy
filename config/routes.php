@@ -50,7 +50,7 @@ Router::scope('/', function (RouteBuilder $routes) {
      * to use (in this case, src/Template/Pages/home.ctp)...
      */
     $routes->extensions(['json', 'xml']);
-    $routes->connect('/', ['controller' => 'Pages', 'action' => 'display', 'home']);
+    $routes->connect('/', ['controller' => 'Home', 'action' => 'index']);
     $routes->connect('/about', ['controller' => 'Pages', 'action' => 'display', 'about']);
     $routes->connect('/accessibility', ['controller' => 'Pages', 'action' => 'display', 'accessibility']);
     $routes->connect('/terms', ['controller' => 'Pages', 'action' => 'display', 'terms']);
