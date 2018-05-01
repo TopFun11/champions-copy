@@ -520,4 +520,18 @@ $("#profile-add").submit(function (e) {
     }
 });
 
-$('.lazyYT').lazyYT();
+$('.lazyYT').lazyYT && $('.lazyYT').lazyYT();
+
+// Make tabs in exercises "stick"
+// Code derived from https://stackoverflow.com/a/12138756/4438720
+$(function(){
+    var hash = window.location.hash;
+    hash && $('ul.nav a[href="' + hash + '"]').tab('show');
+
+    $('.nav-pills a').click(function (e) {
+        $(this).tab('show');
+        var scrollmem = $('body').scrollTop() || $('html').scrollTop();
+        window.location.hash = this.hash;
+        $('html,body').scrollTop(scrollmem);
+    });
+});
