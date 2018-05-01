@@ -79,3 +79,4 @@
         </div>
     </div>
 </div>
+<script type="text/javascript" src="/js/chartjs.min.js"></script>
