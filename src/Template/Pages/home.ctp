@@ -44,7 +44,7 @@
                    <?php if ($module->enrolled > 0) { ?>
                      Read More <i class="fa fa-angle-double-right"></i>
                    <?php } else { ?>
-                     Enroll <i class="fa fa-angle-double-right"></i>
+                     Enrol <i class="fa fa-angle-double-right"></i>
                    <?php } ?>
                  </a>
                </div>
