@@ -48,7 +48,7 @@
         <div class="col-md-4 module-enrolments">
             <h2>Your Modules</h2>
             <div>
-                <p>You are enrolled onto <?=count($user->module)?> module<?=(count($user->module)!=1?'':'s')?></p>
+                <p>You are enrolled onto <?=count($user->module)?> module<?=(count($user->module)==1?'':'s')?></p>
                 <?php
                 if(0 == count($user->module)) {
                 ?>
