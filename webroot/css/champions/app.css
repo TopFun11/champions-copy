@@ -15,9 +15,10 @@
     color: white;
     text-shadow: 1px 1px #000000;
     text-align: center;
+    background-image:url('/webroot/img/headers/home/bg.jpg')
 }
 
-.c4h-home-jumbo {
+.c4h-home-jumbo p {
     font-size: 2.4em;
 }
 

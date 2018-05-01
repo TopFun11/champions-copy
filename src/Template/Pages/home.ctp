@@ -1,8 +1,8 @@
 <div class="row">
-  <div class="c4h-home-jumbo jumbotron" style="background-image:url('/webroot/img/headers/home/bg.jpg')">
-    <h1>Champions for Health</h1>
-    <p>A healthier you means a healthier Wales.</p>
-  </div>
+    <div class="c4h-home-jumbo jumbotron">
+        <h1>Champions for Health</h1>
+        <p>A healthier you means a healthier Wales.</p>
+    </div>
 </div>
 
 <div class="row">
@@ -18,7 +18,6 @@
   </div>
 </div>
 
-<!--Seriously? Ever heard of this magical thing called css?-->
 <br>
 <br>
 <hr>
