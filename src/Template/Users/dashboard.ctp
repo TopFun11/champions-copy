@@ -26,8 +26,8 @@
         <div class="col-md-8 activity-summary">
             <h2>Your Activity Summary<span><a href="">This Week</a> | <a href="">Last 30 Days</a> | <a href="">All Time</a></span></h2>
             <div class="row">
-                <div class="col-md-6">
-                    (pie chart)
+                <div class="col-md-6" id="pie-chart-container">
+                    <div id="pie-chart"><em>Please wait for the chart to load&hellip;</em></div>
                 </div>
                 <div class="col-md-6 activity-statistics">
                     <div class="row">
@@ -72,11 +72,25 @@
             <h2>Trophies</h2>
             <div class="row">
                 <div class="col-md-12">
-                    <div class="trophy-icon"></div>
+                    <img class="trophy-icon" src="/img/trophy.jpg">
                     <p>You may earn trophies through continued engagement with your modules, and they will appear in the trophy cabinet on your public profile.</p>
+                    <p>You haven't earned any trophies yet, why not engage with <a href="/module/explore" title="Module catalogue">a module</a>?</p>
                 </div>
             </div>
         </div>
     </div>
 </div>
 <script type="text/javascript" src="/js/chartjs.min.js"></script>
+<script>
+var chartOptions = {
+    
+};
+var dashboardChart = new Chart(
+    $("#pie-chart"),
+    {
+        type: 'pie',
+        data: [],
+        options: chartOptions
+    }
+);
+</script>

@@ -138,11 +138,15 @@ body {
 }
 
 .user-dashboard .trophies .trophy-icon {
-    width: 80px;
-    height: 80px;
+    width: 88px;
+    height: 65px;
     background-color: #CCC;
     border: 1px solid #AAA;
     float: left;
+    margin: .5em;
+}
+
+.user-dashboard .trophies p {
     margin: .5em;
 }
 
