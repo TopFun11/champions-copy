@@ -125,7 +125,7 @@ body {
 }
 
 .user-dashboard .activity-summary span {
-    display: block;
+    display: none;
     float: right;
     font-size: .55em;
     font-weight: normal

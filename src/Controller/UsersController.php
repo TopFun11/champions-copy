@@ -38,8 +38,19 @@ use Cake\Controller\Component\AuthComponent;
          ]
        ]);
        $profile = $this->Profile->find("all")->where(['user_id' => $this->Auth->user("id")])->first();
-       $this->set('profile', $profile);
-       $this->set("user", $user);
+
+       // Build up stats on engagement
+       $engagement = [];
+       foreach($user->recordset as $rs) {
+           $mod = $rs->exercise->section->module;
+           isset($engagement[$mod->id]) ? $engagement[$mod->id]['count'] ++ : $engagement[$mod->id]['count'] = 1;
+           $engagement[$mod->id]['title'] = $mod->title;
+           $engagement[$mod->id]['colour'] = [ord($mod->title[1])*$mod->id%255, ord($mod->title[3])*$mod->id%255, ord($mod->title[5])*$mod->id%255];
+       }
+
+       $this->set('profile',    $profile);
+       $this->set('user',       $user);
+       $this->set('engagement', $engagement);
      }
 
      public function login()

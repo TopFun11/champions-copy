@@ -27,12 +27,12 @@
             <h2>Your Activity Summary<span><a href="">This Week</a> | <a href="">Last 30 Days</a> | <a href="">All Time</a></span></h2>
             <div class="row">
                 <div class="col-md-6" id="pie-chart-container">
-                    <div id="pie-chart"><em>Please wait for the chart to load&hellip;</em></div>
+                    <canvas id="pie-chart" height="260" width="350"><em>Please wait for the chart to load&hellip;</em></canvas>
                 </div>
                 <div class="col-md-6 activity-statistics">
                     <div class="row">
-                        <div class="col-md-2 value">3</div>
-                        <div class="col-md-10 align-middle">Modules engaged with this week</div>
+                        <div class="col-md-2 value"><?=count($engagement)?></div>
+                        <div class="col-md-10 align-middle">Modules engaged with recently</div>
                     </div>
                     <div class="row">
                         <div class="col-md-2 value">9</div>
@@ -82,15 +82,64 @@
 </div>
 <script type="text/javascript" src="/js/chartjs.min.js"></script>
 <script>
-var chartOptions = {
-    
-};
-var dashboardChart = new Chart(
-    $("#pie-chart"),
-    {
-        type: 'pie',
-        data: [],
-        options: chartOptions
-    }
-);
+$(function() {
+    var selector = document.getElementById('pie-chart');
+    var chartOptions = {
+        responsive: true
+    };
+    var dashboardChart = new Chart(
+        selector,
+        {
+            type: 'pie',
+            data: {
+<?php
+            if(0 == count($engagement)) {
+?>
+                datasets: [{
+                    data: [
+                        1
+                    ],
+                    backgroundColor: [
+                        '#DDD'
+                    ],
+                    label: 'No recent engagement'
+                }],
+                labels: [
+                    'No recent engagement'
+                ]
+<?php
+            } else {
+?>
+                datasets: [{
+                    data: [
+<?php
+                        foreach($engagement as $e) {
+                            echo $e['count'] . ",\n";
+                        }
+?>
+                    ],
+                    backgroundColor: [
+<?php
+                        foreach($engagement as $e) {
+                            echo "'rgb({$e['colour'][0]}, {$e['colour'][1]}, {$e['colour'][2]})',\n";
+                        }
+?>
+                    ],
+                    label: 'My Label'
+                }],
+                labels: [
+<?php
+                        foreach($engagement as $e) {
+                            echo "'" . $e['title'] . "',\n";
+                        }
+?>
+                ]
+<?php
+            }
+?>
+            },
+            options: chartOptions
+        }
+    );
+});
 </script>
