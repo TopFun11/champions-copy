@@ -1,14 +1,3 @@
-<ul class="nav nav-sidebar">
-<li><?= $this->Html->link(__('Edit Screener'), ['action' => 'edit', $screener->id]) ?> </li>
-<li><?= $this->Form->postLink(__('Delete Screener'), ['action' => 'delete', $screener->id], ['confirm' => __('Are you sure you want to delete # {0}?', $screener->id)]) ?> </li>
-<li><?= $this->Html->link(__('List Screener'), ['action' => 'index']) ?> </li>
-<li><?= $this->Html->link(__('New Screener'), ['action' => 'add']) ?> </li>
-<li><?= $this->Html->link(__('List Module'), ['controller' => 'Module', 'action' => 'index']) ?> </li>
-<li><?= $this->Html->link(__('New Module'), ['controller' => 'Module', 'action' => 'add']) ?> </li>
-</ul>
-<?php
-$this->end();
-?>
 <?= $this->Form->create($recordset); ?>
 <?=  $this->Form->hidden('screener_id', ['value' => $screener->id]); ?>
 <div class="panel panel-default">
