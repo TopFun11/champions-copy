@@ -38,14 +38,20 @@ use Cake\Controller\Component\AuthComponent;
          ]
        ]);
        $profile = $this->Profile->find("all")->where(['user_id' => $this->Auth->user("id")])->first();
-
        // Build up stats on engagement
        $engagement = [];
        foreach($user->recordset as $rs) {
            $mod = $rs->exercise->section->module;
-           isset($engagement[$mod->id]) ? $engagement[$mod->id]['count'] ++ : $engagement[$mod->id]['count'] = 1;
-           $engagement[$mod->id]['title'] = $mod->title;
-           $engagement[$mod->id]['colour'] = [ord($mod->title[1])*$mod->id%255, ord($mod->title[3])*$mod->id%255, ord($mod->title[5])*$mod->id%255];
+           $modId = ($mod == null || $mod->id == null) ? 0 : $mod->id;
+           isset($engagement[$modId]) ? $engagement[$modId]['count'] ++ : $engagement[$modId]['count'] = 1;
+           // Wellbeing module is hard-coded in (bad!) because it's the only module that is set up in such a way that it will return a null title
+           // @TODO: Find a better way of doing this...
+           $engagement[$modId]['title'] = isset($mod->title)?$mod->title:"Wellbeing";
+           $engagement[$modId]['colour'] = [
+               ord($engagement[$modId]['title'][1])*$modId%255,
+               ord($engagement[$modId]['title'][3])*$modId%255,
+               ord($engagement[$modId]['title'][5])*$modId%255
+           ];
        }
 
        $this->set('profile',    $profile);
