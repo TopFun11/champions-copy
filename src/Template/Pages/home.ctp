@@ -8,7 +8,7 @@
 <div class="row">
   <div class="col-xs-12 col-sm-6 col-lg-6 left-Panel">
     <h3 class="home-title">What is Champions for Health?</h3>
-    <p>Champions for Health is an all-Wales campaign which is encouraging NHS staff to become healthier and also encourages the public to do the same. Registration is currently open to staff within Abertawe Bro Morgannwg University Health Board.</p>
+    <p>Champions for Health is an fall-Wales campaign which is encouraging NHS staff to become healthier and also encourages the public to do the same. Registration is currently open to staff within Abertawe Bro Morgannwg University Health Board.</p>
   </div>
 
   <div class="col-xs-12 col-sm-6 col-lg-6 left-Panel">
