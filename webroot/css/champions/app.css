@@ -227,7 +227,7 @@ body {
 }
 
 .form-control[type=checkbox] {
-    width: 6em;
+    width: 3em;
 }
 
 .panel textarea {
