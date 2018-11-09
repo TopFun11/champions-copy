@@ -13,7 +13,7 @@
 <p>Welcome to Champions for Health, please select your health challenges. Click &lsquo;enrol&rsquo; to enrol onto a new module, or click &lsquo;read more&rsquo; to take part in a module that you have previously enrolled onto.</p>
     <div class="row">
       <?php foreach($module as $module): ?>
-        <div class="col-xs-12 col-sm-6 col-md-4">
+        <div class="col-xs-12 col-sm-4 col-md-4">
             <div class="box">
                 <div class="icon">
                     <div class="image"><img class="img-responsive" src="<?= h($module->icon) ?>" /></div>
