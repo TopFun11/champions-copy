@@ -11,7 +11,7 @@
 
 <div class="container">
 <p>Welcome to Champions for Health, please select your health challenges. Click &lsquo;enrol&rsquo; to enrol onto a new module, or click &lsquo;read more&rsquo; to take part in a module that you have previously enrolled onto.</p>
-    <div class="row">
+    <div class="row.row-eq-height">
       <?php foreach($module as $module): ?>
         <div class="col-xs-12 col-sm-4 col-md-4">
             <div class="box">
