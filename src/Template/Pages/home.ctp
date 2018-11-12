@@ -24,7 +24,7 @@
 <?php if ($module) {?>
   <hr>
 
-  <div class="container">
+  <div class="col container">
    <div class="row">
      <?php foreach($module as $module): ?>
         <div class="col-xs-12 col-sm-4 col-md-4">
