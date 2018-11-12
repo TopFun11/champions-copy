@@ -10,7 +10,9 @@
 
 
 <div class="container">
-<p>Welcome to Champions for Health, please select your health challenges. Click &lsquo;enrol&rsquo; to enrol onto a new module, or click &lsquo;read more&rsquo; to take part in a module that you have previously enrolled onto.</p>
+<?php
+    echo "<p><center>Welcome to Champions for Health, please select your health challenges. Click &lsquo;enrol&rsquo; to enrol onto a new module, or click &lsquo;read more&rsquo; to take part in a module that you have previously enrolled onto.</center></p>"
+?>
     <div class=".row-eq-height">
       <?php foreach($module as $module): ?>
         <div class="col-xs-12 col-sm-4 col-md-4">
