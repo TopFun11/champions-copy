@@ -27,7 +27,7 @@
   <h3 class="home-title">Featured Modules</h3>
   <br>
 
-  <div class="container">
+  <div class="col-container">
    <div class="row.row-eq-height">
      <?php foreach($module as $module): ?>
         <div class="col-xs-12 col-sm-4 col-md-4">
