@@ -34,7 +34,7 @@
             <div class="box">
                 <div class="icon">
                     <div class="image"><img class="img-responsive" src="<?= h($module->icon) ?>" /></div>
-                    <div class="col">
+                    <div class="info">
                         <h3 class="title"><?= h($module->title) ?></h3>
                           <p>
                               <?= $module->description_text ?>
