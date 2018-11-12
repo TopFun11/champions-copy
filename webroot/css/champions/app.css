@@ -543,11 +543,3 @@ hr {
   color:white;
 }
 
-.col-container {
-  display: flex;
-  height: 100%;
-}
-.col {
-  flex: 1;
-  padding: 16px;
-}
