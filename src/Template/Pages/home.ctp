@@ -42,7 +42,7 @@
                         <div class="more">
                             <a href="/module/overview/<?=$module->id?>" title="Title Link">
                                 <?php if ($module->enrolled > 0) { ?>
-                                    Read More <i class="fa fa-angle-double-right"></i>
+                                    Take Part <i class="fa fa-angle-double-right"></i>
                                 <?php } else { ?>
                                     Enrol <i class="fa fa-angle-double-right"></i>
                                 <?php } ?>
