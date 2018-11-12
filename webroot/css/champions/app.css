@@ -542,3 +542,11 @@ hr {
 .edit-button > a:hover{
   color:white;
 }
+
+.row.display-flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+.row.display-flex > [class*='col-'] {
+  flex-grow: 1;
+}
