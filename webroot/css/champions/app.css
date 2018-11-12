@@ -543,7 +543,4 @@ hr {
   color:white;
 }
 
-.row {
-    display: flex; /* equal height of the children */
-}
 
