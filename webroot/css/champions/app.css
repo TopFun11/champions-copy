@@ -543,7 +543,7 @@ hr {
   color:white;
 }
 
-.row-eq-height {
+.box.eq-height {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
