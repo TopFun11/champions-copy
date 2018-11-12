@@ -38,10 +38,6 @@
                         <div class="col-md-2 value">9</div>
                         <div class="col-md-10 align-middle">Consecutive days of engagement</div>
                     </div>
-                    <div class="row">
-                        <div class="col-md-2 value">1</div>
-                        <div class="col-md-10 align-middle">Trophy earned this week <em>(Good work!)</em></div>
-                    </div>
                 </div>
             </div>
         </div>
