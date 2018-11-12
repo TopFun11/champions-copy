@@ -543,10 +543,7 @@ hr {
   color:white;
 }
 
-.box.eq-height {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display:         flex;
+.col {
+    display: flex;
+    flex: 1; /* additionally, equal width */
 }
-
