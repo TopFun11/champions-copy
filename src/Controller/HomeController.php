@@ -27,7 +27,7 @@ class HomeController extends AppController
             'conditions' => [
                 'featured' => true
             ]
-        ])
+        ]);
 
         $module
             ->select($this->Module)
