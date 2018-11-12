@@ -548,6 +548,5 @@ hr {
   flex-wrap: wrap;
 }
 .row.display-flex > [class*='col-'] {
-  display: flex;
-  flex-direction: column;
+  flex-grow: 1;
 }
