@@ -31,10 +31,10 @@
    <div class="row.row-eq-height">
      <?php foreach($module as $module): ?>
         <div class="col-xs-12 col-sm-4 col-md-4">
-            <div class="col">
+            <div class="box">
                 <div class="icon">
                     <div class="image"><img class="img-responsive" src="<?= h($module->icon) ?>" /></div>
-                    <div class="info">
+                    <div class="col">
                         <h3 class="title"><?= h($module->title) ?></h3>
                           <p>
                               <?= $module->description_text ?>
