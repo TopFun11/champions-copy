@@ -25,10 +25,10 @@
   <hr>
 
   <div class="container">
-   <div class="row eq-height">
+   <div class="row">
      <?php foreach($module as $module): ?>
         <div class="col-xs-12 col-sm-4 col-md-4">
-            <div class="box">
+            <div class="box eq-height">
                 <div class="icon">
                     <div class="image"><img class="img-responsive" src="<?= h($module->icon) ?>" /></div>
                     <div class="info">
