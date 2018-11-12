@@ -318,7 +318,7 @@ hr {
 }
 
 .min-height-box{
-  min-height: 400px;
+  min-height: 280px;
 }
 
 .box>.icon:hover>.info {
@@ -362,7 +362,7 @@ hr {
 }
 
 .box .space {
-    height: 30px;
+    height: 50px;
 }
 
 .enroll-buttons {
