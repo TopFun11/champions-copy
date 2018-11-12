@@ -279,11 +279,6 @@ hr {
     padding-bottom: 30px;
 }
 
-.box.equal-height {
-    display: flex;
-    flex-wrap: wrap;
-}
-
 .box>.icon {
     text-align: center;
     position: relative;
