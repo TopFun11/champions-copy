@@ -550,6 +550,6 @@ hr {
 .row.display-flex > [class*='col-'] {
   flex-grow: 1;
 }
-.row.display-fex > [class='icon'] {
+.row.display-flex > [class='icon'] {
   flex-grow: 1;
 }
