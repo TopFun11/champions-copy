@@ -282,8 +282,6 @@ hr {
 .box>.icon {
     text-align: center;
     position: relative;
-    display: flex;
-    flex-wrap: wrap;
 }
 
 .box>.icon>.image {
