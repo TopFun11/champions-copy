@@ -25,7 +25,7 @@
   <hr>
 
   <div class="container">
-   <div class="row">
+   <div class="row display-flex">
      <?php foreach($module as $module): ?>
         <div class="col-xs-12 col-sm-4 col-md-4">
             <div class="box">
