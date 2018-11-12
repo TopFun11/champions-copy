@@ -320,7 +320,6 @@ hr {
     background: rgba(0, 0, 0, 0.04);
     border: 1px solid #e0e0e0;
     padding: 15px 0 10px 0;
-    height: flex;
 }
 
 .min-height-box{
@@ -547,12 +546,4 @@ hr {
 }
 .edit-button > a:hover{
   color:white;
-}
-
-.row.display-flex {
-  display: flex;
-  flex-wrap: wrap;
-}
-.row.display-flex > [class*='col-'] {
-  flex-grow: 1;
 }
