@@ -23,11 +23,7 @@ class HomeController extends AppController
         $this->viewBuilder()->template("/Pages/home");
         
         $userId = $this->Auth->user("id");
-        $module = TableRegistry::get('Module')->find("all", [
-            'conditions' => [
-                'featured' => true
-            ]
-        ]);
+        $module = TableRegistry::get('Module')->find("all");
         
         $module
             ->select($this->Module)
