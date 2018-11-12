@@ -21,6 +21,15 @@ class HomeController extends AppController
 
     public function index() {
         $this->viewBuilder()->template("/Pages/home");
+        
+        public function index() {
+        $this->viewBuilder()->template("/Pages/home");
+         $userId = $this->Auth->user("id");
+        $module = TableRegistry::get('Module')->find("all", [
+            'conditions' => [
+                'featured' => true
+            ]
+        ]);
 
         $module
             ->select($this->Module)
