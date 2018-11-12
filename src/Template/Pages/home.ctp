@@ -24,9 +24,6 @@
 <?php if ($module) {?>
   <hr>
 
-  <h3 class="home-title">Featured Modules</h3>
-  <br>
-
   <div class="container">
    <div class=".row-eq-height">
      <?php foreach($module as $module): ?>
