@@ -28,7 +28,7 @@
   <br>
 
   <div class="container">
-   <div class="row-eq-height">
+   <div class=".row-eq-height">
      <?php foreach($module as $module): ?>
         <div class="col-xs-12 col-sm-4 col-md-4">
             <div class="box">
