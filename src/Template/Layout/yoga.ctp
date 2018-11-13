@@ -102,7 +102,7 @@
                       <p>Relaxation</p>
                   </div>
               </div>
-              <div class="mg-container" style="top:30px;left:570px;">
+              <div class="mg-container" style="top:120px;left:570px;">
                   <div class="mg-icon mg-icon-right wb">
                       <a href="#" data-toggle="modal" data-target="#sleep">
                           <img class="img-responsive mg-fade" src="/webroot/img/my-icons-collection/png/bed.png">
@@ -112,7 +112,7 @@
                       <p>Sleep</p>
                   </div>
               </div>
-              <div class="mg-container" style="top:120px;left:650px;">
+              <div class="mg-container" style="top:300px;left:650px;">
                   <div class="mg-icon mg-icon-right wb">
                       <a href="#" data-toggle="modal" data-target="#nature">
                           <img class="img-responsive mg-fade" src="/webroot/img/my-icons-collection/png/mountain.png">
