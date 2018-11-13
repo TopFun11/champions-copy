@@ -50,8 +50,6 @@
                    </li>
                    <li><a href="/about">About us</a>
                    </li>
-                   <li><a href="/module/explore">Explore Modules</a>
-                   </li>
                </ul>
                <ul class="nav navbar-nav navbar-right">
                  <?php
@@ -93,16 +91,6 @@
           <div id="module-game">
               <div id="yoga-girl">
                   <img class="img-responsive" src="/webroot/img/my-icons-collection/png/lotus-position.png" alt="‘Improve Your Well Being’ icon" class="img-thumnail" width="800">
-              </div>
-              <div class="mg-container" style="top:300px;left:-100px;">
-                  <div class="mg-icon mg-icon-left wb">
-                      <a href="#" data-toggle="modal" data-target="#five-ways-to-wellbeing">
-                          <img class="img-responsive mg-fade" src="/webroot/img/my-icons-collection/png/brain-1.png">
-                      </a>
-                  </div>
-                  <div class="mg-text text-right">
-                      <p>5 Ways to Well Being</p>
-                  </div>
               </div>
               <div class="mg-container" style="top:120px;left:-30px;">
                   <div class="mg-icon mg-icon-left wb">
