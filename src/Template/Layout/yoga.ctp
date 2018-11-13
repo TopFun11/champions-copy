@@ -123,7 +123,7 @@
                   </div>
               </div>
               <div class="mg-container" style="top:300px;left:-100px;">
-                  <div class="mg-icon mg-icon-right wb">
+                  <div class="mg-icon mg-icon-left wb">
                       <a href="#" data-toggle="modal" data-target="#act">
                           <img class="img-responsive mg-fade" src="/webroot/img/my-icons-collection/png/test.png">
                       </a>
