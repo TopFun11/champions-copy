@@ -128,7 +128,7 @@
                           <img class="img-responsive mg-fade" src="/webroot/img/my-icons-collection/png/test.png">
                       </a>
                   </div>
-                  <div class="mg-text">
+                  <div class="mg-text text-right">
                       <p>ACT</p>
                   </div>
               </div>
