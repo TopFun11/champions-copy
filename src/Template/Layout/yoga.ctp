@@ -122,12 +122,12 @@
               </div>
               <div class="mg-container" style="top:300px;left:650px;">
                   <div class="mg-icon mg-icon-right wb">
-                      <a href="#" data-toggle="modal" data-target="#nature">
+                      <a href="#" data-toggle="modal" data-target="#green_space">
                           <img class="img-responsive mg-fade" src="/webroot/img/my-icons-collection/png/mountain.png">
                       </a>
                   </div>
                   <div class="mg-text">
-                      <p>Nature</p>
+                      <p>Green Space</p>
                   </div>
               </div>
               <div class="mg-container" style="top:300px;left:-100px;">
