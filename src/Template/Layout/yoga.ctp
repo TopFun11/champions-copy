@@ -72,6 +72,12 @@
                        </li>
                        <li><a href="/users/dashboard">Dashboard</a>
                        </li>
+                      if("admin" == $user['role']) {
+                      ?>
+                      <li><a href="/module/index">Admin Dashboard</a>
+                      </li>
+                      <?php
+                      }
                        <li role="separator" class="divider"></li>
                        <li><a href="/users/logout">Log out</a>
                        </li>
