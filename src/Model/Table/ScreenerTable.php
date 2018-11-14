@@ -41,7 +41,6 @@ class ScreenerTable extends Table
             'joinType' => 'INNER'
         ]);
         $this->hasMany('Question', [
-           'foreignKey' => 'screener_id',
            'joinType' => 'LEFT',
            'dependent' => true,
         ]);
