@@ -11,8 +11,13 @@ class EnrollmentTable extends Table
   public function initialize(array $config)
   {
     //parent::initialize($config);
+    
+      $this->table('enrollment');
+      $this->displayField('id');
+      $this->primaryKey('id');
+    
 
-      //$this->belongsTo('Module');
-      //$this->belongsTo('Users');
+      $this->belongsTo('Module');
+      $this->belongsTo('Users');
   }
 }
