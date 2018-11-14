@@ -38,7 +38,7 @@
                           </p>
                         <div class="more">
                             <a href="/module/overview/<?=$module->id?>" title="Title Link">
-                                <?php if ($module->enrolled == 1) { ?>
+                                <?php if ($module == $user->$Module) { ?>
                                     Take Part <i class="fa fa-angle-double-right"></i>
                                 <?php } else { ?>
                                     Enrol <i class="fa fa-angle-double-right"></i>
