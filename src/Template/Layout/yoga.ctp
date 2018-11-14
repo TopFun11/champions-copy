@@ -122,7 +122,7 @@
               </div>
               <div class="mg-container" style="top:300px;left:650px;">
                   <div class="mg-icon mg-icon-right wb">
-                      <a href="#" data-toggle="modal" data-target="#green_space">
+                      <a href="#" data-toggle="modal" data-target="#green-space">
                           <img class="img-responsive mg-fade" src="/webroot/img/my-icons-collection/png/mountain.png">
                       </a>
                   </div>
