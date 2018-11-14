@@ -38,12 +38,10 @@
                           </p>
                         <div class="more">
                             <a href="/module/overview/<?=$module->id?>" title="Title Link">
-                                <?php foreach($user->module as $usermodule){ ?>
-                                <?php if ($module == $usermodule) { ?>
+                                <?php if ($module->enrolled > 0) { ?>
                                     Take Part <i class="fa fa-angle-double-right"></i>
                                 <?php } else { ?>
                                     Enrol <i class="fa fa-angle-double-right"></i>
-                                <?php } ?>
                                 <?php } ?>
                             </a>
                         </div>
