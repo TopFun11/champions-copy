@@ -38,10 +38,12 @@ class ModuleTable extends Table
 
         $this->hasOne("Screener", [
           'foreignKey' => 'module_id'
+          'dependent' => true,
         ]);
 
         $this->hasMany('Sections', [
             'foreignKey' => 'module_id'
+            'dependent' => true,
         ]);
         $this->belongsToMany('Users', [
           'through' => 'userenrollment',
