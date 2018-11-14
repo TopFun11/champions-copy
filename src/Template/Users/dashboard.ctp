@@ -48,7 +48,7 @@
                 <?php
                 if(0 == count($user->module)) {
                 ?>
-                <p>You are not enrolled onto any modules. To enrol onto a module, visit the <a href="/pages/home" title="View the module catalogue">module catalogue</a>.</p>
+                <p>You are not enrolled onto any modules. <a href="/pages/home" title="Return Home">Visit the homepage</a> to view the modules on offer.</p>
                 <?php
                 } else {
                 foreach($user->module as $module):
@@ -59,7 +59,7 @@
                 }
                 ?>
                 <hr>
-                <a class="catalogue-link" href="/module/explore">View Module Catalogue</a>
+                <a class="catalogue-link" href="/pages/home">Return Home</a>
             </div>
         </div>
     </div>
