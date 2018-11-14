@@ -44,7 +44,6 @@ class QuestionTable extends Table
           'joinType' => 'INNER'
         ]);
         $this->hasMany('QuestionOption', [
-            'foreignKey' => 'question_id',
             'dependent' => true,
         ]);
 
