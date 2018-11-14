@@ -18,10 +18,10 @@ class EnrollmentTable extends Table
     
 
       $this->belongsTo('Module', [
-        'foreignKey' = 'module_id',
+        'foreignKey' => 'module_id',
       ]);
       $this->belongsTo('Users', [
-        'foreignKey' = 'module_id',
+        'foreignKey' => 'module_id',
       ]);
   }
 }
