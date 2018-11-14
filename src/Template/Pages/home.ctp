@@ -26,8 +26,8 @@
   
   <div class="container">
    <div class="row display-flex">
-     <?php foreach($module as $module){
-        if ($module->title != 'Dissertation demo') {
+     <?php foreach($module as $module)?>
+        <?php if ($module->title != 'Dissertation demo') ?>
         <div class="col-xs-12 col-sm-4 col-md-4">
             <div class="box">
                 <div class="icon">
@@ -51,8 +51,7 @@
                 <div class="space"></div>
             </div>
         </div>
-        }
-     } ?>
+      <?php endforeach; ?>
    </div>
   </div>
 <?php } ?>
