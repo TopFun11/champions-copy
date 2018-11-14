@@ -50,6 +50,7 @@ class ModuleTable extends Table
         ]);
         $this->hasMany('Files', [
           'foreignKey' => 'module_id',
+          'dependent' => true,
         ]);
     }
 
