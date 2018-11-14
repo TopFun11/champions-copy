@@ -46,6 +46,7 @@ class ModuleTable extends Table
             'dependent' => true,
         ]);
         $this->belongsToMany('Users', [
+          'foreignKey' => 'user_id',  
           'through' => 'userenrollment',
         ]);
         $this->hasMany('Files', [
