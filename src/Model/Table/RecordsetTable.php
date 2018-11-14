@@ -45,7 +45,7 @@ class RecordsetTable extends Table
           'joinType' => 'INNER'
         ]);
         $this->belongsTo('Users', [
-          'foreignKey' => 'users_id',
+          'foreignKey' => 'user_id',
           'joinType' => 'INNER'
         ]);
         $this->hasMany("Record");
