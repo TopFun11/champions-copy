@@ -40,6 +40,7 @@ class UsersTable extends Table
           'through' => 'userenrollment',
         ]);
         $this->hasMany("Recordset", [
+          'foreignKey' => 'user_id',
           'className' => 'Recordset',
           'through' => 'recordset'
         ]);
