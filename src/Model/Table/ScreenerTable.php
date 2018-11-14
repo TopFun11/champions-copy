@@ -40,11 +40,11 @@ class ScreenerTable extends Table
             'foreignKey' => 'module_id',
             'joinType' => 'INNER'
         ]);
-        $this->hasMany('Question', [
-            'foreignKey' => 'screener_id',
-            'joinType' => 'LEFT',
-            'dependent' => true,
-        ]);
+        //$this->hasMany('Question', [
+           //'foreignKey' => 'screener_id',
+        //    'joinType' => 'LEFT',
+          //  'dependent' => true,
+        //]);
         $this->hasOne('Formular', [
             'dependent' => true,
         ]);
