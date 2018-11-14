@@ -45,7 +45,7 @@ class QuestionTable extends Table
           'joinType' => 'INNER'
         ]);
         $this->hasMany('QuestionOption', [
-            'dependent' = true,
+            'dependent' => true,
         ]);
 
     }
