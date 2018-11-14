@@ -37,19 +37,19 @@ class ModuleTable extends Table
         $this->primaryKey('id');
 
         $this->hasOne("Screener", [
-          'foreignKey' => 'module_id'
+          'foreignKey' => 'module_id',
           'dependent' => true,
         ]);
 
         $this->hasMany('Sections', [
-            'foreignKey' => 'module_id'
+            'foreignKey' => 'module_id',
             'dependent' => true,
         ]);
         $this->belongsToMany('Users', [
           'through' => 'userenrollment',
         ]);
         $this->hasMany('Files', [
-          'foreignKey' => 'module_id'
+          'foreignKey' => 'module_id',
         ]);
     }
 
