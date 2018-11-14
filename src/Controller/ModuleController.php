@@ -187,7 +187,6 @@ class ModuleController extends AppController
         $enroll->module_id = $module->id;
         $enroll->user_id = $userId;
         if($enrollment->save($enroll)){
-          $enrolled -> true;
           return $this->redirect(["controller" => "module", "action" => "dashboard/".$module->id]);
         }
       }else{
