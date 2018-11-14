@@ -40,7 +40,6 @@ class QuestionTable extends Table
             'joinType' => 'INNER'
         ]);
         $this->belongsTo('Exercise', [
-          'foreignKey' => 'exercise_id',
           'joinType' => 'INNER'
         ]);
         $this->hasMany('QuestionOption', [
