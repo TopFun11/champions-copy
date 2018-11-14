@@ -24,7 +24,7 @@
             </div>
       </a>
 
-      <a href="/module/explore" title="Title Link">
+      <a href="/pages/home" title="Title Link">
             <div class="btn btn-danger">
               Back
             </div>
