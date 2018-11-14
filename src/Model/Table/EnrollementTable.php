@@ -12,7 +12,7 @@ class EnrollmentTable extends Table
   {
     //parent::initialize($config);
 
-      $this->belongsTo('Module');
-      $this->belongsTo('Users');
+      //$this->belongsTo('Module');
+      //$this->belongsTo('Users');
   }
 }
