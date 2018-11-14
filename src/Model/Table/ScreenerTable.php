@@ -45,7 +45,9 @@ class ScreenerTable extends Table
             'joinType' => 'LEFT',
             'dependent' => true,
         ]);
-        $this->hasOne('Formular');
+        $this->hasOne('Formular', [
+            'dependent' => true,
+        ]);
     }
 
     /**
