@@ -36,10 +36,10 @@ class QuestionTable extends Table
         $this->displayField('question');
         $this->primaryKey('id');
 
-        //$this->belongsTo('Screener', [
-            //'foreignKey' => 'screener_id',
-            //'joinType' => 'INNER'
-        //]);
+        $this->belongsTo('Screener', [
+            'foreignKey' => 'screener_id',
+            'joinType' => 'INNER'
+        ]);
         $this->belongsTo('Exercise', [
           'foreignKey' => 'exercise_id',
           'joinType' => 'INNER'
