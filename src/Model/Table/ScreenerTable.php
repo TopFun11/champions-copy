@@ -37,7 +37,6 @@ class ScreenerTable extends Table
         $this->primaryKey('id');
 
         $this->belongsTo('Module', [
-            'foreignKey' => 'module_id',
             'joinType' => 'INNER'
         ]);
         $this->hasMany('Question', [
