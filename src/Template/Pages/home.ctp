@@ -21,12 +21,13 @@
 <br>
 <br>
 
-<?php if ($module->title != 'Dissertation Demo') {?>
+<?php if ($module) {?>
   <hr>
 
   <div class="container">
    <div class="row display-flex">
      <?php foreach($module as $module): ?>
+       if($module->title != 'Dissertation Demo'):
         <div class="col-xs-12 col-sm-4 col-md-4">
             <div class="box">
                 <div class="icon">
