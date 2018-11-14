@@ -36,10 +36,10 @@ class QuestionOptionTable extends Table
         $this->displayField('id');
         $this->primaryKey('id');
 
-        $this->belongsTo('Question', [
-            'foreignKey' => 'question_id',
-            'joinType' => 'INNER'
-        ]);
+        /**$this->belongsTo('Question', [
+           * 'foreignKey' => 'question_id',
+            *'joinType' => 'INNER'
+       */ ]);
     }
 
     /**
