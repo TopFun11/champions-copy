@@ -26,7 +26,7 @@
   
   <div class="container">
    <div class="row display-flex">
-     <?php foreach($module as $module): ?>
+     <?php foreach($module as $module) if ($module->title != 'Dissertation demo'){ ?>
         <div class="col-xs-12 col-sm-4 col-md-4">
             <div class="box">
                 <div class="icon">
@@ -38,7 +38,7 @@
                           </p>
                         <div class="more">
                             <a href="/module/overview/<?=$module->id?>" title="Title Link">
-                                <?php if ($module->enrolled > 0) { ?>
+                                <?php if ($module->enrolled == 1) { ?>
                                     Take Part <i class="fa fa-angle-double-right"></i>
                                 <?php } else { ?>
                                     Enrol <i class="fa fa-angle-double-right"></i>
@@ -50,7 +50,7 @@
                 <div class="space"></div>
             </div>
         </div>
-      <?php endforeach ?>
+      <?php } ?>
    </div>
   </div>
 <?php } ?>
