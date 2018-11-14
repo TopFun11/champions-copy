@@ -42,9 +42,12 @@ class SectionsTable extends Table
         ]);
         $this->hasMany('Sections', [
           'className' => 'Section',
-          'foreignKey' => 'section_id'
+          'foreignKey' => 'section_id',
+          'dependent' => true,
         ]);
-        $this->hasOne('Exercise');
+        $this->hasOne('Exercise', [
+            'dependent' => true,
+        ]);
     }
 
     /**
