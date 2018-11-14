@@ -47,7 +47,7 @@ class SectionsTable extends Table
           'dependent' => true,
         ]);
         $this->hasOne('Exercise', [
-            'foreignKey' => 'exercise_id',
+            'foreignKey' => 'section_id',
             'dependent' => true,
         ]);
     }
