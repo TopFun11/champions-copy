@@ -53,8 +53,8 @@
                 } else {
                 foreach($user->module as $module):
                 ?>
-                <hr>
-                <img src="<?= $module->icon ?>" alt="Icon for the <?=addslashes($module->title)?> module"> <?= $this->Html->link($module->title, ['controller' => 'module', 'action' => 'dashboard', $module->id], ['title' => __($module->title)]); ?>
+                <hr style="float:left">
+                <img src="<?= $module->icon ?>" alt="Icon for the <?=addslashes($module->title)?> module"> <?= $this->Html->link($module->title, ['controller' => 'module', 'action' => 'dashboard', $module->id], ['title' => __($module->title)]); ?><span style="float:right;">Remove</span>
                 <?php endforeach;
                 }
                 ?>
