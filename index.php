@@ -13,5 +13,6 @@
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
 define("webroot", realpath(dirname(__FILE__)));
+echo 'webroot';
 
 require 'webroot' . DIRECTORY_SEPARATOR . 'index.php';
