@@ -54,7 +54,7 @@
                 foreach($user->module as $module):
                 ?>
                 <hr style="text-align:left">
-                <img src="<?= $module->icon ?>" alt="Icon for the <?=addslashes($module->title)?> module"> <?= $this->Html->link($module->title, ['controller' => 'module', 'action' => 'dashboard', $module->id], ['title' => __($module->title)]); ?><span style="float:right;">Remove</span>
+                <img src="<?= $module->icon ?>" alt="Icon for the <?=addslashes($module->title)?> module"> <?= $this->Html->link($module->title, ['controller' => 'module', 'action' => 'dashboard', $module->id], ['title' => __($module->title)]); ?><span style="float:right;">postLink('', ['action' => 'delete', $module->id], ['confirm' => __('Are you sure you want to delete # {0}?', $module->id), 'title' => __('Delete'),</span>
                 <?php endforeach;
                 }
                 ?>
