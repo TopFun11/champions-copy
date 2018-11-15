@@ -37,6 +37,7 @@ class ProfileTable extends Table
         $this->primaryKey('id');
 
         $this->belongsTo('Users', [
+            'foreignKey' => 'user_id',
             'joinType' => 'INNER'
         ]);
     }
