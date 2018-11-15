@@ -13,10 +13,6 @@
   </p>
   <h2>Information We Collect</h2>
   <h3>Personal Information</h3>
-  <?php 
-  define("webroot", realpath(dirname(__FILE__))); 
-  ?>
-  echo 'webroot';
   <p>We do not collect personal information about anonymous site visitors.</p>
   <p>When you voluntarily submit identifiable data on this website (this
   includes registration, submission of feedback forms, subscriptions or
