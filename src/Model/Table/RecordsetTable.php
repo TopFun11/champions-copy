@@ -48,8 +48,9 @@ class RecordsetTable extends Table
           'foreignKey' => 'user_id',
           'joinType' => 'INNER'
         ]);
-        $this->hasMany("Record");
-    }
+        $this->hasMany("Record", [
+            'foreignKey' => 'recordset_id',
+        ]};
 
     /**
      * Default validation rules.
