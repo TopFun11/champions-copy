@@ -41,7 +41,7 @@ class RecordTable extends Table
             'joinType' => 'INNER'
         ]);
         $this->belongsTo("Question", [
-            'foreignKey' = 'question_id',
+            'foreignKey' => 'question_id',
         ]);
     }
 
