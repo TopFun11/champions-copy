@@ -50,7 +50,7 @@ class RecordsetTable extends Table
         ]);
         $this->hasMany("Record", [
             'foreignKey' => 'recordset_id',
-        ]};
+        ]);
 
     /**
      * Default validation rules.
