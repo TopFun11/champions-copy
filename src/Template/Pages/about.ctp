@@ -1,7 +1,7 @@
 <div class="container">
     <div class="c4h-home-jumbo jumbotron" style="background-image:url('img/headers/home/bg.jpg')">
-        <h1 style="font-size:500%;"><center>Champions for Health</h1>
-        <p style="font-size:300%;"><center>A healthier you means a healthier Wales.</p>
+        <h1 style="font-size:500%;">Champions for Health</h1>
+        <p style="font-size:300%;">A healthier you means a healthier Wales.</p>
     </div>
 </div>
 
