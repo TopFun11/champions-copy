@@ -26,6 +26,6 @@ class Module extends Entity
      */
     protected $_accessible = [
         '*' => true,
-        'id' => true,
+        'id' => false,
     ];
 }
