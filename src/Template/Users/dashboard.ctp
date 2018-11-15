@@ -54,7 +54,7 @@
                 foreach($user->module as $module):
                 ?>
                 <hr>
-                <img src="<?= $module->icon ?>" alt="Icon for the <?=addslashes($module->title)?> module"> <?= $this->Html->link($module->title, ['controller' => 'module', 'action' => 'dashboard', $module->id], ['title' => __($module->title)]); ?> <p><right>Remove Module<right><p>
+                <img src="<?= $module->icon ?>" alt="Icon for the <?=addslashes($module->title)?> module"> <?= $this->Html->link($module->title, ['controller' => 'module', 'action' => 'dashboard', $module->id], ['title' => __($module->title)]); ?> Remove Module
                 <?php endforeach;
                 }
                 ?>
