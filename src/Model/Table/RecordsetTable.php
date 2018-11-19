@@ -49,7 +49,7 @@ class RecordsetTable extends Table
           'joinType' => 'INNER'
         ]);
         $this->hasMany("Record", [
-            'foreignKey' => 'recordset_id',
+            'dependent' => 'true';
         ]);
     }
 
