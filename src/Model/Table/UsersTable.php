@@ -40,15 +40,12 @@ class UsersTable extends Table
           'through' => 'userenrollment',
         ]);
         $this->hasMany("Recordset", [
-          'foreignKey' => 'user_id',
           'className' => 'Recordset',
           'through' => 'recordset',
            'dependent' => 'true',
         ]);
         $this->addBehavior('Timestamp');
-        $this->hasOne('Profile', [
-            'foreignKey' => 'user_id',
-        ]);
+        $this->hasOne('Profile);
     }
 
     /**
