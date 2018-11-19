@@ -37,7 +37,6 @@ class RecordTable extends Table
         $this->primaryKey('id');
 
         $this->belongsTo('Recordset', [
-            'foreignKey' => 'recordset_id',
             'joinType' => 'INNER'
         ]);
         $this->belongsTo("Question", [
