@@ -45,7 +45,6 @@ class ExerciseTable extends Table
             'dependent' => true,
         ]);
         $this->hasMany('Question', [
-          'foreignKey' => 'exercise_id',
           'dependent' => true,
         ]);
     }
