@@ -37,7 +37,7 @@ class UsersTable extends Table
         $this->primaryKey('id');
         $this->belongsToMany('Module', [
           'className' => 'Module',
-          'through' => 'enrollment',
+          'through' => 'userenrollment',
         ]);
         $this->hasMany("Recordset", [
           'foreignKey' => 'user_id',
