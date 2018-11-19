@@ -41,7 +41,6 @@ class RecordsetTable extends Table
             'joinType' => 'INNER'
         ]);
         $this->belongsTo('Exercise', [
-          'foreignKey' => 'exercise_id',
           'joinType' => 'INNER'
         ]);
         $this->belongsTo('Users', [
