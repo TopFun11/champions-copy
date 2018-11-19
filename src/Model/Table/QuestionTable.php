@@ -41,7 +41,6 @@ class QuestionTable extends Table
             'joinType' => 'INNER'
         ]);
         $this->belongsTo('Exercise', [
-          'module_id' => 'exercise_id',
           'joinType' => 'INNER'
         ]);
         $this->hasMany('QuestionOption', [
