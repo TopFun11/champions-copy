@@ -42,7 +42,8 @@ class UsersTable extends Table
         $this->hasMany("Recordset", [
           'foreignKey' => 'user_id',
           'className' => 'Recordset',
-          'through' => 'recordset'
+          'through' => 'recordset',
+           'dependent' => 'true',
         ]);
         $this->addBehavior('Timestamp');
         $this->hasOne('Profile', [
