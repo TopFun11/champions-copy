@@ -37,14 +37,12 @@ class QuestionTable extends Table
         $this->primaryKey('id');
 
         $this->belongsTo('Screener', [
-            'module_id' => 'screener_id',
             'joinType' => 'INNER'
         ]);
         $this->belongsTo('Exercise', [
           'joinType' => 'INNER'
         ]);
         $this->hasMany('QuestionOption', [
-            'module_id' => 'question_id',
             'dependent' => true,
         ]);
 
