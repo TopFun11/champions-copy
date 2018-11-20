@@ -39,10 +39,8 @@ class ExerciseTable extends Table
 
         $this->belongsTo('Sections');
         $this->hasMany('Recordset', [
-            'dependent' => true,
         ]);
         $this->hasMany('Question', [
-          'dependent' => true,
         ]);
     }
 
