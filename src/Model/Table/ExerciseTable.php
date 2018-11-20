@@ -37,9 +37,7 @@ class ExerciseTable extends Table
         $this->displayField('id');
         $this->primaryKey('id');
 
-        $this->belongsTo('Sections', [
-            'foreignKey' => 'section_id',
-        ]);
+        $this->belongsTo('Sections');
         $this->hasMany('Recordset', [
             'dependent' => true,
         ]);
