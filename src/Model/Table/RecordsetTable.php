@@ -37,14 +37,12 @@ class RecordsetTable extends Table
         $this->primaryKey('id');
 
         $this->belongsTo('Screener', [
-            'foreignKey' => 'screener_id',
             'joinType' => 'INNER'
         ]);
         $this->belongsTo('Exercise', [
           'joinType' => 'INNER'
         ]);
         $this->belongsTo('Users', [
-          'foreignKey' => 'user_id',
           'joinType' => 'INNER'
         ]);
         $this->hasMany("Record", [
