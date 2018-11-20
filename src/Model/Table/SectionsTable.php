@@ -37,16 +37,13 @@ class SectionsTable extends Table
           'className' => 'Module',
         ]);
         $this->belongsTo('Sections', [
-          'foreignKey' => 'section_id',
           'className' => 'Section',
         ]);
         $this->hasMany('Sections', [
-          'foreignKey' => 'section_id',
           'className' => 'Section',
           'dependent' => true,
         ]);
         $this->hasOne('Exercise', [
-            'foreignKey' => 'section_id',
             'dependent' => true,
         ]);
     }
