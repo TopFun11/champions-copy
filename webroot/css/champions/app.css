@@ -230,12 +230,9 @@ body {
     width: 3em;
 }
 
-.form-control[type=textarea] {
-    rows: 3;
-}
-
 .panel textarea {
     width: 30em;
+    rows: 3;
 }
 
 .user-form {
