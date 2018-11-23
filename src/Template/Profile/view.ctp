@@ -17,7 +17,7 @@
    <div class="col-sm-9">
      <div class="panel panel-primary">
        <div class="panel-heading">
-         Personal Information
+         Personal Information <span class="pull-right edit-button"><a href="/profile/editPersonal"> Edit <i class="glyphicon glyphicon-pencil"></i></a></span>
        </div>
        <div class="panel-body">
          <table class="table table-striped" cellpadding="0" cellspacing="0">
