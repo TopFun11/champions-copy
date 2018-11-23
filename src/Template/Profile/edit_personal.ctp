@@ -18,12 +18,12 @@
   <div class="col-xs-9">
     <div class="panel panel-primary">
       <div class="panel-heading">
-       Contact Details <span class="pull-right edit-button"><a href="/profile/view"> Cancel <i class="glyphicon glyphicon-trash"></i></a></span>
+      Personal Details <span class="pull-right edit-button"><a href="/profile/view"> Cancel <i class="glyphicon glyphicon-trash"></i></a></span>
       </div>
       <div class="panel-body">
        <table class="table table-striped" cellpadding="0" cellspacing="0">
          <tr>
-            <td><?= __('Unsubscribe from emails and texts') ?><br/><em>Please note that you can always resubscribe later!</em></td>
+            <td><?= __('Age') ?> </td>
             <td><div class="checkbox"><?=$this->Form->input('unsubscribed',['label'=>'Yes, unsubscribe me. I know that I can resubscribe later.']) ?></div></td>
          </tr>
           <tr>
