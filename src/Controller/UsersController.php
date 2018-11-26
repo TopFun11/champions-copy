@@ -150,6 +150,8 @@ use Cake\Controller\Component\AuthComponent;
          }
          $this->set('user', $user);
          $this->set('options', $options);
+         $user->engage = 0;
+         $user->engageCheck = false;
      }
   
   public function delete($id)  
