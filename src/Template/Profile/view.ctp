@@ -119,6 +119,7 @@
               <tr>
                  <td><?= __('Anxiety' + h($profile->phq4_anxiety) ?></td>
                  <td><?= __('Depression' + h($profile->phq4_depression) ?></td>
+              </tr>
            </table>
          </div>
         </div>
