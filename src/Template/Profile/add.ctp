@@ -50,9 +50,9 @@
              <div class="form-group">
                <label> Gender:* </label>
                   <select name="gender" class="form-control" required>
-                     <option value="female">Female</option>
-                     <option value="male">Male</option>
-                     <option value="unknown">Prefer not to say</option>
+                     <option value="Female">Female</option>
+                     <option value="Male">Male</option>
+                     <option value="Not Given">Prefer not to say</option>
                      <option value="other">Other</option>
                   </select>
              </div>
