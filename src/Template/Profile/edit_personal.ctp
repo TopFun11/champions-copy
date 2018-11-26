@@ -24,7 +24,17 @@
        <table class="table table-striped" cellpadding="0" cellspacing="0">
          <tr>
             <td><?= __('Age') ?> </td>
-            <td><div class="checkbox"><?=$this->Form->input('unsubscribed',['label'=>'Yes, unsubscribe me. I know that I can resubscribe later.']) ?></div></td>
+            <td><div class="form-group">
+                <label> Age Band:* </label>
+                   <select name="age" class="form-control" required>
+                      <option value="band1">18-25</option>
+                      <option value="band2">26-35</option>
+                      <option value="band3">36-45</option>
+                      <option value="band4">46-55</option>
+                      <option value="band5">56-65</option>
+                      <option value="band6">65+</option>
+                   </select>
+             </div></td>
          </tr>
           <tr>
              <td><?= __('Email') ?></td>
