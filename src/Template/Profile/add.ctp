@@ -22,16 +22,16 @@
              ?>
              <label> Health board and hospital location:* </label>
                 <select name="hospital" class="form-control" required>
-                   <option value="singleton">Singleton Hospital</option>
-                   <option value="moriston">Moriston Hospital</option>
-                   <option value="neath port talbot">Neath Port Talbot Hospital</option>
-                   <option value="princess of wales">Princess of Wales Hospital</option>
-                   <option value="garn goch">Garn Goch Hospital</option>
-                   <option value="fairwood">Fairwood Hospital</option>
-                   <option value="hill house">Hill House</option>
-                   <option value="bon-y-maen">Bon-y-maen</option>
-                   <option value="phillips parade">Phillips Parade</option>
-                   <option value="gellunudd">Gellunudd</option>
+                   <option value="Singleton">Singleton Hospital</option>
+                   <option value="Moriston">Moriston Hospital</option>
+                   <option value="Neath Port Talbot">Neath Port Talbot Hospital</option>
+                   <option value="Princess of Wales">Princess of Wales Hospital</option>
+                   <option value="Garn Goch">Garn Goch Hospital</option>
+                   <option value="Fairwood">Fairwood Hospital</option>
+                   <option value="Hill House">Hill House</option>
+                   <option value="Bon-Y-Maen">Bon-y-maen</option>
+                   <option value="Phillips Parade">Phillips Parade</option>
+                   <option value="Gellunudd">Gellunudd</option>
                 </select>
 
 
@@ -53,7 +53,7 @@
                      <option value="Female">Female</option>
                      <option value="Male">Male</option>
                      <option value="Not Given">Prefer not to say</option>
-                     <option value="other">Other</option>
+                     <option value="Other">Other</option>
                   </select>
              </div>
         </div>
