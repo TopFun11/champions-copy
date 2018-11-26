@@ -91,7 +91,7 @@
            <table class="table table-striped" cellpadding="0" cellspacing="0">
              <tr>
                 <td><?= __('Warwick-Edinburgh Mental Wellbeing Scale') ?></td>
-                <td><?= h($profile->wemwbs_value) ?></td>
+                <td><?= h($profile->wembs_optimism) ?></td>
              </tr>
            </table>
          </div>
