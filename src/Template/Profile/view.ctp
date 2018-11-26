@@ -15,6 +15,7 @@
       </div>
    </div>
    <?php $profile->wemwbs_score = $profile->wembs_optimism + $profile->wembs_useful + $profile->wembs_relaxed + $profile->wembs_relaxed + $profile->interested_in_people + $profile->wembs_spare_energy + $profile->wembs_dealing_with_problems_well + $profile->wembs_thinking_clearly + $profile->wembs_good_about_self + $profile->wembs_close_to_others + $profile->wembs_feeling_confident + $profile->wembs_make_mind_up + $profile->wembs_loved + $profile->wembs_interested_in_new_things + $profile->wembs_cheerful; ?>
+   <?php $profile->phq4_score = $profile->phq_anxious + $profile->phq_worrying + $profile->phq_interest_please + $profile->phq_depressed; ?>
    <div class="col-sm-9">
      <div class="panel panel-primary">
        <div class="panel-heading">
@@ -94,6 +95,12 @@
                 <td><?= __('Warwick-Edinburgh Mental Wellbeing Scale') ?></td>
                 <td><?= h($profile->wemwbs_score) ?></td>
              </tr>
+             <tr>
+                <td><?=__('WEMWBS Male National Average (2016)  - 50.1') ?></td>
+                <td><?=__('WEMWBS Female National Average (2016) - 49.6') ?></td>
+             <tr>
+                <td><?= __('Patient Health Questionnaire for Depression and Anxiety') ?></td>
+                <td><?= h($profile->phq4_score) ?></td>
            </table>
          </div>
         </div>
