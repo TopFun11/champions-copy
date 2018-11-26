@@ -185,7 +185,7 @@
                 <td><input type="radio" name="wembs_optimism" value="4"></td>
                 <td><input type="radio" name="wembs_optimism" value="5"></td>
               </tr>
-              <?php $this->wemwbs_value = $this->wemwbs_value + $_POST['wembs_optimism'];
+              <?php $this->wemwbs_value = $this->wemwbs_value + $_POST['wembs_optimism']; ?>
               <tr>
                 <td>I've been feeling useful</td>
                 <td><input type="radio" name="wembs_useful" value="1" required></td>
