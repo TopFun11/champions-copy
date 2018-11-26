@@ -169,7 +169,6 @@
           </div>
 
           <div class="form-group">
-            <?php $this->wemwbs_value = 0; ?>
             <table class="wemwbs-table table table-striped">
               <th></th>
               <th>None of the time</th>
@@ -185,7 +184,6 @@
                 <td><input type="radio" name="wembs_optimism" value="4"></td>
                 <td><input type="radio" name="wembs_optimism" value="5"></td>
               </tr>
-              <?php $this->wemwbs_value = $this->wemwbs_value + $_POST['wembs_optimism']; ?>
               <tr>
                 <td>I've been feeling useful</td>
                 <td><input type="radio" name="wembs_useful" value="1" required></td>
@@ -292,8 +290,6 @@
               </tr>
             </table>
           </div>
-          <?php $this->wemwbs_value = $_POST["wembs_optimism"] + $_POST['wembs_useful'] + $_POST['wembs_relaxed'] + $_POST['wembs_interested_in_people'] + $_POST['wembs_spare_energy'] + $_POST['wembs_dealing_with_problems_well'] + $_POST['wembs_thinking_clearly'] + $_POST['wembs_good_about_self'] + $_POST['wembs_close_to_others'] + $_POST['wembs_feeling_confident'] + $_POST['wembs_make_mind_up'] + $_POST['wembs_loved'] + $_POST['wembs_interested_in_new_things'] + $_POST['wembs_cheerful']; ?>
-
         </div>
       </div>
     </div>
@@ -372,3 +368,5 @@
 
 
 <?= $this->Form->end() ?>
+
+<?= $this->wemwbs_value = $_POST['wembs_optimism'];
