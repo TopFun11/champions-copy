@@ -83,6 +83,27 @@
            </table>
          </div>
         </div>
+        <div class="panel panel-primary">
+         <div class="panel-heading">
+           Scores
+         </div>
+         <div class="panel-body">
+           <table class="table table-striped" cellpadding="0" cellspacing="0">
+             <tr>
+                <td><?= __('Warwick-Edinburgh Mental Wellbeing Scale') ?></td>
+                <td><?= h($profile->wemwbs_value) ?></td>
+             </tr>
+              <tr>
+                 <td><?= __('Email') ?></td>
+                 <td><?= h($profile->email) ?></td>
+              </tr>
+              <tr>
+                 <td><?= __('Phone Number') ?></td>
+                 <td><?= h($profile->phone_number) ?></td>
+              </tr>
+           </table>
+         </div>
+        </div>
       <div class="row user-profile-buttons">
         <a href="/users/dashboard"><div class="btn btn-success">
             My Dashboard
