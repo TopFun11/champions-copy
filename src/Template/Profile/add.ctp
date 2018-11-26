@@ -369,4 +369,8 @@
 
 <?= $this->Form->end() ?>
 
-<?= $this->wemwbs_value = $_POST['wembs_optimism'];
+<?= 
+  if (isset($_POST["wembs_optimism"])) {
+    $this->wemwbs_value = $_POST['wembs_optimism']; 
+  }
+?>
