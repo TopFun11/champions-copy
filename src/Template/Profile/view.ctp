@@ -93,15 +93,6 @@
                 <td><?= __('Warwick-Edinburgh Mental Wellbeing Scale') ?></td>
                 <td><?= h($profile->wemwbs_value) ?></td>
              </tr>
-              <tr>
-                 <td><?= __('Email') ?></td>
-                 <td><?= h($profile->email) ?></td>
-              </tr>
-              <tr>
-                 <td><?= __('Phone Number') ?></td>
-                 <td><?= h($profile->phone_number) ?></td>
-              </tr>
-           </table>
          </div>
         </div>
       <div class="row user-profile-buttons">
