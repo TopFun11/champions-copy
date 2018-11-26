@@ -117,9 +117,12 @@
                 <td><?= h($profile->phq4_score) ?></td>
               </tr>
               <tr>
-                 <td><?= __('Anxiety' + h($profile->phq4_anxiety) ?></td>
-                 <td><?= __('Depression' + h($profile->phq4_depression) ?></td>
+                 <td><?= __('Anxiety:') ?></td>
+                 <td><?= h($profile->phq_anxiety) ?></td>
               </tr>
+              <tr>
+                 <td><?= __('Depression:') ?></td>
+                 <td><?= h($profile->phq_depression) ?></td>
            </table>
          </div>
         </div>
