@@ -16,6 +16,20 @@
    </div>
    <?php $profile->wemwbs_score = $profile->wembs_optimism + $profile->wembs_useful + $profile->wembs_relaxed + $profile->wembs_relaxed + $profile->interested_in_people + $profile->wembs_spare_energy + $profile->wembs_dealing_with_problems_well + $profile->wembs_thinking_clearly + $profile->wembs_good_about_self + $profile->wembs_close_to_others + $profile->wembs_feeling_confident + $profile->wembs_make_mind_up + $profile->wembs_loved + $profile->wembs_interested_in_new_things + $profile->wembs_cheerful; ?>
    <?php $profile->phq4_score = $profile->phq_anxious + $profile->phq_worrying + $profile->phq_interest_please + $profile->phq_depressed; ?>
+   <?php $profile->phq4_anxiety = NULL;
+   if ($profile->phq_anxious + $profile->phq_worrying >= 3) {
+      phq_anxiety = "Possible Cause for Concern";
+   } else {
+      phq_anxiety = "No Cause for Concern";
+   }
+   ?>
+   <?php $profile->phq_depression = NULL;
+   if ($profile->phq_interest_please + $profile->phq_depressed >= 3) {
+      phq_depression = "Possible Cause for Concern";
+   } else {
+      phq_depression = "No Cause for Concern";
+   }
+   ?>
    <div class="col-sm-9">
      <div class="panel panel-primary">
        <div class="panel-heading">
@@ -101,6 +115,10 @@
              <tr>
                 <td><?= __('Patient Health Questionnaire for Depression and Anxiety') ?></td>
                 <td><?= h($profile->phq4_score) ?></td>
+              </tr>
+              <tr>
+                 <td><?= __('Anxiety' + h($profile->phq4_anxiety) ?></td>
+                 <td><?= __('Depression' + h($profile->phq4_depression) ?></td>
            </table>
          </div>
         </div>
