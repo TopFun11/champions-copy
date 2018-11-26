@@ -6,7 +6,7 @@
       </h5>
    </div>
 </div>
-<form>
+<form action="" method="post">
 <!-- Personal Information -->
 <div class="container">
   <div class="col-md-10">
