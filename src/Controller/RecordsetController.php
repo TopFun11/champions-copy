@@ -208,6 +208,8 @@ class RecordsetController extends AppController
         //TODO get rid of magic numbers
         $profile = $this->Profile->find("all")->where(['user_id' => $this->Auth->user('id')])->first();
         $profile->points = $profile->points + 5;
+        $profile->engage = $profile->engage + 1;
+        $profile->engageCheck = true;
         if($this->hasDoneExerciseFor(10)){
           $profile->points = $profile->points + 10;
         }
