@@ -35,7 +35,7 @@
                         <div class="col-md-10 align-middle">Modules engaged with recently</div>
                     </div>
                     <div class="row">
-                        <div class="col-md-2 value">($engage)</div>
+                        <div class="col-md-2 value"><?=$engage?></div>
                         <div class="col-md-10 align-middle">Consecutive days of engagement</div>
                     </div>
                 </div>
