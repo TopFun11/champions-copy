@@ -18,16 +18,16 @@
    <?php $profile->phq4_score = $profile->phq_anxious + $profile->phq_worrying + $profile->phq_interest_please + $profile->phq_depressed; ?>
    <?php $profile->phq4_anxiety = NULL;
    if ($profile->phq_anxious + $profile->phq_worrying >= 3) {
-      phq_anxiety = "Possible Cause for Concern";
+      $profile->phq_anxiety = "Possible Cause for Concern";
    } else {
-      phq_anxiety = "No Cause for Concern";
+      $profile->phq_anxiety = "No Cause for Concern";
    }
    ?>
    <?php $profile->phq_depression = NULL;
    if ($profile->phq_interest_please + $profile->phq_depressed >= 3) {
-      phq_depression = "Possible Cause for Concern";
+      $profile->phq_depression = "Possible Cause for Concern";
    } else {
-      phq_depression = "No Cause for Concern";
+      $profile->phq_depression = "No Cause for Concern";
    }
    ?>
    <div class="col-sm-9">
