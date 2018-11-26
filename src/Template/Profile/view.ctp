@@ -25,7 +25,7 @@
                <td><?= __('Age') ?></td>
                <td>
                <?php
-               switch ($profile->age=="band1") {
+               switch ($profile->age) {
                  case "band1":
                   echo "18-25";
                   break;
