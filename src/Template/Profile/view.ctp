@@ -13,6 +13,8 @@
             </div>
          </div>
       </div>
+      <br>
+      <br>
       <div class="row">
          <?php if(isset($profile->motiv)) {
             echo $profile->motiv;
