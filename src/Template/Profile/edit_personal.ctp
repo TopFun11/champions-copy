@@ -66,6 +66,10 @@
                 </select>
                </div></td>
           </tr>
+          <tr>
+            <td><?= __('Motivation Message') ?></td>
+            <td><?= $this->Form->input('motiv', ['class'=>'form-control','type'=>'motiv','label'=>false]) ?></td>
+         </tr>
        </table>
        <?= $this->Form->button(__("Save"),['class'=>'btn btn-success pull-right']); ?>
       </div>
