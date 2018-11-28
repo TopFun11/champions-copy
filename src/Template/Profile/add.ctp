@@ -368,9 +368,3 @@
 
 
 <?= $this->Form->end() ?>
-
-<?= 
-  if (isset($_POST["wembs_optimism"])) {
-    $this->wemwbs_value = $_POST['wembs_optimism']; 
-  }
-?>
