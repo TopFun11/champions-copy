@@ -72,7 +72,7 @@ class ProfileController extends AppController
             if ($this->Profile->save($profile)) {
                 $this->Flash->success(__('The profile has been saved.'));
 
-                return $this->redirect(['action' => 'explore', 'controller' => 'module']);
+                return $this->redirect(['action' => 'home', 'controller' => 'pages']);
             }
             $this->Flash->error(__('The profile could not be saved. Please, try again.'));
         }
