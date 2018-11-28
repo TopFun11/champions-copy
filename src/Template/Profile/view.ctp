@@ -17,9 +17,9 @@
                <?php 
                   $profile->motiv = NULL;
                   if(isset($profile->motiv)) {
-                     echo ($profile->motiv);
+                     echo $profile->motiv;
                   } else {
-                     echo "";
+                     echo " ";
                   }
                ?>
             </div>
