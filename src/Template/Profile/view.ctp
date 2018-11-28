@@ -15,7 +15,7 @@
          <div class="col-sm-6">
             <div class="row">
                <?php 
-                  if(isset($profile->motiv) {
+                  if(isset($profile->motiv)) {
                      echo ($profile->motiv);
                   } else {
                      echo "";
