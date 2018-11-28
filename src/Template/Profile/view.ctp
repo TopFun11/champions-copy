@@ -16,10 +16,13 @@
       <br>
       <br>
       <div class="row">
-         <?php if(isset($profile->motiv)) {
+         <?php
+         
+         if(isset($profile->motiv)) {
             echo $profile->motiv;
          } else {
-            echo "NULL";
+            $profile->motiv = "NULL";
+            echo $profile->motiv;
          }
          ?>
      </div>       
