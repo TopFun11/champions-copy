@@ -28,9 +28,9 @@
      </div> 
      
    </div>
-   <?php motive = NULL; 
+   <?php $profile->motive = NULL; 
    if ($profile->motiv != NULL) {
-      motive = $profile->motiv;
+      $profile->motive = $profile->motiv;
    } else {
    }
    ?>
@@ -97,7 +97,7 @@
             </tr>
             <tr>
                <td><?= __('Motivational Message') ?></td>
-               <td><?= h($profile->motiv) ?></td>
+               <td><?= h($profile->motive) ?></td>
                </tr>
          </table>
        </div>
