@@ -19,7 +19,7 @@
          <?php
          
          if($profile->motiv != "NULL") {
-            <?= h($profile->motiv) ?>
+            h($profile->motiv)
          } else {
             $profile->motiv = "NULL";
             echo $profile->motiv;
