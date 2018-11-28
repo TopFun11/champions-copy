@@ -15,7 +15,7 @@
       </div>
       <div class="row">
          <?php if(isset($profile->motiv)) {
-            h($profile->motiv);
+            echo $profile->motiv;
          } else {
             echo "";
          }
