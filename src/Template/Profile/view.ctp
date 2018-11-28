@@ -18,7 +18,7 @@
       <div class="row">
          <?php
          
-         if($profile->motiv != NULL) {
+         if($profile->motiv != "NULL") {
             echo $profile->motiv;
          } else {
             $profile->motiv = "NULL";
