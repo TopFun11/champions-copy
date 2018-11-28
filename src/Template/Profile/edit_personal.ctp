@@ -67,7 +67,7 @@
                </div></td>
           </tr>
           <tr>
-            <td><?= __('Motivation Message') ?></td>
+            <td><?= __('Motivational Message') ?></td>
             <td><?= $this->Form->input('motiv', ['class'=>'form-control','type'=>'motiv','label'=>false]) ?></td>
          </tr>
        </table>
