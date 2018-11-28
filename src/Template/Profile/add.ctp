@@ -16,6 +16,7 @@
       <div class="panel panel-primary">
         <div class="panel-body">
           <?php
+             $this->motiv = NULL;
              echo $this->Form->input('email', ['class'=>'form-control','type'=>'email','placeholder'=>'joebloggs@email.com','label'=>'Email*']);
              echo $this->Form->input('phone_number', ['class'=>'form-control','type'=>'tel','placeholder'=>'Telephone number', 'required' => false, 'label'=>'Phone number (Optional)']);
              ?>
