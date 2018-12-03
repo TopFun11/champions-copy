@@ -72,10 +72,12 @@
                     <p>You may earn trophies through continued engagement with your modules, and they will appear in the trophy cabinet on your public profile.</p>
                     <p>You haven't earned any trophies yet, why not engage with <a href="/module/explore" title="Module catalogue">a module</a>?</p>
                 </div>
-               <div class="progress">
-                  <div class="progress-bar" role="progressbar" aria-valuenow="70"
-                     aria-valuemin="0" aria-valuemax="100" style="width:70%">
-                        70%
+                <div class="row">
+                  <div class="progress">
+                     <div class="progress-bar" role="progressbar" aria-valuenow="70"
+                        aria-valuemin="0" aria-valuemax="100" style="width:70%">
+                           70%
+                     </div>
                   </div>
                </div>
             </div>
