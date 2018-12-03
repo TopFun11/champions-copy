@@ -17,16 +17,16 @@
 
    ?>
 
-<?php $bronzeValue = 50; $silverValue = 100; $goldValue = 200; $platValue = 400; 
+<?php $bronzeValue = 50; $silverValue = 100; $goldValue = 200; $platValue = 400; $bronzeComp = false; $silverComp = false; $goldComp = false; $platComp = false;
                      $goalValue = $bronzeValue;
                      if (($bronzeValue <= $profile->points) and ($profile->points < $silverValue)) {
-                        $goalValue = $silverValue;
+                        $goalValue = $silverValue; $bronzeComp = true;
                      } else if (($silverValue <= $profile->points) and ($profile->points < $goldValue)) {
-                        $goalValue = $goldValue;
+                        $goalValue = $goldValue; $silverComp = true;
                      } else if (($goldValue <= $profile->points) and  ($profile->points < $platValue)) {
-                        $goalValue = $platValue;
+                        $goalValue = $platValue; $goldComp = true;
                      } else if ($platValue <= $profile->points) {
-                        $goalValue = $profile->points;
+                        $goalValue = $profile->points; $platComp = true;
                      } ?>
 <div class="container user-dashboard">
     <div class="row greeting">
@@ -82,7 +82,12 @@
                 <div class="col-md-12">
                     <img class="trophy-icon" src="/img/trophy.jpg">
                     <p>You may earn trophies through continued engagement with your modules, and they will appear in the trophy cabinet on your public profile.</p>
-                    if 
+                    <?php if ($bronzeComp = true) {
+                        echo "You have earned the Bronze Trophy. Congratulations!"; <br>
+                     }
+                     if ($silverComp = true) {
+                        echo "You have earned the Silver Trophy. Congratulations!"; <br>
+                     } ?>
                 </div>
            </div>
         </div>
