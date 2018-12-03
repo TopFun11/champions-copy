@@ -42,7 +42,7 @@ class ScreenerTable extends Table
         ]);
         $this->hasMany('Question', [
            'joinType' => 'LEFT',
-           'dependent' => true,
+           'dependent' => 'true',
         ]);
         $this->hasOne('Formular');
     }
