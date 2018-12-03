@@ -53,7 +53,7 @@ use Cake\Controller\Component\AuthComponent;
                ord($engagement[$modId]['title'][5])*$modId%255
            ];
            if ($engagement[$modId]['title'] == "Wellbeing") {
-              $engagement[$modId]['colour'] = [66, 255, 0];
+              $engagement[$modId]['colour'] = [20, 244, 255];
            }
        }
 
