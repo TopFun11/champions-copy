@@ -70,16 +70,17 @@
                 <div class="col-md-12">
                     <img class="trophy-icon" src="/img/trophy.jpg">
                     <p>You may earn trophies through continued engagement with your modules, and they will appear in the trophy cabinet on your public profile.</p>
-                    <p>You haven't earned any trophies yet, why not engage with <a href="/module/explore" title="Module catalogue">a module</a>?</p>
+                    <p>You haven't earned any trophies yet, why not engage with <a href="/pages/home" title="Home Page">a module</a>?</p>
                 </div>
            </div>
         </div>
     </div>
    <div class="row">
                   <div class="progress">
+                     <?php $bronzeValue = 200; $currentProgress = $profile->points/$bronzeValue; ?>
                      <div class="progress-bar" role="progressbar" aria-valuenow="70"
-                        aria-valuemin="0" aria-valuemax="100" style="width:70%">
-                           70%
+                        aria-valuemin="0" aria-valuemax="200" style="width: <?= $currentProgress ?>%">
+                           <?= echo($profile->points) / echo($bronzeValue) ?>
                      </div>
                   </div>
                </div>
