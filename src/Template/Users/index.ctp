@@ -6,7 +6,9 @@ $this->start('tb_actions');
     <li><?= $this->Html->link(__('New User'), ['action' => 'add']); ?></li>
 <?php $this->end(); ?>
 <?php $this->assign('tb_sidebar', '<ul class="nav nav-sidebar">' . $this->fetch('tb_actions') . '</ul>'); ?>
-
+<div class="row">
+  <div class="col-xs-12">
+    <h1>Users</h1>
 <table class="table table-striped" cellpadding="0" cellspacing="0">
     <thead>
         <tr>
@@ -44,4 +46,6 @@ $this->start('tb_actions');
         <?= $this->Paginator->next(__('next') . ' >') ?>
     </ul>
     <p><?= $this->Paginator->counter() ?></p>
+</div>
+</div>
 </div>
