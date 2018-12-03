@@ -50,7 +50,7 @@ use Cake\Controller\Component\AuthComponent;
            $engagement[$modId]['colour'] = [
                ord($engagement[$modId]['title'][1])*$modId%255,
                ord($engagement[$modId]['title'][3])*$modId%255,
-               ord($engagement[$modId]['title'][5])*$modId%255
+               ord($engagement[$modId]['title'][6])*$modId%255
            ];
        }
 
