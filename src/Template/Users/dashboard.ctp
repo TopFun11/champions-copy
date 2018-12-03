@@ -79,11 +79,21 @@
     </div>
    <div class="row">
                   <div class="progress">
-                     <?php 
-                     $currentProgress = ($profile->points/$bronzeValue) * 100; ?>
+                     <?php
+                     $goalValue = $bronzeValue;
+                     if ($bronzeValue > $profile->points > $silverValue) {
+                        $goalValue = $silverValue;
+                     } else if ($silverValue > $profile->points > $goldValue) {
+                        $goalValue = $goldValue;
+                     } else if ($goldValue > $profile->points > $platValue) {
+                        $goalValue = $platValue
+                     } else {
+                        $goalValue = $profile->points;
+                     }
+                     $currentProgress = ($profile->points/$goalValue) * 100; ?>
                      <div class="progress-bar" role="progressbar" aria-valuenow="70"
                         aria-valuemin="0" aria-valuemax="200" style="width: <?= $currentProgress ?>%">
-                           <?php echo $profile->points . "/" . $bronzeValue ?>
+                           <?php echo $profile->points . "/" . $goalValue ?>
                      </div>
                   </div>
                </div>
