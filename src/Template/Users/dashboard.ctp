@@ -17,7 +17,7 @@
 
    ?>
 
-<?php $bronzeValue = 50; $silverValue = 100; $goldValue = 200; $platValue = 500; ?>
+<?php $bronzeValue = 50; $silverValue = 100; $goldValue = 200; $platValue = 400; ?>
 <div class="container user-dashboard">
     <div class="row greeting">
         <div class="col-md-12">
