@@ -79,7 +79,8 @@
         <div class="col-md-12">
             <h2>Trophies</h2>
             <div class="row">
-                    <p>You may earn trophies through continued engagement with your modules, and they will appear in the trophy cabinet on your public profile.</p>
+                <p>You may earn trophies through continued engagement with your modules, and they will appear in the trophy cabinet on your public profile.</p>
+                <p>You will recieve 1 point for each visit, and 5 points for each completion of a module activity. Collect points to unlock new trophies.<p>    
            </div>   
             <div class="row">
                     <?php if ($bronzeComp == true) { ?>
