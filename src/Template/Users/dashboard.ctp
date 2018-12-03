@@ -77,7 +77,7 @@
     </div>
    <div class="row">
                   <div class="progress">
-                     <?php $bronzeValue = 200; $currentProgress = $profile->points/$bronzeValue; ?>
+                     <?php $bronzeValue = 200; $currentProgress = ($profile->points/$bronzeValue) * 100; ?>
                      <div class="progress-bar" role="progressbar" aria-valuenow="70"
                         aria-valuemin="0" aria-valuemax="200" style="width: <?= $currentProgress ?>%">
                            194/200
