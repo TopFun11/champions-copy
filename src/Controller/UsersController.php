@@ -48,10 +48,13 @@ use Cake\Controller\Component\AuthComponent;
            // @TODO: Find a better way of doing this...
            $engagement[$modId]['title'] = isset($mod->title)?$mod->title:"Wellbeing";
            $engagement[$modId]['colour'] = [
-               ord($engagement[$modId]['title'][2])*$modId%32,
+               ord($engagement[$modId]['title'][2])*$modId%255,
                ord($engagement[$modId]['title'][4])*$modId%255,
                ord($engagement[$modId]['title'][6])*$modId%255
            ];
+           if ($engagement[$modId]['title'] == "Wellbeing") {
+              $engagement[$modId]['colour'] = #42FF00;
+           }
        }
 
        $this->set('profile',    $profile);
