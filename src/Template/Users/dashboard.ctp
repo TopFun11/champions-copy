@@ -78,7 +78,7 @@
         </div>
     </div>
    <div class="row">
-      <h3> Progress to Next Trophy </h3>
+      <h3><center> Progress to Next Trophy </center></h3>
                   <div class="progress">
                      <?php
                      $goalValue = $bronzeValue;
