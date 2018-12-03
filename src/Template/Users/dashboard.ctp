@@ -87,15 +87,15 @@
                         echo "<br>";
                      }
                      if ($silverComp == true) {
-                        echo "You have earned the Silver Trophy. Congratulations!";
+                        echo "<span style='color: #E6E8FA;' />You have earned the Silver Trophy. Congratulations!</span>";
                         echo "<br>";
                      }
                      if ($goldComp == true) {
-                        echo "You have earned the Gold Trophy. Congratulations!";
+                        echo "<span style='color: #CD7F32;' />You have earned the Gold Trophy. Congratulations!</span>";
                         echo "<br>";
                      }
                      if ($platComp == true) {
-                        echo "You have earned the Platinum Trophy. Congratulations!";
+                        echo "<span style='color: #D9D9F3;' />You have earned the Platinum Trophy. Congratulations!</span>";
                         echo "<br>";
                      } ?>
                 </div>
