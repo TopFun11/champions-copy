@@ -82,13 +82,13 @@
                   <div class="progress">
                      <?php
                      $goalValue = $bronzeValue;
-                     if (($bronzeValue < $profile->points) and ($profile->points < $silverValue)) {
+                     if (($bronzeValue <= $profile->points) and ($profile->points < $silverValue)) {
                         $goalValue = $silverValue;
-                     } else if (($silverValue < $profile->points) and ($profile->points < $goldValue)) {
+                     } else if (($silverValue <= $profile->points) and ($profile->points < $goldValue)) {
                         $goalValue = $goldValue;
-                     } else if (($goldValue < $profile->points) and  ($profile->points < $platValue)) {
+                     } else if (($goldValue <= $profile->points) and  ($profile->points < $platValue)) {
                         $goalValue = $platValue;
-                     } else if ($platValue < $profile->points) {
+                     } else if ($platValue <= $profile->points) {
                         $goalValue = $profile->points;
                      }
                      $currentProgress = ($profile->points/$goalValue) * 100; ?>
