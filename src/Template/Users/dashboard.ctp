@@ -34,6 +34,10 @@
                         <div class="col-md-2 value"><?=count($engagement)?></div>
                         <div class="col-md-10 align-middle">Modules engaged with recently</div>
                     </div>
+                   <div class="row">
+                        <div class="col-md-2 value"><?=$profile->points?></div>
+                        <div class="col-md-10 align-middle">User Points</div>
+                    </div>
                 </div>
             </div>
         </div>
