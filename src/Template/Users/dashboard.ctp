@@ -16,6 +16,8 @@
 
 
    ?>
+
+<?php $bronzeValue = 50; $silverValue = 100; $goldValue = 200; $platValue = 500; ?>
 <div class="container user-dashboard">
     <div class="row greeting">
         <div class="col-md-12">
@@ -77,7 +79,10 @@
     </div>
    <div class="row">
                   <div class="progress">
-                     <?php $bronzeValue = 200; $currentProgress = ($profile->points/$bronzeValue) * 100; ?>
+                     <?php 
+                     if
+                     
+                     $currentProgress = ($profile->points/$bronzeValue) * 100; ?>
                      <div class="progress-bar" role="progressbar" aria-valuenow="70"
                         aria-valuemin="0" aria-valuemax="200" style="width: <?= $currentProgress ?>%">
                            <?php echo $profile->points . "/" . $bronzeValue ?>
