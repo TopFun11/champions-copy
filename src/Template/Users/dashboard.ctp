@@ -22,11 +22,11 @@
                      if (($bronzeValue <= $profile->points) and ($profile->points < $silverValue)) {
                         $goalValue = $silverValue; $bronzeComp = true;
                      } else if (($silverValue <= $profile->points) and ($profile->points < $goldValue)) {
-                        $goalValue = $goldValue; $silverComp = true;
+                        $goalValue = $goldValue; $silverComp = true; $bronzeComp = true;
                      } else if (($goldValue <= $profile->points) and  ($profile->points < $platValue)) {
-                        $goalValue = $platValue; $goldComp = true;
+                        $goalValue = $platValue; $goldComp = true; $silverComp = true; $bronzeComp = true;
                      } else if ($platValue <= $profile->points) {
-                        $goalValue = $profile->points; $platComp = true;
+                        $goalValue = $profile->points; $platComp = true; $goldComp = true; $silverComp = true; $bronzeComp = true;
                      } ?>
 <div class="container user-dashboard">
     <div class="row greeting">
