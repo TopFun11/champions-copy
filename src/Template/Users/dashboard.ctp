@@ -79,13 +79,17 @@
         <div class="col-md-12">
             <h2>Trophies</h2>
             <div class="row">
-                    <img class="trophy-icon" src="/img/trophy.jpg">
+                    //<img class="trophy-icon" src="/img/trophy.jpg">
                     <p>You may earn trophies through continued engagement with your modules, and they will appear in the trophy cabinet on your public profile.</p>
-                   
-                    <?php if ($bronzeComp == true) {
+           </div>   
+            <div class="row">
+                    <?php if ($bronzeComp == true) { ?>
+                        <img class="trophy-icon" src="/img/trophyBronze.jpg">
+                        <?php
                         echo "<span style='color: #B87333;' />You have earned the Bronze Trophy. Congratulations!</span>";
                         echo "<br>";
-                     }
+                     } ?>
+            </div>
                      if ($silverComp == true) {
                         echo "<span style='color: #E6E8FA;' />You have earned the Silver Trophy. Congratulations!</span>";
                         echo "<br>";
