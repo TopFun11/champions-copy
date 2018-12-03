@@ -83,9 +83,9 @@
                      $goalValue = $bronzeValue;
                      if ($bronzeValue < $profile->points and $profile->points < $silverValue) {
                         $goalValue = $silverValue;
-                     } else if ($silverValue > $profile->points > $goldValue) {
+                     } else if ($silverValue < $profile->points and $profile->points < $goldValue) {
                         $goalValue = $goldValue;
-                     } else if ($goldValue > $profile->points > $platValue) {
+                     } else if ($goldValue < $profile->points and  $profile->points < $platValue) {
                         $goalValue = $platValue
                      } else {
                         $goalValue = $profile->points;
