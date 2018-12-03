@@ -79,7 +79,6 @@
         <div class="col-md-12">
             <h2>Trophies</h2>
             <div class="row">
-                    //<img class="trophy-icon" src="/img/trophy.jpg">
                     <p>You may earn trophies through continued engagement with your modules, and they will appear in the trophy cabinet on your public profile.</p>
            </div>   
             <div class="row">
