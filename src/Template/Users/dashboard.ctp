@@ -34,10 +34,10 @@
                         <div class="col-md-2 value"><?=count($engagement)?></div>
                         <div class="col-md-10 align-middle">Modules engaged with recently</div>
                     </div>
-                    <div class="row">
+                    /**<div class="row">
                         <div class="col-md-2 value"><?=$user->engage?></div>
                         <div class="col-md-10 align-middle">Consecutive days of engagement</div>
-                    </div>
+                    */</div>
                 </div>
             </div>
         </div>
