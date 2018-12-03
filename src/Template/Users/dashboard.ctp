@@ -83,10 +83,10 @@
                     <img class="trophy-icon" src="/img/trophy.jpg">
                     <p>You may earn trophies through continued engagement with your modules, and they will appear in the trophy cabinet on your public profile.</p>
                     <?php if ($bronzeComp = true) {
-                        echo "You have earned the Bronze Trophy. Congratulations!"; <br>
+                        echo "You have earned the Bronze Trophy. Congratulations!";
                      }
                      if ($silverComp = true) {
-                        echo "You have earned the Silver Trophy. Congratulations!"; <br>
+                        echo "You have earned the Silver Trophy. Congratulations!";
                      } ?>
                 </div>
            </div>
