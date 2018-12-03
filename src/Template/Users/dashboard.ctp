@@ -86,20 +86,31 @@
                     <?php if ($bronzeComp == true) { ?>
                         <img class="trophy-icon" src="/img/trophyBronze.jpg">
                         <?php
-                        echo "<span style='color: #B87333;' />You have earned the Bronze Trophy. Congratulations!</span>";
+                        echo "<span style='color: #B87333;' />You have earned the Bronze Trophy for achieving 50 points. Congratulations!</span>";
                         echo "<br>";
                      } ?>
             </div>
-                     if ($silverComp == true) {
-                        echo "<span style='color: #E6E8FA;' />You have earned the Silver Trophy. Congratulations!</span>";
+            <div class="row">
+                     <?php if ($silverComp == true) { ?>
+                        <img class="trophy-icon" src="/img/trophySilver.jpg">
+                        <?php
+                        echo "<span style='color: #E6E8FA;' />You have earned the Silver Trophy by achieving 100 points. Congratulations!</span>";
                         echo "<br>";
-                     }
-                     if ($goldComp == true) {
-                        echo "<span style='color: #FFCA18;' />You have earned the Gold Trophy. Congratulations!</span>";
+                     } ?>
+           </div>
+           <div class="row">
+                     <?php if ($goldComp == true) { ?>
+                        <img class="trophy-icon" src="/img/trophyGold.jpg">
+                        <?php
+                        echo "<span style='color: #FFCA18;' />You have earned the Gold Trophy by achieving 200 points. Congratulations!</span>";
                         echo "<br>";
-                     }
-                     if ($platComp == true) {
-                        echo "<span style='color: #D9D9F3;' />You have earned the Platinum Trophy. Congratulations!</span>";
+                     } ?>
+           </div>
+           <div class="row">
+                     <?php if ($platComp == true) { ?>
+                        <img class="trophy-icon" src="/img/trophyPlat.jpg">
+                        <?php
+                        echo "<span style='color: #D9D9F3;' />You have earned the Platinum Trophy by achieving 400 points. Congratulations!</span>";
                         echo "<br>";
                      } ?>
            </div>
