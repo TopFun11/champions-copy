@@ -89,6 +89,14 @@
                      if ($silverComp = true) {
                         echo "You have earned the Silver Trophy. Congratulations!";
                         echo "<br>";
+                     }
+                     if ($goldComp = true) {
+                        echo "You have earned the Gold Trophy. Congratulations!";
+                        echo "<br>";
+                     }
+                     if ($platComp = true) {
+                        echo "You have earned the Platinum Trophy. Congratulations!";
+                        echo "<br>";
                      } ?>
                 </div>
            </div>
