@@ -17,7 +17,17 @@
 
    ?>
 
-<?php $bronzeValue = 50; $silverValue = 100; $goldValue = 200; $platValue = 400; ?>
+<?php $bronzeValue = 50; $silverValue = 100; $goldValue = 200; $platValue = 400; 
+                     $goalValue = $bronzeValue;
+                     if (($bronzeValue <= $profile->points) and ($profile->points < $silverValue)) {
+                        $goalValue = $silverValue;
+                     } else if (($silverValue <= $profile->points) and ($profile->points < $goldValue)) {
+                        $goalValue = $goldValue;
+                     } else if (($goldValue <= $profile->points) and  ($profile->points < $platValue)) {
+                        $goalValue = $platValue;
+                     } else if ($platValue <= $profile->points) {
+                        $goalValue = $profile->points;
+                     } ?>
 <div class="container user-dashboard">
     <div class="row greeting">
         <div class="col-md-12">
@@ -72,7 +82,7 @@
                 <div class="col-md-12">
                     <img class="trophy-icon" src="/img/trophy.jpg">
                     <p>You may earn trophies through continued engagement with your modules, and they will appear in the trophy cabinet on your public profile.</p>
-                    <p>You haven't earned any trophies yet, why not engage with <a href="/pages/home" title="Home Page">a module</a>?</p>
+                    if 
                 </div>
            </div>
         </div>
@@ -80,18 +90,7 @@
    <div class="row">
       <h3><center> Progress to Next Trophy </center></h3>
                   <div class="progress">
-                     <?php
-                     $goalValue = $bronzeValue;
-                     if (($bronzeValue <= $profile->points) and ($profile->points < $silverValue)) {
-                        $goalValue = $silverValue;
-                     } else if (($silverValue <= $profile->points) and ($profile->points < $goldValue)) {
-                        $goalValue = $goldValue;
-                     } else if (($goldValue <= $profile->points) and  ($profile->points < $platValue)) {
-                        $goalValue = $platValue;
-                     } else if ($platValue <= $profile->points) {
-                        $goalValue = $profile->points;
-                     }
-                     $currentProgress = ($profile->points/$goalValue) * 100; ?>
+                     <?php $currentProgress = ($profile->points/$goalValue) * 100; ?>
                      <div class="progress-bar" role="progressbar" aria-valuenow="70"
                         aria-valuemin="0" aria-valuemax="200" style="width: <?= $currentProgress ?>%">
                            <?php echo $profile->points . "/" . $goalValue ?>
