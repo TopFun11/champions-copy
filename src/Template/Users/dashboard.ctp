@@ -91,7 +91,7 @@
                         echo "<br>";
                      }
                      if ($goldComp == true) {
-                        echo "<span style='color: #CD7F32;' />You have earned the Gold Trophy. Congratulations!</span>";
+                        echo "<span style='color: #FFCA18;' />You have earned the Gold Trophy. Congratulations!</span>";
                         echo "<br>";
                      }
                      if ($platComp == true) {
