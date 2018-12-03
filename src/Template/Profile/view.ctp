@@ -11,6 +11,9 @@
             <div class="row">
                <?= $this->Number->format($profile->points) ?> points
             </div>
+            <div class="row">
+               <?= $this->Number->format($profile->logCount) ?> Log On
+            </div>
          </div>
       </div>
    </div>
