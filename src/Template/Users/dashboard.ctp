@@ -51,7 +51,7 @@
                         <div class="col-md-10 align-middle">User Points</div>
                     </div>
                    <div class="row">
-                      <div class="col-md-2 value"><?=$profile->logon?></div>
+                      <div class="col-md-2 value"><?=$profile->logCount?></div>
                       <div class="col-md-10 align-middle">Number of Times Logged On</div>
                    </div>
                 </div>
