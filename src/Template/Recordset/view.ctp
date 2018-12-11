@@ -50,7 +50,7 @@ $this->end();
             <td><?= $recordset->has('screener') ? $recordset->screener->formular->calculate($recordset->record) : '' ?></td>
         </tr>
     </table>
-    <?php foreach($recordset->record as $record){
+    <?php foreach($recordset->Record as $record){
     echo $record;
 } ?>
 </div>
