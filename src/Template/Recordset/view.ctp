@@ -50,5 +50,9 @@ $this->end();
             <td><?= $recordset->has('screener') ? $recordset->screener->formular->calculate($recordset->record) : '' ?></td>
         </tr>
     </table>
-    <?php echo $recordset; ?>
+    <?php $record = $this->Record->get($id, [
+            'contain' => []
+    ]);
+    echo $record;
+?>
 </div>
