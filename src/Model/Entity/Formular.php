@@ -2,6 +2,7 @@
 namespace App\Model\Entity;
 
 use Cake\ORM\Entity;
+use Cake\Math\Parser;
 
 /**
  * Formular Entity
@@ -71,7 +72,7 @@ class Formular extends Entity
     }
 
     public function calculate($records) {
-      $parser = new Math\Parser();
+      $parser = new \Math\Parser();
       $vars = $this->insertVariables($this->formula, $records);
       return  $vars .' = '. $parser->evaluate($vars);
     }
