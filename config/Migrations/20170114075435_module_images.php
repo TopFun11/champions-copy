@@ -40,7 +40,7 @@ class ModuleImages extends AbstractMigration
           'null' => false
         ])
         ->addColumn('description', 'string', [
-          'length' => 255,
+          'length' => 2000,
           'default' => null,
           'null' => false
         ])
