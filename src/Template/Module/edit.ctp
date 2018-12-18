@@ -123,7 +123,7 @@ $this->end();
         <div class="ed-preview">
           <label for="comment">Module description:</label>
           <?php
-          echo $this->Form->textarea('description_text',['class="form-control"','label'=>false, 'id' => 'description_text']);
+          echo $this->Form->textarea('description',['class="form-control"','label'=>false, 'id' => 'description']);
           ?>
         </div>
       </div>
