@@ -4,6 +4,7 @@ $this->layout = 'adminDefault';
 $this->start('tb_actions');
 ?>
     <li><?= $this->Html->link(__('New Recordset'), ['action' => 'add']); ?></li>
+    <li><?=$this->Html->link(__('List Record'), ['controller' => 'Record', 'action' => 'index']) ?> </li>
     <li><?= $this->Html->link(__('List Screener'), ['controller' => 'Screener', 'action' => 'index']); ?></li>
     <li><?= $this->Html->link(__('New Screener'), ['controller' => 'Screener', 'action' => 'add']); ?></li>
 <?php $this->end(); ?>
