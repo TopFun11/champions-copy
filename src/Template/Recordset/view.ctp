@@ -1,7 +1,5 @@
 <?php
 $this->layout = 'adminDefault';
-
-
 $this->start('tb_actions');
 ?>
 <li><?= $this->Html->link(__('Edit Recordset'), ['action' => 'edit', $recordset->id]) ?> </li>
@@ -12,7 +10,6 @@ $this->start('tb_actions');
 <li><?= $this->Html->link(__('New Screener'), ['controller' => 'Screener', 'action' => 'add']) ?> </li>
 <?php
 $this->end();
-
 $this->start('tb_sidebar');
 ?>
 <ul class="nav nav-sidebar">
@@ -50,5 +47,4 @@ $this->end();
             <td><?= $recordset->has('screener') ? $recordset->screener->formular->calculate($recordset->record) : '' ?></td>
         </tr>
     </table>
-?>
 </div>
