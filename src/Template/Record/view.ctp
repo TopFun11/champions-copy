@@ -48,7 +48,11 @@ $this->end();
         </tr>
         <tr>
           <td><?= __('Option') ?></td>
-          <td><?= $record->option_id?></td>
+          <td><?= $record->question_option_id?></td>
+        </tr>
+        <tr>
+          <td><?= __('Question') ?></td>
+          <td><?= $record->question_id?></td>
         </tr>
     </table>
 </div>
