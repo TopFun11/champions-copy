@@ -46,5 +46,12 @@ $this->end();
             <td><?= __('Screener Score') ?></td>
             <td><?= $recordset->has('screener') ? $recordset->screener->formular->calculate($recordset->record) : '' ?></td>
         </tr>
+        <tr>
+            <td><?php $record = $this->Record->get($id, [
+                        'contain' => []
+                    ]);
+            echo $record;
+                ?></td>
+        </tr>
     </table>
 </div>
