@@ -71,7 +71,7 @@ class Formular extends Entity
     }
 
     public function calculate($records) {
-      $parser = new MathParser();
+      $parser = new \Math\Parser();
       $vars = $this->insertVariables($this->formula, $records);
       return  $vars .' = '. $parser->evaluate($vars);
     }
