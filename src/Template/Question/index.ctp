@@ -4,6 +4,7 @@ $this->layout = 'adminDefault';
 $this->start('tb_actions');
 ?>
     <li><?= $this->Html->link(__('New Question'), ['action' => 'add']); ?></li>
+    <li><?= $this->Html->link(__('List Question Options'), ['controller' => 'QuestionOption', 'action' => 'index']); ?></li>
 <?php $this->end(); ?>
 <?php $this->assign('tb_sidebar', '<ul class="nav nav-sidebar">' . $this->fetch('tb_actions') . '</ul>'); ?>
 
