@@ -132,7 +132,8 @@
                  <td><?= h($profile->phq_depression) ?></td>
               </tr>
               <tr>
-                 <td><?= __('Recordset') ?></td></tr>
+                 <td><?= __('Recordset') ?></td>
+                 <td><?= $recordset ?></td></tr>
                  <?php if ($recordset->user->id == $user->id) { ?>
                      <?php foreach($recordset as $recordset): ?>
                         <tr><?= $recordset->has('exercise') ? $this->Number->format($recordset->exercise->id) : '' ?></tr>
