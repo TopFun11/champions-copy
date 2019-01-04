@@ -134,7 +134,7 @@
               <tr>
                  <td><?= __('Recordset') ?></td>
                  <td><?php if (($user->recordset->exercise->id) == 49) { ?>
-                     <?= $this->Number->format($recordset->exercise->id) ?>
+                     <td><?= $user->recordset->has('exercise') ? $this->Html->link($user->recordset->exercise->id, ['controller' => 'exercise', 'action' => 'view', $user->recordset->exercise->id]) : '' ?></td>
                     <?php } ?>
                   </td>
            </table>
