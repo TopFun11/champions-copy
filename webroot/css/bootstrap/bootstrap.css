@@ -2518,7 +2518,7 @@ input[type="search"] {
           box-sizing: border-box;
 }
 input[type="radio"] {
-  margin-right: 0;
+  margin-right: 2px;
 }
 input[type="checkbox"] {
   margin: 4px 0 0;
