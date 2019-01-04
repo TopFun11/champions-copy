@@ -133,7 +133,11 @@
               </tr>
               <tr>
                  <td><?= __('Recordset') ?></td>
-                 <td><?= $user->has('recordset') ? $this->Html->link($user->recordset, ['controller' => 'recordset', 'action' => 'view', $user->recordset->id]) : '' ?></td>
+                 <td><?= $user->has('recordset') ? 
+                 (foreach $user->recordset as $recordset) {
+                     $this->Html->link($recordset, ['controller' => 'recordset', 'action' => 'view', $recordset->id]) : '' ?>
+                 }
+                 </td>
            </table>
          </div>
         </div>
