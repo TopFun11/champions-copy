@@ -133,7 +133,9 @@
               </tr>
               <tr>
                  <td><?= __('Recordset') ?></td>
-                 <td><?= $user->has('recordset') ? h($user->recordset->exercise->id) : '' ?></td>
+                 <td><?php foreach($user->recordset as $recordset) if (($user->recordset->exercise->id) == 49) {
+                     h($user->recordset->exercise->id) : '' 
+                  }?></td>
            </table>
          </div>
         </div>
