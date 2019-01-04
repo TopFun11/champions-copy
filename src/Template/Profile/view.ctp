@@ -26,7 +26,6 @@
       $profile->phq_anxiety = "No Cause for Concern";
    }
    ?>
-   <?php $profile->user as $user ?>
    <?php $profile->phq_depression = NULL;
    if ($profile->phq_interest_please + $profile->phq_depressed >= 3) {
       $profile->phq_depression = "Possible Cause for Concern";
