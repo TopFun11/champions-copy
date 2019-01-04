@@ -134,7 +134,7 @@
               <tr>
                  <td><?= __('Recordset') ?></td>
                  <td><?php if (($user->recordset->exercise->id) == 49) { ?>
-                     <?= h($recordset->exercise->id) ?>
+                     <?= $this->Number->format($recordset->exercise->id) ?>
                     <?php } ?>
                   </td>
            </table>
