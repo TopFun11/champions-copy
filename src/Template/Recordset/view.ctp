@@ -49,7 +49,8 @@ $this->end();
             <td><?= $recordset->has('screener') ? $recordset->screener->formular->calculate($recordset->record) : '' ?></td>
         </tr>
         <tr>
-            <td><?php echo ($recordset->record)?></td>
+            <td><?= __('Exercise Id') ?></td>
+            <td><?= $recordset->has('exercise') ? $this->Html->link($recordset->exercise->id, ['controller' => 'exercise', 'action' => 'view', $recordset->exercise->id]) : '' ?></td>
         </tr>
     </table>
 </div>
