@@ -132,9 +132,9 @@
                  <td><?= h($profile->phq_depression) ?></td>
               </tr>
               <tr>
-                 <td><?= __('Recordset') ?></td>
+                 <td><?= __('Recordset') ?></td></tr>
                  <?php foreach($user->recordset as $recordset): ?>
-                 <td><?= $recordset->has('exercise') ? $this->Html->link($recordset->exercise->id, ['controller' => 'exercise', 'action' => 'view', $recordset->exercise->id]) : '' ?></td>
+                 <tr><?= $recordset->has('exercise') ? $this->Html->link($recordset->exercise->id, ['controller' => 'exercise', 'action' => 'view', $recordset->exercise->id]) : '' ?></tr>
                  <?php endforeach; ?>
            </table>
          </div>
