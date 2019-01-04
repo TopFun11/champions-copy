@@ -26,6 +26,7 @@
       $profile->phq_anxiety = "No Cause for Concern";
    }
    ?>
+   <?php $user = $profile->user ?>
    <?php $profile->phq_depression = NULL;
    if ($profile->phq_interest_please + $profile->phq_depressed >= 3) {
       $profile->phq_depression = "Possible Cause for Concern";
@@ -130,6 +131,10 @@
               <tr>
                  <td><?= __('Depression:') ?></td>
                  <td><?= h($profile->phq_depression) ?></td>
+              </tr>
+              <tr>
+                 <td><?= __('Recordset') ?></td>
+                 <td><?= $user->has('recordset') ? $this->Html->link($user->recordset, ['controller' => 'recordset', 'action' => 'view', $user->recordset->id]) : '' ?></td>
            </table>
          </div>
         </div>
