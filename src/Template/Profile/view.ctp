@@ -133,7 +133,7 @@
               </tr>
               <tr>
                  <td><?= __('Recordset') ?></td>
-                 <td><?= ($user->recordset->exercise_id = '49') ? $this->Html->link($user->recordset, ['controller' => 'recordset', 'action' => 'view', $user->recordset->id]) : '' ?>
+                 <td><?= ($user->recordset->exercise_id == '49') ? $this->Html->link($user->recordset, ['controller' => 'recordset', 'action' => 'view', $user->recordset->id]) : '' ?>
                  </td>
            </table>
          </div>
