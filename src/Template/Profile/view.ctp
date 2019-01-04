@@ -133,7 +133,7 @@
               </tr>
               <tr>
                  <td><?= __('Recordset') ?></td></tr>
-                 <? if (is_array($values) || is_object($values)) { ?>
+                 <? if (is_array($user->recordset) || is_object($user->recordset)) { ?>
                      <?php foreach($user->recordset as $recordset): ?>
                         <tr><?= $recordset->has('exercise') ? $this->Html->link($recordset->exercise->id, ['controller' => 'exercise', 'action' => 'view', $recordset->exercise->id]) : '' ?></tr>
                      <?php endforeach; ?>
