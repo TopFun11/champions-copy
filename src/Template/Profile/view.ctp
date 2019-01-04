@@ -133,8 +133,8 @@
               </tr>
               <tr>
                  <td><?= __('Recordset') ?></td>
-                 <td><?php foreach ($user->recordset->record as $record) if (($user->recordset->exercise->id) == 49) { ?>
-                     <?= h($record->answer) ?>
+                 <td><?php if (($user->recordset->exercise->id) == 49) { ?>
+                     <?= h($recordset->exercise->id) ?>
                     <?php } ?>
                   </td>
            </table>
