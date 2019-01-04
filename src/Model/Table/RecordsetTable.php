@@ -46,6 +46,8 @@ class RecordsetTable extends Table
           'joinType' => 'INNER'
         ]);
         $this->hasMany("Record", [
+            'classname' => 'Record',
+            'through' => 'record',
             'dependent' => 'true',
         ]);
     }
