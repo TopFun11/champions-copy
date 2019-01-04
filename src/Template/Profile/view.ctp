@@ -135,7 +135,7 @@
                  <td><?= __('Recordset') ?></td></tr>
                  <?php if ($user->has['recordset']) { ?>
                      <?php foreach($user->recordset as $recordset): ?>
-                        <tr><?= $recordset->has('exercise') ? $this->Number->format($recordset->exercise->id) ?></tr>
+                        <tr><?= $recordset->has('exercise') ? $this->Number->format($recordset->exercise->id) : '' ?></tr>
                      <?php endforeach; ?>
                  <?php } ?>
            </table>
