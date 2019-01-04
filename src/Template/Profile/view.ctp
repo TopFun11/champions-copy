@@ -133,10 +133,7 @@
               </tr>
               <tr>
                  <td><?= __('Recordset') ?></td>
-                 <td><?php if (($user->recordset->exercise->id) == 49) { ?>
-                     <td><?= $user->recordset->has('exercise') ? $this->Html->link($user->recordset->exercise->id, ['controller' => 'exercise', 'action' => 'view', $user->recordset->exercise->id]) : '' ?></td>
-                    <?php } ?>
-                  </td>
+                 <td><?= $user->recordset->has('exercise') ? $this->Html->link($user->recordset->exercise->id, ['controller' => 'exercise', 'action' => 'view', $user->recordset->exercise->id]) : '' ?></td>
            </table>
          </div>
         </div>
