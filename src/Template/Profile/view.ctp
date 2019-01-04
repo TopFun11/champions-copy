@@ -133,9 +133,11 @@
               </tr>
               <tr>
                  <td><?= __('Recordset') ?></td></tr>
-                 <?php foreach($user->recordset as $recordset): ?>
-                 <tr><?= $recordset->has('exercise') ? $this->Html->link($recordset->exercise->id, ['controller' => 'exercise', 'action' => 'view', $recordset->exercise->id]) : '' ?></tr>
-                 <?php endforeach; ?>
+                 <? if (is_array($values) || is_object($values)) { ?>
+                     <?php foreach($user->recordset as $recordset): ?>
+                        <tr><?= $recordset->has('exercise') ? $this->Html->link($recordset->exercise->id, ['controller' => 'exercise', 'action' => 'view', $recordset->exercise->id]) : '' ?></tr>
+                     <?php endforeach; ?>
+                 <? } ?>
            </table>
          </div>
         </div>
