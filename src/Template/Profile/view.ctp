@@ -9,10 +9,10 @@
                <strong><?= $user->username ?></strong>
             </div>
             <div class="row">
-               <?= $this->Number->format($profile->points) ?> points
+               <?= $this->Number->format($profile->points) ?> Points
             </div>
             <div class="row">
-               <?= $this->Number->format($profile->logCount) ?> Log On
+               Logged On <?= $this->Number->format($profile->logCount) ?> Times
             </div>
          </div>
       </div>
