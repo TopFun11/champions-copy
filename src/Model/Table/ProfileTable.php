@@ -63,9 +63,9 @@ class ProfileTable extends Table
             ->notEmpty('points');
         
         $validator
-            ->integer('logCount')
-            ->requirePresence('logCount', 'create')
-            ->notEmpty('logCount');
+            ->integer('login')
+            ->requirePresence('login', 'create')
+            ->notEmpty('login');
 
         $validator
             ->email('email')
