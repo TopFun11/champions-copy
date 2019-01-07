@@ -12,7 +12,7 @@
                <?= $this->Number->format($profile->points) ?> Points
             </div>
             <div class="row">
-               Logged On <?= $this->Number->format($profile->logCount) ?> Times
+               Logged On <?= $this->Number->format($profile->login) ?> Times
             </div>
          </div>
       </div>
