@@ -86,6 +86,11 @@ class ProfileTable extends Table
 
         $validator
             ->integer('absences_lasting_a_week', 'Please enter a valid whole number for absences lasting a week');
+        
+        $validator
+            ->test('motiv')
+            ->requirePresence('motiv', 'create')
+            ->notEmpty('motiv');
 
         return $validator;
     }
