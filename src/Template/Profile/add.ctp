@@ -16,7 +16,6 @@
       <div class="panel panel-primary">
         <div class="panel-body">
           <?php
-             $this->motiv = NULL;
              echo $this->Form->input('email', ['class'=>'form-control','type'=>'email','placeholder'=>'joebloggs@email.com','label'=>'Email*']);
              echo $this->Form->input('phone_number', ['class'=>'form-control','type'=>'tel','placeholder'=>'Telephone number', 'required' => false, 'label'=>'Phone number (Optional)']);
              ?>
@@ -349,6 +348,7 @@
                 <td><input type="radio" name="phq_depressed" value="2"></td>
                 <td><input type="radio" name="phq_depressed" value="3"></td>
               </tr></tbody>
+              echo $this->Form->input('motiv', ['class'=>'form-control','type'=>'text','placeholder'=>'Motivational Message', 'required' => false, 'label'=>'Motivational Message (Optional)']);
             </table>
           </div>
         </div>
