@@ -69,7 +69,7 @@ class ProfileController extends AppController
             $profile->user_id = $this->Auth->user("id");
             $profile->image = "default/path.jpg";
             $profile->points = 0;
-            $profile->logCount = 0;
+            $profile->logCount = 1;
             if ($this->Profile->save($profile)) {
                 $this->Flash->success(__('The profile has been saved.'));
 
