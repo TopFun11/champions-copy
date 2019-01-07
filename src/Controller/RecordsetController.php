@@ -211,6 +211,7 @@ class RecordsetController extends AppController
         if($this->hasDoneExerciseFor(10)){
           $profile->points = $profile->points + 10;
         }
+        $profile->login = $profile->login + 2;
         //Saving profile
         $this->Profile->save($profile);
 
