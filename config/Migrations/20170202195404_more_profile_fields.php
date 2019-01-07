@@ -181,6 +181,7 @@ class MoreProfileFields extends AbstractMigration
       ->removeColumn("phq_worrying")
       ->removeColumn("phq_interest_please")
       ->removeColumn("phq_depressed")
+      ->removeColumn("motiv")
       ->update();
 
     }
