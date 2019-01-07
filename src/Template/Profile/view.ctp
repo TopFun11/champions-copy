@@ -39,6 +39,7 @@
          Personal Information <span class="pull-right edit-button"><a href="/profile/editPersonal"> Edit <i class="glyphicon glyphicon-pencil"></i></a></span>
        </div>
        <div class="panel-body">
+          <?php echo ($profile->motiv) ?>
          <table class="table table-striped" cellpadding="0" cellspacing="0">
             <tr>
                <td><?= __('Age') ?></td>
