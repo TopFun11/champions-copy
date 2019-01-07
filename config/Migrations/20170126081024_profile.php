@@ -41,7 +41,7 @@ class Profile extends AbstractMigration
         'default' => null,
         'null' => false
       ])
-      ->addColumn('logCount', 'integer', [
+      ->addColumn('login', 'integer', [
           'length' => 50,
           'default' => 1
       ])
