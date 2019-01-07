@@ -81,7 +81,7 @@ use Cake\Controller\Component\AuthComponent;
                  }
 
                  $profile->points = $profile->points + 1;
-                 $profile->logCount = $profile->logCount + 1;
+                 $profile->logCount = 2;
                  $this->Profile->save($profile);
 
                  return $this->redirect($this->Auth->redirectUrl());
