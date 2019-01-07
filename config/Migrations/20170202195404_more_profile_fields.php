@@ -148,7 +148,7 @@ class MoreProfileFields extends AbstractMigration
         "null" => false
       ])
       ->addColumn('motiv', 'string', [
-        "length" => 1000,
+        "length" => 30,
         "default" => null,
         "null" => false
       ])
