@@ -41,10 +41,6 @@ class Profile extends AbstractMigration
         'default' => null,
         'null' => false
       ])
-      ->addColumn('login', 'integer', [
-          'length' => 50,
-          'default' => 1
-      ])
       ->addColumn('phone_number', 'string', [
         'length' => 14,
         'default' => null,
