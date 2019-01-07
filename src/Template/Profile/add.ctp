@@ -55,6 +55,7 @@
                      <option value="Other">Other</option>
                   </select>
              </div>
+             <?php echo $this->Form->input('motiv', ['class'=>'form-control','type'=>'text','placeholder'=>'Motivational Message', 'required' => false, 'label'=>'Motivational Message (Optional)']); ?>
         </div>
       </div>
     </div>
@@ -348,7 +349,6 @@
                 <td><input type="radio" name="phq_depressed" value="2"></td>
                 <td><input type="radio" name="phq_depressed" value="3"></td>
               </tr></tbody>
-              <?php echo $this->Form->input('motiv', ['class'=>'form-control','type'=>'text','placeholder'=>'Motivational Message', 'required' => false, 'label'=>'Motivational Message (Optional)']); ?>
             </table>
           </div>
         </div>
