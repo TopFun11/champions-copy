@@ -150,7 +150,7 @@ class MoreProfileFields extends AbstractMigration
       ->addColumn('motiv', 'string', [
         "length" => 30,
         "default" => null,
-        "null" => false
+        "null" => ""
       ])
       ->update();
     }
