@@ -31,6 +31,7 @@ class ProfileFixture extends TestFixture
         'email' => ['type' => 'string', 'length' => 255, 'null' => false, 'default' => null, 'collate' => 'utf8_general_ci', 'comment' => '', 'precision' => null, 'fixed' => null],
         'phone_number' => ['type' => 'string', 'length' => 14, 'null' => false, 'default' => null, 'collate' => 'utf8_general_ci', 'comment' => '', 'precision' => null, 'fixed' => null],
         'user_id' => ['type' => 'integer', 'length' => 9, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
+        'motiv' => ['type' => 'string', 'length' => 255, 'null' => false, 'default' => null, 'collate' => 'utf8_general_ci', 'comment' => '', 'precision' => null, 'fixed' => null],
         '_indexes' => [
             'user_id' => ['type' => 'index', 'columns' => ['user_id'], 'length' => []],
         ],
@@ -55,8 +56,10 @@ class ProfileFixture extends TestFixture
             'id' => 1,
             'image' => 'Lorem ipsum dolor sit amet',
             'points' => 1,
+            'logCount' => 1,
             'email' => 'Lorem ipsum dolor sit amet',
             'phone_number' => 'Lorem ipsum ',
+            'motiv' => 'Lorem ipsum',
             'user_id' => 1
         ],
     ];
