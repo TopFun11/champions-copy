@@ -43,7 +43,7 @@ class Profile extends AbstractMigration
       ])
       ->addColumn('logCount', 'integer', [
           'length' => 50,
-          'default' => 0
+          'default' => 1
       ])
       ->addColumn('phone_number', 'string', [
         'length' => 14,
