@@ -141,7 +141,11 @@
                         <?php $sum += ($record->answer) ?>
                      <?php } ?>
                  <?php } ?>
-                 <td><?= h($sum) ?></td>                
+                 <?php if($sum == 0) { ?>
+                 <td><?= h("Please complete the AAQ-II Questionnaire in the Wellbeing Module"); ?>
+                 <?php } else { ?>
+                 <td><?= h($sum) ?></td> 
+                 <?php } ?>
               </tr>
               <tr><td><?= __('A Higher AAQ-II score indicates greater levels of psychological inflexibility.') ?></td></tr>
               <?php } ?>
