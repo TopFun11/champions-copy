@@ -45,7 +45,9 @@ class UsersTable extends Table
            'dependent' => 'true',
         ]);
         $this->addBehavior('Timestamp');
-        $this->hasOne('Profile');
+        $this->hasOne('Profile' [
+            'dependent' => 'true',
+        ]);
     }
 
     /**
