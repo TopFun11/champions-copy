@@ -134,7 +134,7 @@
               </tr> 
               <?php //if($profile->hospital != 'Morriston') { ?> 
               <?php $records = $recordset->find("all")->where(['exercise_id' == 49, 'user_id' == $user->id]); ?>
-              <?php if(isset($records)) { ?>
+              <?php if($records != null) { ?>
               <tr>
                  <td><?= __('Acceptance and Action Questionnaire - II:') ?></td>
                  <?php $sum = 0; ?>
