@@ -134,9 +134,7 @@
               </tr>
               <tr>
                  <td><?= __('Recordset:') ?></td>
-                 <?php foreach($record->recordset as $recordset){ ?>
-                     <td><?= h($recordset->id) ?></td>
-                 <?php } ?>
+                 <td><?= h($recordset->id) ?></td>
               </tr>
            </table>
          </div>
