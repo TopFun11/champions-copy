@@ -32,7 +32,7 @@ class PagesController extends AppController
     public function initialize()
     {
       parent::initialize();
-      $this->loadModel("Users");
+      $this->loadModel("Profile");
     }
     /**
      * Index method
