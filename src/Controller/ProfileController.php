@@ -48,10 +48,10 @@ class ProfileController extends AppController
     public function view()
     {
         $id = $this->Auth->user("id");
-        $profile = $this->Profile->find("all")->where(['user_id' => $this->Auth->user("id")])->first();
-        $user= $this->Users->find("all")->where(['id' => $this->Auth->user("id")])->first();
+        $profile = $this->Profile->find("all")->where(['user_id' => $id])->first();
+        $user= $this->Users->find("all")->where(['id' => $id])->first();
         
-        $recordset = $this->Recordset->find("all")->where(['user_id' => $this->Auth->user("id")]);
+        $recordset = $this->Recordset->find("all")->where(['user_id' => $id]);
 
         $this->set('profile', $profile);
         $this->set('user', $user);
