@@ -137,24 +137,25 @@
               <?php $presum = 0; ?>
               <tr>
                  <td><?= __('Acceptance and Action Questionnaire - II (Pre-Intervention):') ?></td>
-                 <? foreach($recordset as $recordset) if ($recordset->exercise_id == '51'): ?>
-                     <? foreach($record as $record) if ($record->recordset_id == $recordset->id): ?>
+                 <?php foreach($recordset as $recordset) if ($recordset->exercise_id == '51') { ?>
+                     <?php foreach($record as $record) if ($record->recordset_id == $recordset->id) { ?>
                         <?php $presum += ($record->answer); ?>
-                     <? endforeach ?>
-                 <? endforeach ?>
+                     <?php } ?>
+                 <?php } ?>
                  <?php if($presum == 0) { ?>
                  <td><?= h("Please complete the AAQ-II Questionnaire in the Wellbeing Module"); ?></td></tr>
                  <?php } else { ?>
                  <td><?= h($presum) ?></td></tr>
                  <tr><td><?= __('A Higher AAQ-II score indicates greater levels of psychological inflexibility.') ?></td></tr>
                  <?php } ?>
+              <?php $recordset = null; ?>
               <tr>
                  <td><?= __('Acceptance and Action Questionnaire - II (Post-Intervention):') ?></td>
-                 <? foreach($recordset as $precordset) if ($recordset->exercise_id == '49'): ?>
-                     <? foreach($record as $record) if ($record->recordset_id == $precordset->id): ?>
+                 <?php foreach($recordset as $precordset) if ($recordset->exercise_id == '49') { ?>
+                     <?php foreach($record as $record) if ($record->recordset_id == $precordset->id) { ?>
                         <?php $postsum += ($record->answer) ?>
-                     <? endforeach ?>
-                 <? endforeach ?>
+                     <?php } ?>
+                 <?php } ?>
                  <?php if($postsum == 0) { ?>
                  <td><?= h("Please complete the AAQ-II Questionnaire in the Wellbeing Module"); ?></td></tr>
                  <?php } else { ?>
