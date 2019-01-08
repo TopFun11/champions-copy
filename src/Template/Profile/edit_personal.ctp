@@ -49,18 +49,6 @@
              </div></td>
           </tr>
           <tr>
-             <td><?= __('Health Board') ?></td>
-             <td><div class="form=group">
-               <label> Health board and hospital location:* </label>
-                <select name="hospital" class="form-control" required>
-                   <option value="Singleton">Singleton Hospital</option>
-                   <option value="Morriston">Morriston Hospital</option>
-                   <option value="Neath Port Talbot">Neath Port Talbot Hospital</option>
-                   <option value="Princess of Wales">Princess of Wales Hospital</option>
-                </select>
-               </div></td>
-          </tr>
-          <tr>
             <td><?= __('Motivational Message') ?></td>
             <td><?= $this->Form->input('motiv', ['class'=>'form-control','type'=>'text','label'=>false]) ?></td>
          </tr>
