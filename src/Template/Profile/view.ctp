@@ -137,11 +137,11 @@
               <?php $presum = 0; ?>
               <tr>
                  <td><?= __('Acceptance and Action Questionnaire - II (Pre-Intervention):') ?></td>
-                 <?php foreach($recordset as $recordset) if ($recordset->exercise_id == '49') { ?>
-                     <?php foreach($record as $record) if ($record->recordset_id == $recordset->id) { ?>
+                 <?php foreach($recordset as $recordset) if ($recordset->exercise_id == '49') : ?>
+                     <?php foreach($record as $record) if ($record->recordset_id == $recordset->id) : ?>
                         <?php $presum += ($record->answer); ?>
-                     <?php } ?>
-                 <?php } ?>
+                     <?php endforeach; ?>
+                 <?php endforeach; ?>
                  <?php if($presum == 0) { ?>
                  <td><?= h("Please complete the AAQ-II Questionnaire in the Wellbeing Module"); ?></td></tr>
                  <?php } else { ?>
