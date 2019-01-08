@@ -137,7 +137,7 @@
                  <?php foreach($recordset as $recordset) if ($recordset->exercise_id == '49') { ?>
                      <?php foreach($record as $record) if ($record->recordset_id == $recordset->id) { ?>
                         <tr><td><?= h($record->answer) ?></td></tr>
-                     <?php } >?
+                     <?php } ?>
                  <?php } ?>
            </table>
          </div>
