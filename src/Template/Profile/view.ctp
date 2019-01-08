@@ -151,7 +151,8 @@
                  <?php foreach($recordset as $recordset){ ?>
                      <tr><td><?= $recordset->id ?></td></tr>
                  <?php } ?>
-                 <?php reset($recordset); reset($record); ?>
+                 <?php $recordset = reset($recordset); 
+                       $record = reset($record); ?>
                  <?php foreach($recordset as $recordset){ ?>
                      <tr><td><?= $recordset->id ?></td></tr>
                  <?php } ?>
