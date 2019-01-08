@@ -54,15 +54,9 @@
                <label> Health board and hospital location:* </label>
                 <select name="hospital" class="form-control" required>
                    <option value="Singleton">Singleton Hospital</option>
-                   <option value="Moriston">Moriston Hospital</option>
+                   <option value="Morriston">Morriston Hospital</option>
                    <option value="Neath Port Talbot">Neath Port Talbot Hospital</option>
                    <option value="Princess of Wales">Princess of Wales Hospital</option>
-                   <option value="Garn Goch">Garn Goch Hospital</option>
-                   <option value="Fairwood">Fairwood Hospital</option>
-                   <option value="Hill House">Hill House</option>
-                   <option value="Bon-Y-Maen">Bon-y-maen</option>
-                   <option value="Phillips Parade">Phillips Parade</option>
-                   <option value="Gellunudd">Gellunudd</option>
                 </select>
                </div></td>
           </tr>
