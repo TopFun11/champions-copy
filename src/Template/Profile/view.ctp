@@ -150,7 +150,11 @@
                  <?php } ?>
                  <?php foreach($recordset as $recordset){ ?>
                      <tr><td><?= $recordset->id ?></td></tr>
+                 <?php } ?>
                  <?php reset($recordset); reset($record); ?>
+                 <?php foreach($recordset as $recordset){ ?>
+                     <tr><td><?= $recordset->id ?></td></tr>
+                 <?php } ?>
               <tr>
                  <td><?= __('Acceptance and Action Questionnaire - II (Post-Intervention):') ?></td>
                  <?php foreach($recordset as $recordset) if ($recordset->exercise_id == '51') { ?>
