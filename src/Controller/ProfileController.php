@@ -52,11 +52,14 @@ class ProfileController extends AppController
         $user= $this->Users->find("all")->where(['id' => $id])->first();
         
         $recordset = $this->Recordset->find("all")->where(['user_id' => $id]);
+        $rid = $this->Recordset("user_id");
+        $record = $this->Record->find("all")->where(['recordset_id' => $rid]);
 
         $this->set('profile', $profile);
         $this->set('user', $user);
         $this->set('recordset', $recordset);
-        $this->set('_serialize', ['profile', 'user', 'recordset']);
+        $this->set('record', $record);
+        $this->set('_serialize', ['profile', 'user', 'recordset', 'record']);
     }
 
     /**
