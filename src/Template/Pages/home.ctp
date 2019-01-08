@@ -20,8 +20,7 @@
 
 <br>
 <br>
-
-<?php $profile = $this->Users->Profile; ?>
+<?php $profile ?>
 <?php if ($module) {?>
   <hr>
   
