@@ -22,7 +22,7 @@
              <label> Health board and hospital location:* </label>
                 <select name="hospital" class="form-control" required>
                    <option value="Singleton">Singleton Hospital</option>
-                   <option value="Moriston">Moriston Hospital</option>
+                   <option value="Morriston">Morriston Hospital</option>
                    <option value="Neath Port Talbot">Neath Port Talbot Hospital</option>
                    <option value="Princess of Wales">Princess of Wales Hospital</option>
                 </select>
