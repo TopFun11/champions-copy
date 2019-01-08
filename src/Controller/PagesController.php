@@ -65,12 +65,5 @@ class PagesController extends AppController
             }
             throw new NotFoundException();
         }
-        
-        $id = $this->Auth->user("id");
-        $profile = $this->Profile->find("all")->where(['user_id' => $this->Auth->user("id")])->first();
-        $user= $this->Users->find("all")->where(['id' => $this->Auth->user("id")])->first();
-        $this->set('profile', $profile);
-        $this->set('user', $user);
-        $this->set('_serialize', ['profile', 'user']);
     }
 }
