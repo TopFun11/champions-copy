@@ -134,15 +134,17 @@
               </tr>
               <?php if($profile->hospital != 'Morriston') { ?>
               <tr>
-                 <td><?= __('Recordset:') ?></td>
+                 <td><?= __('Acceptance and Action Questionnaire - II:') ?></td>
                  <?php $sum = 0; ?>
                  <?php foreach($recordset as $recordset) if ($recordset->exercise_id == '49') { ?>
                      <?php foreach($record as $record) if ($record->recordset_id == $recordset->id) { ?>
                         <?php $sum += ($record->answer) ?>
                      <?php } ?>
                  <?php } ?>
-                 <td><?= h($sum) ?></td>
+                 <td><?= h($sum) ?></td>                
               </tr>
+              <tr>
+                 <td><?= __('A Higher AAQ-II score indicates greater levels of psychological inflexibility') ?></td>
               <?php } ?>
            </table>
          </div>
