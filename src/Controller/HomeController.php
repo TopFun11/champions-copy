@@ -37,7 +37,6 @@ class HomeController extends AppController
             })
             ->group(['Module.id']);
         
-        $id = $this->Auth->user("id");
         $profile = $this->Profile->find("all")->where(['user_id' => $this->Auth->user("id")])->first();
         $user= $this->Users->find("all")->where(['id' => $this->Auth->user("id")])->first();
         $this->set('profile', $profile);
