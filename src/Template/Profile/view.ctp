@@ -132,11 +132,12 @@
                  <td><?= __('Depression:') ?></td>
                  <td><?= h($profile->phq_depression) ?></td>
               </tr>
-              <?php if($profile->hospital != 'Morriston') { ?>
+              <?php 
+              <?php if($recordset->exercise_id == '49') { ?>
               <tr>
                  <td><?= __('Acceptance and Action Questionnaire - II:') ?></td>
                  <?php $sum = 0; ?>
-                 <?php foreach($recordset as $recordset) if ($recordset->exercise_id == '49') { ?>
+                 <?php foreach($recordset as $recordset) { ?>
                      <?php foreach($record as $record) if ($record->recordset_id == $recordset->id) { ?>
                         <?php $sum += ($record->answer) ?>
                      <?php } ?>
