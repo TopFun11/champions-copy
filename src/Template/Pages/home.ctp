@@ -20,6 +20,7 @@
 
 <br>
 <br>
+<?= $profile ?>
 <?php if ($module) {?>
   <hr>
   
