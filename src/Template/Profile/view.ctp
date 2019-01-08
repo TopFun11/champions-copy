@@ -150,7 +150,7 @@
                  <?php } ?>
               <tr>
                  <td><?= __('Acceptance and Action Questionnaire - II (Post-Intervention):') ?></td>
-                 <?php foreach($recordset as $precordset) if ($precordset->exercise_id == '49') { ?>
+                 <?php foreach($recordset as $precordset) if ($recordset->exercise_id == '49') { ?>
                      <?php foreach($record as $record) if ($record->recordset_id == $precordset->id) { ?>
                         <?php $postsum += ($record->answer) ?>
                      <?php } ?>
