@@ -133,11 +133,10 @@
                  <td><?= h($profile->phq_depression) ?></td>
               </tr>
               <tr>
-                 <td><?= __('Recordset:') ?></td>
+                 <td><?= __('Recordset:') ?></td></tr>
                  <?php foreach($recordset as $recordset) { ?>
-                     <td><?= h($recordset->user_id) ?></td>
+                     <tr><?= h($recordset->user_id) ?></tr>
                  <?php } ?>
-              </tr>
            </table>
          </div>
         </div>
