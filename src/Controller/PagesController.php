@@ -37,18 +37,7 @@ class PagesController extends AppController
      *   be found or \Cake\View\Exception\MissingTemplateException in debug mode.
      */
     public function display()
-    {
-       $userId = $this->Auth->user("id");
-       $user = $this->Module->Users->get($userId, [
-         'contain' => ['Module', 'Recordset' => [
-           'conditions' => ['not' => ['exercise_id' => 'null']],
-           'Exercise' => ['Sections' => ['Sections' => [
-             'conditions' => ['not' => ['section_id' => null]]
-           ], 'Module']]]
-         ]
-       ]);
-       $profile = $this->Module->Users->Profile->find("all")->where(['user_id' => $this->Auth->user("id")])->first();
-        
+    {   
         $path = func_get_args();
 
         $count = count($path);
