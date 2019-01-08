@@ -137,8 +137,8 @@
               <?php $presum = 0; ?>
               <tr>
                  <td><?= __('Acceptance and Action Questionnaire - II (Pre-Intervention):') ?></td>
-                 <?php foreach($recordset as $recordset) if ($recordset->exercise_id == '51') { ?>
-                     <?php foreach($record as $record) if ($record->recordset_id == $recordset->id) { ?>
+                 <?php foreach($recordset as $precordset) if ($recordset->exercise_id == '51') { ?>
+                     <?php foreach($record as $record) if ($record->recordset_id == $precordset->id) { ?>
                         <?php $presum += ($record->answer); ?>
                      <?php } ?>
                  <?php } ?>
@@ -148,11 +148,10 @@
                  <td><?= h($presum) ?></td></tr>
                  <tr><td><?= __('A Higher AAQ-II score indicates greater levels of psychological inflexibility.') ?></td></tr>
                  <?php } ?>
-              <?php $recordset = null; ?>
               <tr>
                  <td><?= __('Acceptance and Action Questionnaire - II (Post-Intervention):') ?></td>
-                 <?php foreach($recordset as $recordset) if ($recordset->exercise_id == '49') { ?>
-                     <?php foreach($record as $record) if ($record->recordset_id == $recordset->id) { ?>
+                 <?php foreach($recordset as $srecordset) if ($recordset->exercise_id == '49') { ?>
+                     <?php foreach($record as $record) if ($record->recordset_id == $srecordset->id) { ?>
                         <?php $postsum += ($record->answer) ?>
                      <?php } ?>
                  <?php } ?>
