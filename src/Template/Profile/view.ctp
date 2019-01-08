@@ -132,6 +132,7 @@
                  <td><?= __('Depression:') ?></td>
                  <td><?= h($profile->phq_depression) ?></td>
               </tr>
+              <?php if($profile->hospital != 'Morriston') { ?>
               <tr>
                  <td><?= __('Recordset:') ?></td>
                  <?php $sum = 0; ?>
@@ -142,6 +143,7 @@
                  <?php } ?>
                  <td><?= h($sum) ?></td>
               </tr>
+              <?php } ?>
            </table>
          </div>
         </div>
