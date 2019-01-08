@@ -159,7 +159,7 @@
                  <td><?= h("Please complete the AAQ-II Questionnaire in the Wellbeing Module"); ?></td></tr>
                  <?php } else { ?>
                  <td><?= h($postsum) ?></td></tr>
-                 <tr><td><?= __('Compare with your initial score to see the effects of the ACT intervention') ?></td></tr>
+                 <tr><td><?= __('Compare with your initial score to see the effects of the ACT intervention.') ?></td></tr>
                  <?php } ?>
               <?php } ?>
            </table>
