@@ -20,7 +20,7 @@
 
 <br>
 <br>
-<?= $authUser->profile ?>
+<?= $this->authUser->profile ?>
 <?php if ($module) {?>
   <hr>
   
