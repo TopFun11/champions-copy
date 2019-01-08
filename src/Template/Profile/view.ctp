@@ -142,12 +142,11 @@
                      <?php } ?>
                  <?php } ?>
                  <?php if($sum == 0) { ?>
-                 <td><?= h("Please complete the AAQ-II Questionnaire in the Wellbeing Module"); ?>
+                 <td><?= h("Please complete the AAQ-II Questionnaire in the Wellbeing Module"); ?></td></tr>
                  <?php } else { ?>
-                 <td><?= h($sum) ?></td> 
+                 <td><?= h($sum) ?></td></tr>
+                 <tr><td><?= __('A Higher AAQ-II score indicates greater levels of psychological inflexibility.') ?></td></tr>
                  <?php } ?>
-              </tr>
-              <tr><td><?= __('A Higher AAQ-II score indicates greater levels of psychological inflexibility.') ?></td></tr>
               <?php } ?>
            </table>
          </div>
