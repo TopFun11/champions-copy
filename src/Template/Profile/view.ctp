@@ -138,9 +138,9 @@
               <tr>
                  <td><?= __('Acceptance and Action Questionnaire - II (Pre-Intervention):') ?></td>
                  <? foreach($recordset as $recordset) if ($recordset->exercise_id == '51'): ?>
-                     <?php foreach($record as $record) if ($record->recordset_id == $recordset->id) { ?>
+                     <? foreach($record as $record) if ($record->recordset_id == $recordset->id): ?>
                         <?php $presum += ($record->answer); ?>
-                     <?php } ?>
+                     <? endforeach ?>
                  <? endforeach ?>
                  <?php if($presum == 0) { ?>
                  <td><?= h("Please complete the AAQ-II Questionnaire in the Wellbeing Module"); ?></td></tr>
@@ -151,9 +151,9 @@
               <tr>
                  <td><?= __('Acceptance and Action Questionnaire - II (Post-Intervention):') ?></td>
                  <? foreach($recordset as $precordset) if ($recordset->exercise_id == '49'): ?>
-                     <?php foreach($record as $record) if ($record->recordset_id == $precordset->id) { ?>
+                     <? foreach($record as $record) if ($record->recordset_id == $precordset->id): ?>
                         <?php $postsum += ($record->answer) ?>
-                     <?php } ?>
+                     <? endforeach ?>
                  <? endforeach ?>
                  <?php if($postsum == 0) { ?>
                  <td><?= h("Please complete the AAQ-II Questionnaire in the Wellbeing Module"); ?></td></tr>
