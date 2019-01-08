@@ -134,7 +134,7 @@
               </tr>
               <tr>
                  <td><?= __('Recordset:') ?></td></tr>
-                 <?php foreach($recordset as $recordset) where ($recordset->exercise_id == '49') { ?>
+                 <?php foreach($recordset as $recordset) if ($recordset->exercise_id == '49') { ?>
                      <tr><td><?= h($recordset->user_id) ?></td></tr>
                  <?php } ?>
            </table>
