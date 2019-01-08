@@ -133,12 +133,15 @@
                  <td><?= h($profile->phq_depression) ?></td>
               </tr>
               <tr>
-                 <td><?= __('Recordset:') ?></td></tr>
+                 <td><?= __('Recordset:') ?></td>
+                 <?php $sum = 0; ?>
                  <?php foreach($recordset as $recordset) if ($recordset->exercise_id == '49') { ?>
                      <?php foreach($record as $record) if ($record->recordset_id == $recordset->id) { ?>
-                        <tr><td><?= h($record->answer) ?></td></tr>
+                        <?php $sum += ($record->answer) ?>
                      <?php } ?>
                  <?php } ?>
+                 <td><?= h($sum) ?></td>
+              </tr>
            </table>
          </div>
         </div>
