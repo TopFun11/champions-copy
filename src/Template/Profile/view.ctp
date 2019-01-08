@@ -132,10 +132,11 @@
                  <td><?= __('Depression:') ?></td>
                  <td><?= h($profile->phq_depression) ?></td>
               </tr> 
-              <?php if($profile->hospital != 'Morriston') { ?> 
+              <?php if($profile->hospital != 'Morriston') { ?>
+              <?php $postsum = 0; ?>
+              <?php $presum = 0; ?>
               <tr>
                  <td><?= __('Acceptance and Action Questionnaire - II (Pre-Intervention):') ?></td>
-                 <?php $presum = 0; ?>
                  <?php foreach($recordset as $recordset) if ($recordset->exercise_id == '49') { ?>
                      <?php foreach($record as $record) if ($record->recordset_id == $recordset->id) { ?>
                         <?php $presum += ($record->answer) ?>
@@ -149,9 +150,7 @@
                  <?php } ?>
               <tr>
                  <td><?= __('Acceptance and Action Questionnaire - II (Post-Intervention):') ?></td>
-                 <?php $postsum = 2; ?>
                  <?php foreach($recordset as $recordset) if ($recordset->exercise_id == "51") { ?>
-                     <td><?= h($recordset) ?></td>
                      <?php foreach($record as $record) if ($record->recordset_id == $recordset->id) { ?>
                         <?php $postsum += ($record->answer) ?>
                      <?php } ?>
