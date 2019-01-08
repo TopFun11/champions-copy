@@ -20,7 +20,7 @@
 
 <br>
 <br>
-<?= $module->Users->Profile ?>
+<?= $module->get($Users) ?>
 <?php if ($module) {?>
   <hr>
   
