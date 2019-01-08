@@ -16,6 +16,10 @@ class ProfileController extends AppController
     {
       parent::initialize();
       $this->loadModel("Users");
+      $this->loadModel('Screener');
+      $this->loadModel('Exercise');
+      $this->loadModel('Record');
+      $this->loadModel('Recordset');
 
     }
     /**
