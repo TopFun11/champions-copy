@@ -33,6 +33,7 @@ class PagesController extends AppController
     {
       parent::initialize();
       $this->loadModel("Profile");
+      $this->loadModel("Users");
     }
     /**
      * Index method
@@ -55,6 +56,7 @@ class PagesController extends AppController
         
         $id = $this->Auth->user("id");
         $profile = $this->Profile->find("all")->where(['user_id' => $this->Auth->user("id")])->first();
+        $this->set('profile', $profile);
 
         $count = count($path);
         if (!$count) {
