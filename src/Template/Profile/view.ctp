@@ -134,7 +134,7 @@
               </tr>
               <tr>
                  <td><?= __('Recordset:') ?></td>
-                 <td><?= h($recordset) ?></td>
+                 <td><?= h($recordset->exercise_id) ?></td>
               </tr>
            </table>
          </div>
