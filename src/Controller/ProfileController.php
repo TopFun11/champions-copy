@@ -56,7 +56,7 @@ class ProfileController extends AppController
         $this->set('profile', $profile);
         $this->set('user', $user);
         $this->set('recordset', $recordset);
-        $this->set('_serialize', ['profile', 'user']);
+        $this->set('_serialize', ['profile', 'user', 'recordset']);
     }
 
     /**
