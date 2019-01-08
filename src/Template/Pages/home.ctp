@@ -21,7 +21,7 @@
 <br>
 <br>
 
-<?php $profile = $module->Users->Profile; ?>
+<?php $profile = $module->userenrollment->Profile; ?>
 <?php if ($module) {?>
   <hr>
   
