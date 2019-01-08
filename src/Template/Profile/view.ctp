@@ -150,11 +150,11 @@
                  <?php } ?>
               <tr>
                  <td><?= __('Acceptance and Action Questionnaire - II (Post-Intervention):') ?></td>
-                 <?php foreach($recordset as $precordset) if ($recordset->exercise_id == '49'): ?>
+                 <? foreach($recordset as $precordset) if ($recordset->exercise_id == '49'): ?>
                      <?php foreach($record as $record) if ($record->recordset_id == $precordset->id) { ?>
                         <?php $postsum += ($record->answer) ?>
                      <?php } ?>
-                 <?php endforeach ?>
+                 <? endforeach ?>
                  <?php if($postsum == 0) { ?>
                  <td><?= h("Please complete the AAQ-II Questionnaire in the Wellbeing Module"); ?></td></tr>
                  <?php } else { ?>
