@@ -20,7 +20,7 @@
 
 <br>
 <br>
-<?= $profile ?>
+<?= $profile->hospital ?>
 <?php if ($module) {?>
   <hr>
   
