@@ -136,6 +136,9 @@
               <?php $postsum = 0; ?>
               <?php $presum = 0; ?>
               <tr>
+                 <?php foreach($recordset as $recordset) { ?>
+                 <td><?= h($recordset->id) ?> </td>
+                 <?php } ?>
                  <td><?= __('Acceptance and Action Questionnaire - II (Pre-Intervention):') ?></td>
                  <?php foreach($recordset as $recordset) if ($recordset->exercise_id == '49') { ?>
                      <?php foreach($record as $record) if ($record->recordset_id == $recordset->id) { ?>
