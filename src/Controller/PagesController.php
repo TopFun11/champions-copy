@@ -32,8 +32,7 @@ class PagesController extends AppController
     public function initialize()
     {
       parent::initialize();
-      $this->loadModel("Profile");
-      $this->loadModel("Users");
+      
     }
     /**
      * Index method
@@ -52,12 +51,18 @@ class PagesController extends AppController
      */
     public function display()
     {
-        $id = $this->Auth->user("id");
+        $this->loadModel("Profile");
+        $this->loadModel("Users");
+        $userId = $this->Auth->user("id");
+        $user = $this->Users->get($userId, [
+         'contain' => ['Module', 'Recordset' => [
+           'conditions' => ['not' => ['exercise_id' => 'null']],
+           'Exercise' => ['Sections' => ['Sections' => [
+             'conditions' => ['not' => ['section_id' => null]]
+           ], 'Module']]]
+         ]
+        ]);
         $profile = $this->Profile->find("all")->where(['user_id' => $this->Auth->user("id")])->first();
-        $user= $this->Users->find("all")->where(['id' => $this->Auth->user("id")])->first();
-        $this->set('profile', $profile);
-        $this->set('user', $user);
-        $this->set('_serialize', ['profile', 'user']);
         
         $path = func_get_args();
 
