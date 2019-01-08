@@ -25,6 +25,7 @@ use Cake\Controller\Component\AuthComponent;
      public function initialize(){
        parent::initialize();
        $this->loadModel('Profile');
+       $this->loadModel('Recordset');
      }
 
      public function dashboard(){
@@ -56,6 +57,24 @@ use Cake\Controller\Component\AuthComponent;
               $engagement[$modId]['colour'] = [20, 244, 255];
            }
        }
+      
+      $recordset = null;
+        $tmp = $this->Recordset->get($id, [
+            'contain' => [],
+
+        ]);
+        if($tmp->exercise_id != null){
+          $recordset = $this->Recordset->get($id, [
+              'contain' => ['Exercise', 'Users'],
+          ]);
+          $this->set('recordset', $recordset);
+        }else{
+          $recordset = $this->Recordset->get($id, [
+              'contain' => ['Screener' => ['Formular'], 'Users', 'Record'],
+          ]);
+        $this->set('recordset', $recordset);
+        }
+
 
        $this->set('profile',    $profile);
        $this->set('user',       $user);
