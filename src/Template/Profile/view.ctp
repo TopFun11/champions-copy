@@ -133,7 +133,8 @@
                  <td><?= h($profile->phq_depression) ?></td>
               </tr> 
               <?php //if($profile->hospital != 'Morriston') { ?> 
-              <?php $records = $this->Recordset->find("all")->where(['exercise_id' == 49]);
+              <?php $records = $this->Recordset->find("all")->where(['exercise_id' == 49]); ?>
+              <?php if(isset($records)) { ?>
               <tr>
                  <td><?= __('Acceptance and Action Questionnaire - II:') ?></td>
                  <?php $sum = 0; ?>
