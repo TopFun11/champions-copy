@@ -137,7 +137,7 @@
               <?php $presum = 0; ?>
               <tr>
                  <td><?= __('Acceptance and Action Questionnaire - II (Pre-Intervention):') ?></td>
-                 <?php foreach($recordset as $recordset) if ($recordset->exercise_id == '49'){ ?>
+                 <?php for($recordset as $recordset) if ($recordset->exercise_id == '49'){ ?>
                      <?php foreach($record as $record) if ($record->recordset_id == $recordset->id){ ?>
                         <?php $presum += ($record->answer); ?>
                      <?php } ?>
@@ -151,7 +151,7 @@
                  <?php reset($recordset); reset($record); ?>
               <tr>
                  <td><?= __('Acceptance and Action Questionnaire - II (Post-Intervention):') ?></td>
-                 <?php foreach($recordset as $recordset) if ($recordset->exercise_id == '51') { ?>
+                 <?php for($recordset as $recordset) if ($recordset->exercise_id == '51') { ?>
                      <?php foreach($record as $record) if ($record->recordset_id == $recordset->id) { ?>
                         <?php $postsum += ($record->answer); ?>
                      <?php } ?>
