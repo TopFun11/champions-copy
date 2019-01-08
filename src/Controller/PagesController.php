@@ -27,20 +27,7 @@ use Cake\View\Exception\MissingTemplateException;
  * @link http://book.cakephp.org/3.0/en/controllers/pages-controller.html
  */
 class PagesController extends AppController
-{
-
-    public function initialize()
-    {
-      parent::initialize();
-      
-    }
-    /**
-     * Index method
-     *
-     * @return \Cake\Network\Response|null
-     */
-    
-    
+{ 
     /**
      * Displays a view
      *
@@ -51,18 +38,16 @@ class PagesController extends AppController
      */
     public function display()
     {
-        $this->loadModel("Profile");
-        $this->loadModel("Users");
-        $userId = $this->Auth->user("id");
-        $user = $this->Users->get($userId, [
+       $userId = $this->Auth->user("id");
+       $user = $this->Users->get($userId, [
          'contain' => ['Module', 'Recordset' => [
            'conditions' => ['not' => ['exercise_id' => 'null']],
            'Exercise' => ['Sections' => ['Sections' => [
              'conditions' => ['not' => ['section_id' => null]]
            ], 'Module']]]
          ]
-        ]);
-        $profile = $this->Profile->find("all")->where(['user_id' => $this->Auth->user("id")])->first();
+       ]);
+       $profile = $this->Users->Profile->find("all")->where(['user_id' => $this->Auth->user("id")])->first();
         
         $path = func_get_args();
 
