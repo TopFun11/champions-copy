@@ -29,6 +29,18 @@ use Cake\View\Exception\MissingTemplateException;
 class PagesController extends AppController
 {
 
+    public function initialize()
+    {
+      parent::initialize();
+      $this->loadModel("Users");
+    }
+    /**
+     * Index method
+     *
+     * @return \Cake\Network\Response|null
+     */
+    
+    
     /**
      * Displays a view
      *
