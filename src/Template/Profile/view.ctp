@@ -155,11 +155,11 @@
                         <?php $postsum += ($record->answer) ?>
                      <?php } ?>
                  <?php } ?>
-                 <?php if ($postsum == 0) { ?>
-                 <td><?= h("To Be Completed at the End of the Wellbeing Module"); ?></td></tr>
+                 <?php if($postsum == 0) { ?>
+                 <td><?= h("Please complete the AAQ-II Questionnaire in the Wellbeing Module"); ?></td></tr>
                  <?php } else { ?>
-                 <td><? h($postsum) ?></td></tr>
-                 <tr><td><?= __('Compare your Score with your earlier results to see the impact of the ACT intervention') ?></td></tr>
+                 <td><?= h($postsum) ?></td></tr>
+                 <tr><td><?= __('A Higher AAQ-II score indicates greater levels of psychological inflexibility.') ?></td></tr>
                  <?php } ?>
               <?php } ?>
            </table>
