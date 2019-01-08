@@ -25,6 +25,7 @@
   
   <div class="container">
    <div class="row display-flex">
+       <?php if ($profile) { ?>
        <?php if ($profile->hospital != "Morriston") { ?>
         <?php foreach($module as $module) if ($module->title != 'Dissertation demo'){ ?>
             <div class="col-xs-12 col-sm-4 col-md-4">
