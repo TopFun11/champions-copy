@@ -65,5 +65,18 @@ class PagesController extends AppController
             }
             throw new NotFoundException();
         }
+        
+        $userId = $this->Auth->user("id");
+        $user = $this->Users->get($userId, [
+         'contain' => ['Module', 'Recordset' => [
+           'conditions' => ['not' => ['exercise_id' => 'null']],
+           'Exercise' => ['Sections' => ['Sections' => [
+             'conditions' => ['not' => ['section_id' => null]]
+           ], 'Module']]]
+         ]
+        ]);
+        $profile = $this->Profile->find("all")->where(['user_id' => $this->Auth->user("id")])->first();
+        $this->set('profile',    $profile);
+        $this->set('user',       $user);
     }
 }
