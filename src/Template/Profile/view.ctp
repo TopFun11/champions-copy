@@ -131,8 +131,7 @@
               <tr>
                  <td><?= __('Depression:') ?></td>
                  <td><?= h($profile->phq_depression) ?></td>
-              </tr>
-              <?php 
+              </tr> 
               <?php if($recordset->exercise_id == '49') { ?>
               <tr>
                  <td><?= __('Acceptance and Action Questionnaire - II:') ?></td>
