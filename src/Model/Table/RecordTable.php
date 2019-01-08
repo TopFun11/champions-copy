@@ -39,6 +39,7 @@ class RecordTable extends Table
         $this->belongsTo('Recordset', [
             'joinType' => 'INNER'
         ]);
+        $this->belongsTo('Users');
         $this->belongsTo("Question", [
         ]);
     }
