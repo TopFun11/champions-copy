@@ -143,7 +143,7 @@
                  <?php } ?>
                  <td><?= h($sum) ?></td>                
               </tr>
-              <tr><td><?= __('A Higher AAQ-II score indicates greater levels of psychological inflexibility') ?></td></tr>
+              <tr><td><?= __('A Higher AAQ-II score indicates greater levels of psychological inflexibility.') ?></td></tr>
               <?php } ?>
            </table>
          </div>
