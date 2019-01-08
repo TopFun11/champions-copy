@@ -51,7 +51,32 @@
                 </div>
             </div>
        <?php } ?>
-      <?php } ?>
-      </div>
+      <?php } else { ?>
+       <?php foreach($module as $module) if ($module->title != 'Dissertation demo' || $module->title != 'Wellbeing'){ ?>
+            <div class="col-xs-12 col-sm-4 col-md-4">
+                <div class="box">
+                    <div class="icon">
+                        <div class="image"><img class="img-responsive" src="<?= h($module->icon) ?>" /></div>
+                        <div class="info">
+                            <h3 class="title"><?= h($module->title) ?></h3>
+                            <p>
+                                <?= $module->description_text ?>
+                            </p>
+                            <div class="more">
+                                <a href="/module/overview/<?=$module->id?>" title="Title Link">
+                                    <?php if ($module->enrolled > 0) { ?>
+                                        Take Part <i class="fa fa-angle-double-right"></i>
+                                    <?php } else { ?>
+                                        Enrol <i class="fa fa-angle-double-right"></i>
+                                    <?php } ?>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="space"></div>
+                </div>
+            </div>
+       <?php } ?>
+   </div>
 </div>
 <?php } ?>
