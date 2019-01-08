@@ -133,7 +133,7 @@
                  <td><?= h($profile->phq_depression) ?></td>
               </tr> 
               <?php //if($profile->hospital != 'Morriston') { 
-              if (foreach($recordset as $recordset) if ($recordset->exercise_id == '49')) != null) ?>
+              if (foreach($recordset as $recordset) if ($recordset->exercise_id == '49')) != null) { ?>
               <tr>
                  <td><?= __('Acceptance and Action Questionnaire - II:') ?></td>
                  <?php $sum = 0; ?>
