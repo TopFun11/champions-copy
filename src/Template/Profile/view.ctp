@@ -132,9 +132,6 @@
                  <td><?= __('Depression:') ?></td>
                  <td><?= h($profile->phq_depression) ?></td>
               </tr>
-              <tr>
-                 <td><?= __('Recordset') ?></td>
-                 <td><?= h($user->recordset->Record->id) ?></td></tr>
            </table>
          </div>
         </div>
