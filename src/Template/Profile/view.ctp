@@ -137,8 +137,8 @@
               <?php $presum = 0; ?>
               <tr>
                  <td><?= __('Acceptance and Action Questionnaire - II (Pre-Intervention):') ?></td>
-                 <?php foreach($recordset as $recordset) if ($recordset->exercise_id == '49') : ?>
-                     <?php foreach($record as $record) if ($record->recordset_id == $recordset->id) : ?>
+                 <?php foreach($recordset as $recordset) if ($recordset->exercise_id == '49'): ?>
+                     <?php foreach($record as $record) if ($record->recordset_id == $recordset->id): ?>
                         <?php $presum += ($record->answer); ?>
                      <?php endforeach; ?>
                  <?php endforeach; ?>
