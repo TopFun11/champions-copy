@@ -38,5 +38,6 @@ class AppView extends UIView
     {
       $this->loadHelper('QuestionAnswer');
       $this->loadHelper('Exercise');
+      $this->loadHelper('Users');
     }
 }
