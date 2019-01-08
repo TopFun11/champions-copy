@@ -21,12 +21,13 @@
 <br>
 <br>
 
+<?php $profile = $this->Users->Profile; ?>
 <?php if ($module) {?>
   <hr>
   
   <div class="container">
    <div class="row display-flex">
-      <?php if($this->Profile->hospital != 'Morriston'){ ?>
+      <?php if($profile->hospital != 'Morriston'){ ?>
         <?php foreach($module as $module) if ($module->title != 'Dissertation demo'){ ?>
             <div class="col-xs-12 col-sm-4 col-md-4">
                 <div class="box">
