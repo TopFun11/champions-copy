@@ -148,14 +148,6 @@
                  <td><?= h($presum) ?></td></tr>
                  <tr><td><?= __('A Higher AAQ-II score indicates greater levels of psychological inflexibility.') ?></td></tr>
                  <?php } ?>
-                 <?php foreach($recordset as $recordset){ ?>
-                     <tr><td><?= $recordset->id ?></td></tr>
-                 <?php } ?>
-                 <?php $recordset = reset($recordset); 
-                       $record = reset($record); ?>
-                 <?php foreach($recordset as $recordset){ ?>
-                     <tr><td><?= $recordset->id ?></td></tr>
-                 <?php } ?>
               <tr>
                  <td><?= __('Acceptance and Action Questionnaire - II (Post-Intervention):') ?></td>
                  <?php foreach($recordset as $recordset) if ($recordset->exercise_id == '51') { ?>
