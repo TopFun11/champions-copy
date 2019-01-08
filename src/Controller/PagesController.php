@@ -39,7 +39,7 @@ class PagesController extends AppController
     public function display()
     {
        $userId = $this->Auth->user("id");
-       $user = $this->Users->get($userId, [
+       $user = $this->Module->Users->get($userId, [
          'contain' => ['Module', 'Recordset' => [
            'conditions' => ['not' => ['exercise_id' => 'null']],
            'Exercise' => ['Sections' => ['Sections' => [
@@ -47,7 +47,7 @@ class PagesController extends AppController
            ], 'Module']]]
          ]
        ]);
-       $profile = $this->Users->Profile->find("all")->where(['user_id' => $this->Auth->user("id")])->first();
+       $profile = $this->Module->Users->Profile->find("all")->where(['user_id' => $this->Auth->user("id")])->first();
         
         $path = func_get_args();
 
