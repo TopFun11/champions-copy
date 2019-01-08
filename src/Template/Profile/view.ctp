@@ -156,9 +156,9 @@
                      <?php } ?>
                  <?php } ?>
                  <?php if ($postsum == 0) { ?>
-                    <td><?= h("To Be Completed at the End of the Wellbeing Module"); ?></td></tr>
+                 <td><?= h("To Be Completed at the End of the Wellbeing Module"); ?></td></tr>
                  <?php } else { ?>
-                     <td><? h($postsum) ?></td></tr>
+                 <td><? h($postsum) ?></td></tr>
                  <tr><td><?= __('Compare your Score with your earlier results to see the impact of the ACT intervention') ?></td></tr>
                  <?php } ?>
               <?php } ?>
