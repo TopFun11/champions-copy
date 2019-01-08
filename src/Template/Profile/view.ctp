@@ -150,9 +150,9 @@
                  <?php } ?>
               <tr>
                  <td><?= __('Acceptance and Action Questionnaire - II (Post-Intervention):') ?></td>
-                 <?php foreach($recordset2 as $recordset) if ($recordset2->exercise_id == '49') { ?>
-                     <?php foreach($record2 as $record) if ($record2->recordset_id == $recordset->id) { ?>
-                        <?php $postsum += ($record->answer); ?>
+                 <?php foreach($recordset2 as $recordset2) if ($recordset2->exercise_id == '49') { ?>
+                     <?php foreach($record2 as $record2) if ($record2->recordset_id == $recordset2->id) { ?>
+                        <?php $postsum += ($record2->answer); ?>
                      <?php } ?>
                  <?php } ?>
                  <?php if($postsum == 0) { ?>
