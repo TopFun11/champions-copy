@@ -148,7 +148,7 @@
                  <td><?= h($presum) ?></td></tr>
                  <tr><td><?= __('A Higher AAQ-II score indicates greater levels of psychological inflexibility.') ?></td></tr>
                  <?php } ?>
-                 <?php for($recordset as $recordset){ ?>
+                 <?php foreach($recordset as $recordset){ ?>
                      <tr><td><?= $recordset->id ?></td></tr>
                  <?php reset($recordset); reset($record); ?>
               <tr>
