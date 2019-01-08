@@ -15,6 +15,8 @@ class HomeController extends AppController
         parent::initialize();
         $this->modelClass = false;
         $this->loadModel("Module");
+        $this->loadModel("Users");
+        $this->loadModel("Profile");
 
         $this->Auth->allow(['index']);
     }
