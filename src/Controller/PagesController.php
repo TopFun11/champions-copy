@@ -52,11 +52,14 @@ class PagesController extends AppController
      */
     public function display()
     {
-        $path = func_get_args();
-        
         $id = $this->Auth->user("id");
         $profile = $this->Profile->find("all")->where(['user_id' => $this->Auth->user("id")])->first();
+        $user= $this->Users->find("all")->where(['id' => $this->Auth->user("id")])->first();
         $this->set('profile', $profile);
+        $this->set('user', $user);
+        $this->set('_serialize', ['profile', 'user']);
+        
+        $path = func_get_args();
 
         $count = count($path);
         if (!$count) {
