@@ -46,7 +46,7 @@ $cakeDescription = 'Champions for Health';
           </div>
           <div class="collapse navbar-collapse navbar-menubuilder">
               <ul class="nav navbar-nav navbar-left">
-                  <li><a href="/">Home</a>
+                  <li><a href="/home">Home</a>
                   </li>
                   <li><a href="/about">About us</a>
                   </li>
