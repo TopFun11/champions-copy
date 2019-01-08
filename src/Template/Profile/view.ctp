@@ -134,18 +134,32 @@
               </tr> 
               <?php if($profile->hospital != 'Morriston') { ?> 
               <tr>
-                 <td><?= __('Acceptance and Action Questionnaire - II:') ?></td>
-                 <?php $sum = 0; ?>
+                 <td><?= __('Acceptance and Action Questionnaire - II (Pre-Intervention):') ?></td>
+                 <?php $presum = 0; ?>
                  <?php foreach($recordset as $recordset) if ($recordset->exercise_id == '49') { ?>
                      <?php foreach($record as $record) if ($record->recordset_id == $recordset->id) { ?>
-                        <?php $sum += ($record->answer) ?>
+                        <?php $presum += ($record->answer) ?>
                      <?php } ?>
                  <?php } ?>
-                 <?php if($sum == 0) { ?>
+                 <?php if($presum == 0) { ?>
                  <td><?= h("Please complete the AAQ-II Questionnaire in the Wellbeing Module"); ?></td></tr>
                  <?php } else { ?>
-                 <td><?= h($sum) ?></td></tr>
+                 <td><?= h($presum) ?></td></tr>
                  <tr><td><?= __('A Higher AAQ-II score indicates greater levels of psychological inflexibility.') ?></td></tr>
+                 <?php } ?>
+              <tr>
+                 <td><?= __('Acceptance and Action Questionnaire - II (Post-Intervention):') ?></td>
+                 <?php $postsum = 0; ?>
+                 <?php foreach($recordset as $recordset) if ($recordset->exercise_id == '51') { ?>
+                     <?php foreach($record as $record) if ($record->recordset_id == $recordset->id) { ?>
+                        <?php $postsum += ($record->answer) ?>
+                     <?php } ?>
+                 <?php } ?>
+                 <?php if ($postsum == 0) { ?>
+                    <td><?= h("To Be Completed at the End of the Intervention Period"); ?></td></tr>
+                 <?php } else { ?>
+                     <td><? h($postsum) ?></td></tr>
+                 <tr><td><?= __('Compare your Score with your earlier results to see the impact of the ACT intervention') ?></td></tr>
                  <?php } ?>
               <?php } ?>
            </table>
