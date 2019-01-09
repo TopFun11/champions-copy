@@ -298,7 +298,7 @@ class ModuleController extends AppController
         $this->Flash->Error("You are not enrolled on this module");
       }else{
         $this->request->allowMethod(['post', 'delete']);
-        if ($this->Enrollment->delete($enrolled) {
+        if ($this->Enrollment->delete($enrolled)) {
             $this->Flash->success(__('You have successfully unenrolled from this module.'));
       } else {
             $this->Flash->error(__('You have been unable to unenroll. Please try again.'));
