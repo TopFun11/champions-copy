@@ -299,7 +299,7 @@ class ModuleController extends AppController
       }else{
         $enrolled = null;
         if ($enrolled == null) {
-            $this->Flash->sucess(__('You have successfully unenrolled from this module.'));
+            $this->Flash->success(__('You have successfully unenrolled from this module.'));
       } else {
             $this->Flash->error(__('You have been unable to unenroll. Please try again.'));
       }
