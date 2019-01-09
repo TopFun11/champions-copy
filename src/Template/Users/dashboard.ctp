@@ -83,8 +83,8 @@
          <div class="col-md-12">
             <h2>Progress Graphs</h2>
             <div class="row">
-               <p><center>Here you can see the progress you have made through interactions with the various modules</center></p>
-               <p><center>Be sure to regularly visit the website and complete the weekly exercises to better view your progress</center></p>
+               <p><center>Here you can see the progress you have made through interactions with the various modules.</center></p>
+               <p><center>Be sure to regularly visit the website and complete the weekly exercises to better view your progress!</center></p>
             </div>
          </div>
     </div>
