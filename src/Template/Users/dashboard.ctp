@@ -79,7 +79,7 @@
             </div>
         </div>
     </div>
-    <div class="row"
+    <div class="row">
          <div class="col-md-12">
             <h2>Progress Graphs</h2>
             <div class="row">
