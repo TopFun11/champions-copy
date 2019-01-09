@@ -288,10 +288,6 @@ class ModuleController extends AppController
     
     public function unenroll($id = null){
       $userId = $this->Auth->user('id');
-      $module = $this->Module->get($id, ['contain' => ['Screener']]);
-      if(!$module){
-        throw new NotFoundException(__("Module not found."));
-      }
       $this->request->allowMethod(['post', 'delete']);
       $enrollment = TableRegistry::get("userenrollment");
       $enrolled = $enrollment->find("all")->where(['user_id' => $userId, 'module_id'=>$module->id])->first();
