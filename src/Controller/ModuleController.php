@@ -296,12 +296,12 @@ class ModuleController extends AppController
       $enrolled = $enrollment->find("all")->where(['user_id' => $userId, 'module_id'=>$module->id])->first();
       if(!$enrolled){
         $this->Flash->Error("You are not enrolled on this module");
-      }else{
-        $this->request->allowMethod(['post', 'delete']);
-        if ($this->Enrollment->delete($enrolled)) {
-            $this->Flash->success(__('You have successfully unenrolled from this module.'));
+      }
+      $this->request->allowMethod(['post', 'delete']);
+      if ($this->Enrollment->delete($enrolled)) {
+        $this->Flash->success(__('You have successfully unenrolled from this module.'));
       } else {
-            $this->Flash->error(__('You have been unable to unenroll. Please try again.'));
+        $this->Flash->error(__('You have been unable to unenroll. Please try again.'));
       }
       return $this->redirect(['controller' => 'users', 'action' => 'dashboard']);
       }                          
