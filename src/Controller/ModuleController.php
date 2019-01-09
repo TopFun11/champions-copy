@@ -292,12 +292,9 @@ class ModuleController extends AppController
       if(!$module){
         throw new NotFoundException(__("Module not found."));
       }
+      $this->request->allowMethod(['post', 'delete']);
       $enrollment = TableRegistry::get("userenrollment");
       $enrolled = $enrollment->find("all")->where(['user_id' => $userId, 'module_id'=>$module->id])->first();
-      if(!$enrolled){
-        $this->Flash->Error("You are not enrolled on this module");
-      }
-      $this->request->allowMethod(['post', 'delete']);
       if ($this->Enrollment->delete($enrolled)) {
         $this->Flash->success(__('You have successfully unenrolled from this module.'));
       } else {
