@@ -204,3 +204,6 @@ $(function() {
     );
 });
 </script>
+<script type="text/javascript" src="/js/chartjs.min.js"></script>
+<script>
+</script>
