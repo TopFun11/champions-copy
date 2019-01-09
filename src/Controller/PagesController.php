@@ -22,7 +22,7 @@ use Cake\View\Exception\MissingTemplateException;
 /**
  * Static content controller
  *
- * This controller will render views from Template/Pages/
+ * This controller will render views from Template
  *
  * @link http://book.cakephp.org/3.0/en/controllers/pages-controller.html
  */
