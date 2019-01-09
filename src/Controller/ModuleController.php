@@ -287,7 +287,6 @@ class ModuleController extends AppController
     }
     
     public function unenroll($id = null){
-      $userRole = $this->Auth->user('role');
       $userId = $this->Auth->user('id');
       $module = $this->Module->get($id, ['contain' => ['Screener']]);
       if(!$module){
@@ -298,7 +297,6 @@ class ModuleController extends AppController
       if(!$enrolled){
         $this->Flash->Error("You are not enrolled on this module");
       }else{
-        $this->request->allowMethod(['post', 'delete']);
         if ($this->userenrollment->delete($enrolled)) {
             $this->Flash->sucess(__('You have successfully unenrolled from this module.'));
       } else {
