@@ -303,7 +303,6 @@ class ModuleController extends AppController
       } else {
         $this->Flash->error(__('You have been unable to unenroll. Please try again.'));
       }
-      return $this->redirect(['controller' => 'users', 'action' => 'dashboard']);
-      }                          
+      return $this->redirect(['controller' => 'users', 'action' => 'dashboard']);                      
     }
 }
