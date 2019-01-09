@@ -71,6 +71,7 @@
                 ?>
                 <hr style="text-align:left">
                 <img src="<?= $module->icon ?>" alt="Icon for the <?=addslashes($module->title)?> module"> <?= $this->Html->link($module->title, ['controller' => 'module', 'action' => 'dashboard', $module->id], ['title' => __($module->title)]); ?>
+                <p>Unenroll<p>
                 <?php endforeach;
                 }
                 ?>
