@@ -57,10 +57,15 @@ use Cake\Controller\Component\AuthComponent;
               $engagement[$modId]['colour'] = [20, 244, 255];
            }
        }
+      
+       $recordset = $this->Recordset->find("all")->where(['user_id' => $id]);
+       $record = $this->Record->find("all");
 
        $this->set('profile',    $profile);
        $this->set('user',       $user);
        $this->set('engagement', $engagement);
+       $this->set('recordset', $recordset);
+       $this->set('record', $record);
      }
 
      public function login()
