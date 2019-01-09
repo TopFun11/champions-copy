@@ -285,4 +285,27 @@ class ModuleController extends AppController
 
         return $this->redirect(['action' => 'index']);
     }
+    
+    public function unenroll($id = null){
+      $userRole = $this->Auth->user('role');
+      $userId = $this->Auth->user('id');
+      $module = $this->Module->get($id, ['contain' => ['Screener']]);
+      if(!$module){
+        throw new NotFoundException(__("Module not found."));
+      }
+      $enrollment = TableRegistry::get("userenrollment");
+      $enrolled = $enrollment->find("all")->where(['user_id' => $userId, 'module_id'=>$module->id])->first();
+      if(!$enrolled){
+        $this->Flash->Error("You are not enrolled on this module");
+        }
+      }else{
+        $this->request->allowMethod(['post', 'delete']);
+        if ($this->Module->delete($enrolled)) {
+            $this->Flash->sucess(__('You have successfully unenrolled from this module.'));
+      } else {
+            $this->Flash->error(__('You have been unable to unenroll. Please try again.'));
+      }
+      return $this->redirection(['controller' => 'users', 'action' => 'dashboard']);
+                                
+    }
 }
