@@ -26,6 +26,7 @@ use Cake\Controller\Component\AuthComponent;
        parent::initialize();
        $this->loadModel('Profile');
        $this->loadModel('Recordset');
+       $this->loadModel('Record');     
      }
 
      public function dashboard(){
@@ -58,7 +59,7 @@ use Cake\Controller\Component\AuthComponent;
            }
        }
       
-       $recordset = $this->Recordset->find("all")->where(['user_id' => $id]);
+       $recordset = $this->Recordset->find("all")->where(['user_id' => $userId]);
        $record = $this->Record->find("all");
 
        $this->set('profile',    $profile);
