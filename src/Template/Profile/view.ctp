@@ -132,7 +132,7 @@
                  <td><?= __('Depression:') ?></td>
                  <td><?= h($profile->phq_depression) ?></td>
               </tr> 
-              <?php if($profile->hospital != 'Morriston') { ?>
+              <?php if($profile->hospital != 'Neath Port Talbot') { ?>
               <?php $postsum = 0; ?>
               <?php $presum = 0; ?>
               <tr>
