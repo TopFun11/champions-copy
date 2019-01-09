@@ -297,7 +297,6 @@ class ModuleController extends AppController
       $enrolled = $enrollment->find("all")->where(['user_id' => $userId, 'module_id'=>$module->id])->first();
       if(!$enrolled){
         $this->Flash->Error("You are not enrolled on this module");
-        }
       }else{
         $this->request->allowMethod(['post', 'delete']);
         if ($this->Module->delete($enrolled)) {
