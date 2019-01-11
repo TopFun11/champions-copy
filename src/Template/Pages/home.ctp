@@ -8,13 +8,13 @@
 <div class="row">
   <div class="col-xs-12 col-sm-6 col-lg-6 left-Panel">
     <h3 class="home-title">What is Champions for Health?</h3>
-    <p>Champions for Health is an all-Wales campaign which is encouraging NHS staff to become healthier and also encourages the public to do the same. Registration is currently open to staff within Abertawe Bro Morgannwg University Health Board.</p>
+    <p>Champions for Health is a FREE online health and well-being programme developed by researchers at Swansea University and Public Health Wales currently it is available for staff across Abertawe Bro Morgannwg University Health Board. Please register to begin your health challenge 2019 and to use the wellbeing resources.</p>
   </div>
 
   <div class="col-xs-12 col-sm-6 col-lg-6 left-Panel">
     <h3 class="home-title">What will taking part involve?</h3>
-    <p>If you choose to take part, you will need to submit some basic personal information to complete the online registration process. </p>
-    <p>You will be asked to select which lifestyle topic areas you would like to focus on, and then chart your progress towards your personal goals. You will also be asked some online evaluation-based questions at the end of the campaign which will help assess how effective it has been and help us improve it in the future.</p>
+    <p>If you choose to take part, you will need to submit some basic personal information to complete the online registration process.  </p>
+    <p>You will be asked to select a health challenge to take part in. Each week you can chart your progress towards your personal goals and earn health points and trophies along the way. At the end of the FREE 12 week programme you will be asked to complete a questionnaire and to provide feedback which will help assess how effective it has been and help us improve it in the future.</p>
   </div>
 </div>
 
