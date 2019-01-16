@@ -54,6 +54,11 @@
                       <div class="col-md-2 value"><?=$this->Number->format($profile->login)?></div>
                       <div class="col-md-10 align-middle">Number of Times Logged On</div>
                    </div>
+                   <?php if profile->hospital="Morriston" { ?>
+                   <div class="row">
+                      <p>You are in the top 65% of participants for behaviour improvement and change</p>
+                   </div>
+                   <?php } ?>
                 </div>
             </div>
         </div>
