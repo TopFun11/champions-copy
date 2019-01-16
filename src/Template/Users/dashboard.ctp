@@ -91,7 +91,7 @@
             <h2>Progress Graphs</h2>
             <div class="row">
                <p><center>Here you can see the progress you have made through interactions with the various modules.</center></p>
-               <p><center>Be sure to regularly visit the website and complete the weekly exercises to better view your progress!</center></p>
+               <p><center>Be sure to regularly visit the website and complete the weekly exercises to view your progress!</center></p>
             </div>
          </div>
     </div>
@@ -99,8 +99,8 @@
         <div class="col-md-12">
             <h2>Trophies</h2>
             <div class="row">
-                <p><center>You may earn trophies through continued engagement with your modules, and they will appear in the trophy cabinet on your public profile.</center></p>
-                <p><center>You will recieve 1 point for each visit, and 5 points for each completion of a module activity. Collect points to unlock new trophies.</center><p>    
+                <p><center>You can earn points and trophies by taking part in the activities found in each module and recording your progress. They will appear here in your user dashboard.</center></p>
+                <p><center>You will receive 1 point for each visit and 5 points for each activity you complete. Collect points to unlock new trophies.</center><p>    
            </div>   
             <div class="row">
                     <?php if ($bronzeComp == true) { ?>
