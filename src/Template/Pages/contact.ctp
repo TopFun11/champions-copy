@@ -20,7 +20,7 @@
     <div class="col-xs-12 col-sm-4 dashboard-section">
       <br><br><br><br>
       <div class="right-image">
-          <img class="img-responsive" src="img/MennaBrown.jpg" height="42" width="42" />
+          <img class="img-responsive" src="img/MennaBrown.jpg" height="200" width="150" />
       </div>
     </div>
   </div>
@@ -40,7 +40,7 @@
     <div class="col-xs-12 col-sm-4 dashboard-section">
       <br><br><br><br>
       <div class="right-image">
-          <img class="img-responsive" src="img/AnnJohn.png" height="42" width="42" />
+          <img class="img-responsive" src="img/AnnJohn.png" height="200" width="150" />
       </div>
     </div>
   </div>
