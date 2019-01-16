@@ -20,10 +20,10 @@
 <br>
 <?php if($profile->hospital = "Morriston") { ?>
 <hr>
+<div style="background-color:#aed6f1">
 <div class="row">
-    <div style="background-color:#aed6f1">
     <h2><center>58% of users have completed their weekly exercises. Have you?</center></h2>
-    </div>
+</div>
 </div>
 <?php } ?>
 <br>
