@@ -36,7 +36,7 @@
         <?php if($profile->hospital="Morriston") { ?>
         <br>
         <div style="background-color:#aed6f1">
-        <div class="col-md-12">
+        <div class="col-md-12" style="background-color:#aed6f1">
            <h2>You are in the top 60% for positive behavioural improvement and behaviour change</h2>
            </div>
        </div>
