@@ -54,18 +54,20 @@
                       <div class="col-md-2 value"><?=$this->Number->format($profile->login)?></div>
                       <div class="col-md-10 align-middle">Number of Times Logged On</div>
                    </div>
-                   <?php if($profile->hospital="Morriston") { ?>
-                   <br><br>
-                   <div style="background-color:#aed6f1">
-                   <div class="row">
-                      <p><bold>You are in the top 65% of participants for behaviour improvement and change<bold></p>
-                   </div>
-                   </div>
-                   <?php } ?>
                 </div>
             </div>
         </div>
-        <div class="col-md-4 module-enrolments">
+       <?php if($profile->hospital="Morriston") { ?>
+         <div class="col-md-12">
+         <br><br>
+         <div style="background-color:#aed6f1">
+         <div class="row">
+         <p><bold>You are in the top 65% of participants for behaviour improvement and change<bold></p>
+         </div>
+         </div>
+         </div>
+       <?php } ?>
+       <div class="col-md-4 module-enrolments">
             <h2>Your Modules</h2>
             <div>
                 <p>You are enrolled onto <?=count($user->module)?> module<?=(count($user->module)==1?'':'s')?></p>
