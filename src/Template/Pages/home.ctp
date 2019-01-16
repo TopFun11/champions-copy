@@ -19,10 +19,10 @@
 </div>
 
 <br>
-
+<hr>
 <?php if($profile->hospital = "Morriston") { ?>
 <div class="container">
-    <div class="row display-flex">
+    <div class="row">
         <h2><center>58% of users have completed their weekly exercises. Have you?</center></h2>
     </div>
 </div>
