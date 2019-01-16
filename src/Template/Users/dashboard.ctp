@@ -33,7 +33,7 @@
         <div class="col-md-12">
             <h1>Good <?=(date('H')<12?'Morning':date('H')<18?'Afternoon':'Evening')?>, <?=ucwords($user->username)?>.</h1>
         </div>
-        <?php if($profile->hospital="Morriston" { ?>
+        <?php if($profile->hospital="Morriston") { ?>
         <br>
         <div style="background-color:#aed6f1">
         <div class="col-md-12">
