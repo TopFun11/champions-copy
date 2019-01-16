@@ -12,7 +12,7 @@
         <h2> Contact Us </h2>
           <h3> Menna Brown </h3>
 <p>Menna Brown MSc, BSc (Hons) is a lecturer at Swansea University Medical School (SUMS). She has over 12 years’ experience in health and wellbeing research in a medical context and has worked extensively with staff and patients from across NHS Wales to undertake qualitative research looking at health and wellbeing in a range of contexts. She is also a current PhD candidate in medicine and social care at Swansea University Medical School (SUMS).
-</p><p>If you have any questions or would like to get in touch about any aspect of this website please contact Menna on Menna.Brown@swansea.ac.uk
+</p><p>If you have any questions or would like to get in touch about any aspect of this website please contact Menna on <a href = "mailto:menna.brown@swansea.ac.uk">Menna.Brown@swansea.ac.uk</a>
 </p>
       </div>
     </div>
