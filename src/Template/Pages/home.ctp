@@ -21,8 +21,10 @@
 <br>
 
 <?php if($profile->hospital = "Morriston") { ?>
-<div class="row">
-    <p>58% of users have completed their weekly exercises. Have you?</p>
+<div class="container">
+    <div class="row">
+        <h2><center>58% of users have completed their weekly exercises. Have you?</center></h2>
+    </div>
 </div>
 <?php } ?>
 
