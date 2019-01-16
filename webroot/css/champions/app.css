@@ -555,3 +555,6 @@ hr {
 .row.display-flex > [class='icon'] {
   flex-grow: 1;
 }
+.row.display-pers {
+    background-color: #aed6f1
+}
