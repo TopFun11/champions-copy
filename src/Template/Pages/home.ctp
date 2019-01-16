@@ -24,6 +24,7 @@
 <div class="row">
     <p>58% of users have completed their weekly exercises. Have you?</p>
 </div>
+<?php } ?>
 
 <br>
 <?php if ($module) {?>
