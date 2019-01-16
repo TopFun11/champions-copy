@@ -55,8 +55,11 @@
                       <div class="col-md-10 align-middle">Number of Times Logged On</div>
                    </div>
                    <?php if($profile->hospital="Morriston") { ?>
+                   <br><br>
+                   <div style="background-color:#aed6f1">
                    <div class="row">
-                      <p>You are in the top 65% of participants for behaviour improvement and change</p>
+                      <p><bold>You are in the top 65% of participants for behaviour improvement and change<bold></p>
+                   </div>
                    </div>
                    <?php } ?>
                 </div>
