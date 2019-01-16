@@ -442,7 +442,7 @@ $(".section-exercises").on("submit", function(event){
     data: formData,
     success: function(data) {
       console.log($(data));
-      alert("Data saved. Thanking you!");
+      alert("Data saved. Thank you.");
     },
     error: function(data) {
       console.log($(data));
