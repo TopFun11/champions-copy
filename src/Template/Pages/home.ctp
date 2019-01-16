@@ -17,15 +17,15 @@
     <p>You will be asked to select a health challenge to take part in. Each week you can chart your progress towards your personal goals and earn health points and trophies along the way. At the end of the FREE 12 week programme you will be asked to complete a questionnaire and to provide feedback which will help assess how effective it has been and help us improve it in the future.</p>
   </div>
 </div>
-
 <br>
-<hr>
 <?php if($profile->hospital = "Morriston") { ?>
-<div class="row display-pers">
+<hr>
+<div class="row">
+    <div style="background-color:#aed6f1">
     <h2><center>58% of users have completed their weekly exercises. Have you?</center></h2>
+    </div>
 </div>
 <?php } ?>
-
 <br>
 <?php if ($module) {?>
   <hr>
