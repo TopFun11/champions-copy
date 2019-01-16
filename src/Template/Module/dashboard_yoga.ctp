@@ -94,10 +94,7 @@ function makeAccordionBody($id, $content) {
                 echo("<input type='hidden' name='exercise_id' value='".$l2child->exercises->id."'/>");
                 $qnum = 1;
                 foreach($l2child->exercises->question as $question){
-
-                  echo("<h4>Question ".$qnum."</h4>");
-                  $qnum++;
-                  echo($question->question);
+                  echo("<h4>$question->question</h4>");
                   echo $this->QuestionAnswer->display($question);
                 }
                 echo("<div class='text-center'><button type='submit' class='btn btn-success' id='".$l2child->exercises->id."'>Save answers</button></div><hr/>");
