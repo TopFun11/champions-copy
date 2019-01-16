@@ -48,6 +48,9 @@ $this->end();
 <?=  $this->Form->hidden('exercise_id', ['value' => $exercise->id]); ?>
 <div class="panel panel-default">
     <!-- Panel header -->
+      <div class="panel-heading">
+        <h3 class="panel-title"><?= h($exercise->section->title . ' exercise') ?></h3>
+    </div>
 
 <!--<?= $exercise ?>-->
   <?php foreach($exercise->question as $question): ?>
