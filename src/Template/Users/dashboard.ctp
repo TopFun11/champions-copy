@@ -33,7 +33,7 @@
         <div class="col-md-12">
             <h1>Good <?=(date('H')<12?'Morning':date('H')<18?'Afternoon':'Evening')?>, <?=ucwords($user->username)?>.</h1>
         </div>
-        <?php if($profile->hospital="Morriston") { ?>
+        <?php if($profile->hospital=="Morriston") { ?>
         <br>
         <div class="col-md-12" style="background-color:#aed6f1">
            <h2>You are in the top 60% for positive behavioural improvement and behaviour change</h2>
