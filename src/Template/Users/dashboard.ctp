@@ -58,7 +58,7 @@
             </div>
         </div>
        <?php if($profile->hospital="Morriston") { ?>
-         <div class="col-md-12">
+         <div class="col-md-8">
          <br><br>
          <div style="background-color:#aed6f1">
          <div class="row">
