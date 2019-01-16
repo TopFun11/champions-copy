@@ -18,8 +18,8 @@
   </div>
 </div>
 
-<hr>
 <br>
+<hr>
 <?php if($profile->hospital = "Morriston") { ?>
 <div class="container">
     <div class="row">
