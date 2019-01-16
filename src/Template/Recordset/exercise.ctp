@@ -55,7 +55,7 @@ $this->end();
 <!--<?= $exercise ?>-->
   <?php foreach($exercise->question as $question): ?>
       <div>
-          <p><?= $question->question ?></p>
+          <h3><?= $question->question ?></h3>
         </div>
         <div>
           <?php
