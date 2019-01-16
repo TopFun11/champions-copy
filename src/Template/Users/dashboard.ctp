@@ -33,6 +33,14 @@
         <div class="col-md-12">
             <h1>Good <?=(date('H')<12?'Morning':date('H')<18?'Afternoon':'Evening')?>, <?=ucwords($user->username)?>.</h1>
         </div>
+        <?php if($profile->hospital="Morriston" { ?>
+        <br>
+        <div style="background-color:#aed6f1">
+        <div class="col-md-12">
+           <h2>You are in the top 60% for positive behavioural improvement and behaviour change</h2>
+           </div>
+       </div>
+       <?php } ?>
     </div>
     <div class="row">
         <div class="col-md-8 activity-summary">
@@ -57,16 +65,6 @@
                 </div>
             </div>
         </div>
-       <?php if($profile->hospital="Morriston") { ?>
-         <div class="col-md-8">
-         <br><br>
-         <div style="background-color:#aed6f1">
-         <div class="row">
-         <p><bold>You are in the top 65% of participants for behaviour improvement and change<bold></p>
-         </div>
-         </div>
-         </div>
-       <?php } ?>
        <div class="col-md-4 module-enrolments">
             <h2>Your Modules</h2>
             <div>
