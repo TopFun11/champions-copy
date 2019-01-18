@@ -25,8 +25,8 @@
       }
 ?>
 
-<?php $recordsetSmoke= $recordset if ($recordset->screener_id == 3);
-      $recordSmoke = $record if (($record->recordset_id = $recordsetSmoke->id) and ($record->question_id == 10)); ?>
+<?php if ($recordset->screener_id == 3) { $recordsetSmoke = $recordset };
+      if (($record->recordset_id = $recordsetSmoke->id) and ($record->question_id == 10)) { $recordSmoke = $record }; ?>
       
       
 
