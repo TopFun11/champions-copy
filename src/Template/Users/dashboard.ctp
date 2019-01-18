@@ -17,6 +17,11 @@
 
    ?>
 
+<?php $noise = rand(-1, 1);
+      $userPerform = 4;
+      $peerPerform = max(0, ($userPerform + 1 + $noise));
+?>
+
 <?php $bronzeValue = 50; $silverValue = 100; $goldValue = 200; $platValue = 400; $bronzeComp = false; $silverComp = false; $goldComp = false; $platComp = false;
                      $goalValue = $bronzeValue;
                      if (($bronzeValue <= $profile->points) and ($profile->points < $silverValue)) {
@@ -36,7 +41,7 @@
         <?php if($profile->hospital=="Morriston") { ?>
         <br>
         <div class="col-md-12" style="background-color:#aed6f1">
-           <h2>You are in the top 60% for positive behavioural improvement and behaviour change</h2>
+           <h2>Other users have achieved general behavioral improvement of ($peerPerform)% this week.</h2>
        </div>
        <?php } ?>
     </div>
