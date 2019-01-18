@@ -34,6 +34,8 @@
 ?>
 
 <?php $smokeSum = 0;
+      reset($recordset);
+      reset($record);
       foreach($recordset as $recordset) if ($recordset->exercise_id == 5) {
          foreach($record as $record) if ($record->recordset_id = $recordset->id) {
             $smokeSum += $record->answer;
