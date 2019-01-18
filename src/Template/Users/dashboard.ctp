@@ -290,12 +290,8 @@ $(function() {
                 labels: [
 <?php
                         "Start" . "\n";
-                        for($e = 0; $e < 1; $e++) {
-                           if ($e > 0 ) {
-                            echo "'" . $e . "',\n";
-                           } else {
-                            echo "Start" . ",\n";
-                           }
+                        foreach($engagement as $e) {
+                            echo "'" . $e['title'] . "',\n";
                         }
 ?>
                 ]
