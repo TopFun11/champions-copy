@@ -281,13 +281,13 @@ $(function() {
                         
 ?>
                     ],
-                    label: 'Start'
+                    label: 'Cigarettes Smoked'
                 }],
                 labels: [
 <?php
                         "Start" . "\n";
-                        foreach($engagement as $e) {
-                            echo "'" . $e['title'] . "',\n";
+                        foreach($e = 0; $e < 1; $e++) {
+                            echo "'" . $e . "',\n";
                         }
 ?>
                 ]
