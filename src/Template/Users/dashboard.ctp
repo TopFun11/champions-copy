@@ -285,8 +285,9 @@ $(function() {
                 }],
                 labels: [
 <?php
-                        foreach($engagement as $e) {
-                            echo "'" . $e['title'] . "',\n";
+                        "Start" . "\n";
+                        for ($i = 0, $i < 13, $i++) {
+                            echo "Week" . $i . "\n";
                         }
 ?>
                 ]
