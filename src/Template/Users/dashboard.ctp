@@ -34,11 +34,9 @@
 ?>
 
 <?php $smokeSum = 0;
-      reset($recordset);
-      reset($record);
-      foreach($recordset as $recordset) if ($recordset->exercise_id == 5) {
-         foreach($record as $record) if ($record->recordset_id = $recordset->id) {
-            $smokeSum += $record->answer;
+      foreach($recordset2 as $recordset2) if ($recordset2->exercise_id == 5) {
+         foreach($record2 as $record2) if ($record2->recordset_id = $recordset2->id) {
+            $smokeSum += $record2->answer;
             $smokeSum = $smokeSum / 7;
          }
       }
