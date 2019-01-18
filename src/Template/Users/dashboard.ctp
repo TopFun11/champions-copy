@@ -269,6 +269,14 @@ $(function() {
                     data: [
 <?php
                         echo $screenerSmoke . ",\n";
+                        foreach($recordset as $recordset) if ($recordset->exercise_id == 5) {
+                           $smokeSum = 0;
+                           foreach($record as $record) if ($record->recordset_id = $recordset->id) {
+                              $smokeSum += $record->answer;
+                           }
+                        }
+                        echo $smokeSum . ",\n";
+                        
                         
 ?>
                     ],
