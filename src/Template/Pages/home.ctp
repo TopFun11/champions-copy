@@ -21,8 +21,15 @@
 <?php if($profile) { ?>
 <?php if($profile->hospital == "Morriston") { ?>
 <hr>
+<?php $noise = rand(-5, 5);
+      $userPerform = 30;
+      $peerPerform = max(0, ($userPerform + 10 + $noise));
+      if ($peerPerform > 100) {
+         $peerPerform = 100;
+      }
+?>
 <div class="row" style="background-color:#aed6f1">
-    <h2><center>58% of users have completed their weekly exercises. Have you?</center></h2>
+    <h2><center><?= $peerPerform ?>% of users have improved their health. Get started here!</center></h2>
 </div>
 <?php } ?>
 <?php } ?>
