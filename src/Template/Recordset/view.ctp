@@ -44,9 +44,9 @@ $this->end();
             <td><?= __('User') ?></td>
             <td><?= $recordset->has('user') ? $this->Html->link($recordset->user->username, ['controller' => 'user', 'action' => 'view', $recordset->user->id]) : '' ?></td>
         </tr>
-        <tr>
-            <td><?= //__('Screener Score') ?></td>
-            <td><?= //$recordset->has('screener') ? $recordset->screener->formular->calculate($recordset->record) : '' ?></td>
+        //<tr>
+            <td><?=//__('Screener Score') ?></td>
+            <td><?=//$recordset->has('screener') ? $recordset->screener->formular->calculate($recordset->record) : '' ?></td>
         </tr>
         <tr>
             <td><?= __('Exercise Id') ?></td>
