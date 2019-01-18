@@ -287,7 +287,7 @@ $(function() {
                         
 ?>
                     ],
-                    label: 'Cigarettes Smoked'
+                    label: 'Cigarettes Smoked / Day'
                 }],
                 labels: [
 <?php
