@@ -234,7 +234,7 @@ $(function() {
     var dashboardChart = new Chart(
         selector,
         {
-            type: 'pie',
+            type: 'line',
             data: {
 <?php
             if(0 == count($engagement)) {
