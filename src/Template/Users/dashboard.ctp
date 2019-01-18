@@ -281,7 +281,7 @@ $(function() {
                         
 ?>
                     ],
-                    label: 'My Label'
+                    label: 'Start'
                 }],
                 labels: [
 <?php
