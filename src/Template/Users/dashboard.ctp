@@ -274,8 +274,9 @@ $(function() {
                            foreach($record as $record) if ($record->recordset_id = $recordset->id) {
                               $smokeSum += $record->answer;
                            }
+                           echo $smokeSum . ",\n";
                         }
-                        echo $smokeSum . ",\n";
+                        
                         
                         
 ?>
