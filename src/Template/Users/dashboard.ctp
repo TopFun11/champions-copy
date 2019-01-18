@@ -17,7 +17,7 @@
 
    ?>
 
-<?php $noise = rand(-1, 1);
+<?php $noise = rand(-5, 5);
       $userPerform = 30;
       $peerPerform = max(0, ($userPerform + 10 + $noise));
       if ($peerPerform > 100) {
