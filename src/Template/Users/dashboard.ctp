@@ -41,7 +41,7 @@
         <?php if($profile->hospital=="Morriston") { ?>
         <br>
         <div class="col-md-12" style="background-color:#aed6f1">
-           <h2>Other users have achieved general behavioral improvement of ($peerPerform)% this week.</h2>
+           <h2>Other users have achieved general behavioral improvement of <?php ($peerPerform) ?>% this week.</h2>
        </div>
        <?php } ?>
     </div>
