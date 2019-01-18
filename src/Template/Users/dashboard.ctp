@@ -76,7 +76,7 @@
                         <div class="col-md-10 align-middle">User Points</div>
                     </div>
                    <div class="row">
-                      <div class="col-md-2 value"><?=$this->Number->format($profile->login)?></div>
+                      <div class="col-md-2 value"><?=$screenerSmoke?></div>
                       <div class="col-md-10 align-middle">Number of Times Logged On</div>
                    </div>
                 </div>
