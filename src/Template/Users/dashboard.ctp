@@ -115,7 +115,7 @@
          </div>
        <div class="row">
                 <div class="col-md-6" id="pie-chart-container">
-                    <canvas id="line-chart" height="260" width="350"><em>Please wait for the chart to load&hellip;</em></canvas>
+                    <canvas id="smoke-chart" height="260" width="350"><em>Please wait for the chart to load&hellip;</em></canvas>
                 </div>
        </div>
     </div>
@@ -238,7 +238,7 @@ $(function() {
 <script type="text/javascript" src="/js/chartjs.min.js"></script>
 <script>
 $(function() {
-    var selector = document.getElementById('line-chart');
+    var selector = document.getElementById('smoke-chart');
     var chartOptions = {
         responsive: true
     };
@@ -252,15 +252,15 @@ $(function() {
 ?>
                 datasets: [{
                     data: [
-                        1
+                        0
                     ],
                     backgroundColor: [
                         '#DDD'
                     ],
-                    label: 'No recent engagement'
+                    label: 'No engagement'
                 }],
                 labels: [
-                    'No recent engagement'
+                    'No engagement'
                 ]
 <?php
             } else {
@@ -268,15 +268,9 @@ $(function() {
                 datasets: [{
                     data: [
 <?php
+                        $screenerSmoke,
                         foreach($engagement as $e) {
                             echo $e['count'] . ",\n";
-                        }
-?>
-                    ],
-                    backgroundColor: [
-<?php
-                        foreach($engagement as $e) {
-                            echo "'rgb({$e['colour'][0]}, {$e['colour'][1]}, {$e['colour'][2]})',\n";
                         }
 ?>
                     ],
