@@ -268,7 +268,7 @@ $(function() {
                 datasets: [{
                     data: [
 <?php
-                        $screenerSmoke;
+                        echo $screenerSmoke . ",\n";
                         foreach($engagement as $e) {
                             echo $e['count'] . ",\n";
                         }
