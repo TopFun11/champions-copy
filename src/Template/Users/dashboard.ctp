@@ -269,8 +269,6 @@ $(function() {
                     data: [
 <?php
                         echo $screenerSmoke . ",\n";
-                        foreach($engagement as $e) {
-                            echo $e['count'] . ",\n";
                         }
 ?>
                     ],
