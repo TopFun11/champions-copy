@@ -18,8 +18,8 @@
    ?>
 
 <?php $noise = rand(-1, 1);
-      $userPerform = 4;
-      $peerPerform = max(0, ($userPerform + 1 + $noise));
+      $userPerform = 30;
+      $peerPerform = max(0, ($userPerform + 10 + $noise));
 ?>
 
 <?php $bronzeValue = 50; $silverValue = 100; $goldValue = 200; $platValue = 400; $bronzeComp = false; $silverComp = false; $goldComp = false; $platComp = false;
