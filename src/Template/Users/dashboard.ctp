@@ -286,7 +286,7 @@ $(function() {
                 labels: [
 <?php
                         "Start" . "\n";
-                        for ($i = 0, $i < 13, $i++) {
+                        for ($i = 0; $i < 13; $i++) {
                             echo "Week" . $i . "\n";
                         }
 ?>
