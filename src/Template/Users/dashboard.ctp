@@ -286,7 +286,7 @@ $(function() {
                 labels: [
 <?php
                         "Start" . "\n";
-                        foreach($e = 0; $e < 1; $e++) {
+                        for($e = 0; $e < 1; $e++) {
                             echo "'" . $e . "',\n";
                         }
 ?>
