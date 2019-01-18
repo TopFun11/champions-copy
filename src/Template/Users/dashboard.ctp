@@ -291,6 +291,7 @@ $(function() {
                             echo "'" . $e . "',\n";
                            } else {
                             echo "Start" . ",\n";
+                           }
                         }
 ?>
                 ]
