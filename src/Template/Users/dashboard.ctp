@@ -269,7 +269,7 @@ $(function() {
                     data: [
 <?php
                         echo $screenerSmoke . ",\n";
-                        }
+                        
 ?>
                     ],
                     label: 'My Label'
