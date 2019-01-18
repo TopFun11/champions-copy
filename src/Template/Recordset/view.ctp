@@ -46,7 +46,6 @@ $this->end();
         </tr>
         //<tr>
             <td><?=__('Screener Score') ?></td>
-            <td><?=//$recordset->has('screener') ? $recordset->screener->formular->calculate($recordset->record) : '' ?></td>
         </tr>
         <tr>
             <td><?= __('Exercise Id') ?></td>
