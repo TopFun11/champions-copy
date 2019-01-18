@@ -102,6 +102,11 @@
                <p><center>Be sure to regularly visit the website and complete the weekly exercises to view your progress!</center></p>
             </div>
          </div>
+       <div class="row">
+                <div class="col-md-6" id="pie-chart-container">
+                    <canvas id="pie-chart" height="260" width="350"><em>Please wait for the chart to load&hellip;</em></canvas>
+                </div>
+       </div>
     </div>
     <div class="row trophies">
         <div class="col-md-12">
@@ -221,4 +226,64 @@ $(function() {
 </script>
 <script type="text/javascript" src="/js/chartjs.min.js"></script>
 <script>
+$(function() {
+    var selector = document.getElementById('line-chart');
+    var chartOptions = {
+        responsive: true
+    };
+    var dashboardChart = new Chart(
+        selector,
+        {
+            type: 'pie',
+            data: {
+<?php
+            if(0 == count($engagement)) {
+?>
+                datasets: [{
+                    data: [
+                        1
+                    ],
+                    backgroundColor: [
+                        '#DDD'
+                    ],
+                    label: 'No recent engagement'
+                }],
+                labels: [
+                    'No recent engagement'
+                ]
+<?php
+            } else {
+?>
+                datasets: [{
+                    data: [
+<?php
+                        foreach($engagement as $e) {
+                            echo $e['count'] . ",\n";
+                        }
+?>
+                    ],
+                    backgroundColor: [
+<?php
+                        foreach($engagement as $e) {
+                            echo "'rgb({$e['colour'][0]}, {$e['colour'][1]}, {$e['colour'][2]})',\n";
+                        }
+?>
+                    ],
+                    label: 'My Label'
+                }],
+                labels: [
+<?php
+                        foreach($engagement as $e) {
+                            echo "'" . $e['title'] . "',\n";
+                        }
+?>
+                ]
+<?php
+            }
+?>
+            },
+            options: chartOptions
+        }
+    );
+});   
 </script>
