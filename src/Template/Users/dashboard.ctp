@@ -25,7 +25,7 @@
       }
 ?>
 
-<?php $screenerSmoke = null;
+<?php $screenerSmoke = 0;
       foreach($recordset as $recordset) if ($recordset->screener_id == 3) {
          foreach($record as $record) if (($record->recordset_id = $recordset->id) and ($record->question_id == 10)) {
             $screenerSmoke == $record;
