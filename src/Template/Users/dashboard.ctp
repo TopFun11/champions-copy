@@ -104,7 +104,7 @@
          </div>
        <div class="row">
                 <div class="col-md-6" id="pie-chart-container">
-                    <canvas id="pie-chart" height="260" width="350"><em>Please wait for the chart to load&hellip;</em></canvas>
+                    <canvas id="line-chart" height="260" width="350"><em>Please wait for the chart to load&hellip;</em></canvas>
                 </div>
        </div>
     </div>
