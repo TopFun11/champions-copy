@@ -15,6 +15,7 @@ class ModuleController extends AppController
 {
     public function initialize() {
       parent::initialize();
+      $this->loadModel("Profile");
       $this->loadModel("Sections");
       $this->loadModel("Recordset");
       $this->loadModel("Screener");
@@ -102,6 +103,7 @@ class ModuleController extends AppController
     public function Dashboard($id = null)
     {
         $userId = $this->Auth->user("id");
+        $profile = $this->Profile->find("all")->where(['user_id' => $this->Auth->user("id")])->first();
         $module = $this->Module->get($id, [
             'contain' => ['Users']
         ]);
@@ -123,8 +125,9 @@ class ModuleController extends AppController
 
         $module->sections = $sections;
 
+        $this->set('profile', $profile);
         $this->set('module', $module);
-        $this->set('_serialize', ['module']);
+        $this->set('_serialize', ['module', 'profile']);
         if($module->theme != ""){
           $this->render("dashboard-yoga");
         }
