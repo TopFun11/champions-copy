@@ -154,6 +154,7 @@ Each week you can enter your progress and track your activity over time in your 
       </div>
       <?php } else { ?>
      <p>oops</p>
+     <?php } ?>
     </div>
     <br/><br/>
     <footer class="footer">
