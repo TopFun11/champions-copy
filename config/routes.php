@@ -51,6 +51,7 @@ Router::scope('/', function (RouteBuilder $routes) {
      */
     $routes->extensions(['json', 'xml']);
     $routes->connect('/', ['controller' => 'Home', 'action' => 'index']);
+    $routes->connect('/pages/home', ['controller' => 'Pages', 'action' => 'display']);
     $routes->connect('/pages/home', ['controller' => 'Home', 'action' => 'index']);
     $routes->connect('/about', ['controller' => 'Pages', 'action' => 'display', 'about']);
     $routes->connect('/accessibility', ['controller' => 'Pages', 'action' => 'display', 'accessibility']);
