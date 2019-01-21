@@ -160,12 +160,12 @@ Each week you can enter your progress and track your activity over time in your 
               </div>
               <div class="mg-container" style="top:300px;left:-100px;">
                   <div class="mg-icon mg-icon-left wb">
-                      <a href="#" data-toggle="modal" data-target="#five-ways-to-wellbeing">
-                          <img class="img-responsive mg-fade" src="/webroot/img/my-icons-collection/png/brain-1.png">
+                      <a href="#" data-toggle="modal" data-target="#act">
+                          <img class="img-responsive mg-fade" src="/webroot/img/my-icons-collection/png/test.png">
                       </a>
                   </div>
                   <div class="mg-text text-right">
-                      <p>5 Ways to Well Being</p>
+                      <p>ACT</p>
                   </div>
               </div>
               <div class="mg-container" style="top:120px;left:-30px;">
