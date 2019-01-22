@@ -48,6 +48,7 @@
          }
          }
       }
+      }
 print_r($smokingRecords);
 echo count($smokingRecords);
 ?>
