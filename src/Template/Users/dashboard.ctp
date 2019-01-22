@@ -37,7 +37,7 @@
       foreach($recordset2 as $recordset2) if ($recordset2->exercise_id == 5) {
          echo $recordset2->id . "\n";
          $i = 0;
-         $smokingRecs = []
+         $smokingRecs = [];
          if ($record2->recordset_id == $recordset2->id) {
             array_push($smokingRecs, $record2);
             print_r($smokingRecs);
