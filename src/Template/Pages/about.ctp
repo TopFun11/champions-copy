@@ -27,6 +27,7 @@
 <li>Dr Nic Hooper, an expert ACT practitioner and lecturer at UWE, <a href="http://www.nichooper.com">visit his website for further information.</a> </li>
 <li>Viki Metzler a freelance Illustrator, Cartoonist and Painter based in Swansea, Wales who designed the staff images. <a href="http://www.vikicartoons.com">Visit her website for further details.</a> </li>
 <li>Vivienne Ventress a local photographer and photography lecturer who provided the beautiful Gower images. </li>
+<li>PocketMedic, who kindly provided the mental health films included in the wellbeing resource. <a href="http://pocketmedic.org">Visit their website for further information</a></li>
 <li>Darren Scott, a PhD student at Swansea University who supported the development of the website. </li>
 </ul>
       </div>
