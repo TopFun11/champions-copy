@@ -40,7 +40,7 @@
          $smokingRecs = [];
          foreach($record2 as $record2) {
          if ($record2->recordset_id == $recordset2->id) {
-            array_push($smokingRecs, $record2);
+            array_push($smokingRecs, $record2->answer);
             print_r($smokingRecs);
          }
          }
