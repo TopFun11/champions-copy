@@ -232,6 +232,14 @@
                 <div class="col-md-6" id="pie-chart-container">
                     <canvas id="exe-chart" height="500" width="1500"><em>Please wait for the chart to load&hellip;</em></canvas>
                 </div>
+                <div class="col-md-6" id="pie-chart-container">
+                    <canvas id="exe-chart" height="500" width="1500"><em>Please wait for the chart to load&hellip;</em></canvas>
+                </div>
+       </div>
+       <div class="row">
+                          <div class="col-md-6" id="pie-chart-container">
+                    <canvas id="exe-chart" height="500" width="1500"><em>Please wait for the chart to load&hellip;</em></canvas>
+                </div>
        </div>
     </div>
     <div class="row trophies">
@@ -531,6 +539,136 @@ $(function() {
 <?php
                echo "'Start' ,\n";
                for ($i=1; $i < (count($exeRecords)+1); $i++) {
+                   echo "'Week " . $i . "' ,\n";
+               }
+               
+?>
+                ]
+<?php
+            }
+?>
+            },
+            options: chartOptions
+        }
+    );
+});   
+</script>
+<script type="text/javascript" src="/js/chartjs.min.js"></script>
+<script>
+$(function() {
+    var selector = document.getElementById('eat-chart');
+    var chartOptions = {
+        responsive: true,
+        title: {
+           text: 'Eat Healthily',
+           display: true,
+        }
+    };
+    var dashboardChart = new Chart(
+        selector,
+        {
+            type: 'line',
+            data: {
+<?php
+            if(0 == count($engagement)) {
+?>
+                datasets: [{
+                    data: [
+                        0
+                    ],
+                    backgroundColor: [
+                        '#DDD'
+                    ],
+                    label: 'No engagement'
+                }],
+                labels: [
+                    'No engagement'
+                ]
+<?php
+            } else {
+?>
+                datasets: [{
+                    data: [
+<?php
+                        echo $screenerEat . ",\n";
+                        for ($i=0; $i < count($eatRecords); $i++) {
+                           echo $eatRecords[$i] . ",\n";
+                        }
+               
+?>
+
+                    ],
+                    label: 'Days Reaching 5-A-Day'
+                }],
+                labels: [
+<?php
+               echo "'Start' ,\n";
+               for ($i=1; $i < (count($eatRecords)+1); $i++) {
+                   echo "'Week " . $i . "' ,\n";
+               }
+               
+?>
+                ]
+<?php
+            }
+?>
+            },
+            options: chartOptions
+        }
+    );
+});   
+</script>
+<script type="text/javascript" src="/js/chartjs.min.js"></script>
+<script>
+$(function() {
+    var selector = document.getElementById('drink-chart');
+    var chartOptions = {
+        responsive: true,
+        title: {
+           text: 'Drink Responsibily ',
+           display: true,
+        }
+    };
+    var dashboardChart = new Chart(
+        selector,
+        {
+            type: 'line',
+            data: {
+<?php
+            if(0 == count($engagement)) {
+?>
+                datasets: [{
+                    data: [
+                        0
+                    ],
+                    backgroundColor: [
+                        '#DDD'
+                    ],
+                    label: 'No engagement'
+                }],
+                labels: [
+                    'No engagement'
+                ]
+<?php
+            } else {
+?>
+                datasets: [{
+                    data: [
+<?php
+                        echo $screenerDrink . ",\n";
+                        for ($i=0; $i < count($drinkRecords); $i++) {
+                           echo $drinkRecords[$i] . ",\n";
+                        }
+               
+?>
+
+                    ],
+                    label: 'Alcoholic Drinks per Week'
+                }],
+                labels: [
+<?php
+               echo "'Start' ,\n";
+               for ($i=1; $i < (count($drinkRecords)+1); $i++) {
                    echo "'Week " . $i . "' ,\n";
                }
                
