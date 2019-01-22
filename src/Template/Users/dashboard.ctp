@@ -441,7 +441,7 @@ $(function() {
 ?>
                 ]
 <?php
-            }
+            
 ?>
             },
             options: chartOptions
@@ -488,7 +488,7 @@ $(function() {
 ?>
                 ]
 <?php
-            }
+            
 ?>
             },
             options: chartOptions
@@ -535,7 +535,7 @@ $(function() {
 ?>
                 ]
 <?php
-            }
+            
 ?>
             },
             options: chartOptions
@@ -582,7 +582,7 @@ $(function() {
 ?>
                 ]
 <?php
-            }
+            
 ?>
             },
             options: chartOptions
