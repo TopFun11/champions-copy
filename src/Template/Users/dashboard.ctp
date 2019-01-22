@@ -38,7 +38,7 @@
          array_push($smokingSets, $recordset2);
       }
       print_r($smokingSets);
-      foreach($record2 as $record2) if (in_array($record2->recordset_id, $smokingSets)) {
+      foreach($record2 as $record2) if (in_array($record2->recordset, $smokingSets)) {
          array_push($smokingRecs, $record2);
       }
       echo count($smokingSets);
