@@ -356,6 +356,7 @@ $(function() {
         title: {
            text: 'Quit Smoking',
            display: true,
+        }
     };
     var dashboardChart = new Chart(
         selector,
