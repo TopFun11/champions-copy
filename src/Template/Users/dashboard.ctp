@@ -298,9 +298,9 @@ $(function() {
                 }],
                 labels: [
 <?php
-                        "Start" . "\n";
+                        echo "Start" . "\n";
                         for ($i = 1; $i <= count(data); $i++) {
-                           "Week" . $i . "\n";
+                           echo "Week" . $i . "\n";
                         }
 ?>
                 ]
