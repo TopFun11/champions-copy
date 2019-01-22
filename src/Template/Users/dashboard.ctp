@@ -33,28 +33,27 @@
       }
 ?>
 
-<?php $smokingRecords = []; $smokeSum = 0; $smokingSets = []; $smokingRecs = [];
-      $recordset3 = $this->Recordset->find("all")->where(['exercise_id' => 5]);
-      echo $recordset3;
-      foreach($record2 as $record2) if (in_array($record2->recordset, $smokingSets)) {
-         array_push($smokingRecs, $record2);
-      }
-      echo count($smokingSets);
-      echo count($smokingRecs);
-      for($i=0; $i < count($smokingSets); $i++) {
-
-         foreach($smokingSets as $recordset2) {
-         foreach($record2 as $record2) {
-         if ($record2->recordset_id == $recordset2->id) {
-            array_push($smokingRecs, $record2->answer);
-            print_r($smokingRecs);
+<?php $smokingRecords = []; $smokeSum = 0;
+      foreach($recordset2 as $recordset2) if ($recordset2->exercise_id == 5) {
+         echo $recordset2->id . "\n";
+         $i = 0;
+         if ($i < 7) {
+            foreach($record2 as $record2) if ($record2->recordset_id == $recordset2->id) {
+               echo $record2->answer . "\n";
+               $smokeSum += $record2->answer;
+               echo $smokeSum . "\n";
+               $i++;
+            }
+         } else {
+            break;
          }
-         }
-      }
+         array_push($smokingRecords, ($smokeSum/7));
+         $smokeSum = 0;
       }
 print_r($smokingRecords);
 echo count($smokingRecords);
 ?>
+
 
 <?php $bronzeValue = 50; $silverValue = 100; $goldValue = 200; $platValue = 400; $bronzeComp = false; $silverComp = false; $goldComp = false; $platComp = false;
                      $goalValue = $bronzeValue;
