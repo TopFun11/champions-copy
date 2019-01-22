@@ -26,8 +26,8 @@
 ?>
 
 <?php $screenerSmoke = 0;
-      foreach($recordset as $smokeScreen) if (($smokeScreen->user_id = $user->id) and ($smokeScreen->screener_id == 3)) {
-         foreach($record as $smokeScreenrecord) if (($smokeScreenrecord->recordset_id = $smokeScreen->id) and ($smokeScreenrecord->question_id == 10)) {
+      foreach($recordset as $smokeScreen) if (($smokeScreen->user_id == $user->id) and ($smokeScreen->screener_id == 3)) {
+         foreach($record as $smokeScreenrecord) if (($smokeScreenrecord->recordset_id == $smokeScreen->id) and ($smokeScreenrecord->question_id == 10)) {
             $screenerSmoke = $smokeScreenrecord->answer;
             echo $screenerSmoke . ",\n";
          }
@@ -52,7 +52,7 @@
 
 <?php $screenerWeight = 0;
       foreach($recordset as $weightScreen) if ($weightScreen->screener_id == 3) {
-         foreach($record2 as $weightScreenrecord) if (($weightScreenrecord->recordset_id = $weightScreen->id) and ($weightScreenrecord->question_id == 11)) {
+         foreach($record2 as $weightScreenrecord) if (($weightScreenrecord->recordset_id == $weightScreen->id) and ($weightScreenrecord->question_id == 11)) {
             $screenerWeight = $weightScreenrecord->answer;
          }
       }
