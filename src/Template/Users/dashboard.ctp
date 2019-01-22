@@ -52,7 +52,7 @@
 <?php $screenerWeight = 0;
       foreach($recordset as $weightScreen) if ($weightScreen->screener_id == 3) {
          foreach($record2 as $weightScreenrecord) if (($weightScreenrecord->recordset_id = $recordset->id) and ($weightScreenrecord->question_id == 11)) {
-            $screenerWeight = $record->answer;
+            $screenerWeight = $weightScreenrecord->answer;
          }
       }
 ?>
@@ -233,12 +233,12 @@
                     <canvas id="exe-chart" height="500" width="1500"><em>Please wait for the chart to load&hellip;</em></canvas>
                 </div>
                 <div class="col-md-6" id="pie-chart-container">
-                    <canvas id="exe-chart" height="500" width="1500"><em>Please wait for the chart to load&hellip;</em></canvas>
+                    <canvas id="eat-chart" height="500" width="1500"><em>Please wait for the chart to load&hellip;</em></canvas>
                 </div>
        </div>
        <div class="row">
                           <div class="col-md-6" id="pie-chart-container">
-                    <canvas id="exe-chart" height="500" width="1500"><em>Please wait for the chart to load&hellip;</em></canvas>
+                    <canvas id="drink-chart" height="500" width="1500"><em>Please wait for the chart to load&hellip;</em></canvas>
                 </div>
        </div>
     </div>
