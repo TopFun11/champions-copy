@@ -39,7 +39,7 @@
             $smokeSum += $record2->answer;
             echo $smokeSum;  
          }
-         reset($record2);
+         unset($record2);
          echo $smokeSum;
       }            
       $smokeSum = $smokeSum / 7;
