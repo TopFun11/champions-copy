@@ -26,6 +26,30 @@
 ?>
 
 <?php $screenerSmoke = 0;
+      foreach($recordset as $smokeScreen) if ($smokeScreen->screener_id == 3) {
+         foreach($record as $record) if (($record->recordset_id = $recordset->id) and ($record->question_id == 10)) {
+            $screenerSmoke = $record->answer;
+         }
+      }
+?>
+
+<?php $smokingRecords = []; $smokeSum = 0;
+      foreach($recordset2 as $smokingSets) if ($smokingSets->exercise_id == 5) {
+         $i = 0;
+         if ($i < 7) {
+            foreach($record2 as $smokeRecord) if ($smokeRecord->recordset_id == $smokingSets->id) {
+               $smokeSum += $smokeRecord->answer;
+               $i++;
+            }
+         } else {
+            break;
+         }
+         array_push($smokingRecords, ($smokeSum/7));
+         $smokeSum = 0;
+      }
+?>
+
+<?php $screenerWeight = 0;
       foreach($recordset as $recordset) if ($recordset->screener_id == 3) {
          foreach($record as $record) if (($record->recordset_id = $recordset->id) and ($record->question_id == 10)) {
             $screenerSmoke = $record->answer;
@@ -48,6 +72,80 @@
          $smokeSum = 0;
       }
 ?>
+
+<?php $screenerSmoke = 0;
+      foreach($recordset as $recordset) if ($recordset->screener_id == 3) {
+         foreach($record as $record) if (($record->recordset_id = $recordset->id) and ($record->question_id == 10)) {
+            $screenerSmoke = $record->answer;
+         }
+      }
+?>
+
+<?php $smokingRecords = []; $smokeSum = 0;
+      foreach($recordset2 as $smokingSets) if ($smokingSets->exercise_id == 5) {
+         $i = 0;
+         if ($i < 7) {
+            foreach($record2 as $smokeRecord) if ($smokeRecord->recordset_id == $smokingSets->id) {
+               $smokeSum += $smokeRecord->answer;
+               $i++;
+            }
+         } else {
+            break;
+         }
+         array_push($smokingRecords, ($smokeSum/7));
+         $smokeSum = 0;
+      }
+?>
+
+<?php $screenerSmoke = 0;
+      foreach($recordset as $recordset) if ($recordset->screener_id == 3) {
+         foreach($record as $record) if (($record->recordset_id = $recordset->id) and ($record->question_id == 10)) {
+            $screenerSmoke = $record->answer;
+         }
+      }
+?>
+
+<?php $smokingRecords = []; $smokeSum = 0;
+      foreach($recordset2 as $smokingSets) if ($smokingSets->exercise_id == 5) {
+         $i = 0;
+         if ($i < 7) {
+            foreach($record2 as $smokeRecord) if ($smokeRecord->recordset_id == $smokingSets->id) {
+               $smokeSum += $smokeRecord->answer;
+               $i++;
+            }
+         } else {
+            break;
+         }
+         array_push($smokingRecords, ($smokeSum/7));
+         $smokeSum = 0;
+      }
+?>
+
+<?php $screenerSmoke = 0;
+      foreach($recordset as $recordset) if ($recordset->screener_id == 3) {
+         foreach($record as $record) if (($record->recordset_id = $recordset->id) and ($record->question_id == 10)) {
+            $screenerSmoke = $record->answer;
+         }
+      }
+?>
+
+<?php $smokingRecords = []; $smokeSum = 0;
+      foreach($recordset2 as $smokingSets) if ($smokingSets->exercise_id == 5) {
+         $i = 0;
+         if ($i < 7) {
+            foreach($record2 as $smokeRecord) if ($smokeRecord->recordset_id == $smokingSets->id) {
+               $smokeSum += $smokeRecord->answer;
+               $i++;
+            }
+         } else {
+            break;
+         }
+         array_push($smokingRecords, ($smokeSum/7));
+         $smokeSum = 0;
+      }
+?>
+
+
 
 
 <?php $bronzeValue = 50; $silverValue = 100; $goldValue = 200; $platValue = 400; $bronzeComp = false; $silverComp = false; $goldComp = false; $platComp = false;
