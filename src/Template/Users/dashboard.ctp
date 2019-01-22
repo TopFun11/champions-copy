@@ -37,9 +37,10 @@
       foreach($recordset2 as $recordset2) if ($recordset2->exercise_id == 5) {
          foreach($record2 as $record2) if ($record2->recordset_id == $recordset2->id) {
             $smokeSum += $record2->answer;
-            echo $smokeSum;  
+            echo $smokeSum;
+            unset($record2)
          }
-         unset($record2);
+         unset($recordset2);
          echo $smokeSum;
          $smokeSum = $smokeSum / 7;
       }            
