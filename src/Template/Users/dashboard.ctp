@@ -271,6 +271,7 @@ $(function() {
                            $smokeSum = 0;
                            foreach($record2 as $record2) if ($record2->recordset_id == $recordset2->id) {
                               $smokeSum += $record2->answer;
+                              echo $smokeSum;
                            }
                            echo ($smokeSum / 7) . ",\n";
                         }
