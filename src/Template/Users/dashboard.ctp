@@ -517,7 +517,7 @@ $(function() {
                 datasets: [{
                     data: [
 <?php
-                        echo $exeWeight . ",\n";
+                        echo $screenerExe . ",\n";
                         for ($i=0; $i < count($exeRecords); $i++) {
                            echo $exeRecords[$i] . ",\n";
                         }
