@@ -38,9 +38,11 @@
          echo $recordset2->id . "\n";
          $i = 0;
          $smokingRecs = [];
+         foreach($record2 as $record2) {
          if ($record2->recordset_id == $recordset2->id) {
             array_push($smokingRecs, $record2);
             print_r($smokingRecs);
+         }
          }
       }
 print_r($smokingRecords);
