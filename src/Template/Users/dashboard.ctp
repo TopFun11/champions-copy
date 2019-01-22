@@ -353,7 +353,9 @@ $(function() {
     var selector = document.getElementById('smoke-chart');
     var chartOptions = {
         responsive: true,
-        title: 'Quit Smoking',
+        title: {
+           text: 'Quit Smoking',
+           display: true,
     };
     var dashboardChart = new Chart(
         selector,
