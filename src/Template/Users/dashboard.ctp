@@ -40,6 +40,7 @@
          }            
          array_push($smokingRecords, ($smokeSum/7));
          $smokeSum = 0;
+         unset($record2);
       }
 print_r($smokingRecords);      
 ?>
