@@ -51,7 +51,7 @@
 
 <?php $screenerWeight = 0;
       foreach($recordset as $weightScreen) if ($weightScreen->screener_id == 3) {
-         foreach($record2 as $weightScreenrecord) if (($weightScreenrecord->recordset_id = $recordset->id) and ($weightScreenrecord->question_id == 11)) {
+         foreach($record2 as $weightScreenrecord) if (($weightScreenrecord->recordset_id = $weightScreen->id) and ($weightScreenrecord->question_id == 11)) {
             $screenerWeight = $weightScreenrecord->answer;
          }
       }
