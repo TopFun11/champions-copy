@@ -132,7 +132,7 @@ echo count($smokingRecords);
          </div>
        <div class="row">
                 <div class="col-md-6" id="pie-chart-container">
-                    <canvas id="smoke-chart" height="260" width="850"><em>Please wait for the chart to load&hellip;</em></canvas>
+                    <canvas id="smoke-chart" height="500" width="1500"><em>Please wait for the chart to load&hellip;</em></canvas>
                 </div>
        </div>
     </div>
