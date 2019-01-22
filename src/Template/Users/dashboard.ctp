@@ -449,20 +449,20 @@ $(function() {
                     data: [
 <?php
                         echo $screenerWeight . ",\n";
-                        for ($i=0; $i < count($smokingRecords); $i++) {
-                           echo $smokingRecords[$i] . ",\n";
+                        for ($i=0; $i < count($weightRecords); $i++) {
+                           echo $weightRecords[$i] . ",\n";
                         }
                
 ?>
 
                     ],
-                    label: 'Cigarettes Smoked / Day'
+                    label: 'Weight (Kgs)'
                 }],
                 labels: [
 <?php
                echo "'Start' ,\n";
-               for ($i=1; $i < (count($smokingRecords)+1); $i++) {
-                   echo "'Week " . $i . "' ,\n";
+               for ($i=1; $i < (count($weightRecords)+1); $i++) {
+                   echo "'Weigh In " . $i . "' ,\n";
                }
                
 ?>
