@@ -300,8 +300,6 @@ $(function() {
                echo "'Start' ,\n";
                echo "'Week 1' ,\n";
                echo "'Week 2' ,\n";
-               echo "'Week 3' ,\n";
-
                
 ?>
                 ]
