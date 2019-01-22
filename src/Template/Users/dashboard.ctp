@@ -39,9 +39,9 @@
          
          $i = 0;
          if ($i < 7) {
-            foreach($record2 as $smokeRecord) if ($record2->recordset_id == $recordset2->id) {
-               echo $record2->answer . "\n";
-               $smokeSum += $record2->answer;
+            foreach($record2 as $smokeRecord) if ($smokeRecord->recordset_id == $recordset2->id) {
+               echo $smokeRecord->answer . "\n";
+               $smokeSum += $smokeRecord->answer;
                echo $smokeSum . "\n";
                $i++;
             }
