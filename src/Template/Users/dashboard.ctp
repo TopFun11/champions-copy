@@ -298,7 +298,7 @@ $(function() {
                 labels: [
 <?php
                echo "'Start' ,\n";
-               for ($i=0; $i < count($smokingRecords); $i++) {
+               for ($i=1; $i < count($smokingRecords); $i++) {
                    echo "'Week" . $i . "' ,\n";
                }
                
