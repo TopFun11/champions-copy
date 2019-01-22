@@ -40,8 +40,10 @@
             echo $record2->answer . "\n";
             $smokeSum += $record2->answer;
             echo $smokeSum . "\n";
-         }            
+         }
+         reset($record2);
          array_push($smokingRecords, ($smokeSum/7));
+         
       }
 print_r($smokingRecords);      
 ?>
