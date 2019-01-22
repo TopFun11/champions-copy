@@ -41,8 +41,9 @@
          }
          unset($record2);
          echo $smokeSum;
+         $smokeSum = $smokeSum / 7;
       }            
-      $smokeSum = $smokeSum / 7;
+      
 ?>
 
 
