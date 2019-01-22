@@ -34,10 +34,9 @@
 ?>
 
 <?php $smokingRecords = []; $smokeSum = 0; $smokingSets = []; $smokingRecs = [];
-      foreach($recordset2 as $recordset2) if ($recordset2->exercise_id == 5) {
-         array_push($smokingSets, $recordset2);
-      }
-      print_r($smokingSets);
+      $recordset3 = $this->Recordset->find("all")->where(['exercise_id' => 5])'
+      $this->set('recordset3', $recordset3);
+      echo $recordset3;
       foreach($record2 as $record2) if (in_array($record2->recordset, $smokingSets)) {
          array_push($smokingRecs, $record2);
       }
