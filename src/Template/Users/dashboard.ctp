@@ -51,7 +51,7 @@
 
 <?php $screenerWeight = 0;
       foreach($recordset as $weightScreen) if ($weightScreen->screener_id == 3) {
-         foreach($record2 as $weightScreenrecord) if (($weightScreenrecord->recordset_id = $recordset->id) and ($record->question_id == 11)) {
+         foreach($record2 as $weightScreenrecord) if (($weightScreenrecord->recordset_id = $recordset->id) and ($weightScreenrecord->question_id == 11)) {
             $screenerWeight = $record->answer;
          }
       }
@@ -61,7 +61,7 @@
       foreach($recordset2 as $weightSets) if ($weightSets->exercise_id == 6) {
          $i = 0;
          if ($i < 1) {
-            foreach($record2 as $weightRecord) if ($weightRecord->recordset_id == $weightSets->id) {
+            foreach($record2 as $weightRecord) if (($weightRecord->recordset_id == $weightSets->id) and ($weightRecord->question_id == 178)) {
                $weightSum += $weightRecord->answer;
             }
          } else {
