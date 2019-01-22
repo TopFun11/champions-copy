@@ -55,6 +55,7 @@
             $screenerWeight = $weightScreenrecord->answer;
          }
       }
+echo $screenerWeight;
 ?>
 
 <?php $weightRecords = []; $weightSum = 0;
@@ -74,7 +75,7 @@
 
 <?php $screenerExe = 0;
       foreach($recordset as $exeScreen) if ($exeScreen->screener_id == 6) {
-         foreach($record as $exeScreenrecord) if (($exeScreenrecord->recordset_id = $exeScreen->id) and ($exeScreenrecord->question_id == 107)) {
+         foreach($record as $exeScreenrecord) if (($exeScreenrecord->recordset_id == $exeScreen->id) and ($exeScreenrecord->question_id == 107)) {
             $screenerExe = $exeScreenrecord->answer;
          }
       }
