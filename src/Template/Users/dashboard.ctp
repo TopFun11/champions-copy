@@ -37,7 +37,7 @@
       foreach($recordset2 as $recordset2) if ($recordset2->exercise_id == 5) {
          array_push($smokingRecords, [$recordset2->record->answer]);
       }
-echo $smokingRecords;      
+print_r($smokingRecords);      
 ?>
 
 <?php $bronzeValue = 50; $silverValue = 100; $goldValue = 200; $platValue = 400; $bronzeComp = false; $silverComp = false; $goldComp = false; $platComp = false;
