@@ -49,7 +49,6 @@
                      <option value="Other">Other</option>
                   </select>
              </div>
-             <?php echo $this->Form->input('motiv', ['class'=>'form-control','type'=>'text','placeholder'=>'Motivational Message', 'required' => false, 'label'=>'Motivational Message (Optional)']); ?>
         </div>
       </div>
     </div>
