@@ -50,26 +50,25 @@
 ?>
 
 <?php $screenerWeight = 0;
-      foreach($recordset as $recordset) if ($recordset->screener_id == 3) {
-         foreach($record as $record) if (($record->recordset_id = $recordset->id) and ($record->question_id == 10)) {
-            $screenerSmoke = $record->answer;
+      foreach($recordset as $weightScreen) if ($weightScreen->screener_id == 3) {
+         foreach($record2 as $weightScreenrecord) if (($weightScreenrecord->recordset_id = $recordset->id) and ($record->question_id == 11)) {
+            $screenerWeight = $record->answer;
          }
       }
 ?>
 
-<?php $smokingRecords = []; $smokeSum = 0;
-      foreach($recordset2 as $smokingSets) if ($smokingSets->exercise_id == 5) {
+<?php $weightRecords = []; $weightSum = 0;
+      foreach($recordset2 as $weightSets) if ($weightSets->exercise_id == 6) {
          $i = 0;
-         if ($i < 7) {
-            foreach($record2 as $smokeRecord) if ($smokeRecord->recordset_id == $smokingSets->id) {
-               $smokeSum += $smokeRecord->answer;
-               $i++;
+         if ($i < 1) {
+            foreach($record2 as $weightRecord) if ($weightRecord->recordset_id == $weightSets->id) {
+               $weightSum += $weightRecord->answer;
             }
          } else {
             break;
          }
-         array_push($smokingRecords, ($smokeSum/7));
-         $smokeSum = 0;
+         array_push($weightRecords, ($weightSum));
+         $weightSum = 0;
       }
 ?>
 
@@ -385,6 +384,71 @@ $(function() {
                     data: [
 <?php
                         echo $screenerSmoke . ",\n";
+                        for ($i=0; $i < count($smokingRecords); $i++) {
+                           echo $smokingRecords[$i] . ",\n";
+                        }
+               
+?>
+
+                    ],
+                    label: 'Cigarettes Smoked / Day'
+                }],
+                labels: [
+<?php
+               echo "'Start' ,\n";
+               for ($i=1; $i < (count($smokingRecords)+1); $i++) {
+                   echo "'Week " . $i . "' ,\n";
+               }
+               
+?>
+                ]
+<?php
+            }
+?>
+            },
+            options: chartOptions
+        }
+    );
+});   
+</script>
+<script type="text/javascript" src="/js/chartjs.min.js"></script>
+<script>
+$(function() {
+    var selector = document.getElementById('smoke-chart');
+    var chartOptions = {
+        responsive: true,
+        title: {
+           text: 'Weight Optimisation',
+           display: true,
+        }
+    };
+    var dashboardChart = new Chart(
+        selector,
+        {
+            type: 'line',
+            data: {
+<?php
+            if(0 == count($engagement)) {
+?>
+                datasets: [{
+                    data: [
+                        0
+                    ],
+                    backgroundColor: [
+                        '#DDD'
+                    ],
+                    label: 'No engagement'
+                }],
+                labels: [
+                    'No engagement'
+                ]
+<?php
+            } else {
+?>
+                datasets: [{
+                    data: [
+<?php
+                        echo $screenerWeight . ",\n";
                         for ($i=0; $i < count($smokingRecords); $i++) {
                            echo $smokingRecords[$i] . ",\n";
                         }
