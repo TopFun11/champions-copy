@@ -286,7 +286,7 @@ $(function() {
                     data: [
 <?php
                         echo $screenerSmoke . ",\n";
-                        for ($i=1; $i < count($smokingRecords); $i++) {
+                        for ($i=0; $i < count($smokingRecords); $i++) {
                            echo $smokingRecords[i] . ",\n";
                         }
                
@@ -298,7 +298,7 @@ $(function() {
                 labels: [
 <?php
                         echo "Start" . "\n";
-                        for ($i = 1; $i < count(smokingRecords); $i++) {
+                        for ($i = 1; $i < count((smokingRecords)+1); $i++) {
                            echo "Week" . $i . "\n";
                         }
 ?>
