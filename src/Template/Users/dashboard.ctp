@@ -45,10 +45,10 @@
                $i++;
             }
          } else {
+            $smokeSum = 0;
             break;
          }
          array_push($smokingRecords, ($smokeSum/7));
-         $smokeSum = 0;
       }
 print_r($smokingRecords);
 echo count($smokingRecords);
