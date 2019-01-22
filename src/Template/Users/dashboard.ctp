@@ -279,7 +279,7 @@ $(function() {
                     data: [
 <?php
                         echo $screenerSmoke . ",\n";
-                        for
+                        echo $smokeSum . ",\n";
                
 ?>
 
@@ -294,8 +294,8 @@ $(function() {
                 labels: [
 <?php
                         "Start" . "\n";
-                        foreach($engagement as $e) {
-                            echo "'" . $e['title'] . "',\n";
+                        for ($i = 1; $i <= count(data); $i++) {
+                           "Week" . $i , "\n";
                         }
 ?>
                 ]
