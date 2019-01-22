@@ -35,7 +35,7 @@
 
 <?php $smokingRecords = [];
       foreach($recordset2 as $recordset2) if ($recordset2->exercise_id == 5) {
-         $smokingRecords += $recordset2->record->answer;
+         array_push($smokingRecords, [$recordset2->record->answer];
       }
 echo $smokingRecords;      
 ?>
