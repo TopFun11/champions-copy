@@ -418,24 +418,6 @@ $(function() {
         {
             type: 'line',
             data: {
-<?php
-            if(0 == count($engagement)) {
-?>
-                datasets: [{
-                    data: [
-                        0
-                    ],
-                    backgroundColor: [
-                        '#DDD'
-                    ],
-                    label: 'No engagement'
-                }],
-                labels: [
-                    'No engagement'
-                ]
-<?php
-            } else {
-?>
                 datasets: [{
                     data: [
 <?php
@@ -483,24 +465,6 @@ $(function() {
         {
             type: 'line',
             data: {
-<?php
-            if(0 == count($engagement)) {
-?>
-                datasets: [{
-                    data: [
-                        0
-                    ],
-                    backgroundColor: [
-                        '#DDD'
-                    ],
-                    label: 'No engagement'
-                }],
-                labels: [
-                    'No engagement'
-                ]
-<?php
-            } else {
-?>
                 datasets: [{
                     data: [
 <?php
@@ -548,24 +512,6 @@ $(function() {
         {
             type: 'line',
             data: {
-<?php
-            if(0 == count($engagement)) {
-?>
-                datasets: [{
-                    data: [
-                        0
-                    ],
-                    backgroundColor: [
-                        '#DDD'
-                    ],
-                    label: 'No engagement'
-                }],
-                labels: [
-                    'No engagement'
-                ]
-<?php
-            } else {
-?>
                 datasets: [{
                     data: [
 <?php
@@ -613,24 +559,6 @@ $(function() {
         {
             type: 'line',
             data: {
-<?php
-            if(0 == count($engagement)) {
-?>
-                datasets: [{
-                    data: [
-                        0
-                    ],
-                    backgroundColor: [
-                        '#DDD'
-                    ],
-                    label: 'No engagement'
-                }],
-                labels: [
-                    'No engagement'
-                ]
-<?php
-            } else {
-?>
                 datasets: [{
                     data: [
 <?php
