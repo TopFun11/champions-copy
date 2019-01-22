@@ -215,7 +215,12 @@ Each week you can enter your progress and track your activity over time in your 
     <br/><br/>
     <footer class="footer">
       <div class="container">
-        <a href="/accessibility">Accessibility</a><br/><a href="/terms">Terms of use</a><br/><a href="/privacy">Privacy statement</a><br/><a href="#">Back to top</a>
+        <ul class="nav">
+            <li><a href="/accessibility">Accessibility</a></li>
+            <li><a href="/terms">Terms of use</a></li>
+            <li><a href="/privacy">Privacy statement</a></li>
+            <li><a href="#">Back to top</a></li>
+        </ul>
       </div>
     </footer>
     <script>
