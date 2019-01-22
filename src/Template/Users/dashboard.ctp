@@ -36,9 +36,10 @@
 <?php $smokingRecords = []; $smokeSum = 0;
       foreach($recordset2 as $recordset2) if ($recordset2->exercise_id == 5) {
          echo $recordset2->id . "\n";
+         
          $i = 0;
          if ($i < 7) {
-            foreach($record2 as $record2) if ($record2->recordset_id == $recordset2->id) {
+            foreach($record2 as $smokeRecord) if ($record2->recordset_id == $recordset2->id) {
                echo $record2->answer . "\n";
                $smokeSum += $record2->answer;
                echo $smokeSum . "\n";
@@ -46,6 +47,7 @@
             }
          } else {
             $smokeSum = 0;
+            unset($smokeRecord);
             break;
          }
          array_push($smokingRecords, ($smokeSum/7));
