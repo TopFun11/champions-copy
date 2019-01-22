@@ -39,6 +39,7 @@
             $smokeSum += $record2->answer;
          }            
          array_push($smokingRecords, ($smokeSum/7));
+         $smokeSum = 0;
       }
 print_r($smokingRecords);      
 ?>
