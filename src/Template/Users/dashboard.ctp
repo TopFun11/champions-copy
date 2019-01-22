@@ -295,7 +295,7 @@ $(function() {
 <?php
                         "Start" . "\n";
                         for ($i = 1; $i <= count(data); $i++) {
-                           "Week" . $i , "\n";
+                           "Week" . $i . "\n";
                         }
 ?>
                 ]
