@@ -53,7 +53,7 @@ $this->end();
       <?php
       echo $this->Form->input('section_id', ['options' => $sections, 'class'=>'form-control']);
       ?>
-      <select id="type" class="form-control" >
+      <select class="form-control" id="type" name="type">
         <option value="1">Can take exercise once only</option>
         <option value="2">Exercise is done weekly</option>
       </select>
