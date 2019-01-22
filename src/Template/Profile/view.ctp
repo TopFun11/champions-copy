@@ -79,10 +79,6 @@
                <td><?= __('Health Board') ?></td>
                <td><?= h($profile->hospital) ?></td>
             </tr>
-            <tr>
-               <td><?= __('Motivational Message') ?></td>
-               <td><?= h($profile->motiv) ?></td>
-               </tr>
          </table>
        </div>
       </div>
