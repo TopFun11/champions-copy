@@ -34,10 +34,10 @@
 ?>
 
 <?php $smokingRecords = []; $smokeSum = 0;
-      foreach($recordset2 as $recordset2) if ($recordset2->exercise_id == 5) {
+      foreach($recordset2 as $smokingSets) if ($smokingSets->exercise_id == 5) {
          $i = 0;
          if ($i < 7) {
-            foreach($record2 as $smokeRecord) if ($smokeRecord->recordset_id == $recordset2->id) {
+            foreach($record2 as $smokeRecord) if ($smokeRecord->recordset_id == $smokingSets->id) {
                $smokeSum += $smokeRecord->answer;
                $i++;
             }
