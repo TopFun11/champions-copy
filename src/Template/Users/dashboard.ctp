@@ -286,7 +286,9 @@ $(function() {
                     data: [
 <?php
                         echo $screenerSmoke . ",\n";
-                        echo $smokeSum . ",\n";
+                        for ($i=0; $i < count($smokingRecords); $i++) {
+                           echo $smokingRecords[i];
+                        }
                
 ?>
 
