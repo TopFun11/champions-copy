@@ -59,9 +59,9 @@ use Cake\Controller\Component\AuthComponent;
            }
        }
       
-       $recordset = $this->Recordset->find("all")->where(['user_id' => $userId]);
+       $recordset = $this->Recordset->find("all")->where(['user_id' => $user->id]);
        $record = $this->Record->find("all");
-       $recordset2 = $this->Recordset->find("all")->where(['user_id' => $userId]);
+       $recordset2 = $this->Recordset->find("all")->where(['user_id' => $user->id]);
        $record2 = $this->Record->find("all");
 
        $this->set('profile',    $profile);
