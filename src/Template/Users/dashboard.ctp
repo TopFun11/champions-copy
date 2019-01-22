@@ -186,10 +186,6 @@
                         <div class="col-md-2 value"><?=$profile->points?></div>
                         <div class="col-md-10 align-middle">User Points</div>
                     </div>
-                   <div class="row">
-                      <div class="col-md-2 value"><?=$screenerSmoke?></div>
-                      <div class="col-md-10 align-middle">Number of Times Logged On</div>
-                   </div>
                 </div>
             </div>
         </div>
@@ -227,6 +223,11 @@
        <div class="row">
                 <div class="col-md-6" id="pie-chart-container">
                     <canvas id="smoke-chart" height="500" width="1500"><em>Please wait for the chart to load&hellip;</em></canvas>
+                </div>
+       </div>
+       <div class="row">
+                <div class="col-md-6" id="pie-chart-container">
+                    <canvas id="weight-chart" height="500" width="1500"><em>Please wait for the chart to load&hellip;</em></canvas>
                 </div>
        </div>
     </div>
@@ -414,7 +415,7 @@ $(function() {
 <script type="text/javascript" src="/js/chartjs.min.js"></script>
 <script>
 $(function() {
-    var selector = document.getElementById('smoke-chart');
+    var selector = document.getElementById('weight-chart');
     var chartOptions = {
         responsive: true,
         title: {
