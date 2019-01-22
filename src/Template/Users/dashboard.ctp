@@ -96,51 +96,51 @@
       }
 ?>
 
-<?php $screenerSmoke = 0;
-      foreach($recordset as $recordset) if ($recordset->screener_id == 3) {
-         foreach($record as $record) if (($record->recordset_id = $recordset->id) and ($record->question_id == 10)) {
-            $screenerSmoke = $record->answer;
+<?php $screenerEat = 0;
+      foreach($recordset as $eatScreen) if ($eatScreen->screener_id == 5) {
+         foreach($record as $eatScreenrecord) if (($eatScreenrecord->recordset_id = $eatScreen->id) and ($eatScreenrecord->question_id == 13)) {
+            $screenerEat = $eatScreenrecord->answer;
          }
       }
 ?>
 
-<?php $smokingRecords = []; $smokeSum = 0;
-      foreach($recordset2 as $smokingSets) if ($smokingSets->exercise_id == 5) {
+<?php $eatRecords = []; $eatSum = 0;
+      foreach($recordset2 as $eatSets) if ($eatSets->exercise_id == 9) {
          $i = 0;
-         if ($i < 7) {
-            foreach($record2 as $smokeRecord) if ($smokeRecord->recordset_id == $smokingSets->id) {
-               $smokeSum += $smokeRecord->answer;
+         if ($i < 1) {
+            foreach($record2 as $eatRecord) if (($eatRecord->recordset_id == $eatSets->id) and ($eatRecord->question_id == 50)) {
+               $eatSum += $eatRecord->answer;
                $i++;
             }
          } else {
             break;
          }
-         array_push($smokingRecords, ($smokeSum/7));
-         $smokeSum = 0;
+         array_push($eatRecords, $eatSum);
+         $eatSum = 0;
       }
 ?>
 
-<?php $screenerSmoke = 0;
-      foreach($recordset as $recordset) if ($recordset->screener_id == 3) {
-         foreach($record as $record) if (($record->recordset_id = $recordset->id) and ($record->question_id == 10)) {
-            $screenerSmoke = $record->answer;
+<?php $screenerDrink = 0;
+      foreach($recordset as $drinkScreen) if ($drinkScreen->screener_id == 2) {
+         foreach($record as $drinkScreenrecord) if (($drinkScreenrecord->recordset_id = $drinkScreen->id) and ($drinkScreenrecord->question_id == 6)) {
+            $screenerDrink = $drinkScreenrecord->answer;
          }
       }
 ?>
 
-<?php $smokingRecords = []; $smokeSum = 0;
-      foreach($recordset2 as $smokingSets) if ($smokingSets->exercise_id == 5) {
+<?php $drinkRecords = []; $drinkSum = 0;
+      foreach($recordset2 as $drinkSets) if ($drinkSets->exercise_id == 8) {
          $i = 0;
-         if ($i < 7) {
-            foreach($record2 as $smokeRecord) if ($smokeRecord->recordset_id == $smokingSets->id) {
-               $smokeSum += $smokeRecord->answer;
+         if ($i < 1) {
+            foreach($record2 as $drinkRecord) if (($drinkRecord->recordset_id == $drinkSets->id) and ($drinkRecord->question_id == 42)) {
+               $drinkSum += $drinkRecord->answer;
                $i++;
             }
          } else {
             break;
          }
-         array_push($smokingRecords, ($smokeSum/7));
-         $smokeSum = 0;
+         array_push($drinkRecords, $drinkSum);
+         $drinkSum = 0;
       }
 ?>
 
