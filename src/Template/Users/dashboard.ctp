@@ -33,6 +33,19 @@
       }
 ?>
 
+<?php $smokeSum = 0;
+      foreach($recordset2 as $recordset2) if ($recordset2->exercise_id == 5) {
+         foreach($record2 as $record2) if ($record2->recordset_id == $recordset2->id) {
+            $smokeSum += $record2->answer;
+            echo $smokeSum;
+            reset($record2);
+         }
+         echo $smokeSum;
+      }            
+      $smokeSum = $smokeSum / 7;
+?>
+
+
 <?php $bronzeValue = 50; $silverValue = 100; $goldValue = 200; $platValue = 400; $bronzeComp = false; $silverComp = false; $goldComp = false; $platComp = false;
                      $goalValue = $bronzeValue;
                      if (($bronzeValue <= $profile->points) and ($profile->points < $silverValue)) {
@@ -266,16 +279,8 @@ $(function() {
                     data: [
 <?php
                         echo $screenerSmoke . ",\n";
-                        foreach($recordset2 as $recordset2) if ($recordset2->exercise_id == 5) {
-                           if ($recordset2 == null) { $smokeSum = 0; } else {
-                           $smokeSum = 0;
-                           foreach($record2 as $record2) if ($record2->recordset_id == $recordset2->id) {
-                              $smokeSum += $record2->answer;
-                              echo $smokeSum;
-                           }
-                           echo ($smokeSum / 7) . ",\n";
-                        }
-                        }
+                        for
+               
 ?>
 
 
