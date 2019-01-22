@@ -33,19 +33,14 @@
       }
 ?>
 
-<?php $smokeSum = 0;
+<?php $smokingRecords = [];
       foreach($recordset2 as $recordset2) if ($recordset2->exercise_id == 5) {
-         foreach($record2 as $record2) if ($record2->recordset_id == $recordset2->id) {
-            $smokeSum += $record2->answer;
-            echo $smokeSum;
-            unset($record2);
-         }
-         unset($recordset2);
-         echo $smokeSum;
-         $smokeSum = $smokeSum / 7;
-      }            
-      
+         $smokingRecords += $recordset2;
+      }
+echo $smokingRecords;      
 ?>
+
+<?php 
 
 
 <?php $bronzeValue = 50; $silverValue = 100; $goldValue = 200; $platValue = 400; $bronzeComp = false; $silverComp = false; $goldComp = false; $platComp = false;
