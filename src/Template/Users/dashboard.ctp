@@ -408,9 +408,6 @@ $(function() {
                
 ?>
                 ]
-<?php
-            }
-?>
             },
             options: chartOptions
         }
