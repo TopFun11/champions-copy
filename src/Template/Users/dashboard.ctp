@@ -33,13 +33,17 @@
       }
 ?>
 
-<?php $smokingRecords = []; $smokeSum = 0; $smokingSets = [];
+<?php $smokingRecords = []; $smokeSum = 0; $smokingSets = []; $smokingRecs = [];
       foreach($recordset2 as $recordset2) if ($recordset2->exercise_id == 5) {
          array_push($smokingSets, $recordset2);
       }
+      foreach($record2 as $record2) if ($record2->recordset->exercise_id == 5) {
+         array_push($smokingRecs, $record2);
+      }
       echo count($smokingSets);
+      echo count($smokingRecs);
       for($i=0; $i < count($smokingSets); $i++) {
-         $smokingRecs = [];
+
          foreach($smokingSets as $recordset2) {
          foreach($record2 as $record2) {
          if ($record2->recordset_id == $recordset2->id) {
