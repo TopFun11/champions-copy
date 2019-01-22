@@ -297,10 +297,11 @@ $(function() {
                 }],
                 labels: [
 <?php
-                        echo "Start" . "\n";
-                        for ($i = 1; $i < count((smokingRecords)+1); $i++) {
-                           echo "Week" . $i . "\n";
-                        }
+               echo "'Start'" . ",\n";
+               echo "'Week 1'" . ",\n";
+               echo "'Week 2'" . ",\n";
+               echo "'Week 3'" . ",\n";
+               
 ?>
                 ]
 <?php
