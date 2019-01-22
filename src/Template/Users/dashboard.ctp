@@ -36,8 +36,8 @@
 <?php $smokingRecords = []; $smokeSum = 0; $smokingSets = [];
       foreach($recordset2 as $recordset2) if ($recordset2->exercise_id == 5) {
          array_push($smokingSets, $recordset2);
-         echo $recordset2->id . "\n";
       }
+      echo count($smokingSets);
       for($i=0; $i < count($smokingSets); $i++) {
          $smokingRecs = [];
          foreach($record2 as $record2) {
