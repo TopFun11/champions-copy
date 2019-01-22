@@ -137,14 +137,9 @@ class RecordsetController extends AppController
         }else if($exercise->type == 2){
           //TODO remove magic number
           //Check to see if we are handeling a weekly exercise
-
-          $recordset = $this->Recordset->find("all")->where(['Recordset.user_id' => $this->Auth->user('id'),
-           'exercise_id' => $id, 'week' => $weekNum])->contain(['Exercise'=>[ 'Question' => ['QuestionOption']], 'Record'])->first();
-           if(!$recordset){
-               $recordset = $this->Recordset->newEntity();
-               $recordset->created = date('Y-m-d H:i:s');
-               $recordset->week = $weekNum;
-           }
+          $recordset = $this->Recordset->newEntity();
+          $recordset->created = date('Y-m-d H:i:s');
+          $recordset->week = $weekNum;
         }
         $recordset->modified = date('Y-m-d H:i:s');
         //Put request data in to data oject
