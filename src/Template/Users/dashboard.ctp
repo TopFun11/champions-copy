@@ -27,8 +27,8 @@
 
 <?php $screenerSmoke = 0;
       foreach($recordset as $smokeScreen) if ($smokeScreen->screener_id == 3) {
-         foreach($record as $record) if (($record->recordset_id = $smokeScreen->id) and ($record->question_id == 10)) {
-            $screenerSmoke = $record->answer;
+         foreach($record as $smokeScreenrecord) if (($smokeScreenrecord->recordset_id = $smokeScreen->id) and ($smokeScreenrecord->question_id == 10)) {
+            $screenerSmoke = $smokeScreenrecord->answer;
          }
       }
 ?>
@@ -72,27 +72,27 @@
       }
 ?>
 
-<?php $screenerSmoke = 0;
-      foreach($recordset as $recordset) if ($recordset->screener_id == 3) {
-         foreach($record as $record) if (($record->recordset_id = $recordset->id) and ($record->question_id == 10)) {
-            $screenerSmoke = $record->answer;
+<?php $screenerExe = 0;
+      foreach($recordset as $exeScreen) if ($exeScreen->screener_id == 6) {
+         foreach($record as $exeScreenrecord) if (($exeScreenrecord->recordset_id = $exeScreen->id) and ($exeScreenrecord->question_id == 107)) {
+            $screenerExe = $exeScreenrecord->answer;
          }
       }
 ?>
 
-<?php $smokingRecords = []; $smokeSum = 0;
-      foreach($recordset2 as $smokingSets) if ($smokingSets->exercise_id == 5) {
+<?php $exeRecords = []; $exeSum = 0;
+      foreach($recordset2 as $exeSets) if ($exeSets->exercise_id == 7) {
          $i = 0;
          if ($i < 7) {
-            foreach($record2 as $smokeRecord) if ($smokeRecord->recordset_id == $smokingSets->id) {
-               $smokeSum += $smokeRecord->answer;
+            foreach($record2 as $exeRecord) if (($exeRecord->recordset_id == $exeSets->id) and ($exeRecord->question_id != 122) and ($exeRecord->question_id != 123)) {
+               $exeSum += $exeRecord->answer;
                $i++;
             }
          } else {
             break;
          }
-         array_push($smokingRecords, ($smokeSum/7));
-         $smokeSum = 0;
+         array_push($exeRecords, ($exeSum/7));
+         $exeSum = 0;
       }
 ?>
 
@@ -226,6 +226,11 @@
                 </div>
                 <div class="col-md-6" id="pie-chart-container">
                     <canvas id="weight-chart" height="500" width="1500"><em>Please wait for the chart to load&hellip;</em></canvas>
+                </div>
+       </div>
+       <div class="row">
+                <div class="col-md-6" id="pie-chart-container">
+                    <canvas id="exe-chart" height="500" width="1500"><em>Please wait for the chart to load&hellip;</em></canvas>
                 </div>
        </div>
     </div>
@@ -462,6 +467,71 @@ $(function() {
                echo "'Start' ,\n";
                for ($i=1; $i < (count($weightRecords)+1); $i++) {
                    echo "'Weigh In " . $i . "' ,\n";
+               }
+               
+?>
+                ]
+<?php
+            }
+?>
+            },
+            options: chartOptions
+        }
+    );
+});   
+</script>
+<script type="text/javascript" src="/js/chartjs.min.js"></script>
+<script>
+$(function() {
+    var selector = document.getElementById('exe-chart');
+    var chartOptions = {
+        responsive: true,
+        title: {
+           text: 'Regular Exercise',
+           display: true,
+        }
+    };
+    var dashboardChart = new Chart(
+        selector,
+        {
+            type: 'line',
+            data: {
+<?php
+            if(0 == count($engagement)) {
+?>
+                datasets: [{
+                    data: [
+                        0
+                    ],
+                    backgroundColor: [
+                        '#DDD'
+                    ],
+                    label: 'No engagement'
+                }],
+                labels: [
+                    'No engagement'
+                ]
+<?php
+            } else {
+?>
+                datasets: [{
+                    data: [
+<?php
+                        echo $exeWeight . ",\n";
+                        for ($i=0; $i < count($exeRecords); $i++) {
+                           echo $exeRecords[$i] . ",\n";
+                        }
+               
+?>
+
+                    ],
+                    label: 'Minutes Exercising / Day'
+                }],
+                labels: [
+<?php
+               echo "'Start' ,\n";
+               for ($i=1; $i < (count($exeRecords)+1); $i++) {
+                   echo "'Week " . $i . "' ,\n";
                }
                
 ?>
