@@ -38,7 +38,7 @@
          foreach($record2 as $record2) if ($record2->recordset_id == $recordset2->id) {
             $smokeSum += $record2->answer;
             echo $smokeSum;
-            unset($record2)
+            unset($record2);
          }
          unset($recordset2);
          echo $smokeSum;
