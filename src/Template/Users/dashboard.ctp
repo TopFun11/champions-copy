@@ -299,7 +299,7 @@ $(function() {
 <?php
                echo "'Start' ,\n";
                for ($i=1; $i < (count($smokingRecords)+1); $i++) {
-                   echo "'Week" . $i . "' ,\n";
+                   echo "'Week " . $i . "' ,\n";
                }
                
 ?>
