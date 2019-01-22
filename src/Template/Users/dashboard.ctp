@@ -29,6 +29,7 @@
       foreach($recordset as $smokeScreen) if ($smokeScreen->screener_id == 3) {
          foreach($record as $smokeScreenrecord) if (($smokeScreenrecord->recordset_id = $smokeScreen->id) and ($smokeScreenrecord->question_id == 10)) {
             $screenerSmoke = $smokeScreenrecord->answer;
+            echo($screenerSmoke);
          }
       }
 ?>
