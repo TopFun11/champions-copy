@@ -44,9 +44,7 @@
          }
          array_push($smokingRecords, ($smokeSum/7));
          break;
-         }  
-    }
-         
+         }    
       }
 print_r($smokingRecords);      
 ?>
