@@ -224,8 +224,6 @@
                 <div class="col-md-6" id="pie-chart-container">
                     <canvas id="smoke-chart" height="500" width="1500"><em>Please wait for the chart to load&hellip;</em></canvas>
                 </div>
-       </div>
-       <div class="row">
                 <div class="col-md-6" id="pie-chart-container">
                     <canvas id="weight-chart" height="500" width="1500"><em>Please wait for the chart to load&hellip;</em></canvas>
                 </div>
