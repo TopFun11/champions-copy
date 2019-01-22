@@ -50,7 +50,7 @@
          $smokeSum = $smokeSum;
       }
 print_r($smokingRecords);
-
+echo count($smokingRecords);
 ?>
 
 <?php $bronzeValue = 50; $silverValue = 100; $goldValue = 200; $platValue = 400; $bronzeComp = false; $silverComp = false; $goldComp = false; $platComp = false;
@@ -303,7 +303,7 @@ $(function() {
                 labels: [
 <?php
                         echo "Start" . "\n";
-                        for ($i = 1; $i < (count(smokingRecords)-1); $i++) {
+                        for ($i = 1; $i <= (count(smokingRecords)-1); $i++) {
                            echo "Week" . $i . "\n";
                         }
 ?>
