@@ -47,8 +47,10 @@
             break;
          }
          array_push($smokingRecords, ($smokeSum/7));
+         $smokeSum = $smokeSum
       }
-print_r($smokingRecords);      
+print_r($smokingRecords);
+
 ?>
 
 <?php $bronzeValue = 50; $silverValue = 100; $goldValue = 200; $platValue = 400; $bronzeComp = false; $silverComp = false; $goldComp = false; $platComp = false;
