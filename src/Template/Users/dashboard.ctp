@@ -42,7 +42,7 @@
                echo $record2->answer . "\n";
                $smokeSum += $record2->answer;
                echo $smokeSum . "\n";
-               $i++
+               $i++;
             }
          } else {
             break;
