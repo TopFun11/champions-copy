@@ -274,6 +274,7 @@ $(function() {
                            }
                            echo ($smokeSum / 7) . ",\n";
                         }
+                        }
 ?>
 
 
