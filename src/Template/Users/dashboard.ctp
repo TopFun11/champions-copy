@@ -29,9 +29,9 @@
       foreach($recordset as $smokeScreen) if (($smokeScreen->user_id == $user->id) and ($smokeScreen->screener_id == 3)) {
          foreach($record as $smokeScreenrecord) if (($smokeScreenrecord->recordset_id == $smokeScreen->id) and ($smokeScreenrecord->question_id == 10)) {
             $screenerSmoke = $smokeScreenrecord->answer;
-            echo $screenerSmoke . ",\n";
          }
       }
+echo $screenerSmoke
 ?>
 
 <?php $smokingRecords = []; $smokeSum = 0;
