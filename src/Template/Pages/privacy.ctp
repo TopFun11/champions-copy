@@ -5,8 +5,8 @@
   This statement applies to all information collected or submitted on
   this website. It details what information we collect, how and why we
   collect them. If you have any comment or query, please contact us. As
-  described within the provisions of the <a href="http://www.opsi.gov.uk/acts/acts1998/ukpga_19980029_en_1">UK
-    Data Protection Act 1998</a>, we take appropriate measures to maintain
+  described within the provisions of the <a href="http://www.legislation.gov.uk/ukpga/2018/12/pdfs/ukpga_20180012_en.pdf">UK
+    Data Protection Act 2018</a>, we take appropriate measures to maintain
   the security of your data on our website. Information collected is
   governed by this privacy statement and use of this website signifies
   your agreement.
