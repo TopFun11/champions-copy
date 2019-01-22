@@ -40,9 +40,6 @@
 echo $smokingRecords;      
 ?>
 
-<?php 
-
-
 <?php $bronzeValue = 50; $silverValue = 100; $goldValue = 200; $platValue = 400; $bronzeComp = false; $silverComp = false; $goldComp = false; $platComp = false;
                      $goalValue = $bronzeValue;
                      if (($bronzeValue <= $profile->points) and ($profile->points < $silverValue)) {
