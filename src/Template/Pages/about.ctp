@@ -18,7 +18,7 @@
         </ul>
 <p>Champions Phase I was launched in September 2012 and ran for six months all across Wales.
 </p><p>Phase II was active in 2014 across two NHS organisations, Betsi Cadwaladr University Health Board and Velindre NHS Trust in July 2014. The current launch Phase III is available to staff across Abertawe Bro Morgannwg University Health Board.
-</p><p>It is anticipated that following the evaluation of this phase, the Champions programme will be further rolled out further.
+</p><p>It is anticipated that following the evaluation of this phase, the Champions programme will be rolled out further.
 </p><p>Phase III has been updated, given a new look and style and now includes a NEW emotional wellbeing programme to boost wellbeing alongside your health challenge. The programme consists of a 12 week structured, interactive programme based on the Acceptance and Commitment therapy (ACT) with contains 6 techniques to learn. Additional resources to choose from include; quick fire stress busting tips, relaxation exercises and a green space gallery to improve your wellbeing.
 </p><p>The programme also links with existing local and national initiatives by directing participants to available resources, contacts, and interventions. The aim is to spread awareness that health behaviour can change using a structured and purposeful approach.
 </p><p><strong>Acknowledgements and thanks (Champions wellbeing phase developments):</strong></p>
