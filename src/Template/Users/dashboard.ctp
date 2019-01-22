@@ -292,11 +292,6 @@ $(function() {
                
 ?>
 
-
-                        
-                        
-                        
-?>
                     ],
                     label: 'Cigarettes Smoked / Day'
                 }],
