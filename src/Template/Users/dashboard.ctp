@@ -36,22 +36,17 @@
 <?php $smokingRecords = []; $smokeSum = 0;
       foreach($recordset2 as $recordset2) if ($recordset2->exercise_id == 5) {
          echo $recordset2->id . "\n";
-         while (True) {
-            $reset = False;
-            foreach($record2 as $record2) if ($record2->recordset_id == $recordset2->id) {
-               if($record2 != null) {
-                  echo $record2->answer . "\n";
-                  $smokeSum += $record2->answer;
-                  echo $smokeSum . "\n";
-               } else {
-                  $reset = True;
-               }
-            }
-            if ( ! $reset ) {
-               break; # break out of the while(true)
-            }
+         while(true)
+         foreach($record2 as $record2) if ($record2->recordset_id == $recordset2->id) {
+            echo $record2->answer . "\n";
+            $smokeSum += $record2->answer;
+            echo $smokeSum . "\n";
          }
-         array_push($smokingRecords, ($smokeSum/7));   
+         array_push($smokingRecords, ($smokeSum/7));
+         break;
+         }  
+    }
+         
       }
 print_r($smokingRecords);      
 ?>
