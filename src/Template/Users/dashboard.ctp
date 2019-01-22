@@ -376,18 +376,6 @@ $(function() {
             data: {
                 datasets: [{
                     data: [
-                        0
-                    ],
-                    backgroundColor: [
-                        '#DDD'
-                    ],
-                    label: 'No engagement'
-                }],
-                labels: [
-                    'No engagement'
-                ]
-                datasets: [{
-                    data: [
 <?php
                         echo $screenerSmoke . ",\n";
                         for ($i=0; $i < count($smokingRecords); $i++) {
