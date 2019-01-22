@@ -40,6 +40,7 @@
       echo count($smokingSets);
       for($i=0; $i < count($smokingSets); $i++) {
          $smokingRecs = [];
+         foreach($smokingSets as $recordset2) {
          foreach($record2 as $record2) {
          if ($record2->recordset_id == $recordset2->id) {
             array_push($smokingRecs, $record2->answer);
