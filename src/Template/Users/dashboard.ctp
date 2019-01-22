@@ -31,7 +31,6 @@
             $screenerSmoke = $smokeScreenrecord->answer;
          }
       }
-echo $screenerSmoke
 ?>
 
 <?php $smokingRecords = []; $smokeSum = 0;
@@ -375,9 +374,6 @@ $(function() {
         {
             type: 'line',
             data: {
-<?php
-            if(0 == count($engagement)) {
-?>
                 datasets: [{
                     data: [
                         0
@@ -390,9 +386,6 @@ $(function() {
                 labels: [
                     'No engagement'
                 ]
-<?php
-            } else {
-?>
                 datasets: [{
                     data: [
 <?php
