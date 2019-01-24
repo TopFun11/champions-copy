@@ -107,14 +107,14 @@
          <div class="panel-body">
            <table class="table table-striped" cellpadding="0" cellspacing="0">
              <tr>
-                <td><?= __('Warwick-Edinburgh Mental Wellbeing Scale') ?></td>
+                <td><?= __('WEMWBS') ?></td>
                 <td><?= h($profile->wemwbs_score) ?></td>
              </tr>
              <tr>
                 <td><?=__('WEMWBS Male National Average (2016)  - 50.1') ?></td>
                 <td><?=__('WEMWBS Female National Average (2016) - 49.6') ?></td>
              <tr>
-                <td><?= __('Patient Health Questionnaire for Depression and Anxiety') ?></td>
+                <td><?= __('PHQ-4') ?></td>
                 <td><?= h($profile->phq4_score) ?></td>
               </tr>
               <tr>
@@ -129,27 +129,27 @@
               <?php $postsum = 0; ?>
               <?php $presum = 0; ?>
               <tr>
-                 <td><?= __('Acceptance and Action Questionnaire - II (Pre-Intervention):') ?></td>
+                 <td><?= __('AAQ-II (Week 1):') ?></td>
                  <?php foreach($recordset as $recordset) if ($recordset->exercise_id == '49'){ ?>
                      <?php foreach($record as $record) if ($record->recordset_id == $recordset->id){ ?>
                         <?php $presum += ($record->answer); ?>
                      <?php } ?>
                  <?php } ?>
                  <?php if($presum == 0) { ?>
-                 <td><?= h("Please complete the AAQ-II Questionnaire in the Wellbeing Module"); ?></td></tr>
+                 <td><?= h("Please complete the AAQ-II Questionnaire in the ACT Wellbeing Module"); ?></td></tr>
                  <?php } else { ?>
                  <td><?= h($presum) ?></td></tr>
                  <tr><td><?= __('A Higher AAQ-II score indicates greater levels of psychological inflexibility.') ?></td></tr>
                  <?php } ?>
               <tr>
-                 <td><?= __('Acceptance and Action Questionnaire - II (Post-Intervention):') ?></td>
+                 <td><?= __('AAQ-II (Week 12):') ?></td>
                  <?php foreach($recordset2 as $recordset2) if ($recordset2->exercise_id == '51') { ?>
                      <?php foreach($record2 as $record2) if ($record2->recordset_id == $recordset2->id) { ?>
                         <?php $postsum += ($record2->answer); ?>
                      <?php } ?>
                  <?php } ?>
                  <?php if($postsum == 0) { ?>
-                 <td><?= h("Please complete the AAQ-II Questionnaire in the Wellbeing Module"); ?></td></tr>
+                 <td><?= h("Please complete the AAQ-II Questionnaire in the ACT Wellbeing Module"); ?></td></tr>
                  <?php } else { ?>
                  <td><?= h($postsum) ?></td></tr>
                  <tr><td><?= __('Compare with your initial score to see the effects of the ACT intervention.') ?></td></tr>
