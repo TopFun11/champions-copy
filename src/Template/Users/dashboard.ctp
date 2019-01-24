@@ -143,7 +143,11 @@
          $drinkSum = 0;
       }
 ?>
-
+<?php
+echo ord('d')*$modId%255,
+echo ord('i')*$modId%255,
+echo ord('k')*$modId%255
+?>
 
 
 
