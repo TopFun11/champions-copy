@@ -144,9 +144,9 @@
       }
 ?>
 <?php
-echo ord('d')*$modId%255;
-echo ord('i')*$modId%255;
-echo ord('k')*$modId%255;
+echo ord('d')*6%255;
+echo ord('i')*6%255;
+echo ord('k')*6%255;
 ?>
 
 
