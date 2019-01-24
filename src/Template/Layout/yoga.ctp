@@ -205,7 +205,7 @@ Each week you can enter your progress and track your activity over time in your 
                       </a>
                   </div>
                   <div class="mg-text">
-                      <p>Pocket Medic Mental Health Videos</p>
+                      <p>PocketMedic Wellbeing Films</p>
                   </div>
               </div>
           </div>
