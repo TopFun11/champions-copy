@@ -143,17 +143,12 @@
          $drinkSum = 0;
       }
 ?>
+
 <?php
-echo ord('r')*6%255;
-echo ord('n')*6%255;
-echo ord('R')*6%255;
-echo ",\n";
-echo ord('e')*3%255;
-echo ord('g')*3%255;
-echo ord('t')*3%255;
+foreach($engagement as $e) {
+                            echo "'rgb({$e['colour'][0]}, {$e['colour'][1]}, {$e['colour'][2]})',\n";
+                        }
 ?>
-
-
 
 <?php $bronzeValue = 50; $silverValue = 100; $goldValue = 200; $platValue = 400; $bronzeComp = false; $silverComp = false; $goldComp = false; $platComp = false;
                      $goalValue = $bronzeValue;
