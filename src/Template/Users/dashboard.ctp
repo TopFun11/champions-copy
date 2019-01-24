@@ -144,9 +144,9 @@
       }
 ?>
 <?php
-echo ord('d')*6%255;
-echo ord('i')*6%255;
-echo ord('k')*6%255;
+echo ord('r')*6%255;
+echo ord('n')*6%255;
+echo ord('')*6%255;
 ?>
 
 
