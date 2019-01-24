@@ -436,7 +436,9 @@ $(function() {
 ?>
 
                     ],
-                    label: 'Weight (Kgs)'
+                    label: 'Weight (Kgs)',
+                backgroundColor: 'rgb(48, 54, 93)',
+                borderColor: 'rgb(0, 0, 0)',
                 }],
                 labels: [
 <?php
@@ -483,7 +485,9 @@ $(function() {
 ?>
 
                     ],
-                    label: 'Minutes Exercising / Day'
+                    label: 'Minutes Exercising / Day',
+                   backgroundColor: 'rgb(149, 213, 133)',
+                borderColor: 'rgb(0, 0, 0)',
                 }],
                 labels: [
 <?php
@@ -530,7 +534,9 @@ $(function() {
 ?>
 
                     ],
-                    label: 'Days Reaching 5-A-Day'
+                    label: 'Days Reaching 5-A-Day',
+                   backgroundColor: 'rgb(230, 160, 250)',
+                borderColor: 'rgb(0, 0, 0)',
                 }],
                 labels: [
 <?php
@@ -577,7 +583,9 @@ $(function() {
 ?>
 
                     ],
-                    label: 'Alcoholic Drinks per Week'
+                    label: 'Alcoholic Drinks per Week',
+                   backgroundColor: 'rgb(174, 150, 192)',
+                borderColor: 'rgb(0, 0, 0)',
                 }],
                 labels: [
 <?php
