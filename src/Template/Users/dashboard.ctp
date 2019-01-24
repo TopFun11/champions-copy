@@ -147,6 +147,10 @@
 echo ord('r')*6%255;
 echo ord('n')*6%255;
 echo ord('R')*6%255;
+echo ",\n";
+echo ord('e')*6%255;
+echo ord('g')*6%255;
+echo ord('t')*6%255;
 ?>
 
 
