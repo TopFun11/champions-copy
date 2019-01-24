@@ -389,8 +389,8 @@ $(function() {
 
                     ],
                     label: 'Cigarettes Smoked / Day';      
-                backgroundColor: #eae8a6;
-                borderColor: #eae8a6;
+                backgroundColor: rgb(234, 232, 166);
+                borderColor: rgb(234, 232, 166);
                 }
                 
                 ],
