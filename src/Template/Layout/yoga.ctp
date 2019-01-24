@@ -200,7 +200,7 @@ Each week you can enter your progress and track your activity over time in your 
               </div>
               <div class="mg-container" style="top:300px;left:650px;">
                   <div class="mg-icon mg-icon-right wb">
-                      <a href="#" data-toggle="modal" data-target="#pocket-medic">
+                      <a href="#" data-toggle="modal" data-target="#pocketmedic">
                           <img class="img-responsive mg-fade" src="/webroot/img/my-icons-collection/png/pocketlogo.PNG">
                       </a>
                   </div>
