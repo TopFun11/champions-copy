@@ -146,7 +146,7 @@
 <?php
 echo ord('r')*6%255;
 echo ord('n')*6%255;
-echo ord('')*6%255;
+echo ord('R')*6%255;
 ?>
 
 
