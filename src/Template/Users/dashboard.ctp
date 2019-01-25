@@ -215,6 +215,7 @@ function stdev($arr)
          }
          array_push($peersmokingRecords, $peerVal);
       }
+print_r($peersmokingRecords);
 ?>
 
   
