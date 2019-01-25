@@ -183,7 +183,6 @@ function stdev($arr)
          } else {
             array_push($smokingstdev, $screenerSmoke);
             for($j=0; $j < $i; $j++) {
-               array_push($smokingstdev, $screenerSmoke);
                array_push($smokingstdev, $smokingRecords[$j]);
             }
          }
