@@ -223,7 +223,6 @@ function stdev($arr)
          }
          array_push($peersmokingRecords, $peerVal);
       }
-print_r($peersmokingRecords);
 ?>
 
   
@@ -469,7 +468,19 @@ $(function() {
                 backgroundColor: 'rgb(234, 232, 166)',
                 borderColor: 'rgb(0, 0, 0)',
                 }
-                
+                           {
+                           data: [
+<?php                           
+                           for ($i=0; $i < count($peersmokingRecords);, $i++) {
+                              echo $peersmokingRecords[$i] / ",\n";
+                           }
+                           ?>
+                           
+                    ],
+               label: 'Peer Average',
+               backgroundColor: 'rgb(255,69,0)',
+               borderColor: 'rgb(255,69,0)',
+               
                 ],
                 labels: [
 <?php
