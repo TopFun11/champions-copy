@@ -636,8 +636,7 @@ $(function() {
 
                     ],
                     label: 'Days Reaching 5-A-Day',
-                   backgroundColor: 'rgb(230, 160, 250)',
-                borderColor: 'rgb(0, 0, 0)',
+                borderColor: 'rgb(230, 160, 250)',
                 }],
                 labels: [
 <?php
