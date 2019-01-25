@@ -24,6 +24,33 @@ function nrand($mean, $sd){
 }
 ?>
 
+<?php
+function Stand_Deviation($arr) 
+    { 
+        $num_of_elements = count($arr); 
+          
+        $variance = 0.0; 
+          
+                // calculating mean using array_sum() method 
+        $average = array_sum($arr)/$num_of_elements; 
+          
+        foreach($arr as $i) 
+        { 
+            // sum of squares of differences between  
+                        // all numbers and means. 
+            $variance += pow(($i - $average), 2); 
+        } 
+          
+        return (float)sqrt($variance/$num_of_elements); 
+    } 
+      
+    // Input array 
+    $arr = array(2, 3, 5, 6, 7); 
+      
+    print_r(Stand_Deviation($arr)); 
+      
+?> 
+
 <?php $noise = rand(-5, 5);
       $userPerform = 30;
       $peerPerform = max(0, ($userPerform + 10 + $noise));
@@ -154,6 +181,8 @@ function nrand($mean, $sd){
 <?php $peersmokingRecords = []; $peerVal = 0;
       foreach($smokingRecords as $smokingRecord) {
          $i = 0;
+         $userVal = $smokingRecord;
+         $userScale = 
          $smokeNoise = nrand(0.0, 0.25);
          if ($i == 0) {
             $peerVal = $smokingRecords[$i];
