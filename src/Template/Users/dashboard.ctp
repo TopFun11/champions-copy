@@ -174,7 +174,7 @@ function stdev($arr)
 
 <?php $peersmokingRecords = []; $peerVal = 0;
       array_push($peersmokingRecords, $screenerSmoke);
-      for ($i=1; $i < count($smokingRecords); $i++) {
+      for ($i=0; $i < count($smokingRecords); $i++) {
          $smokingstdev = [];
          $userVal = $smokingRecords[$i];
          if ($i == 0) {
@@ -183,6 +183,7 @@ function stdev($arr)
          } else {
             array_push($smokingstdev, $screenerSmoke);
             for($j=0; $j < $i; $j++) {
+               array_push($smokingstdev, $screenerSmoke);
                array_push($smokingstdev, $smokingRecords[$j]);
             }
          }
