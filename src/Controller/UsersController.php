@@ -4,7 +4,7 @@ namespace App\Controller;
 use App\Controller\AppController;
 use Cake\Event\Event;
 use Cake\Controller\Component\AuthComponent;
-use App\Plugins\stats
+use App\Plugins\;
 
 /**
  * User Controller
