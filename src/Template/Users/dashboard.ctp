@@ -445,7 +445,25 @@ $(function() {
         title: {
            text: 'Quit Smoking',
            display: true,
-        }
+        },
+       scales: {
+                    xAxes: [{
+                            display: true,
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'Week'
+                            }
+                        }],
+                    yAxes: [{
+                            display: true,
+                            ticks: {
+                                beginAtZero: true,
+                                steps: 10,
+                                stepValue: 2,
+                                max: 20,
+                            }
+                        }]
+                },
     };
     var dashboardChart = new Chart(
         selector,
