@@ -195,10 +195,16 @@ function stdev($arr)
                $changeVal = round($smokeChange * 2);
                if ($changeVal > 0) {
                   $peerValI = round($userVal - $changeVal + $smokeNoise);
-                  $peerVal = round((0.5 * $peerValI) + (0.25 * $peersmokingRecords[$i-1]) + (0.25 * $peersmokingRecords[$i-2]));
+                  if ($i == 1) {
+                     $peerVal = round((0.5 * $peerValI) + (0.25 * $peersmokingRecords[$i-1]));
+                  } else {
+                     $peerVal = round((0.5 * $peerValI) + (0.25 * $peersmokingRecords[$i-1]) + (0.25 * $peersmokingRecords[$i-2]));
                } else {
                   $peerValI = round($userVal + $changeVal + $smokeNoise);
-                  $peerVal = round((0.5 * $peerValI) + (0.25 * $peersmokingRecords[$i-1]) + (0.25 * $peersmokingRecords[$i-2]));
+                  if ($i == 1) {
+                     $peerVal = round((0.5 * $peerValI) + (0.25 * $peersmokingRecords[$i-1]));
+                  } else {
+                     $peerVal = round((0.5 * $peerValI) + (0.25 * $peersmokingRecords[$i-1]) + (0.25 * $peersmokingRecords[$i-2]));
                }
             }
          }
