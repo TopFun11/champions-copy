@@ -176,14 +176,14 @@ function stdev($arr)
       for ($i=0; $i < count($smokingRecords); $i++) {
          $smokingstdev = [];
          $userVal = $smokingRecords[$i];
+         if ($i == 0) {
+            $smokeNoise = 0;
+         } else {
          for($j=0; $j < $i; $j++) {
             array_push($smokingstdev, $smokingRecords[$j]);
          }
          $userScale = stdev($smokingstdev);
-         if ($i == 0) {
-            $smokeNoise = 0;
-         } else {
-            $smokeNoise = nrand(0.0, $userScale);
+         $smokeNoise = nrand(0.0, $userScale);
          }
          if ($i == 0) {
             $peerVal = $smokingRecords[$i];
