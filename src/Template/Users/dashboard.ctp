@@ -206,7 +206,6 @@ function stdev($arr)
             $peerVal = 0;
          }
          array_push($peersmokingRecords, $peerVal);
-         }
       }
 ?>
 
