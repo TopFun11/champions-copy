@@ -192,7 +192,7 @@ function stdev($arr)
             if ($smokeChange <= 0) {
                $peerVal = round($peerVal[$i-1] + $smokeNoise);
             } else {
-               $changeVal = round($smokeChange * 2)
+               $changeVal = round($smokeChange * 2);
                if ($changeVal > 0) {
                   $peerValI = round($userVal - $changeVal + $smokeNoise);
                   $peerVal = round((0.5 * $peerValI) + (0.25 * $peersmokingRecords[$i-1]) + (0.25 * $peersmokingRecords[$i-2]));
