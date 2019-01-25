@@ -173,12 +173,15 @@ function stdev($arr)
 ?>
 
 <?php $peersmokingRecords = []; $peerVal = 0;
+      array_push($peersmokingRecords, $screenerSmoke);
       for ($i=0; $i < count($smokingRecords); $i++) {
          $smokingstdev = [];
          $userVal = $smokingRecords[$i];
          if ($i == 0) {
-            $smokeNoise = 0;
+            array_push($smokingstdev, $screenerSmoke);
+            array_push($smokingstdev, $smokingRecords[$i]);
          } else {
+            array_push($smokingstdev, $screenerSmoke);
             for($j=0; $j < $i; $j++) {
                array_push($smokingstdev, $smokingRecords[$j]);
             }
@@ -186,7 +189,19 @@ function stdev($arr)
             $smokeNoise = nrand(0.0, ($userScale/2));
          }
          if ($i == 0) {
-            $peerVal = $userVal;
+            $smokeChange = $smokingRecords[$i] - $screenerSmoke;
+            if ($smokeChange <= 0) {
+               $peerVal = round($peerVal[$i-1] + $smokeNoise);
+            } else {
+               $changeVal = round($smokeChange * 2);
+               if ($changeVal > 0) {
+                  $peerValI = round($userVal - $changeVal + $smokeNoise);
+                  $peerVal = round((0.5 * $peerValI) + (0.25 * $peersmokingRecords[$i-1]) + (0.25 * $peersmokingRecords[$i-2]));
+               } else {
+                  $peerValI = round($userVal + $changeVal + $smokeNoise);
+                  $peerVal = round((0.5 * $peerValI) + (0.25 * $peersmokingRecords[$i-1]) + (0.25 * $peersmokingRecords[$i-2]));
+               }
+            }
          } else {
             $smokeChange = $smokingRecords[$i-1] - $smokingRecords[$i];
             if ($smokeChange <= 0) {
@@ -195,18 +210,10 @@ function stdev($arr)
                $changeVal = round($smokeChange * 2);
                if ($changeVal > 0) {
                   $peerValI = round($userVal - $changeVal + $smokeNoise);
-                  if ($i == 1) {
-                     $peerVal = round((0.5 * $peerValI) + (0.25 * $peersmokingRecords[$i-1]));
-                  } else {
-                     $peerVal = round((0.5 * $peerValI) + (0.25 * $peersmokingRecords[$i-1]) + (0.25 * $peersmokingRecords[$i-2]));
-                  }
+                  $peerVal = round((0.5 * $peerValI) + (0.25 * $peersmokingRecords[$i-1]) + (0.25 * $peersmokingRecords[$i-2]));
                } else {
                   $peerValI = round($userVal + $changeVal + $smokeNoise);
-                  if ($i == 1) {
-                     $peerVal = round((0.5 * $peerValI) + (0.25 * $peersmokingRecords[$i-1]));
-                  } else {
-                     $peerVal = round((0.5 * $peerValI) + (0.25 * $peersmokingRecords[$i-1]) + (0.25 * $peersmokingRecords[$i-2]));
-                  }
+                  $peerVal = round((0.5 * $peerValI) + (0.25 * $peersmokingRecords[$i-1]) + (0.25 * $peersmokingRecords[$i-2]));
                }
             }
          }
