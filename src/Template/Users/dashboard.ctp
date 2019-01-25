@@ -478,11 +478,11 @@ $(function() {
                            
                     ],
                label: 'Peer Average',
-               backgroundColor: 'rgb(255,69,0)',
                borderColor: 'rgb(255,69,0)'
                
-                ],
             }
+           ]
+               
                 labels: [
 <?php
                echo "'Start' ,\n";
