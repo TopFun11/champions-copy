@@ -188,6 +188,7 @@ function stdev($arr)
          }
          $userScale = stdev($smokingstdev);
          $smokeNoise = nrand(0.0, ($userScale/2));
+         echo $smokeNoise
          if ($i == 0) {
             $smokeChange = $smokingRecords[$i] - $screenerSmoke;
             if ($smokeChange <= 0) {
@@ -205,7 +206,7 @@ function stdev($arr)
          } else {
             $smokeChange = $smokingRecords[$i-1] - $smokingRecords[$i];
             if ($smokeChange <= 0) {
-               $peerVal = round($peersmokingRecords[$i-1] + $smokeNoise);
+               $peerVal = round($peersmokingRecords[$i] + $smokeNoise);
             } else {
                $changeVal = round($smokeChange * 2);
                if ($changeVal > 0) {
