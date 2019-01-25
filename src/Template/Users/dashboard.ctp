@@ -472,9 +472,9 @@ $(function() {
                            data: [
 <?php                           
                            for ($i=0; $i < count($peersmokingRecords); $i++) {
-                              echo $peersmokingRecords[$i] / ",\n";
+                              echo $peersmokingRecords[$i] . ",\n";
                            }
-                           ?>
+               ?>
                            
                     ],
                label: 'Peer Average',
