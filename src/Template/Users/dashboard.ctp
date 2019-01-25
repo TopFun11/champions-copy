@@ -179,20 +179,33 @@ function stdev($arr)
          if ($i == 0) {
             $smokeNoise = 0;
          } else {
-         for($j=0; $j < $i; $j++) {
-            array_push($smokingstdev, $smokingRecords[$j]);
-         }
-         $userScale = stdev($smokingstdev);
-         $smokeNoise = nrand(0.0, $userScale);
+            for($j=0; $j < $i; $j++) {
+               array_push($smokingstdev, $smokingRecords[$j]);
+            }
+            $userScale = stdev($smokingstdev);
+            $smokeNoise = nrand(0.0, ($userScale/2));
          }
          if ($i == 0) {
-            $peerVal = $smokingRecords[$i];
-            $i++;
+            $peerVal = $userVal;
          } else {
             $smokeChange = $smokingRecords[$i-1] - $smokingRecords[$i];
             if ($smokeChange <= 0) {
-               $peerVal = round($peerVal[$i-1] - round($smokeChange * 0.5) + $smokeNoise);
+               $peerVal = round($peerVal[$i-1] + $smokeNoise);
+            } else {
+               $changeVal = round($smokeChange * 2)
+               if ($changeVal > 0) {
+                  $peerValI = round($userVal - $changeVal + $smokeNoise);
+                  $peerVal = round((0.5 * $peerValI) + (0.25 * $peersmokingRecords[$i-1]) + (0.25 * $peersmokingRecords[$i-2]));
+               } else {
+                  $peerValI = round($userVal + $changeVal + $smokeNoise);
+                  $peerVal = round((0.5 * $peerValI) + (0.25 * $peersmokingRecords[$i-1]) + (0.25 * $peersmokingRecords[$i-2]));
+               }
             }
+         }
+         if ($peerVal <= 0) {
+            $peerVal = 0;
+         }
+         array_push($peersmokingRecords, $peerVal);
          }
       }
 ?>
