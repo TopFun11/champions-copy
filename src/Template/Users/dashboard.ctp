@@ -25,23 +25,6 @@
       }
 ?>
 
-<?php $peersmokingRecords = []; $peerVal = 0;
-      foreach($smokingRecords as $smokingRecord) {
-         $i = 0;
-         $smokeNoise = stats_rand_gen_normal(0.0, 0.25);
-         if ($i < 0) {
-            $peerVal = $smokingRecords[$i];
-            $i++;
-         } else {
-            $smokeChange = $smokingRecords[$i-1] - $smokingRecords[$i];
-            if ($smokeChange <= 0) {
-               $peerVal = round($peerVal[$i-1] - round($smokeChange * 0.5) + $smokeNoise);
-            }
-         }
-      }
-?>
-
-
 <?php $screenerSmoke = 0;
       foreach($recordset as $smokeScreen) if (($smokeScreen->user_id == $user->id) and ($smokeScreen->screener_id == 3)) {
          foreach($record as $smokeScreenrecord) if (($smokeScreenrecord->recordset_id == $smokeScreen->id) and ($smokeScreenrecord->question_id == 10)) {
