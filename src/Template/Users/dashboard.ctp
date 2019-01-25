@@ -177,7 +177,8 @@ function stdev($arr)
          $smokingstdev = [];
          $userVal = $smokingRecords[$i];
          for($j=0; $j < $i; $j++) {
-            array_push($smokingstdev, $smokingRecords[$j]
+            array_push($smokingstdev, $smokingRecords[$j]);
+         }
          $userScale = stdev($smokingstdev);
          if ($i == 0) {
             $smokeNoise = 0;
