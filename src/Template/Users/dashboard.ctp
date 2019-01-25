@@ -161,21 +161,6 @@
       }
 ?>
 
-<?php $peersmokingRecords = []; $peerVal = 0;
-      foreach($smokingRecords as $smokingRecord) {
-         $i = 0;
-         $smokeNoise = stats_rand_gen_normal(0.0, 0.25);
-         if ($i < 0) {
-            $peerVal = $smokingRecords[$i];
-            $i++;
-         } else {
-            $smokeChange = $smokingRecords[$i-1] - $smokingRecords[$i];
-            if ($smokeChange <= 0) {
-               $peerVal = round($peerVal[$i-1] - round($smokeChange * 0.5) + $smokeNoise);
-            }
-         }
-      }
-?>
   
 <?php $bronzeValue = 50; $silverValue = 100; $goldValue = 200; $platValue = 400; $bronzeComp = false; $silverComp = false; $goldComp = false; $platComp = false;
                      $goalValue = $bronzeValue;
