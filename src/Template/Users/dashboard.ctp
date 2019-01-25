@@ -25,7 +25,7 @@ function nrand($mean, $sd){
 ?>
 
 <?php
-function Stand_Deviation($arr) 
+function stdev($arr) 
     { 
         $num_of_elements = count($arr); 
           
@@ -43,12 +43,6 @@ function Stand_Deviation($arr)
           
         return (float)sqrt($variance/$num_of_elements); 
     } 
-      
-    // Input array 
-    $arr = array(2, 3, 5, 6, 7); 
-      
-    print_r(Stand_Deviation($arr)); 
-      
 ?> 
 
 <?php $noise = rand(-5, 5);
@@ -179,11 +173,17 @@ function Stand_Deviation($arr)
 ?>
 
 <?php $peersmokingRecords = []; $peerVal = 0;
-      foreach($smokingRecords as $smokingRecord) {
-         $i = 0;
-         $userVal = $smokingRecord;
-         $userScale = 
-         $smokeNoise = nrand(0.0, 0.25);
+      for ($i=0; $i < count($smokingRecords); $i++) {
+         $smokingstdev = [];
+         $userVal = $smokingRecords[$i];
+         for($j=0; $j < $i; $j++) {
+            array_push($smokingstdev, $smokingRecords[$j]
+         $userScale = stdev($smokingstdev);
+         if ($i == 0) {
+            $smokeNoise = 0;
+         } else {
+            $smokeNoise = nrand(0.0, $userScale);
+         }
          if ($i == 0) {
             $peerVal = $smokingRecords[$i];
             $i++;
