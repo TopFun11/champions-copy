@@ -155,7 +155,7 @@ function nrand($mean, $sd){
       foreach($smokingRecords as $smokingRecord) {
          $i = 0;
          $smokeNoise = nrand(0.0, 0.25);
-         if ($i < 0) {
+         if ($i == 0) {
             $peerVal = $smokingRecords[$i];
             $i++;
          } else {
