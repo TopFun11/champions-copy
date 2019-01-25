@@ -466,7 +466,7 @@ $(function() {
                     ],
                 label: 'Cigarettes Smoked / Day',   
                 backgroundColor: 'rgb(234, 232, 166)',
-                borderColor: 'rgb(0, 0, 0)',
+                borderColor: 'rgb(0, 0, 0)'
                 },
 
                            data: [
@@ -479,9 +479,10 @@ $(function() {
                     ],
                label: 'Peer Average',
                backgroundColor: 'rgb(255,69,0)',
-               borderColor: 'rgb(255,69,0)',
+               borderColor: 'rgb(255,69,0)'
                
                 ],
+            }
                 labels: [
 <?php
                echo "'Start' ,\n";
