@@ -467,8 +467,8 @@ $(function() {
                 label: 'Cigarettes Smoked / Day',   
                 backgroundColor: 'rgb(234, 232, 166)',
                 borderColor: 'rgb(0, 0, 0)',
-                }
-                           {
+                },
+
                            data: [
 <?php                           
                            for ($i=0; $i < count($peersmokingRecords); $i++) {
