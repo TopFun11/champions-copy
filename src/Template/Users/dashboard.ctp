@@ -185,9 +185,9 @@ function stdev($arr)
             for($j=0; $j < $i; $j++) {
                array_push($smokingstdev, $smokingRecords[$j]);
             }
-            $userScale = stdev($smokingstdev);
-            $smokeNoise = nrand(0.0, ($userScale/2));
          }
+         $userScale = stdev($smokingstdev);
+         $smokeNoise = nrand(0.0, ($userScale/2));
          if ($i == 0) {
             $smokeChange = $smokingRecords[$i] - $screenerSmoke;
             if ($smokeChange <= 0) {
