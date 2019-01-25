@@ -187,7 +187,6 @@ function stdev($arr)
             }
          }
          $userScale = stdev($smokingstdev);
-         echo $userScale;
          $smokeNoise = nrand(0.0, ($userScale/2));
          if ($i == 0) {
             $smokeChange = $smokingRecords[$i] - $screenerSmoke;
