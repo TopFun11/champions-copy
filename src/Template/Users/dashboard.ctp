@@ -471,7 +471,7 @@ $(function() {
                            {
                            data: [
 <?php                           
-                           for ($i=0; $i < count($peersmokingRecords);, $i++) {
+                           for ($i=0; $i < count($peersmokingRecords); $i++) {
                               echo $peersmokingRecords[$i] / ",\n";
                            }
                            ?>
