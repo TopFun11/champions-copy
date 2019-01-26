@@ -111,7 +111,7 @@ function isMobile() {
 For a long-term wellbeing boost start with ACT week 1. Here 6 techniques are explained over 12 weeks in bite sized sections. The ‘Try Now’ activities are quick and easy, the ‘Try at Home’ exercises can be used when you have more time and get your headphones ready for the ‘Watch Now’ clips, guided meditations and breathing exercises.
 Each week you can enter your progress and track your activity over time in your personal dashboard.</center></p>
   </div>
-     <?php if(isMobile() == 0) {
+     <?php if(isMobile() == 0) { ?>
      <?php if($profile->hospital != "Singleton") { ?>
       <div class="row">
           <div id="module-game">
@@ -219,7 +219,7 @@ Each week you can enter your progress and track your activity over time in your 
           </div>
       </div>
      <?php } ?>
-     <?php elseif (isMobile() == 1) {
+     <?php elseif (isMobile() == 1) { ?>
       <?php if($profile->hospital != "Singleton") { ?>
       <div class="row">
           <div id="module-game">
@@ -324,6 +324,7 @@ Each week you can enter your progress and track your activity over time in your 
           </div>
       </div>
      <?php } ?>
+     <? } ?>
     </div>
     <br/><br/>
     <footer class="footer">
