@@ -669,7 +669,7 @@ $(function() {
                             ticks: {
                               min: 0,
                               max: 20,
-                              stepSize: 2
+                              stepSize: 5
                            }
                         }]
                 },
@@ -747,10 +747,10 @@ $(function() {
                     yAxes: [{
                             display: true,
                             ticks: {
-                                beginAtZero: true,
-                                stepValue: 5,
-                                max: 100,
-                            }
+                              min: 0,
+                              max: 100,
+                              stepSize: 10
+                           }
                         }]
                 },
     };
@@ -830,10 +830,10 @@ $(function() {
                     yAxes: [{
                             display: true,
                             ticks: {
-                                beginAtZero: true,
-                                stepValue: 5,
-                                max: 180,
-                            }
+                              min: 0,
+                              max: 180,
+                              stepSize: 15
+                           }
                         }]
                 },
     };
@@ -913,10 +913,10 @@ $(function() {
                     yAxes: [{
                             display: true,
                             ticks: {
-                                beginAtZero: true,
-                                stepValue: 1,
-                                max: 7,
-                            }
+                              min: 0,
+                              max: 7,
+                              stepSize: 1
+                           }
                         }]
                 },
     };
@@ -996,10 +996,10 @@ $(function() {
                     yAxes: [{
                             display: true,
                             ticks: {
-                                beginAtZero: true,
-                                stepValue: 8,
-                                max: 25,
-                            }
+                              min: 0,
+                              max: 25,
+                              stepSize: 5
+                           }
                         }]
                 },
     };
