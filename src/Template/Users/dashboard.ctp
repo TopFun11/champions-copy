@@ -349,7 +349,7 @@ function stdev($arr)
             if ($eatChange <= 0) {
                $peerVal = round($peereatRecords[$i] + $eatNoise);
             } else {
-               $changeVal = round($eatChange * 2);
+               $changeVal = round($eatChange * 0.5);
                if ($changeVal > 0) {
                   $peerValI = round($userVal - $changeVal + $eatNoise);
                   $peerVal = round((0.66 * $peerValI) + (0.33 * $peereatRecords[$i]));
@@ -363,7 +363,7 @@ function stdev($arr)
             if ($eatChange <= 0) {
                $peerVal = round($peereatRecords[$i] + $eatNoise);
             } else {
-               $changeVal = round($eatChange * 2);
+               $changeVal = round($eatChange * 0.5);
                if ($changeVal > 0) {
                   $peerValI = round($userVal - $changeVal + $eatNoise);
                   $peerVal = round((0.5 * $peerValI) + (0.25 * $peereatRecords[$i]) + (0.25 * $peereatRecords[$i-1]));
