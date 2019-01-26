@@ -243,7 +243,7 @@ Each week you can enter your progress and track your activity over time in your 
                       <p>Sleep</p>
                   </div>
               </div>
-              <div class="mg-container">
+              <div class="row">
                   <div class="mg-icon mg-icon-right wb">
                       <a href="#" data-toggle="modal" data-target="#green-space">
                           <img class="img-responsive mg-fade" src="/webroot/img/my-icons-collection/png/mountain.png">
@@ -253,7 +253,7 @@ Each week you can enter your progress and track your activity over time in your 
                       <p>Green Space</p>
                   </div>
               </div>
-              <div class="mg-container">
+              <div class="row">
                   <div class="mg-icon mg-icon-left wb">
                       <a href="#" data-toggle="modal" data-target="#act">
                           <img class="img-responsive mg-fade" src="/webroot/img/my-icons-collection/png/test.png">
@@ -268,7 +268,7 @@ Each week you can enter your progress and track your activity over time in your 
       <?php } else { ?>
      <div class="row">
           <div id="module-game">
-              <div class="mg-container">
+              <div class="row">
                   <div class="mg-icon mg-icon-left wb">
                       <a href="#" data-toggle="modal" data-target="#act">
                           <img class="img-responsive mg-fade" src="/webroot/img/my-icons-collection/png/test.png">
@@ -278,7 +278,7 @@ Each week you can enter your progress and track your activity over time in your 
                       <p>ACT</p>
                   </div>
               </div>
-              <div class="mg-container">
+              <div class="row">
                   <div class="mg-icon mg-icon-left wb">
                       <a href="#" data-toggle="modal" data-target="#relax">
                           <img class="img-responsive mg-fade" src="/webroot/img/my-icons-collection/png/coconaut.png">
@@ -288,7 +288,7 @@ Each week you can enter your progress and track your activity over time in your 
                       <p>Relaxation</p>
                   </div>
               </div>
-              <div class="mg-container">
+              <div class="row">
                   <div class="mg-icon mg-icon-right wb">
                       <a href="#" data-toggle="modal" data-target="#sleep">
                           <img class="img-responsive mg-fade" src="/webroot/img/my-icons-collection/png/bed.png">
@@ -298,7 +298,7 @@ Each week you can enter your progress and track your activity over time in your 
                       <p>Sleep</p>
                   </div>
               </div>
-              <div class="mg-container">
+              <div class="row">
                   <div class="mg-icon mg-icon-right wb">
                       <a href="#" data-toggle="modal" data-target="#green-space">
                           <img class="img-responsive mg-fade" src="/webroot/img/my-icons-collection/png/mountain.png">
@@ -308,7 +308,7 @@ Each week you can enter your progress and track your activity over time in your 
                       <p>Green Space</p>
                   </div>
               </div>
-              <div class="mg-container">
+              <div class="row">
                   <div class="mg-icon mg-icon-right wb">
                       <a href="#" data-toggle="modal" data-target="#pocketmedic">
                           <img class="img-responsive mg-fade" src="/webroot/img/my-icons-collection/png/pocketlogo.PNG">
