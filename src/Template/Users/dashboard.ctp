@@ -668,7 +668,6 @@ $(function() {
                             display: true,
                             ticks: {
                                 beginAtZero: true,
-                                steps: 10,
                                 stepValue: 2,
                                 max: 20,
                             }
@@ -749,8 +748,7 @@ $(function() {
                             display: true,
                             ticks: {
                                 beginAtZero: true,
-                                steps: 10,
-                                stepValue: 2,
+                                stepValue: 5,
                                 max: 100,
                             }
                         }]
@@ -833,8 +831,7 @@ $(function() {
                             display: true,
                             ticks: {
                                 beginAtZero: true,
-                                steps: 10,
-                                stepValue: 2,
+                                stepValue: 5,
                                 max: 180,
                             }
                         }]
@@ -917,7 +914,6 @@ $(function() {
                             display: true,
                             ticks: {
                                 beginAtZero: true,
-                                steps: 6,
                                 stepValue: 1,
                                 max: 7,
                             }
@@ -1001,7 +997,6 @@ $(function() {
                             display: true,
                             ticks: {
                                 beginAtZero: true,
-                                steps: 3,
                                 stepValue: 2,
                                 max: 25,
                             }
