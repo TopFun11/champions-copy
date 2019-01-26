@@ -457,19 +457,19 @@ function stdev($arr)
         <div class="col-md-12" style="background-color:#aed6f1">
            <?php foreach($user->module as $module) { ?>
             <?php if($module->title == "Quit Smoking") { ?>
-               <h2>Other users like you have reduced their smoking to <?= end($peersmokingRecords) ?> cigarettes per day.</h2>
+               <h2>Other users like you have reduced their smoking, on average, to <?= end($peersmokingRecords) ?> cigarettes per day.</h2>
             <?php } ?>
            <?php if($module->title == "Weight Optimisation") { ?>
-               <h2>Other users like you have reduced their weight to <?= end($peerweightRecords) ?> Kgs.</h2>
+               <h2>Other users like you have reduced their weight, on average, to <?= end($peerweightRecords) ?> Kgs.</h2>
             <?php } ?>
            <?php if($module->title == "Regular Exercise") { ?>
-               <h2>Other users like you have achieved <?= end($peerexeRecords) ?> minutes of exercise a day.</h2>
+               <h2>Other users like you have achieved, on average, <?= end($peerexeRecords) ?> minutes of exercise a day.</h2>
             <?php } ?>
            <?php if($module->title == "Eat Healthily") { ?>
-               <h2>Other users like you ate their 5-A-Day Fruit and Veg <?= end($peereatRecords) ?> days last week.</h2>
+               <h2>Other users like you, on average, ate their 5-A-Day Fruit and Veg <?= end($peereatRecords) ?> days last week.</h2>
             <?php } ?>
            <?php if($module->title == "Drink Responsibly") { ?>
-               <h2>Other users reduced their drinking to <?= end($peerdrinkRecords) ?> alcoholic drinks per week.</h2>
+               <h2>Other users reduced their drinking, on average, to <?= end($peerdrinkRecords) ?> alcoholic drinks per week.</h2>
             <?php } ?>
            <?php } ?>
        </div>
