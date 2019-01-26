@@ -691,6 +691,7 @@ $(function() {
                 }, 
                 <?php
                            if ($profile->hospital == "Morriston") {
+                              ?>
                            {
                 data: [
 <?php                           
