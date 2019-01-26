@@ -997,7 +997,7 @@ $(function() {
                             display: true,
                             ticks: {
                                 beginAtZero: true,
-                                stepValue: 2,
+                                stepValue: 8,
                                 max: 25,
                             }
                         }]
