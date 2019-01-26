@@ -29,7 +29,7 @@
       }
 ?>
 <div class="row" style="background-color:#aed6f1">
-    <h2><center><?= $peerPerform ?>% of users have improved their health. Get started here!</center></h2>
+    <h2><center>Other users are improving their health every day. Get started here!</center></h2>
 </div>
 <?php } ?>
 <?php } ?>
