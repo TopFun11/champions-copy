@@ -223,7 +223,7 @@ Each week you can enter your progress and track your activity over time in your 
       <?php if($profile->hospital != "Singleton") { ?>
       <div class="row">
           <div id="module-game">
-              <div class="mg-container">
+              <div class="row">
                   <div class="mg-icon mg-icon-left wb">
                       <a href="#" data-toggle="modal" data-target="#relax">
                           <img class="img-responsive mg-fade" src="/webroot/img/my-icons-collection/png/coconaut.png">
@@ -233,7 +233,7 @@ Each week you can enter your progress and track your activity over time in your 
                       <p>Relaxation</p>
                   </div>
               </div>
-              <div class="mg-container">
+              <div class="row">
                   <div class="mg-icon mg-icon-right wb">
                       <a href="#" data-toggle="modal" data-target="#sleep">
                           <img class="img-responsive mg-fade" src="/webroot/img/my-icons-collection/png/bed.png">
