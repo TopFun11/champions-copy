@@ -59,7 +59,7 @@ function isMobile() {
                    </li>
                    <li><a href="/contact">Contact us</a>
                    </li>
-                   <li><?= echo isMobile() ?>
+                   <li><?php echo isMobile() ?>
                 </li>
                </ul>
                <ul class="nav navbar-nav navbar-right">
