@@ -768,7 +768,7 @@ $(function() {
 ?>   
                ],
                label: 'Peer Average',
-               borderColor: 'rgb(255,69,0)'
+               borderColor: 'rgb(255,69,0)',
                }
            <?php
                    }
@@ -834,7 +834,7 @@ $(function() {
 ?>   
                ],
                label: 'Peer Average',
-               borderColor: 'rgb(255,69,0)'
+               borderColor: 'rgb(255,69,0)',
                }
            <?php
                    }
