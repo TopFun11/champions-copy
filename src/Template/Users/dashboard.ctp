@@ -455,7 +455,9 @@ function stdev($arr)
         <?php if($profile->hospital=="Morriston") { ?>
         <br>
         <div class="col-md-12" style="background-color:#aed6f1">
-           <h2>Other users have achieved general behavioral improvement of <?= ($peerPerform) ?>% this week.</h2>
+           <?php if(($module->title == "Quit Smoking") and ($module->enrolled > 0)) { ?>
+            <h2>Other users have reduced their smoking to <?= end($peersmokingRecords) ?>% this week.</h2>
+           <?php } ?>
        </div>
        <?php } ?>
     </div>
