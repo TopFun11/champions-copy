@@ -736,7 +736,25 @@ $(function() {
         title: {
            text: 'Weight Optimisation',
            display: true,
-        }
+        },
+       scales: {
+                    xAxes: [{
+                            display: true,
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'Week'
+                            }
+                        }],
+                    yAxes: [{
+                            display: true,
+                            ticks: {
+                                beginAtZero: true,
+                                steps: 10,
+                                stepValue: 2,
+                                max: 100,
+                            }
+                        }]
+                },
     };
     var dashboardChart = new Chart(
         selector,
@@ -802,7 +820,25 @@ $(function() {
         title: {
            text: 'Regular Exercise',
            display: true,
-        }
+        },
+       scales: {
+                    xAxes: [{
+                            display: true,
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'Week'
+                            }
+                        }],
+                    yAxes: [{
+                            display: true,
+                            ticks: {
+                                beginAtZero: true,
+                                steps: 10,
+                                stepValue: 2,
+                                max: 180,
+                            }
+                        }]
+                },
     };
     var dashboardChart = new Chart(
         selector,
@@ -868,7 +904,25 @@ $(function() {
         title: {
            text: 'Eat Healthily',
            display: true,
-        }
+        },
+       scales: {
+                    xAxes: [{
+                            display: true,
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'Week'
+                            }
+                        }],
+                    yAxes: [{
+                            display: true,
+                            ticks: {
+                                beginAtZero: true,
+                                steps: 10,
+                                stepValue: 2,
+                                max: 7,
+                            }
+                        }]
+                },
     };
     var dashboardChart = new Chart(
         selector,
@@ -934,7 +988,25 @@ $(function() {
         title: {
            text: 'Drink Responsibily ',
            display: true,
-        }
+        },
+       scales: {
+                    xAxes: [{
+                            display: true,
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'Week'
+                            }
+                        }],
+                    yAxes: [{
+                            display: true,
+                            ticks: {
+                                beginAtZero: true,
+                                steps: 10,
+                                stepValue: 2,
+                                max: 25,
+                            }
+                        }]
+                },
     };
     var dashboardChart = new Chart(
         selector,
