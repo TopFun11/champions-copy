@@ -229,7 +229,7 @@ Each week you can enter your progress and track your activity over time in your 
                           <img class="img-responsive mg-fade" src="/webroot/img/my-icons-collection/png/coconaut.png">
                       </a>
                   </div>
-                  <div class="mg-text text-right">
+                  <div class="mg-text">
                       <p>Relaxation</p>
                   </div>
               </div>
@@ -259,7 +259,7 @@ Each week you can enter your progress and track your activity over time in your 
                           <img class="img-responsive mg-fade" src="/webroot/img/my-icons-collection/png/test.png">
                       </a>
                   </div>
-                  <div class="mg-text text-right">
+                  <div class="mg-text">
                       <p>ACT</p>
                   </div>
               </div>
@@ -274,7 +274,7 @@ Each week you can enter your progress and track your activity over time in your 
                           <img class="img-responsive mg-fade" src="/webroot/img/my-icons-collection/png/test.png">
                       </a>
                   </div>
-                  <div class="mg-text text-right">
+                  <div class="mg-text">
                       <p>ACT</p>
                   </div>
               </div>
@@ -284,7 +284,7 @@ Each week you can enter your progress and track your activity over time in your 
                           <img class="img-responsive mg-fade" src="/webroot/img/my-icons-collection/png/coconaut.png">
                       </a>
                   </div>
-                  <div class="mg-text text-right">
+                  <div class="mg-text">
                       <p>Relaxation</p>
                   </div>
               </div>
