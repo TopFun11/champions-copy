@@ -230,7 +230,7 @@ function stdev($arr)
          $weightstdev = [];
          $userVal = $weightRecords[$i];
          if ($i == 0) {
-            array_push($weightstdev, $weightSmoke);
+            array_push($weightstdev, $screenerWeight);
             array_push($weightstdev, $weightRecords[$i]);
          } else {
             array_push($weightstdev, $screenerWeight);
