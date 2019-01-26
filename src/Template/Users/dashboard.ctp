@@ -299,10 +299,10 @@ function stdev($arr)
             } else {
                $changeVal = round($exeChange * 2);
                if ($changeVal > 0) {
-                  $peerValI = round($userVal - $changeVal + $exeNoise);
+                  $peerValI = round($userVal + $changeVal + $exeNoise);
                   $peerVal = round((0.66 * $peerValI) + (0.33 * $peerexeRecords[$i]));
                } else {
-                  $peerValI = round($userVal + $changeVal + $exeNoise);
+                  $peerValI = round($userVal - $changeVal + $exeNoise);
                   $peerVal = round((0.66 * $peerValI) + (0.33 * $peerexeRecords[$i]));
                }
             }
@@ -313,10 +313,10 @@ function stdev($arr)
             } else {
                $changeVal = round($exeChange * 2);
                if ($changeVal > 0) {
-                  $peerValI = round($userVal - $changeVal + $exeNoise);
+                  $peerValI = round($userVal + $changeVal + $exeNoise);
                   $peerVal = round((0.5 * $peerValI) + (0.25 * $peerexeRecords[$i]) + (0.25 * $peerexeRecords[$i-1]));
                } else {
-                  $peerValI = round($userVal + $changeVal + $exeNoise);
+                  $peerValI = round($userVal - $changeVal + $exeNoise);
                   $peerVal = round((0.5 * $peerValI) + (0.25 * $peerexeRecords[$i]) + (0.25 * $peerexeRecords[$i-1]));
                }
             }
@@ -351,10 +351,10 @@ function stdev($arr)
             } else {
                $changeVal = round($eatChange * 0.5);
                if ($changeVal > 0) {
-                  $peerValI = round($userVal - $changeVal + $eatNoise);
+                  $peerValI = round($userVal + $changeVal + $eatNoise);
                   $peerVal = round((0.66 * $peerValI) + (0.33 * $peereatRecords[$i]));
                } else {
-                  $peerValI = round($userVal + $changeVal + $eatNoise);
+                  $peerValI = round($userVal - $changeVal + $eatNoise);
                   $peerVal = round((0.66 * $peerValI) + (0.33 * $peereatRecords[$i]));
                }
             }
@@ -365,10 +365,10 @@ function stdev($arr)
             } else {
                $changeVal = round($eatChange * 0.5);
                if ($changeVal > 0) {
-                  $peerValI = round($userVal - $changeVal + $eatNoise);
+                  $peerValI = round($userVal + $changeVal + $eatNoise);
                   $peerVal = round((0.5 * $peerValI) + (0.25 * $peereatRecords[$i]) + (0.25 * $peereatRecords[$i-1]));
                } else {
-                  $peerValI = round($userVal + $changeVal + $eatNoise);
+                  $peerValI = round($userVal - $changeVal + $eatNoise);
                   $peerVal = round((0.5 * $peerValI) + (0.25 * $peereatRecords[$i]) + (0.25 * $peereatRecords[$i-1]));
                }
             }
