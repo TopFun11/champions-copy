@@ -455,8 +455,10 @@ function stdev($arr)
         <?php if($profile->hospital=="Morriston") { ?>
         <br>
         <div class="col-md-12" style="background-color:#aed6f1">
-           <?php if(($module->title == "Quit Smoking") and ($module->enrolled > 0)) { ?>
-            <h2>Other users have reduced their smoking to <?= end($peersmokingRecords) ?>% this week.</h2>
+           <?php foreach($user->module as $module) { ?>
+            <?php if($module->title == "Quit Smoking") { ?>
+               <h2>Other users have reduced their smoking to <?= end($peersmokingRecords) ?>% this week.</h2>
+            <?php } ?>
            <?php } ?>
        </div>
        <?php } ?>
