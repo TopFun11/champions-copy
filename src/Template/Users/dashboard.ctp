@@ -245,7 +245,7 @@ function stdev($arr)
             if ($weightChange <= 0) {
                $peerVal = round($peerweightRecords[$i] + $weightNoise);
             } else {
-               $changeVal = round($weightChange * 0.5);
+               $changeVal = round($weightChange * 1.5);
                if ($changeVal > 0) {
                   $peerValI = round($userVal - $changeVal + $weightNoise);
                   $peerVal = round((0.66 * $peerValI) + (0.33 * $peerweightRecords[$i]));
@@ -259,7 +259,7 @@ function stdev($arr)
             if ($weightChange <= 0) {
                $peerVal = round($peerweightRecords[$i] + $weightNoise);
             } else {
-               $changeVal = round($weightChange * 0.5);
+               $changeVal = round($weightChange * 1.5);
                if ($changeVal > 0) {
                   $peerValI = round($userVal - $changeVal + $weightNoise);
                   $peerVal = round((0.5 * $peerValI) + (0.25 * $peerweightRecords[$i]) + (0.25 * $peerweightRecords[$i-1]));
