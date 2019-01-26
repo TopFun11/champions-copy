@@ -917,7 +917,7 @@ $(function() {
                             display: true,
                             ticks: {
                                 beginAtZero: true,
-                                steps: 7,
+                                steps: 6,
                                 stepValue: 1,
                                 max: 7,
                             }
