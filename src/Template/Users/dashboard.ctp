@@ -378,6 +378,7 @@ function stdev($arr)
          }
          if ($peerVal >= 7) {
             $peerVal = 7;
+         }
          array_push($peereatRecords, $peerVal);
       }
 ?>
