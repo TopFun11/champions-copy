@@ -1001,7 +1001,7 @@ $(function() {
                             display: true,
                             ticks: {
                                 beginAtZero: true,
-                                steps: 10,
+                                steps: 3,
                                 stepValue: 2,
                                 max: 25,
                             }
