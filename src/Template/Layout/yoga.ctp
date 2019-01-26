@@ -219,7 +219,7 @@ Each week you can enter your progress and track your activity over time in your 
           </div>
       </div>
      <?php } ?>
-     <?php else if(isMobile() == 1) { ?>
+     <?php } else if(isMobile() == 1) { ?>
       <?php if($profile->hospital != "Singleton") { ?>
       <div class="row">
           <div id="module-game">
