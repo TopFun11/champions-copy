@@ -224,6 +224,214 @@ function stdev($arr)
       }
 ?>
 
+<?php $peerweightRecords = []; $peerVal = 0;
+      array_push($peerweightRecords, $screenerWeight);
+      for ($i=0; $i < count($weightRecords); $i++) {
+         $weightstdev = [];
+         $userVal = $weightRecords[$i];
+         if ($i == 0) {
+            array_push($weightstdev, $weightSmoke);
+            array_push($weightstdev, $weightRecords[$i]);
+         } else {
+            array_push($weightstdev, $screenerWeight);
+            for($j=0; $j < $i; $j++) {
+               array_push($weightstdev, $weightRecords[$j]);
+            }
+         }
+         $userScale = stdev($weightstdev);
+         $weightNoise = nrand(0.0, ($userScale/4));
+         if ($i == 0) {
+            $weightChange = $screenerWeight - $weightRecords[$i];
+            if ($weightChange <= 0) {
+               $peerVal = round($peerweightRecords[$i] + $weightNoise);
+            } else {
+               $changeVal = round($weightChange * 2);
+               if ($changeVal > 0) {
+                  $peerValI = round($userVal - $changeVal + $weightNoise);
+                  $peerVal = round((0.66 * $peerValI) + (0.33 * $peerweightRecords[$i]));
+               } else {
+                  $peerValI = round($userVal + $changeVal + $weightNoise);
+                  $peerVal = round((0.66 * $peerValI) + (0.33 * $peerweightRecords[$i]));
+               }
+            }
+         } else {
+            $weightChange = $weightRecords[$i-1] - $weightRecords[$i];
+            if ($weightChange <= 0) {
+               $peerVal = round($peerweightRecords[$i] + $weightNoise);
+            } else {
+               $changeVal = round($weightChange * 2);
+               if ($changeVal > 0) {
+                  $peerValI = round($userVal - $changeVal + $weightNoise);
+                  $peerVal = round((0.5 * $peerValI) + (0.25 * $peerweightRecords[$i]) + (0.25 * $peerweightRecords[$i-1]));
+               } else {
+                  $peerValI = round($userVal + $changeVal + $weightNoise);
+                  $peerVal = round((0.5 * $peerValI) + (0.25 * $peerweightRecords[$i]) + (0.25 * $peerweightRecords[$i-1]));
+               }
+            }
+         }
+         if ($peerVal <= 0) {
+            $peerVal = 0;
+         }
+         array_push($peerweightRecords, $peerVal);
+      }
+?>
+
+<?php $peersmokingRecords = []; $peerVal = 0;
+      array_push($peersmokingRecords, $screenerSmoke);
+      for ($i=0; $i < count($smokingRecords); $i++) {
+         $smokingstdev = [];
+         $userVal = $smokingRecords[$i];
+         if ($i == 0) {
+            array_push($smokingstdev, $screenerSmoke);
+            array_push($smokingstdev, $smokingRecords[$i]);
+         } else {
+            array_push($smokingstdev, $screenerSmoke);
+            for($j=0; $j < $i; $j++) {
+               array_push($smokingstdev, $smokingRecords[$j]);
+            }
+         }
+         $userScale = stdev($smokingstdev);
+         $smokeNoise = nrand(0.0, ($userScale/4));
+         if ($i == 0) {
+            $smokeChange = $screenerSmoke - $smokingRecords[$i];
+            if ($smokeChange <= 0) {
+               $peerVal = round($peersmokingRecords[$i] + $smokeNoise);
+            } else {
+               $changeVal = round($smokeChange * 2);
+               if ($changeVal > 0) {
+                  $peerValI = round($userVal - $changeVal + $smokeNoise);
+                  $peerVal = round((0.66 * $peerValI) + (0.33 * $peersmokingRecords[$i]));
+               } else {
+                  $peerValI = round($userVal + $changeVal + $smokeNoise);
+                  $peerVal = round((0.66 * $peerValI) + (0.33 * $peersmokingRecords[$i]));
+               }
+            }
+         } else {
+            $smokeChange = $smokingRecords[$i-1] - $smokingRecords[$i];
+            if ($smokeChange <= 0) {
+               $peerVal = round($peersmokingRecords[$i] + $smokeNoise);
+            } else {
+               $changeVal = round($smokeChange * 2);
+               if ($changeVal > 0) {
+                  $peerValI = round($userVal - $changeVal + $smokeNoise);
+                  $peerVal = round((0.5 * $peerValI) + (0.25 * $peersmokingRecords[$i]) + (0.25 * $peersmokingRecords[$i-1]));
+               } else {
+                  $peerValI = round($userVal + $changeVal + $smokeNoise);
+                  $peerVal = round((0.5 * $peerValI) + (0.25 * $peersmokingRecords[$i]) + (0.25 * $peersmokingRecords[$i-1]));
+               }
+            }
+         }
+         if ($peerVal <= 0) {
+            $peerVal = 0;
+         }
+         array_push($peersmokingRecords, $peerVal);
+      }
+?>
+
+<?php $peersmokingRecords = []; $peerVal = 0;
+      array_push($peersmokingRecords, $screenerSmoke);
+      for ($i=0; $i < count($smokingRecords); $i++) {
+         $smokingstdev = [];
+         $userVal = $smokingRecords[$i];
+         if ($i == 0) {
+            array_push($smokingstdev, $screenerSmoke);
+            array_push($smokingstdev, $smokingRecords[$i]);
+         } else {
+            array_push($smokingstdev, $screenerSmoke);
+            for($j=0; $j < $i; $j++) {
+               array_push($smokingstdev, $smokingRecords[$j]);
+            }
+         }
+         $userScale = stdev($smokingstdev);
+         $smokeNoise = nrand(0.0, ($userScale/4));
+         if ($i == 0) {
+            $smokeChange = $screenerSmoke - $smokingRecords[$i];
+            if ($smokeChange <= 0) {
+               $peerVal = round($peersmokingRecords[$i] + $smokeNoise);
+            } else {
+               $changeVal = round($smokeChange * 2);
+               if ($changeVal > 0) {
+                  $peerValI = round($userVal - $changeVal + $smokeNoise);
+                  $peerVal = round((0.66 * $peerValI) + (0.33 * $peersmokingRecords[$i]));
+               } else {
+                  $peerValI = round($userVal + $changeVal + $smokeNoise);
+                  $peerVal = round((0.66 * $peerValI) + (0.33 * $peersmokingRecords[$i]));
+               }
+            }
+         } else {
+            $smokeChange = $smokingRecords[$i-1] - $smokingRecords[$i];
+            if ($smokeChange <= 0) {
+               $peerVal = round($peersmokingRecords[$i] + $smokeNoise);
+            } else {
+               $changeVal = round($smokeChange * 2);
+               if ($changeVal > 0) {
+                  $peerValI = round($userVal - $changeVal + $smokeNoise);
+                  $peerVal = round((0.5 * $peerValI) + (0.25 * $peersmokingRecords[$i]) + (0.25 * $peersmokingRecords[$i-1]));
+               } else {
+                  $peerValI = round($userVal + $changeVal + $smokeNoise);
+                  $peerVal = round((0.5 * $peerValI) + (0.25 * $peersmokingRecords[$i]) + (0.25 * $peersmokingRecords[$i-1]));
+               }
+            }
+         }
+         if ($peerVal <= 0) {
+            $peerVal = 0;
+         }
+         array_push($peersmokingRecords, $peerVal);
+      }
+?>
+
+<?php $peersmokingRecords = []; $peerVal = 0;
+      array_push($peersmokingRecords, $screenerSmoke);
+      for ($i=0; $i < count($smokingRecords); $i++) {
+         $smokingstdev = [];
+         $userVal = $smokingRecords[$i];
+         if ($i == 0) {
+            array_push($smokingstdev, $screenerSmoke);
+            array_push($smokingstdev, $smokingRecords[$i]);
+         } else {
+            array_push($smokingstdev, $screenerSmoke);
+            for($j=0; $j < $i; $j++) {
+               array_push($smokingstdev, $smokingRecords[$j]);
+            }
+         }
+         $userScale = stdev($smokingstdev);
+         $smokeNoise = nrand(0.0, ($userScale/4));
+         if ($i == 0) {
+            $smokeChange = $screenerSmoke - $smokingRecords[$i];
+            if ($smokeChange <= 0) {
+               $peerVal = round($peersmokingRecords[$i] + $smokeNoise);
+            } else {
+               $changeVal = round($smokeChange * 2);
+               if ($changeVal > 0) {
+                  $peerValI = round($userVal - $changeVal + $smokeNoise);
+                  $peerVal = round((0.66 * $peerValI) + (0.33 * $peersmokingRecords[$i]));
+               } else {
+                  $peerValI = round($userVal + $changeVal + $smokeNoise);
+                  $peerVal = round((0.66 * $peerValI) + (0.33 * $peersmokingRecords[$i]));
+               }
+            }
+         } else {
+            $smokeChange = $smokingRecords[$i-1] - $smokingRecords[$i];
+            if ($smokeChange <= 0) {
+               $peerVal = round($peersmokingRecords[$i] + $smokeNoise);
+            } else {
+               $changeVal = round($smokeChange * 2);
+               if ($changeVal > 0) {
+                  $peerValI = round($userVal - $changeVal + $smokeNoise);
+                  $peerVal = round((0.5 * $peerValI) + (0.25 * $peersmokingRecords[$i]) + (0.25 * $peersmokingRecords[$i-1]));
+               } else {
+                  $peerValI = round($userVal + $changeVal + $smokeNoise);
+                  $peerVal = round((0.5 * $peerValI) + (0.25 * $peersmokingRecords[$i]) + (0.25 * $peersmokingRecords[$i-1]));
+               }
+            }
+         }
+         if ($peerVal <= 0) {
+            $peerVal = 0;
+         }
+         array_push($peersmokingRecords, $peerVal);
+      }
+?>
+
   
 <?php $bronzeValue = 50; $silverValue = 100; $goldValue = 200; $platValue = 400; $bronzeComp = false; $silverComp = false; $goldComp = false; $platComp = false;
                      $goalValue = $bronzeValue;
@@ -480,7 +688,10 @@ $(function() {
                     ],
                 label: 'Cigarettes Smoked / Day',   
                 borderColor: 'rgb(234, 232, 166)'
-                }, {
+                }, 
+                <?php
+                           if ($profile->hospital == "Morriston") {
+                           {
                 data: [
 <?php                           
                            for ($i=0; $i < count($peersmokingRecords); $i++) {
@@ -491,6 +702,10 @@ $(function() {
                label: 'Peer Average',
                borderColor: 'rgb(255,69,0)'
                }
+           <?php
+                   }
+                   ?>
+           
            ],
                
                 labels: [
