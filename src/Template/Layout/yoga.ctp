@@ -59,8 +59,6 @@ function isMobile() {
                    </li>
                    <li><a href="/contact">Contact us</a>
                    </li>
-                   <li><?php echo isMobile() ?>
-                </li>
                </ul>
                <ul class="nav navbar-nav navbar-right">
                  <?php
@@ -113,6 +111,7 @@ function isMobile() {
 For a long-term wellbeing boost start with ACT week 1. Here 6 techniques are explained over 12 weeks in bite sized sections. The ‘Try Now’ activities are quick and easy, the ‘Try at Home’ exercises can be used when you have more time and get your headphones ready for the ‘Watch Now’ clips, guided meditations and breathing exercises.
 Each week you can enter your progress and track your activity over time in your personal dashboard.</center></p>
   </div>
+     <?php if(isMobile() == 0) {
      <?php if($profile->hospital != "Singleton") { ?>
       <div class="row">
           <div id="module-game">
@@ -208,6 +207,111 @@ Each week you can enter your progress and track your activity over time in your 
                   </div>
               </div>
               <div class="mg-container" style="top:300px;left:650px;">
+                  <div class="mg-icon mg-icon-right wb">
+                      <a href="#" data-toggle="modal" data-target="#pocketmedic">
+                          <img class="img-responsive mg-fade" src="/webroot/img/my-icons-collection/png/pocketlogo.PNG">
+                      </a>
+                  </div>
+                  <div class="mg-text">
+                      <p>PocketMedic Wellbeing Films</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+     <?php } ?>
+     <?php elseif (isMobile() == 1) {
+      <?php if($profile->hospital != "Singleton") { ?>
+      <div class="row">
+          <div id="module-game">
+              <div class="mg-container">
+                  <div class="mg-icon mg-icon-left wb">
+                      <a href="#" data-toggle="modal" data-target="#relax">
+                          <img class="img-responsive mg-fade" src="/webroot/img/my-icons-collection/png/coconaut.png">
+                      </a>
+                  </div>
+                  <div class="mg-text text-right">
+                      <p>Relaxation</p>
+                  </div>
+              </div>
+              <div class="mg-container">
+                  <div class="mg-icon mg-icon-right wb">
+                      <a href="#" data-toggle="modal" data-target="#sleep">
+                          <img class="img-responsive mg-fade" src="/webroot/img/my-icons-collection/png/bed.png">
+                      </a>
+                  </div>
+                  <div class="mg-text">
+                      <p>Sleep</p>
+                  </div>
+              </div>
+              <div class="mg-container">
+                  <div class="mg-icon mg-icon-right wb">
+                      <a href="#" data-toggle="modal" data-target="#green-space">
+                          <img class="img-responsive mg-fade" src="/webroot/img/my-icons-collection/png/mountain.png">
+                      </a>
+                  </div>
+                  <div class="mg-text">
+                      <p>Green Space</p>
+                  </div>
+              </div>
+              <div class="mg-container">
+                  <div class="mg-icon mg-icon-left wb">
+                      <a href="#" data-toggle="modal" data-target="#act">
+                          <img class="img-responsive mg-fade" src="/webroot/img/my-icons-collection/png/test.png">
+                      </a>
+                  </div>
+                  <div class="mg-text text-right">
+                      <p>ACT</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <?php } else { ?>
+     <div class="row">
+          <div id="module-game">
+              <div id="yoga-girl">
+                  <img class="img-responsive" src="/webroot/img/my-icons-collection/png/lotus-position.png" alt="‘Improve Your Well Being’ icon" class="img-thumnail" width="800">
+              </div>
+              <div class="mg-container">
+                  <div class="mg-icon mg-icon-left wb">
+                      <a href="#" data-toggle="modal" data-target="#act">
+                          <img class="img-responsive mg-fade" src="/webroot/img/my-icons-collection/png/test.png">
+                      </a>
+                  </div>
+                  <div class="mg-text text-right">
+                      <p>ACT</p>
+                  </div>
+              </div>
+              <div class="mg-container">
+                  <div class="mg-icon mg-icon-left wb">
+                      <a href="#" data-toggle="modal" data-target="#relax">
+                          <img class="img-responsive mg-fade" src="/webroot/img/my-icons-collection/png/coconaut.png">
+                      </a>
+                  </div>
+                  <div class="mg-text text-right">
+                      <p>Relaxation</p>
+                  </div>
+              </div>
+              <div class="mg-container">
+                  <div class="mg-icon mg-icon-right wb">
+                      <a href="#" data-toggle="modal" data-target="#sleep">
+                          <img class="img-responsive mg-fade" src="/webroot/img/my-icons-collection/png/bed.png">
+                      </a>
+                  </div>
+                  <div class="mg-text">
+                      <p>Sleep</p>
+                  </div>
+              </div>
+              <div class="mg-container">
+                  <div class="mg-icon mg-icon-right wb">
+                      <a href="#" data-toggle="modal" data-target="#green-space">
+                          <img class="img-responsive mg-fade" src="/webroot/img/my-icons-collection/png/mountain.png">
+                      </a>
+                  </div>
+                  <div class="mg-text">
+                      <p>Green Space</p>
+                  </div>
+              </div>
+              <div class="mg-container">
                   <div class="mg-icon mg-icon-right wb">
                       <a href="#" data-toggle="modal" data-target="#pocketmedic">
                           <img class="img-responsive mg-fade" src="/webroot/img/my-icons-collection/png/pocketlogo.PNG">
