@@ -116,7 +116,7 @@ Each week you can enter your progress and track your activity over time in your 
       <div class="row">
           <div id="module-game">
               <div id="yoga-girl">
-                  <img class="img-responsive" src="/webroot/img/my-icons-collection/png/lotus-position.png" alt="‘Improve Your Well Being’ icon" class="img-thumnail" width="800">
+                  <img class="img-responsive" src="/webroot/img/my-icons-collection/png/lotus-position.png" alt="‘Improve Your Well Being’ icon" class="img-thumnail" width="500">
               </div>
               <div class="mg-container" style="top:120px;left:-30px;">
                   <div class="mg-icon mg-icon-left wb">
