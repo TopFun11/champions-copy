@@ -224,7 +224,7 @@ Each week you can enter your progress and track your activity over time in your 
       <div class="row">
           <div id="module-game">
               <div class="row">
-                  <div class="mg-icon mg-icon-left wb">
+                  <div class="mg-icon mg-icon-right wb">
                       <a href="#" data-toggle="modal" data-target="#relax">
                           <img class="img-responsive mg-fade" src="/webroot/img/my-icons-collection/png/coconaut.png">
                       </a>
@@ -254,7 +254,7 @@ Each week you can enter your progress and track your activity over time in your 
                   </div>
               </div>
               <div class="row">
-                  <div class="mg-icon mg-icon-left wb">
+                  <div class="mg-icon mg-icon-right wb">
                       <a href="#" data-toggle="modal" data-target="#act">
                           <img class="img-responsive mg-fade" src="/webroot/img/my-icons-collection/png/test.png">
                       </a>
@@ -269,7 +269,7 @@ Each week you can enter your progress and track your activity over time in your 
      <div class="row">
           <div id="module-game">
               <div class="row">
-                  <div class="mg-icon mg-icon-left wb">
+                  <div class="mg-icon mg-icon-right wb">
                       <a href="#" data-toggle="modal" data-target="#act">
                           <img class="img-responsive mg-fade" src="/webroot/img/my-icons-collection/png/test.png">
                       </a>
@@ -279,7 +279,7 @@ Each week you can enter your progress and track your activity over time in your 
                   </div>
               </div>
               <div class="row">
-                  <div class="mg-icon mg-icon-left wb">
+                  <div class="mg-icon mg-icon-right wb">
                       <a href="#" data-toggle="modal" data-target="#relax">
                           <img class="img-responsive mg-fade" src="/webroot/img/my-icons-collection/png/coconaut.png">
                       </a>
