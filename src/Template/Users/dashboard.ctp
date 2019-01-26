@@ -667,10 +667,10 @@ $(function() {
                     yAxes: [{
                             display: true,
                             ticks: {
-                                beginAtZero: true,
-                                stepValue: 2,
-                                max: 20,
-                            }
+                              min: 0,
+                              max: 20,
+                              stepSize: 2
+                           }
                         }]
                 },
     };
