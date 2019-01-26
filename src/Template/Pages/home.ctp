@@ -21,13 +21,6 @@
 <?php if($profile) { ?>
 <?php if($profile->hospital == "Morriston") { ?>
 <hr>
-<?php $noise = rand(-5, 5);
-      $userPerform = 30;
-      $peerPerform = max(0, ($userPerform + 10 + $noise));
-      if ($peerPerform > 100) {
-         $peerPerform = 100;
-      }
-?>
 <div class="row" style="background-color:#aed6f1">
     <h2><center>Other users are improving their health every day. Get started here!</center></h2>
 </div>
@@ -40,8 +33,8 @@
   <div class="container">
    <div class="row display-flex">
        <?php if ($profile) { ?>
-       <?php if ($profile->hospital != "Neath Port Talbot") { ?>
-        <?php foreach($module as $module) if ($module->title != 'Dissertation demo'){ ?>
+       <?php if ($profile->hospital == "Neath Port Talbot") { ?>
+        <?php foreach($module as $module) if ($module->title != 'Dissertation demo' && $module->title != 'Wellbeing'){ ?>
             <div class="col-xs-12 col-sm-4 col-md-4">
                 <div class="box">
                     <div class="icon">
@@ -67,7 +60,7 @@
             </div>
        <?php } ?>
       <?php } else { ?>
-       <?php foreach($module as $module) if ($module->title != 'Dissertation demo' && $module->title != 'Wellbeing'){ ?>
+       <?php foreach($module as $module) if ($module->title != 'Dissertation demo'){ ?>
             <div class="col-xs-12 col-sm-4 col-md-4">
                 <div class="box">
                     <div class="icon">
@@ -94,7 +87,7 @@
        <?php } ?>
        <?php } ?>
        <?php } else { ?>
-        <?php foreach($module as $module) if ($module->title != 'Dissertation demo'){ ?>
+        <?php foreach($module as $module) if ($module->title != 'Dissertation demo' && $module->title != 'Wellbeing'){ ?>
             <div class="col-xs-12 col-sm-4 col-md-4">
                 <div class="box">
                     <div class="icon">
