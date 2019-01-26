@@ -293,7 +293,7 @@ function stdev($arr)
          $userScale = stdev($exestdev);
          $exeNoise = nrand(0.0, ($userScale/4));
          if ($i == 0) {
-            $exeChange = $screenerExe - $exeRecords[$i];
+            $exeChange = $exeRecords[$i] - $screenerExe;
             if ($exeChange <= 0) {
                $peerVal = round($peerexeRecords[$i] + $exeNoise);
             } else {
@@ -307,7 +307,7 @@ function stdev($arr)
                }
             }
          } else {
-            $exeChange = $exeRecords[$i-1] - $exeRecords[$i];
+            $exeChange = $exeRecords[$i] - $exeRecords[$i-1];
             if ($exeChange <= 0) {
                $peerVal = round($peerexeRecords[$i] + $exeNoise);
             } else {
@@ -383,55 +383,55 @@ function stdev($arr)
       }
 ?>
 
-<?php $peersmokingRecords = []; $peerVal = 0;
-      array_push($peersmokingRecords, $screenerSmoke);
-      for ($i=0; $i < count($smokingRecords); $i++) {
-         $smokingstdev = [];
-         $userVal = $smokingRecords[$i];
+<?php $peerdrinkRecords = []; $peerVal = 0;
+      array_push($peerdrinkRecords, $screenerDrink);
+      for ($i=0; $i < count($drinkRecords); $i++) {
+         $drinkstdev = [];
+         $userVal = $drinkRecords[$i];
          if ($i == 0) {
-            array_push($smokingstdev, $screenerSmoke);
-            array_push($smokingstdev, $smokingRecords[$i]);
+            array_push($drinkstdev, $screenerDrink);
+            array_push($drinkstdev, $drinkRecords[$i]);
          } else {
-            array_push($smokingstdev, $screenerSmoke);
+            array_push($drinkstdev, $screenerDrink);
             for($j=0; $j < $i; $j++) {
-               array_push($smokingstdev, $smokingRecords[$j]);
+               array_push($drinkstdev, $drinkRecords[$j]);
             }
          }
-         $userScale = stdev($smokingstdev);
-         $smokeNoise = nrand(0.0, ($userScale/4));
+         $userScale = stdev($drinkstdev);
+         $drinkNoise = nrand(0.0, ($userScale/4));
          if ($i == 0) {
-            $smokeChange = $screenerSmoke - $smokingRecords[$i];
-            if ($smokeChange <= 0) {
-               $peerVal = round($peersmokingRecords[$i] + $smokeNoise);
+            $drinkChange = $screenerDrink - $drinkRecords[$i];
+            if ($drinkChange <= 0) {
+               $peerVal = round($peerdrinkRecords[$i] + $drinkNoise);
             } else {
-               $changeVal = round($smokeChange * 2);
+               $changeVal = round($drinkChange * 2);
                if ($changeVal > 0) {
-                  $peerValI = round($userVal - $changeVal + $smokeNoise);
-                  $peerVal = round((0.66 * $peerValI) + (0.33 * $peersmokingRecords[$i]));
+                  $peerValI = round($userVal - $changeVal + $drinkNoise);
+                  $peerVal = round((0.66 * $peerValI) + (0.33 * $peerdrinkRecords[$i]));
                } else {
-                  $peerValI = round($userVal + $changeVal + $smokeNoise);
-                  $peerVal = round((0.66 * $peerValI) + (0.33 * $peersmokingRecords[$i]));
+                  $peerValI = round($userVal + $changeVal + $drinkNoise);
+                  $peerVal = round((0.66 * $peerValI) + (0.33 * $peerdrinkRecords[$i]));
                }
             }
          } else {
-            $smokeChange = $smokingRecords[$i-1] - $smokingRecords[$i];
-            if ($smokeChange <= 0) {
-               $peerVal = round($peersmokingRecords[$i] + $smokeNoise);
+            $drinkChange = $drinkRecords[$i-1] - $drinkRecords[$i];
+            if ($drinkChange <= 0) {
+               $peerVal = round($peerdrinkRecords[$i] + $drinkNoise);
             } else {
-               $changeVal = round($smokeChange * 2);
+               $changeVal = round($drinkChange * 2);
                if ($changeVal > 0) {
-                  $peerValI = round($userVal - $changeVal + $smokeNoise);
-                  $peerVal = round((0.5 * $peerValI) + (0.25 * $peersmokingRecords[$i]) + (0.25 * $peersmokingRecords[$i-1]));
+                  $peerValI = round($userVal - $changeVal + $drinkNoise);
+                  $peerVal = round((0.5 * $peerValI) + (0.25 * $peerdrinkRecords[$i]) + (0.25 * $peerdrinkRecords[$i-1]));
                } else {
-                  $peerValI = round($userVal + $changeVal + $smokeNoise);
-                  $peerVal = round((0.5 * $peerValI) + (0.25 * $peersmokingRecords[$i]) + (0.25 * $peersmokingRecords[$i-1]));
+                  $peerValI = round($userVal + $changeVal + $drinkNoise);
+                  $peerVal = round((0.5 * $peerValI) + (0.25 * $peerdrinkRecords[$i]) + (0.25 * $peerdrinkRecords[$i-1]));
                }
             }
          }
          if ($peerVal <= 0) {
             $peerVal = 0;
          }
-         array_push($peersmokingRecords, $peerVal);
+         array_push($peerdrinkRecords, $peerVal);
       }
 ?>
 
@@ -888,7 +888,25 @@ $(function() {
                     ],
                     label: 'Days Reaching 5-A-Day',
                 borderColor: 'rgb(230, 160, 250)',
-                }],
+                },
+                                                <?php
+                           if ($profile->hospital == "Morriston") {
+                              ?>
+                           {
+                data: [
+<?php                           
+                           for ($i=0; $i < count($peereatRecords); $i++) {
+                              echo $peereatRecords[$i] . ",\n";
+                           }
+?>   
+               ],
+               label: 'Peer Average',
+               borderColor: 'rgb(255,69,0)',
+               }
+           <?php
+                   }
+                   ?> 
+                          ],
                 labels: [
 <?php
                echo "'Start' ,\n";
@@ -935,9 +953,26 @@ $(function() {
 
                     ],
                     label: 'Alcoholic Drinks per Week',
-                   backgroundColor: 'rgb(174, 150, 192)',
-                borderColor: 'rgb(0, 0, 0)',
-                }],
+                   borderColor: 'rgb(174, 150, 192)',
+                },
+                                                <?php
+                           if ($profile->hospital == "Morriston") {
+                              ?>
+                           {
+                data: [
+<?php                           
+                           for ($i=0; $i < count($peerdrinkRecords); $i++) {
+                              echo $peerdrinkRecords[$i] . ",\n";
+                           }
+?>   
+               ],
+               label: 'Peer Average',
+               borderColor: 'rgb(255,69,0)',
+               }
+           <?php
+                   }
+                   ?>
+                          ],
                 labels: [
 <?php
                echo "'Start' ,\n";
