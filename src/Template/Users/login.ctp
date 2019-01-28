@@ -7,7 +7,7 @@
                     <?= $this->Form->create() ?>
                     <h2 class="form-signin-heading">Sign in</h2>
                     <label for="inputEmail" class="sr-only">Email address</label>
-                    <?= $this->Form->input('username', ['label' => false, 'class' => 'form-control','placeholder'=>"Email Address", 'required'=>true,'autofocus'=>true]) ?>
+                    <?= $this->Form->input('username', ['label' => false, 'class' => 'form-control','placeholder'=>"Username", 'required'=>true,'autofocus'=>true]) ?>
                     <label for="inputPassword" class="sr-only">Password</label>
                     <?= $this->Form->input('password', ['label' => false, 'class' => 'form-control','placeholder'=>'Password','required'=>true]) ?>
             </div>
