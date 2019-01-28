@@ -466,7 +466,7 @@ function stdev($arr)
                <h3>Other users like you have achieved, on average, <?= end($peerexeRecords) ?> minutes of exercise a day.</h3>
             <?php } ?>
            <?php if($module->title == "Eat Healthily") { ?>
-               <h3>Other users like you, on average, ate their 5-A-Day Fruit and Veg <?= end($peereatRecords) ?> days last week.</h3>
+               <h3>Other users like you, on average, ate their Five-A-Day Fruit and Veg <?= end($peereatRecords) ?> days last week.</h3>
             <?php } ?>
            <?php if($module->title == "Drink Responsibly") { ?>
                <h3>Other users reduced their drinking, on average, to <?= end($peerdrinkRecords) ?> alcoholic drinks per week.</h3>
