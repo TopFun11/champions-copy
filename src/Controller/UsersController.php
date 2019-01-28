@@ -122,7 +122,7 @@ use Cake\Controller\Component\AuthComponent;
              return $this->redirect(["action" => "", "controller" => "pages"]);
          }
          $user = $this->Users->get($id);
-         $this->set('profile', $this->Profile->find("all")->where(['user_id' => $this->Auth->user("id")])->first());
+         $this->set('profile', $this->Profile->find("all")->where(['user_id' => $user->id)->first());
          $this->set(compact('user'));
      }
 
