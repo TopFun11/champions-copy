@@ -381,7 +381,7 @@ hr {
 }
 
 .mg-container {
-    position: absolute;
+    position: relative;
     width: 278px;
     display: table-row;
 }
