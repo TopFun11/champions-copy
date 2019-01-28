@@ -22,6 +22,17 @@ $this->start('tb_sidebar');
 <?php
 $this->end();
 ?>
+<?php $condition = null;
+      if ($profile->hospital == "Singleton") {
+          $condition = "Wellbeing + PocketMedic";
+      } else if ($profile->hospital == "Morriston") {
+          $condition = "Wellbeing + Peer";
+      } else if ($profile->hospital == "Neath Port Talbot") {
+          $condition = "Control";
+      } else {
+          $condition = "Wellbeing";
+      }
+?>
 <div class="panel panel-default">
     <!-- Panel header -->
     <div class="panel-heading">
@@ -39,6 +50,10 @@ $this->end();
         <tr>
             <td><?= __('Role') ?></td>
             <td><?= h($user->role) ?></td>
+        </tr>
+        <tr>
+            <td><?= __('Condition') ?></td>
+            <td><?= h($condition) ?></td>
         </tr>
         <tr>
             <td><?= __('Id') ?></td>
