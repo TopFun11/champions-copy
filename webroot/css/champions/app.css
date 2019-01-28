@@ -374,7 +374,7 @@ hr {
 
 /* WELL-BEING PAGE */
 
-.module-game {
+#module-game {
     position: relative;
     width: 70%;
     margin: 0 auto;
@@ -469,7 +469,7 @@ hr {
     cursor: context-menu;
 }
 
-.yoga-girl {
+#yoga-girl {
     padding-top: 200px;
     padding-right: 200px;
     padding-left: 200px;
