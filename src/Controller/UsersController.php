@@ -113,7 +113,6 @@ use Cake\Controller\Component\AuthComponent;
              return $this->redirect(["action" => "", "controller" => "pages"]);
          }
          $this->set('users', $this->Users->find('all'));
-         $this->set('profile', $this->Profile->find("all")->where(['user_id' => $this->Auth->user("id")])->first());
      }
 
      public function view($id)
@@ -123,6 +122,7 @@ use Cake\Controller\Component\AuthComponent;
              return $this->redirect(["action" => "", "controller" => "pages"]);
          }
          $user = $this->Users->get($id);
+         $this->set('profile', $this->Profile->find("all")->where(['user_id' => $this->Auth->user("id")])->first());
          $this->set(compact('user'));
      }
 
