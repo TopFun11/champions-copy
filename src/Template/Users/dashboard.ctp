@@ -456,7 +456,7 @@ function stdev($arr)
         <br>
         <div class="col-md-12" style="background-color:#aed6f1">
            <?php foreach($user->module as $module) { ?>
-            <?php if($module->title == "Quit Smoking" && empty($peersmokingRecords) != true) { ?>
+            <?php if(($module->title == "Quit Smoking") and (empty($peersmokingRecords) != true)) { ?>
                <h3>Other users like you have reduced their smoking, on average, to <?= end($peersmokingRecords) ?> cigarettes per day.</h3>
             <?php } ?>
            <?php if($module->title == "Weight Optimisation") { ?>
