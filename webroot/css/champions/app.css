@@ -375,13 +375,13 @@ hr {
 /* WELL-BEING PAGE */
 
 #module-game {
-    position: absolute;
+    position: relative;
     width: 70%;
     margin: 0 auto;
 }
 
 .mg-container {
-    position: relative;
+    position: absolute;
     width: 278px;
     display: table-row;
 }
