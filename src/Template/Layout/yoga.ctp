@@ -102,18 +102,18 @@ function isMobile() {
            </div>
        </div>
   </div>
-    <div class="container clearfix">
-      <?= $this->fetch('content') ?>
-      <div class="row">
-   <h1><center>Welcome!</center></h1>
-   <p><center><b>Where to start?</b></center></p>
-   <p><center>If you’re looking for quick fire tips go to Relaxation. If sleep is troubling you look here for suggestions, if you want inspiration look at the Green Space gallery.
-For a long-term wellbeing boost start with ACT week 1. Here 6 techniques are explained over 12 weeks in bite sized sections. The ‘Try Now’ activities are quick and easy, the ‘Try at Home’ exercises can be used when you have more time and get your headphones ready for the ‘Watch Now’ clips, guided meditations and breathing exercises.
-Each week you can enter your progress and track your activity over time in your personal dashboard.</center></p>
-  </div>
+  <div class="container clearfix">
+   <?= $this->fetch('content') ?>
+   <div class="row">
+    <h1><center>Welcome!</center></h1>
+    <p><center><b>Where to start?</b></center></p>
+    <p><center>If you’re looking for quick fire tips go to Relaxation. If sleep is troubling you look here for suggestions, if you want inspiration look at the Green Space gallery.
+     For a long-term wellbeing boost start with ACT week 1. Here 6 techniques are explained over 12 weeks in bite sized sections. The ‘Try Now’ activities are quick and easy, the ‘Try at Home’ exercises can be used when you have more time and get your headphones ready for the ‘Watch Now’ clips, guided meditations and breathing exercises.
+     Each week you can enter your progress and track your activity over time in your personal dashboard.</center></p>
+     <br>
+     <br>
      <?php if(isMobile() == 0) { ?>
      <?php if($profile->hospital != "Singleton") { ?>
-      <div class="row">
           <div id="module-game">
               <div id="yoga-girl">
                   <img class="img-responsive" src="/webroot/img/my-icons-collection/png/lotus-position.png" alt="‘Improve Your Well Being’ icon" class="img-thumnail" width="800">
@@ -161,7 +161,6 @@ Each week you can enter your progress and track your activity over time in your 
           </div>
       </div>
       <?php } else { ?>
-     <div class="row">
           <div id="module-game">
               <div id="yoga-girl">
                   <img class="img-responsive" src="/webroot/img/my-icons-collection/png/lotus-position.png" alt="‘Improve Your Well Being’ icon" class="img-thumnail" width="800">
@@ -221,7 +220,6 @@ Each week you can enter your progress and track your activity over time in your 
      <?php } ?>
      <?php } else if(isMobile() == 1) { ?>
       <?php if($profile->hospital != "Singleton") { ?>
-      <div class="row">
           <div id="module-game">
               <div class="row">
                   <div class="mg-icon mg-icon-right wb">
@@ -266,7 +264,6 @@ Each week you can enter your progress and track your activity over time in your 
           </div>
       </div>
       <?php } else { ?>
-     <div class="row">
           <div id="module-game">
               <div class="row">
                   <div class="mg-icon mg-icon-right wb">
