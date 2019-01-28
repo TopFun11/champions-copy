@@ -375,7 +375,7 @@ hr {
 /* WELL-BEING PAGE */
 
 #module-game {
-    position: relative;
+    position: absolute;
     width: 70%;
     margin: 0 auto;
 }
