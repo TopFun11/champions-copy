@@ -53,7 +53,7 @@ $this->end();
         </tr>
         <tr>
             <td><?= __('Condition') ?></td>
-            <td><?= h($condition) ?></td>
+            <td><?= h($profile->hospital) ?></td>
         </tr>
         <tr>
             <td><?= __('Id') ?></td>
