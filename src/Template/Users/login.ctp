@@ -10,7 +10,6 @@
                     <?= $this->Form->input('username', ['label' => false, 'class' => 'form-control','placeholder'=>"Email Address", 'required'=>true,'autofocus'=>true]) ?>
                     <label for="inputPassword" class="sr-only">Password</label>
                     <?= $this->Form->input('password', ['label' => false, 'class' => 'form-control','placeholder'=>'Password','required'=>true]) ?>
-                    <a href=""> Forgot Password </a>
             </div>
         </div>
         <div class="row">
