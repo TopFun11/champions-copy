@@ -33,6 +33,13 @@ $this->end();
           $condition = "Wellbeing";
       }
 ?>
+<?php $emailCond = null;
+      if ($profile->unsubscribed) {
+            $emailCond = "Unsubscribed from Emails";
+      } else {
+            $emailCond = $profile->email;
+      }
+?>
 <div class="panel panel-default">
     <!-- Panel header -->
     <div class="panel-heading">
@@ -53,8 +60,12 @@ $this->end();
         </tr>
         <tr>
             <td><?= __('Condition') ?></td>
-            <td><?= h($profile->hospital) ?></td>
+            <td><?= h($condition) ?></td>
         </tr>
+        <tr>
+              <td><?= __('Email') ?></td>
+              <td><?= h($emailCond) ?></td>
+          </tr>
         <tr>
             <td><?= __('Id') ?></td>
             <td><?= $this->Number->format($user->id) ?></td>
