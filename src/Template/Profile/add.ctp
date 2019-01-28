@@ -25,6 +25,7 @@
                    <option value="Morriston">Morriston Hospital</option>
                    <option value="Neath Port Talbot">Neath Port Talbot Hospital</option>
                    <option value="Princess of Wales">Princess of Wales Hospital</option>
+                  <option value="Community">Mental Health Services / Community</option>
                 </select>
 
 
