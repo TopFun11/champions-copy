@@ -74,7 +74,7 @@ $this->end();
               <td><?= h($emailCond) ?></td>
           </tr>
           <tr>
-                <td><?= __('Email') ?></td>
+                <td><?= __('SMS') ?></td>
                 <td><?= h($phoneCond) ?></td>
           </tr>
         <tr>
