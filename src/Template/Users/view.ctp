@@ -44,7 +44,7 @@ $this->end();
       if ($profile->unsubscribed) {
             $phoneCond = "Unsubscribed from SMS";
       } else {
-            $phoneCond = $profile->phone_number;
+            $phoneCond = $this->Number->format($profile->phone_number);
       }
 ?>
 <div class="panel panel-default">
