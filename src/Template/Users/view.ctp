@@ -40,6 +40,13 @@ $this->end();
             $emailCond = $profile->email;
       }
 ?>
+<?php $phoneCond = null;
+      if ($profile->unsubscribed) {
+            $phoneCond = "Unsubscribed from SMS";
+      } else {
+            $phoneCond = $profile->phone_number;
+      }
+?>
 <div class="panel panel-default">
     <!-- Panel header -->
     <div class="panel-heading">
@@ -65,6 +72,10 @@ $this->end();
         <tr>
               <td><?= __('Email') ?></td>
               <td><?= h($emailCond) ?></td>
+          </tr>
+          <tr>
+                <td><?= __('Email') ?></td>
+                <td><?= h($phoneCond) ?></td>
           </tr>
         <tr>
             <td><?= __('Id') ?></td>
