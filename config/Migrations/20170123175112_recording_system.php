@@ -52,7 +52,7 @@ class RecordingSystem extends AbstractMigration
       ->addIndex('recordset_id')
       ->addForeignKey('recordset_id', 'recordset', 'id')
       ->addColumn("answer", 'string', [
-        'length' => 255,
+        'length' => 1000,
         'default' => null,
         'null' => true
       ])
