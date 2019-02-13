@@ -450,7 +450,7 @@ function stdev($arr)
 <div class="container user-dashboard">
     <div class="row greeting">
         <div class="col-md-12">
-            <h1>Good <?=(date('H')<12?'Morning':date('H')<18?'Afternoon':'Evening')?>, <?=ucwords($user->username)?>.</h1><p><span class="pull-right edit-button"><a href="/profile/editPersonal"> Change Password <i class="glyphicon glyphicon-pencil"></i></a></span></p>
+            <h1>Good <?=(date('H')<12?'Morning':date('H')<18?'Afternoon':'Evening')?>, <?=ucwords($user->username)?>.</h1><p><span class="pull-right edit-button"><a href="/profile/edit_password"> Change Password <i class="glyphicon glyphicon-pencil"></i></a></span></p>
         </div>
         <?php if($profile->hospital=="Morriston") { ?>
         <br>
