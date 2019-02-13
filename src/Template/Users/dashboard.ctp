@@ -450,7 +450,7 @@ function stdev($arr)
 <div class="container user-dashboard">
     <div class="row greeting">
         <div class="col-md-12">
-            <h1>Good <?=(date('H')<12?'Morning':date('H')<18?'Afternoon':'Evening')?>, <?=ucwords($user->username)?>.</h1>
+            <h1>Good <?=(date('H')<12?'Morning':date('H')<18?'Afternoon':'Evening')?>, <?=ucwords($user->username)?>.<span class="pull-right edit-button"><a href="/profile/editPersonal"> Edit <i class="glyphicon glyphicon-pencil"></i></a></span></h1>
         </div>
         <?php if($profile->hospital=="Morriston") { ?>
         <br>
@@ -477,7 +477,7 @@ function stdev($arr)
     </div>
     <div class="row">
         <div class="col-md-8 activity-summary">
-            <h2>Your Activity Summary<span><a href="">This Week</a> | <a href="">Last 30 Days</a> | <a href="">All Time</a></span><span class="pull-right edit-button"><a href="/profile/editPersonal"> Edit <i class="glyphicon glyphicon-pencil"></i></a></span></h2>
+            <h2>Your Activity Summary<span><a href="">This Week</a> | <a href="">Last 30 Days</a> | <a href="">All Time</a></span></h2>
             <div class="row">
                 <div class="col-md-6" id="pie-chart-container">
                     <canvas id="pie-chart" height="260" width="350"><em>Please wait for the chart to load&hellip;</em></canvas>
