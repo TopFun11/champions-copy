@@ -213,7 +213,7 @@ use Cake\Controller\Component\AuthComponent;
             $this->Users->patchEntity($user, $this->request->data);
                 if ($this->Users->save($user)) {
                     $this->Flash->success(__('Your user has been updated.'));
-                    return $this->redirect(['action' => 'index']);
+                    return $this->redirect(['action' => 'dashboard']);
                 }
             $this->Flash->error(__('Unable to update.'));
         }
