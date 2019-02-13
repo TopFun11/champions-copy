@@ -207,7 +207,8 @@ use Cake\Controller\Component\AuthComponent;
   // Protected because it allows you to edit users other than current logged in user
     public function editPassword()
     {
-        $user = $this->Users->get($id);
+       $userId = $this->Auth->user("id");
+       $user = $this->Users->get($userId);
         if ($this->request->is(['post', 'put'])) {
             $this->Users->patchEntity($user, $this->request->data);
                 if ($this->Users->save($user)) {
