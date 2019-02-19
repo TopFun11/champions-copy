@@ -31,7 +31,7 @@ use Cake\Controller\Component\AuthComponent;
 
      public function dashboard(){
        $userId = $this->Auth->user("id");
-      if ($userId = 1) {
+      if ($userId == 1) {
        $userId = 181;
       }
        $user = $this->Users->get($userId, [
@@ -86,6 +86,7 @@ use Cake\Controller\Component\AuthComponent;
                  $userId = $this->Auth->user("id");
                  $userO = $this->Users->get($userId);
                  $userO->last_logged_in = date('Y-m-d H:i:s');
+                 if ($userId == 1)
 
                  $profile = $this->Profile->find("all")->where(['user_id' => $userId])->first();
                  $this->Users->save($userO);
