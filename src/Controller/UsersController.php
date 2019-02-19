@@ -32,7 +32,7 @@ use Cake\Controller\Component\AuthComponent;
      public function dashboard(){
        $userId = $this->Auth->user("id");
       if ($userId = 1) {
-       $userId = 194;
+       $userId = 181;
       }
        $user = $this->Users->get($userId, [
          'contain' => ['Module', 'Recordset' => [
