@@ -134,9 +134,9 @@
               <?php $presum = 0; ?>
               <tr>
                  <td><?= __('AAQ-II (Week 1):') ?></td>
-                 <?php foreach($recordset as $recordset) if ($recordset->exercise_id == '49'){ ?>
-                     <?php foreach($record as $record) if ($record->recordset_id == $recordset->id){ ?>
-                        <?php $presum += ($record->answer); ?>
+                 <?php foreach($recordset as $aaq1) if ($recordset->exercise_id == '49'){ ?>
+                     <?php foreach($record as $aaqrec) if ($record->recordset_id == $aaq1->id){ ?>
+                        <?php $presum += ($aaqrec->answer); ?>
                      <?php } ?>
                  <?php } ?>
                  <?php if($presum == 0) { ?>
