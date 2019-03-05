@@ -149,9 +149,10 @@
               <tr>
                  <td><?= __('AAQ-II (Week 12):') ?></td>
                  <?php foreach($recordset2 as $recordset2) if ($recordset2->exercise_id == '51') { ?>
+                     <?php echo ($recordset->id) ?>
                      <?php foreach($record2 as $record2) if ($record2->recordset_id == $recordset2->id) { ?>
-                        <?php $postsum += ($record2->answer); ?>
-                     <?php } ?>
+                        <?php echo ($record2->id); $postsum += ($record2->answer); ?>
+                     <?php } echo ($presum); ?>
                  <?php } ?>
                  <?php if($postsum == 0) { ?>
                  <td><?= h("Please complete the AAQ-II Questionnaire in the ACT Wellbeing Module"); ?></td></tr>
