@@ -152,7 +152,7 @@
                      <?php echo ($recordset->id) ?>
                      <?php foreach($record2 as $record2) if ($record2->recordset_id == $recordset2->id) { ?>
                         <?php echo ($record2->id); $postsum += ($record2->answer); ?>
-                     <?php } echo ($presum); ?>
+                     <?php } echo ($postsum); ?>
                  <?php } ?>
                  <?php if($postsum == 0) { ?>
                  <td><?= h("Please complete the AAQ-II Questionnaire in the ACT Wellbeing Module"); ?></td></tr>
