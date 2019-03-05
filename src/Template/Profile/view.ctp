@@ -135,10 +135,9 @@
               <tr>
                  <td><?= __('AAQ-II (Week 1):') ?></td>
                  <?php foreach($recordset as $recordset) if ($recordset->exercise_id == '49'){ ?>
-                     <?php echo ($recordset->id) ?>
                      <?php foreach($record as $record) if ($record->recordset_id == $recordset->id){ ?>
-                        <?php echo ($record->id); $presum += ($record->answer); echo ($presum); ?>
-                     <?php } echo ($presum); ?>
+                        <?php $presum += ($record->answer); ?>
+                     <?php } ?>
                  <?php } ?>
                  <?php if($presum == 0) { ?>
                  <td><?= h("Please complete the AAQ-II Questionnaire in the ACT Wellbeing Module"); ?></td></tr>
@@ -149,10 +148,9 @@
               <tr>
                  <td><?= __('AAQ-II (Week 12):') ?></td>
                  <?php foreach($recordset2 as $recordset2) if ($recordset2->exercise_id == '51') { ?>
-                     <?php echo ($recordset2->id) ?>
                      <?php foreach($record2 as $record2) if ($record2->recordset_id == $recordset2->id) { ?>
-                        <?php echo ($record2->id); $postsum += ($record2->answer); echo ($postsum); ?>
-                     <?php } echo ($postsum); ?>
+                        <?php $postsum += ($record2->answer); ?>
+                     <?php }  ?>
                  <?php } ?>
                  <?php if($postsum == 0) { ?>
                  <td><?= h("Please complete the AAQ-II Questionnaire in the ACT Wellbeing Module"); ?></td></tr>
