@@ -137,7 +137,7 @@
                  <?php foreach($recordset as $recordset) if ($recordset->exercise_id == '49'){ ?>
                      <?php echo ($recordset->id) ?>
                      <?php foreach($record as $record) if ($record->recordset_id == $recordset->id){ ?>
-                        <?php echo ($record->answer); $presum += ($record->answer); ?>
+                        <?php echo ($record->id); $presum += ($record->answer); ?>
                      <?php } echo ($presum); ?>
                  <?php } ?>
                  <?php if($presum == 0) { ?>
