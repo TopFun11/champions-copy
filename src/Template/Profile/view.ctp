@@ -137,8 +137,8 @@
                  <?php foreach($recordset as $recordset) if ($recordset->exercise_id == '49'){ ?>
                      <?php echo ($recordset->id) ?>
                      <?php foreach($record as $record) if ($record->recordset_id == $recordset->id){ ?>
-                        <?php $presum += ($record->answer); ?>
-                     <?php } ?>
+                        <?php echo ($record->answer); $presum += ($record->answer); ?>
+                     <?php } echo ($presum); ?>
                  <?php } ?>
                  <?php if($presum == 0) { ?>
                  <td><?= h("Please complete the AAQ-II Questionnaire in the ACT Wellbeing Module"); ?></td></tr>
