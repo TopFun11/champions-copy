@@ -93,6 +93,7 @@ $this->end();
         </tr>
         <tr>
               <td><?=__('Age') ?></td>
+              <td>
               <?php
                switch ($profile->age) {
                  case "band1":
