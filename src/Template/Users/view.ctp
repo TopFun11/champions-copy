@@ -90,8 +90,28 @@ $this->end();
             <td><?= h($user->modified) ?></td>
         </tr>
         <tr>
-              <td><?=__('Occupation') ?></td>
-              <td><?= h($profile->occupation) ?></td>
+              <td><?=__('General Health') ?></td>
+              <td><?= h($profile->general_health) ?></td>
         </tr>
+        <tr>
+              <td><?=__('Supervises Others?') ?></td>
+              <td><?= h($profile->supervises) ?></td>
+        </tr>
+        <tr>
+              <td><?=__('Days off Work') ?></td>
+              <td><?= h($profile->days_off_work) ?></td>
+        </tr>
+        <tr>
+              <td><?=__('Abscences Lasting A Week') ?></td>
+              <td><?= h($profile->absences_lasting_a_week) ?></td>
+        </tr>
+        <tr>
+              <td><?=__('General Work Performance') ?></td>
+              <td><?= h($profile->work_performance) ?></td>
+        </tr>
+        <tr>
+              <td><?=__('General Health') ?></td>
+              <td><?= h($profile->general_health) ?></td>
+        </tr>  
     </table>
 </div>
