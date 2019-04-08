@@ -83,17 +83,17 @@
 
             <div class="form-group">
               <label>Occupation:* </label><br/>
-              <input type="radio" name="occupation" value="excellent" required>Professional Occupation
+              <input type="radio" name="occupation" value="Professional" required>Professional Occupation
               <br/><div class="radio-extra">Teacher, nurse, physiotherapist, social worker, welfare officer, software designer, accountant, solicitor, medical practitioner, scientist<br/></div>
-              <input type="radio" name="occupation" value="excellent">Clerical and intermediate occupations
+              <input type="radio" name="occupation" value="Clerical Or Intermediate">Clerical and intermediate occupations
               <br/><div class="radio-extra">Secretary, personal assistant, clerical worker, office clerk, call centre agent, nursing auxiliary, nursery nurse<br/></div>
-              <input type="radio" name="occupation" value="excellent">Senior managers or administrators
+              <input type="radio" name="occupation" value="Senior Manager Or Admin">Senior managers or administrators
               <br/><div class="radio-extra">Finance manager, chief executive<br/></div>
-              <input type="radio" name="occupation" value="excellent">Middle or junior managers
+              <input type="radio" name="occupation" value="Middle Or Junior Manager">Middle or junior managers
               <br/><div class="radio-extra">Office manager, retail manager, bank manager, restaurant manager, warehouse manager<br/></div>
-              <input type="radio" name="occupation" value="excellent">Technical and craft occupations
+              <input type="radio" name="occupation" value="Technical and Craft">Technical and craft occupations
               <br/><div class="radio-extra">Inspector, plumber, printer, electrician, gardener, tool maker<br/></div>
-              <input type="radio" name="occupation" value="excellent">Routine manual and service occupations
+              <input type="radio" name="occupation" value="Manual Or Service">Routine manual and service occupations
               <br/><div class="radio-extra">Postal worker, security guard, caretaker, catering assistant, receptionist, sales assistant, HGV/van driver, cleaner, porter, messenger<br/></div>
           </div>
 
