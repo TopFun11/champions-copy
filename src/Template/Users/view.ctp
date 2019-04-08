@@ -89,5 +89,9 @@ $this->end();
             <td><?= __('Modified') ?></td>
             <td><?= h($user->modified) ?></td>
         </tr>
+        <tr>
+              <td><?=__('Occupation') ?></td>
+              <td><?= h($profile->occupation) ?></td>
+        </tr>
     </table>
 </div>
