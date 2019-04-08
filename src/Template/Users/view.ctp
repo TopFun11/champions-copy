@@ -93,7 +93,32 @@ $this->end();
         </tr>
         <tr>
               <td><?=__('Age') ?></td>
-              <td><?= h($profile->age) ?></td>
+              <?php
+               switch ($profile->age) {
+                 case "band1":
+                  echo "18-25";
+                  break;
+                case "band2":
+                  echo "26-35";
+                  break;
+                case "band3":
+                  echo "36-45";
+                  break;
+                case "band4":
+                  echo "46-55";
+                  break;
+                case "band5":
+                  echo "56-65";
+                  break;
+                case "band6":
+                  echo "65+";
+                  break;
+                default:
+                  echo "Unspecified";
+                  break;
+               }
+               ?>
+               </td>
         </tr>
         <tr>
               <td><?=__('Gender') ?></td>
