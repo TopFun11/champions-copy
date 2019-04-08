@@ -92,6 +92,18 @@ $this->end();
             <td><?= h($user->modified) ?></td>
         </tr>
         <tr>
+              <td><?=__('Age') ?></td>
+              <td><?= h($profile->age) ?></td>
+        </tr>
+        <tr>
+              <td><?=__('Gender') ?></td>
+              <td><?= h($profile->gender) ?></td>
+        </tr>  
+        <tr>
+              <td><?=__('Hospital Board') ?></td>
+              <td><?= h($profile->hospital) ?></td>
+        </tr>    
+        <tr>
               <td><?=__('General Health') ?></td>
               <td><?= h($profile->general_health) ?></td>
         </tr>
