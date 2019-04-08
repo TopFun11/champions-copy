@@ -47,6 +47,8 @@ $this->end();
             $phoneCond = $this->Number->format($profile->phone_number);
       }
 ?>
+<?php $profile->wemwbs_score = $profile->wembs_optimism + $profile->wembs_useful + $profile->wembs_relaxed + $profile->wembs_relaxed + $profile->interested_in_people + $profile->wembs_spare_energy + $profile->wembs_dealing_with_problems_well + $profile->wembs_thinking_clearly + $profile->wembs_good_about_self + $profile->wembs_close_to_others + $profile->wembs_feeling_confident + $profile->wembs_make_mind_up + $profile->wembs_loved + $profile->wembs_interested_in_new_things + $profile->wembs_cheerful; ?>
+<?php $profile->phq4_score = $profile->phq_anxious + $profile->phq_worrying + $profile->phq_interest_please + $profile->phq_depressed; ?>
 <div class="panel panel-default">
     <!-- Panel header -->
     <div class="panel-heading">
@@ -110,8 +112,12 @@ $this->end();
               <td><?= h($profile->work_performance) ?></td>
         </tr>
         <tr>
-              <td><?=__('General Health') ?></td>
-              <td><?= h($profile->general_health) ?></td>
-        </tr>  
+              <td><?=__('WEMWBS Score') ?></td>
+              <td><?= h($profile->wemwbs_score) ?></td>
+        </tr>
+        <tr>
+              <td><?=__('PHQ4 Score') ?></td>
+              <td><?= h($profile->phq4_score) ?></td>
+        </tr>    
     </table>
 </div>
