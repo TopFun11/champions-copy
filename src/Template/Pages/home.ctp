@@ -33,7 +33,7 @@
   <div class="container">
    <div class="row display-flex">
        <?php if ($profile) { ?>
-       <?php if ($profile->hospital == "Neath Port Talbot" && $user->role == ("new student" || "student")) { ?>
+       <?php if ($profile->hospital == "Neath Port Talbot" && $user->role == ('new student' || 'student')) { ?>
         <?php foreach($module as $module) if ($module->title != 'Dissertation demo' && $module->title != 'Wellbeing' && $module->title != 'Feedback'){ ?>
             <div class="col-xs-12 col-sm-4 col-md-4">
                 <div class="box">
@@ -59,7 +59,7 @@
                 </div>
             </div>
        <?php } ?>
-      <?php } else if ($user->role == ("student" || "new student")) { ?>
+      <?php } else if ($user->role == ('student' || 'new student')) { ?>
        <?php foreach($module as $module) if ($module->title != 'Dissertation demo' && $module->title != 'Feedback'){ ?>
             <div class="col-xs-12 col-sm-4 col-md-4">
                 <div class="box">
