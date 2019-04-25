@@ -85,7 +85,7 @@
                 </div>
             </div>
        <?php } ?>
-       <?php } else if ($user->role == "admin") { ?>
+       <?php } else { ?>
             <?php foreach($module as $module) if ($module->title != 'Dissertation demo') { ?>
             <div class="col-xs-12 col-sm-4 col-md-4">
                 <div class="box">
