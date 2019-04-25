@@ -113,7 +113,7 @@
        <?php } ?>
        <?php } ?>
        <?php } else { ?>
-        <?php foreach($module as $module) if ($module->title != 'Dissertation demo' && $module->title != 'Wellbeing' && $module->title != 'Feedback'){ ?>
+        <?php foreach($module as $module) if ($module->title != 'Dissertation demo' && $module->title != 'Wellbeing'){ ?>
             <div class="col-xs-12 col-sm-4 col-md-4">
                 <div class="box">
                     <div class="icon">
