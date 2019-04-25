@@ -110,7 +110,6 @@
                 </div>
             </div>
        <?php } ?>
-       <?php } ?>
        <?php } else { ?>
         <?php foreach($module as $module) if ($module->title != 'Dissertation demo' && $module->title != 'Wellbeing' && $module->title != 'Feedback'){ ?>
             <div class="col-xs-12 col-sm-4 col-md-4">
