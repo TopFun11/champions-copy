@@ -17,9 +17,9 @@
   </div>
 
   <div class="col-xs-12 col-sm-6 col-lg-6 left-Panel">
-    <h3 class="home-title">What will taking part involve?</h3>
-    <p>If you choose to take part, you will need to submit some basic personal information to complete the online registration process.  </p>
-    <p>You will be asked to select a health challenge to take part in. Each week you can chart your progress towards your personal goals and earn health points and trophies along the way. At the end of the FREE 12 week programme you will be asked to complete a questionnaire and to provide feedback which will help assess how effective it has been and help us improve it in the future.</p>
+    <h3 class="home-title">Thank you</h3>
+    <p>On Friday May 3rd you will no longer have access to your personal dashboard. We hope you have found it useful. </p>
+    <p>If you would like to be notified when the 12 week challenge returns, have any questions or would like to take part in a focus group discussion to tell us about using the website please email Menna.Brown@swansea.ac.uk</p>
   </div>
 </div>
 <br>
