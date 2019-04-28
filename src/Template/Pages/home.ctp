@@ -6,6 +6,7 @@
 </div>
 
 <div class="row">
+    <h3 class="home-title">Thank you for taking part</h3>
   <div class="col-xs-12 col-sm-6 col-lg-6 left-Panel">
     <h3 class="home-title">What is Champions for Health?</h3>
     <p>Champions for Health is a FREE online health and wellbeing programme developed by researchers at Swansea University and Public Health Wales. Currently, it is available for staff across Abertawe Bro Morgannwg University Health Board. Please register to begin your health challenge 2019 and to use the wellbeing resources.</p>
