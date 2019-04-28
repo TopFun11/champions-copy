@@ -6,10 +6,14 @@
 </div>
 
 <div class="row">
-    <h3 class="home-title">Thank you for taking part</h3>
+    <h1 class="home-title">Thank you for taking part</h1>
   <div class="col-xs-12 col-sm-6 col-lg-6 left-Panel">
-    <h3 class="home-title">What is Champions for Health?</h3>
-    <p>Champions for Health is a FREE online health and wellbeing programme developed by researchers at Swansea University and Public Health Wales. Currently, it is available for staff across Abertawe Bro Morgannwg University Health Board. Please register to begin your health challenge 2019 and to use the wellbeing resources.</p>
+    <h3 class="home-title">What next?</h3>
+      <p>The 12 week health challenge has now ended.</p>
+
+<p>Please answer these final questions about your health and wellbeing. These are the same ones you answered when you registered to join. This will help you track your progress overall and help us evaluate whether the programme has been useful.</p>
+
+<p>If you used the wellbeing resource please answer the 7 questions found in Week 12, ‘Try Now’. You can download a certificate from the ‘summary’ section.</p>
   </div>
 
   <div class="col-xs-12 col-sm-6 col-lg-6 left-Panel">
