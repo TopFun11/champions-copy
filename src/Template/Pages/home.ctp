@@ -13,7 +13,7 @@
 
 <p>Please answer these final questions about your health and wellbeing. These are the same ones you answered when you registered to join. This will help you track your progress overall and help us evaluate whether the programme has been useful.</p>
       
-<p>You will be able to find these questions, as well as the oppourtunity to give your thoughts on the programme, in the newly added 'Feedback' module which is available here from the homepage.</p>
+<p>This is really important. You will find the questions below the new 'Feedback' module at the bottom of this page. You can also give us your feedback from there.</p>
 
 <p>If you used the wellbeing resource please answer the 7 questions found in Week 12, ‘Try Now’. You can download a certificate from the ‘summary’ section.</p>
   </div>
