@@ -11,7 +11,7 @@
     <h3 class="home-title">What next?</h3>
       <p>The 12 week health challenge has now ended.</p>
 
-<p>Please answer these final questions about your health and wellbeing. These are the same ones you answered when you registered to join. This will help you track your progress overall and help us evaluate whether the programme has been useful.</p>
+<p>Please answer these final questions about your health and wellbeing. These are the same ones you answered when you registered to join. This will help you track your progress overall and help us evaluate whether the programme has been useful. You will be able to find these questions, as well as the oppourtunity to give your thoughts on the programme, in the newly added 'Feedback' module which is available here from the homepage.</p>
 
 <p>If you used the wellbeing resource please answer the 7 questions found in Week 12, ‘Try Now’. You can download a certificate from the ‘summary’ section.</p>
   </div>
