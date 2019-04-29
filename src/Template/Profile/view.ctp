@@ -140,6 +140,15 @@
                  <?php } ?>
                  <td><?= h($wemsum) ?></td>
               </tr>
+              <tr>
+                 <td><?= __('PHQ-4 Follow-Up') ?></td>
+                 <?php foreach($recordset as $phqrecordset) if ($phqrecordset->exercise_id == '67') { ?>
+                     <?php foreach($record as $phqrecord) if ($phqrecord->recordset_id == $phqrecordset->id){ ?>
+                        <?php $phqsum += ($phqrecord->answer); ?>
+                     <?php } ?>
+                 <?php } ?>
+                 <td><?= h($phqsum) ?></td>
+              </tr>
               <?php if($profile->hospital != 'Neath Port Talbot') { ?>
               <?php $postsum = 0; ?>
               <?php $presum = 0; ?>
