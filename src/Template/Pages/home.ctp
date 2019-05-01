@@ -20,7 +20,7 @@
 
   <div class="col-xs-12 col-sm-6 col-lg-6 left-Panel">
     <h3 class="home-title">TELL US WHAT YOU THOUGHT</h3>
-    <p>Please click on new feedback module at the bottom of this page and tell us how we can improve. What worked for you, what didn’t? what do you need?</p>
+    <p>Please click on the <b>new feedback module</b> at the bottom of this page and tell us how we can improve. What worked for you, what didn’t? what do you need?</p>
     <p>If you prefer to chat in person please email Menna.Brown@swansea.ac.uk</p>
     <p>We will be holding a small group session to learn more about what you want from this resource. <b<This is really important.</b> Without you we can’t make improvements. Lunch and refreshments will be provided.</p>
     <br>
