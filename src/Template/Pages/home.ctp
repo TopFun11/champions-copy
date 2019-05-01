@@ -8,20 +8,24 @@
 <div class="row">
     <h1 class="home-title">Thank you for taking part</h1>
   <div class="col-xs-12 col-sm-6 col-lg-6 left-Panel">
-    <h3 class="home-title">What next?</h3>
+    <h3 class="home-title">BEFORE YOU GO</h3>
       <p>The 12 week health challenge has now ended.</p>
 
-<p>Please answer these final questions about your health and wellbeing. These are the same ones you answered when you registered to join. This will help you track your progress overall and help us evaluate whether the programme has been useful. This is really important.</p>
+      <p>Please click on the <b>new feedback module</b> at the bottom of this page and tell us about your health and wellbeing now you have taken part. This is really important for us even if you only took part a few times.</p>
       
 <p>You will find the questions below the new 'Feedback' module at the bottom of this page. You can also give us your feedback from there.</p>
 
-<p>If you used the wellbeing resource please answer the 7 questions found in Week 12, ‘Try Now’. You can download a certificate from the ‘summary’ section.</p>
+      <p>If you used the wellbeing module please <b>ALSO</b> answer the 7 questions found in Week 12, ‘Try Now’</p>
   </div>
 
   <div class="col-xs-12 col-sm-6 col-lg-6 left-Panel">
-    <h3 class="home-title">Thank you</h3>
-    <p>On Friday May 3rd you will no longer have access to your personal dashboard. We hope you have found it useful. </p>
-    <p>If you would like to be notified when the 12 week challenge returns, have any questions or would like to take part in a focus group discussion to tell us about using the website please email Menna.Brown@swansea.ac.uk</p>
+    <h3 class="home-title">TELL US WHAT YOU THOUGHT</h3>
+    <p>Please click on new feedback module at the bottom of this page and tell us how we can improve. What worked for you, what didn’t? what do you need?</p>
+    <p>If you prefer to chat in person please email Menna.Brown@swansea.ac.uk</p>
+    <p>We will be holding a small group session to learn more about what you want from this resource. <b<This is really important.</b> Without you we can’t make improvements. Lunch and refreshments will be provided.</p>
+    <br>
+    <h3 class="home-title">CERTIFICATE</h3>
+    <p>Please get in touch if you would like a certificate for your CPD folder.</p>
   </div>
 </div>
 <br>
