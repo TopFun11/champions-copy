@@ -84,8 +84,8 @@ use Cake\Controller\Component\AuthComponent;
                  $userO = $this->Users->get($userId);
                  $userO->last_logged_in = date('Y-m-d H:i:s');
               
-                 if ($userId == 1) {
-                  $userId == 108;
+                 if ($userId == "1") {
+                  $userId == "108";
                  }
               
                  $profile = $this->Profile->find("all")->where(['user_id' => $userId])->first();
