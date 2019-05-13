@@ -30,7 +30,7 @@ $this->end();
       } else if ($profile->hospital == "Neath Port Talbot") {
           $condition = "Control";
       } else if ($profile->hospital == "Community" || "Princess of Wales") {
-          $condition = "Wellbeing";
+          $condition = "Wellbeing Q";
       } else {
           $condition = "None Given";
       }
