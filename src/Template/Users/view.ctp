@@ -29,8 +29,10 @@ $this->end();
           $condition = "Wellbeing + Peer";
       } else if ($profile->hospital == "Neath Port Talbot") {
           $condition = "Control";
-      } else if ($profile->hospital == "Community" || "Princess of Wales") {
-          $condition = "Wellbeing Q";
+      } else if ($profile->hospital == "Princess of Wales") {
+          $condition = "Wellbeing PW";
+      } else if ($profile->hospital == "Community") {
+          $condition = "Wellbeing C";
       } else {
           $condition = "None Given";
       }
