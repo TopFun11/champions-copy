@@ -40,9 +40,6 @@ use Cake\Controller\Component\AuthComponent;
          ]
        ]);
        $profile = $this->Profile->find("all")->where(['user_id' => $this->Auth->user("id")])->first();
-       if ($userId == 1) {
-        $profile = $this->Profile->find("all")->where(['user_id' => 108])->first();
-       }
        // Build up stats on engagement
        $engagement = [];
        foreach($user->recordset as $rs) {
