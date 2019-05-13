@@ -29,8 +29,10 @@ $this->end();
           $condition = "Wellbeing + Peer";
       } else if ($profile->hospital == "Neath Port Talbot") {
           $condition = "Control";
-      } else {
+      } else if ($profile->hospital == "Community" || "Princess of Wales") {
           $condition = "Wellbeing";
+      } else {
+          $condition = "None Given";
       }
 ?>
 <?php $emailCond = null;
