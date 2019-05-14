@@ -31,7 +31,7 @@ use Cake\Controller\Component\AuthComponent;
 
      public function dashboard(){
        $userId = $this->Auth->user("id");
-      if ($userId == 1) {
+      if ($userId == 106) {
        $userId = 108;
       }
        $user = $this->Users->get($userId, [
