@@ -150,7 +150,7 @@ function stdev($arr)
 
 <?php $screenerDrink = 0;
       foreach($recordset as $drinkScreen) if ($drinkScreen->screener_id == 2) {
-         foreach($record as $drinkScreenrecord) if (($drinkScreenrecord->recordset_id = $drinkScreen->id) and ($drinkScreenrecord->question_id == 6)) {
+         foreach($record as $drinkScreenrecord) if (($drinkScreenrecord->recordset_id == $drinkScreen->id) and ($drinkScreenrecord->question_id == 6)) {
             $screenerDrink = $drinkScreenrecord->answer;
          }
       }
