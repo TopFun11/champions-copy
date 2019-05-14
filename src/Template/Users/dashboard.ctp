@@ -126,7 +126,7 @@ function stdev($arr)
 
 <?php $screenerEat = 0;
       foreach($recordset as $eatScreen) if ($eatScreen->screener_id == 5) {
-         foreach($record as $eatScreenrecord) if (($eatScreenrecord->recordset_id = $eatScreen->id) and ($eatScreenrecord->question_id == 13)) {
+         foreach($record as $eatScreenrecord) if (($eatScreenrecord->recordset_id == $eatScreen->id) and ($eatScreenrecord->question_id == 13)) {
             $screenerEat = $eatScreenrecord->answer;
          }
       }
