@@ -139,7 +139,19 @@ $this->end();
         </tr>
         <tr>
               <td><?=__('Supervises Others?') ?></td>
-              <td><?= h($profile->supervises) ?></td>
+              <td><?php
+               switch ($profile->supervises) {
+                 case "yes":
+                  echo "Yes";
+                  break;
+                case "no":
+                  echo "No";
+                  break;
+                default:
+                  echo "Unspecified";
+                  break;
+               }
+               ?></td>
         </tr>
         <tr>
               <td><?=__('Days off Work') ?></td>
