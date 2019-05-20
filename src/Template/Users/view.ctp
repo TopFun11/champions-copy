@@ -140,16 +140,10 @@ $this->end();
         <tr>
               <td><?=__('Supervises Others?') ?></td>
               <td><?php
-               switch ($profile->supervises) {
-                 case "yes":
-                  echo "Ys";
-                  break;
-                case "no":
-                  echo "No";
-                  break;
-                default:
-                  echo "Unspecified";
-                  break;
+               if ($profile->supervises == "yes") {
+                     echo "Yes";
+               } else {
+                     echo "No";
                }
                ?></td>
         </tr>
