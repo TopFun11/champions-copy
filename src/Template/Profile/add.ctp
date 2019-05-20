@@ -77,7 +77,7 @@
 
             <div class="form-group">
               <label>Do (did) you supervise any other employees?*</label><br/>
-              <label class="radio-inline"><input type="radio" name="supervises" value="yes" required>Yes</label>
+              <label class="radio-inline"><input type="radio" name="supervises" value="yes">Yes</label>
               <label class="radio-inline"><input type="radio" name="supervises" value="no">No</label>
             </div>
 
