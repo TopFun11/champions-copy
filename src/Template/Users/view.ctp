@@ -142,7 +142,7 @@ $this->end();
               <td><?php
                switch ($profile->supervises) {
                  case "yes":
-                  echo "Yes";
+                  echo "Ys";
                   break;
                 case "no":
                   echo "No";
