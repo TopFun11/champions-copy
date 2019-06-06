@@ -166,6 +166,102 @@ $this->end();
         <tr>
               <td><?=__('PHQ4 Score') ?></td>
               <td><?= h($profile->phq4_score) ?></td>
-        </tr>    
+        </tr>
+        <tr>
+              <td><?=__('PHQ4 - Feeling nervous, anxious or on edge') ?></td>
+              <td>
+              <?php
+               switch ($profile->phq_anxious) {
+                 case "0":
+                  echo "Not at all";
+                  break;
+                case "1":
+                  echo "Several days";
+                  break;
+                case "2":
+                  echo "More than half the days";
+                  break;
+                case "3":
+                  echo "Nearly every day";
+                  break;
+                default:
+                  echo "Unspecified";
+                  break;
+               }
+               ?>
+               </td>
+          </tr>
+          <tr>
+                <td><?=__('PHQ4 - Not being able to stop or control worrying') ?></td>
+                <td>
+              <?php
+               switch ($profile->phq_worrying) {
+                 case "0":
+                  echo "Not at all";
+                  break;
+                case "1":
+                  echo "Several days";
+                  break;
+                case "2":
+                  echo "More than half the days";
+                  break;
+                case "3":
+                  echo "Nearly every day";
+                  break;
+                default:
+                  echo "Unspecified";
+                  break;
+               }
+               ?>
+               </td>
+          </tr>
+          <tr>
+                <td><?=__('PHQ4 - Little interest or pleasure in doing things') ?></td>
+                <td>
+              <?php
+               switch ($profile->phq_worrying) {
+                 case "0":
+                  echo "Not at all";
+                  break;
+                case "1":
+                  echo "Several days";
+                  break;
+                case "2":
+                  echo "More than half the days";
+                  break;
+                case "3":
+                  echo "Nearly every day";
+                  break;
+                default:
+                  echo "Unspecified";
+                  break;
+               }
+               ?>
+               </td>
+          </tr>
+          <tr>
+                <td><?=__('PHQ4 - Feeling down, depressed or hopeless) ?></td>
+                <td>
+                <?php
+               switch ($profile->phq_worrying) {
+                 case "0":
+                  echo "Not at all";
+                  break;
+                case "1":
+                  echo "Several days";
+                  break;
+                case "2":
+                  echo "More than half the days";
+                  break;
+                case "3":
+                  echo "Nearly every day";
+                  break;
+                default:
+                  echo "Unspecified";
+                  break;
+               }
+               ?>
+               </td>
+          </tr>            
     </table>
 </div>
