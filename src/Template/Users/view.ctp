@@ -219,7 +219,7 @@ $this->end();
                 <td><?=__('PHQ4 - Little interest or pleasure in doing things') ?></td>
                 <td>
               <?php
-               switch ($profile->phq_worrying) {
+               switch ($profile->phq_interest_please) {
                  case "0":
                   echo "Not at all";
                   break;
@@ -240,10 +240,10 @@ $this->end();
                </td>
           </tr>
           <tr>
-                <td><?=__('PHQ4 - Feeling down, depressed or hopeless) ?></td>
+                <td><?=__('PHQ4 - Feeling down, depressed or hopeless') ?></td>
                 <td>
-                <?php
-               switch ($profile->phq_worrying) {
+              <?php 
+              switch ($profile->phq_depressed) {
                  case "0":
                   echo "Not at all";
                   break;
