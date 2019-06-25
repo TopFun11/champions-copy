@@ -11,7 +11,7 @@
     <h3 class="home-title">Why take part?</h3>
       <p>Changing your lifestyle and health choices can be difficult even when you are motivated and aware of the benefits!</p>
 
-      <p>Champions is here to help!/p>
+      <p>Champions is here to help!</p>
       
 <p>Take the 12 week challenge and improve your health and wellbeing alongside your work colleagues.</p>
 
